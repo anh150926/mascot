@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "presets": [
+    {"id":"neutral","label":"Mặc định","values":{"mood":"neutral","isAsleep":false},"capture_steps":[{"advance":24}]},
+    {"id":"happy","label":"Vui vẻ","values":{"mood":"happy","isAsleep":false},"capture_steps":[{"advance":24}]},
+    {"id":"wink","label":"Nháy mắt","values":{"mood":"wink","isAsleep":false},"capture_steps":[{"advance":24}]},
+    {"id":"focus","label":"Tập trung","values":{"mood":"focus","isAsleep":false},"capture_steps":[{"advance":24}]},
+    {"id":"surprised","label":"Bất ngờ","values":{"mood":"surprised","isAsleep":false},"capture_steps":[{"advance":24}]},
+    {"id":"sleepy","label":"Buồn ngủ","values":{"mood":"sleepy","isAsleep":false},"capture_steps":[{"advance":24}]},
+    {"id":"confused","label":"Thắc mắc","values":{"mood":"confused","isAsleep":false},"capture_steps":[{"advance":24}]},
+    {"id":"sleep","label":"Ngủ say","values":{"mood":"neutral","isAsleep":true},"capture_steps":[{"advance":90}]},
+    {"id":"wave","label":"Vẫy chào","values":{"mood":"neutral","isAsleep":false},"triggers":["wave"],"capture_steps":[{"advance":22}]},
+    {"id":"wake","label":"Chạm đánh thức","values":{"mood":"neutral","isAsleep":true},"capture_steps":[{"advance":60},{"click":[250,350]},{"advance":12}]}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "checks": [
+    "unique IDs",
+    "artboard and default state machine",
+    "exported View Model defaults",
+    "embedded model equality",
+    "bindings for every property",
+    "enum animations and transitions",
+    "ordered layers",
+    "transparent vector-only rig"
+  ],
+  "source_sha256": {
+    "data/model.json": "c91da3b09ac1944a4b8eaf24a667dc9d0292f3affcbe3441a7aef2f67ee8d3ea",
+    "data/presets.json": "d29055e055f3d76f52f5ca4c4eaecaa07f8ec531705478e36fb10d80454e3513",
+    "data/features.json": "12f013b8636398eaf1e49e9137b4b1289ec5d47f799699358f63edf7ddcb6d8b",
+    "speech/lines.vi.json": "0c8b18c420cba743460d4fabd1cc6159ff792592762c71f936808a70cc022db5",
+    "data.rml": "8a802622ce9e884888d3e875c284b53cc2ddfcbabce865e2a3295c5842790fcc",
+    "runtime.rml": "db38765a15d1240aeae51d8af5538ceb0998486a1bc37d29238ba8db9e39c33a"
+  },
+  "errors": []
+}

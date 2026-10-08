@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "presets": [
+    {
+      "id": "neutral",
+      "label": "Mặc định",
+      "values": {
+        "mood": "neutral",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 24
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=neutral",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=neutral",
+        "--data=isAsleep=false",
+        "--advance=24"
+      ]
+    },
+    {
+      "id": "happy",
+      "label": "Vui vẻ",
+      "values": {
+        "mood": "happy",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 24
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=happy",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=happy",
+        "--data=isAsleep=false",
+        "--advance=24"
+      ]
+    },
+    {
+      "id": "wink",
+      "label": "Nháy mắt",
+      "values": {
+        "mood": "wink",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 24
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=wink",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=wink",
+        "--data=isAsleep=false",
+        "--advance=24"
+      ]
+    },
+    {
+      "id": "focus",
+      "label": "Tập trung",
+      "values": {
+        "mood": "focus",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 24
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=focus",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=focus",
+        "--data=isAsleep=false",
+        "--advance=24"
+      ]
+    },
+    {
+      "id": "surprised",
+      "label": "Bất ngờ",
+      "values": {
+        "mood": "surprised",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 24
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=surprised",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=surprised",
+        "--data=isAsleep=false",
+        "--advance=24"
+      ]
+    },
+    {
+      "id": "sleepy",
+      "label": "Buồn ngủ",
+      "values": {
+        "mood": "sleepy",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 24
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=sleepy",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=sleepy",
+        "--data=isAsleep=false",
+        "--advance=24"
+      ]
+    },
+    {
+      "id": "confused",
+      "label": "Thắc mắc",
+      "values": {
+        "mood": "confused",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 24
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=confused",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=confused",
+        "--data=isAsleep=false",
+        "--advance=24"
+      ]
+    },
+    {
+      "id": "sleep",
+      "label": "Ngủ say",
+      "values": {
+        "mood": "neutral",
+        "isAsleep": true
+      },
+      "capture_steps": [
+        {
+          "advance": 90
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=neutral",
+        "--data=isAsleep=true"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=neutral",
+        "--data=isAsleep=true",
+        "--advance=90"
+      ]
+    },
+    {
+      "id": "wave",
+      "label": "Vẫy chào",
+      "values": {
+        "mood": "neutral",
+        "isAsleep": false
+      },
+      "triggers": [
+        "wave"
+      ],
+      "capture_steps": [
+        {
+          "advance": 22
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=neutral",
+        "--data=isAsleep=false",
+        "--data=wave=1"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=neutral",
+        "--data=isAsleep=false",
+        "--data=wave=1",
+        "--advance=22"
+      ]
+    },
+    {
+      "id": "wake",
+      "label": "Chạm đánh thức",
+      "values": {
+        "mood": "neutral",
+        "isAsleep": true
+      },
+      "capture_steps": [
+        {
+          "advance": 60
+        },
+        {
+          "click": [
+            250,
+            350
+          ]
+        },
+        {
+          "advance": 12
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=neutral",
+        "--data=isAsleep=true"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=neutral",
+        "--data=isAsleep=true",
+        "--advance=60",
+        "--pointer=click@250,350",
+        "--advance=12"
+      ]
+    }
+  ]
+}

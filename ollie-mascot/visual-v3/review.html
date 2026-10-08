@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ollie V3 · đối chiếu hình</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color:#173f2a; background:#f3f8f1; }
+    * { box-sizing:border-box; }
+    body { margin:0; }
+    header, main { width:min(1400px, calc(100% - 32px)); margin:auto; }
+    header { padding:28px 0 12px; }
+    h1 { margin:0; font-size:clamp(28px,4vw,46px); letter-spacing:-.04em; }
+    p { max-width:900px; line-height:1.55; }
+    a { color:#28784a; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:18px 0; }
+    .card { min-width:0; background:white; border:1px solid #d1e1d1; border-radius:20px; overflow:hidden; }
+    h2 { margin:0; padding:15px 18px; font-size:19px; }
+    .stage { background:#1d1d1d; display:grid; place-items:center; min-height:360px; }
+    .stage img { display:block; width:min(100%,500px); height:auto; }
+    .reference img { display:block; width:100%; max-height:500px; object-fit:contain; object-position:top; }
+    .caption { margin:0; padding:12px 18px 18px; color:#50705b; font-size:14px; }
+    .small { display:flex; align-items:end; gap:22px; padding:22px; background:#1d1d1d; color:white; }
+    .small figure { margin:0; text-align:center; }
+    .small img { display:block; margin-bottom:8px; }
+    @media(max-width:900px) { .grid { grid-template-columns:1fr 1fr; } .reference { grid-column:1/-1; } }
+    @media(max-width:600px) { .grid { grid-template-columns:1fr; } .reference { grid-column:auto; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ollie · dựng lại hình V3</h1>
+    <p>So bản vector mới với V2 và bảng mẫu. Dùng hình <strong>Front</strong> trong ô turnaround làm chuẩn cho rig nhìn thẳng; hình lớn là chuẩn về ánh sáng, màu và lớp lông. <a href="./DESIGN_ANALYSIS.md">Đọc phân tích tạo hình</a> · <a href="../playground/">Mở playground animation</a>.</p>
+  </header>
+  <main>
+    <div class="grid">
+      <section class="card"><h2>V3 · neutral</h2><div class="stage"><img src="./build/ollie-neutral-500.png" alt="Ollie V3 neutral"></div><p class="caption">Mặt kem liền, mắt ít viền, cánh có silhouette và lông bên trong.</p></section>
+      <section class="card"><h2>V2 · mốc cũ</h2><div class="stage"><img src="../visual-v2/build/ollie-neutral-500.png" alt="Ollie V2 neutral"></div><p class="caption">Dùng để kiểm tra thay đổi của trán, má, mắt và cánh.</p></section>
+      <section class="card reference"><h2>Bảng mẫu</h2><img src="./ollie-reference.png" alt="Bảng thiết kế Ollie"><p class="caption">Hình minh họa lớn là 3/4; ô turnaround có góc front.</p></section>
+    </div>
+    <section class="card"><h2>Đọc hình ở kích thước nhỏ</h2><div class="small"><figure><img src="./build/ollie-neutral-240.png" width="240" height="240" alt="Ollie V3 240 px"><figcaption>240 px</figcaption></figure><figure><img src="./build/ollie-neutral-120.png" width="120" height="120" alt="Ollie V3 120 px"><figcaption>120 px</figcaption></figure><figure><img src="./build/ollie-neutral-80.png" width="80" height="80" alt="Ollie V3 80 px"><figcaption>80 px</figcaption></figure></div></section>
+  </main>
+</body>
+</html>

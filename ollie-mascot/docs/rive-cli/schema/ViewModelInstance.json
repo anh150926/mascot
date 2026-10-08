@@ -1,0 +1,171 @@
+{
+  "type": "ViewModelInstance",
+  "typeKey": 437,
+  "authorable": true,
+  "extends": [
+    "ContainerComponent",
+    "Component",
+    "ArtboardProvider"
+  ],
+  "properties": [
+    {
+      "name": "viewModelId",
+      "owner": "ViewModelInstance",
+      "type": "Id",
+      "key": 566,
+      "animatable": false,
+      "bindable": false,
+      "derived": false
+    },
+    {
+      "name": "x",
+      "owner": "ViewModelInstance",
+      "type": "double",
+      "key": 567,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "0",
+      "description": "The x coordinate of the stage representation."
+    },
+    {
+      "name": "y",
+      "owner": "ViewModelInstance",
+      "type": "double",
+      "key": 568,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "0",
+      "description": "The y coordinate of the stage representation."
+    },
+    {
+      "name": "onStage",
+      "owner": "ViewModelInstance",
+      "type": "bool",
+      "key": 569,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "false",
+      "description": "Whether it is visible on stage or not."
+    },
+    {
+      "name": "order",
+      "owner": "ViewModelInstance",
+      "type": "FractionalIndex",
+      "key": 739,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "View model instance display order"
+    },
+    {
+      "name": "exports",
+      "owner": "ViewModelInstance",
+      "type": "bool",
+      "key": 740,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "false",
+      "description": "Whether the instance should be exported for runtime."
+    },
+    {
+      "name": "isOverride",
+      "owner": "ViewModelInstance",
+      "type": "bool",
+      "key": 1034,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "false",
+      "description": "Whether this instance is an override of a global ViewModel instance."
+    },
+    {
+      "name": "dependentIds",
+      "owner": "Component",
+      "type": "List<Id>",
+      "key": 3,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "List of integer ids for objects registered in the same context that depend on this object."
+    },
+    {
+      "name": "name",
+      "owner": "Component",
+      "type": "String",
+      "key": 4,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Non-unique identifier, used to give friendly names to elements in the hierarchy. Runtimes provide an API for finding components by this [name]."
+    },
+    {
+      "name": "exportName",
+      "owner": "Component",
+      "type": "bool",
+      "key": 544,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "false",
+      "description": "Flag to export the name property for runtime."
+    },
+    {
+      "name": "parentId",
+      "owner": "Component",
+      "type": "Id",
+      "key": 5,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Identifier used to track parent ContainerComponent."
+    },
+    {
+      "name": "childOrder",
+      "owner": "Component",
+      "type": "FractionalIndex",
+      "key": 6,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Order value for sorting child elements in ContainerComponent parent."
+    },
+    {
+      "name": "flags",
+      "owner": "Component",
+      "type": "uint",
+      "key": 130,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "0",
+      "bits": [
+        "hidden",
+        "locked",
+        "disconnected",
+        "opaque",
+        "guide",
+        "isolated",
+        "visibleOverride",
+        "unlockedOverride",
+        "participatesInLayout",
+        "complexDependency",
+        "selectable"
+      ],
+      "description": "Component state. Runtime export folds visibility and selectable state into drawable flags; editor-only flags stay in the editor."
+    },
+    {
+      "name": "tagIds",
+      "owner": "Component",
+      "type": "List<Id>",
+      "key": 382,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Assigned tag ids."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "project": "ollie-mascot",
+  "artboard": {"name": "Runtime", "id": "0:2", "width": 500, "height": 500, "fit": "contain"},
+  "state_machine": {"name": "Main", "id": "0:500", "layers": ["Idle", "Blink", "Ears", "Core", "Mood", "Gesture", "Sleep"]},
+  "view_model": {"name": "Mascot", "id": "0:610", "instance": {"name": "Default", "id": "0:612"}},
+  "enums": [
+    {"name": "Mood", "id": "0:600", "values": [
+      {"key": "neutral", "label": "Neutral", "id": "0:601"},
+      {"key": "happy", "label": "Happy", "id": "0:602"},
+      {"key": "wink", "label": "Wink", "id": "0:603"},
+      {"key": "focus", "label": "Focus", "id": "0:604"},
+      {"key": "surprised", "label": "Surprised", "id": "0:605"},
+      {"key": "sleepy", "label": "Sleepy", "id": "0:606"},
+      {"key": "confused", "label": "Confused", "id": "0:607"}
+    ]}
+  ],
+  "properties": [
+    {"name": "mood", "type": "enum", "enum": "Mood", "default": "neutral", "id": "0:611", "instance_value_id": "0:806", "description": "Biểu cảm; giữ thứ tự enum khi tích hợp ứng dụng."},
+    {"name": "isAsleep", "type": "boolean", "default": false, "id": "0:613", "instance_value_id": "0:807", "description": "Ngủ/thức. Chạm Ollie khi ngủ sẽ ghi false trở lại View Model."},
+    {"name": "wave", "type": "trigger", "id": "0:614", "instance_value_id": "0:808", "description": "Vẫy cánh một lần khi thức; trigger không phải boolean có trạng thái lưu."}
+  ],
+  "runtime_file": "dist/ollie.riv",
+  "notes": "Nguồn chính cho data.rml. Đổi tên/ID phải cập nhật scaffold và binding tương ứng. Chưa khai báo view nghiêng/sau vì chưa có artwork."
+}

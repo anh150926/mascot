@@ -1,0 +1,32 @@
+{
+  "primary": {
+    "file": "ollie-front-master.png",
+    "original_filename": "Cú lá xanh chibi đáng yêu.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "sha256": "ad07b5bea4f7c44152e2e1c37e1e67d4e9e52e8c6da844d1d15bb3f02d2b7c10",
+    "role": "front identity reference supplied by user",
+    "status": "reference supplied; vector draft not approved"
+  },
+  "coordinate_system": {
+    "source": [
+      1254,
+      1254
+    ],
+    "artboard": [
+      500,
+      500
+    ],
+    "fit": "contain",
+    "crop": null
+  },
+  "pending_views": [
+    "left profile",
+    "right profile",
+    "back"
+  ],
+  "incoming_folder": "reference/incoming",
+  "secondary": "Earlier design board: expression/action direction only; latest front wins on conflicting anatomy."
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "description": "Ánh xạ tính năng Ollie sang biểu cảm/cử chỉ hiện đã có. Đạo cụ là mục cần dựng sau, chưa phải state trong file .riv.",
+  "features": [
+    {"id":"greeting","label":"Chào người dùng","preset":"wave","speech_category":"greeting","artwork_status":"available"},
+    {"id":"planning","label":"Lập kế hoạch","preset":"focus","speech_category":"planning","artwork_status":"mood_only","pending_prop":"Bảng công việc"},
+    {"id":"finance","label":"Xem thu chi","preset":"focus","speech_category":"finance","artwork_status":"mood_only","pending_prop":"Bảng thu chi và kính"},
+    {"id":"nutrition","label":"Bữa ăn","preset":"happy","speech_category":"nutrition","artwork_status":"mood_only","pending_prop":"Bát rau quả"},
+    {"id":"activity","label":"Vận động","preset":"wink","speech_category":"activity","artwork_status":"mood_only","pending_prop":"Tư thế vận động riêng"},
+    {"id":"reminder","label":"Nhắc lịch","preset":"surprised","speech_category":"reminder","artwork_status":"mood_only","pending_prop":"Lịch và chuông"},
+    {"id":"progress","label":"Động viên","preset":"happy","speech_category":"cheer","artwork_status":"available"},
+    {"id":"rest","label":"Nghỉ ngơi","preset":"sleepy","speech_category":"night","artwork_status":"available"}
+  ]
+}

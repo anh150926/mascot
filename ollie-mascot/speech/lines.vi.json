@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "_about": "Lời thoại Ollie do ứng dụng hiển thị bên ngoài Rive. Mood/gesture chỉ dùng các điều khiển hiện có; số liệu placeholder phải do ứng dụng cung cấp.",
+  "anchor": {"artboardX": 370, "artboardY": 115, "note": "Điểm neo phía trên-phải đầu trên artboard 500×500; ứng dụng đặt khung ngoài hình và giới hạn trong viewport."},
+  "placeholders": {"name":"Tên người dùng","minutes":"Số phút thực tế","task":"Tên công việc","time":"Thời gian theo lịch người dùng"},
+  "rules": {"suppress_while_asleep":true,"avoid_immediate_repeat":true,"min_duration_ms":3200,"ms_per_character":65},
+  "categories": {
+    "greeting":{"label":"Chào hỏi","lines":[
+      {"id":"greeting-1","text":"Chào {name}! Mình là Ollie, cùng bắt đầu ngày mới nhé.","mood":"happy","gesture":"wave"},
+      {"id":"greeting-2","text":"Bạn muốn bắt đầu từ việc nhỏ nào hôm nay?","mood":"neutral"}
+    ]},
+    "planning":{"label":"Lập kế hoạch","lines":[
+      {"id":"planning-1","text":"Mình cùng chia việc lớn thành từng bước nhỏ nhé.","mood":"focus"},
+      {"id":"planning-2","text":"Bắt đầu với {task} nhé, mình ở đây cùng bạn.","mood":"focus"}
+    ]},
+    "finance":{"label":"Thu chi","lines":[
+      {"id":"finance-1","text":"Mình cùng xem lại các khoản bạn đã ghi hôm nay nhé.","mood":"focus"},
+      {"id":"finance-2","text":"Ghi thêm một khoản nhỏ cũng giúp bức tranh thu chi rõ hơn.","mood":"neutral"}
+    ]},
+    "nutrition":{"label":"Bữa ăn","lines":[
+      {"id":"nutrition-1","text":"Đến giờ nghỉ dùng bữa trong lịch của bạn rồi nè.","mood":"happy"},
+      {"id":"nutrition-2","text":"Hôm nay bạn muốn ghi lại món nào?","mood":"neutral"}
+    ]},
+    "activity":{"label":"Vận động","lines":[
+      {"id":"activity-1","text":"Nếu tiện, mình cùng đứng dậy vươn vai một chút nhé.","mood":"wink"},
+      {"id":"activity-2","text":"Bạn đã dành {minutes} phút cho hoạt động này rồi.","mood":"happy"}
+    ]},
+    "reminder":{"label":"Nhắc lịch","lines":[
+      {"id":"reminder-1","text":"Bạn có lịch {task} lúc {time} nhé.","mood":"surprised"},
+      {"id":"reminder-2","text":"Mình cùng xem việc tiếp theo trong lịch nhé.","mood":"focus"}
+    ]},
+    "cheer":{"label":"Động viên","lines":[
+      {"id":"cheer-1","text":"Thêm một bước nhỏ đã hoàn thành rồi!","mood":"happy","gesture":"wave"},
+      {"id":"cheer-2","text":"Cứ đi theo nhịp của bạn, mình luôn ở đây.","mood":"wink"}
+    ]},
+    "wake":{"label":"Thức dậy","lines":[
+      {"id":"wake-1","text":"Ồ, mình tỉnh rồi! Tiếp tục cùng bạn nhé.","mood":"surprised"},
+      {"id":"wake-2","text":"Ollie có mặt! Bạn cần mình giúp gì nào?","mood":"happy"}
+    ]},
+    "night":{"label":"Nghỉ ngơi","lines":[
+      {"id":"night-1","text":"Mình cùng khép lại những việc hôm nay nhé.","mood":"sleepy"},
+      {"id":"night-2","text":"Chúc bạn một khoảng nghỉ thật dễ chịu.","mood":"sleepy"}
+    ]},
+    "trouble":{"label":"Thử lại","lines":[
+      {"id":"trouble-1","text":"Có vẻ việc này chưa xong. Mình cùng thử lại nhé?","mood":"confused"},
+      {"id":"trouble-2","text":"Mình cùng kiểm tra lại bước vừa rồi nhé.","mood":"neutral"}
+    ]}
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "type": "TransitionViewModelCondition",
+  "typeKey": 482,
+  "authorable": true,
+  "extends": [
+    "TransitionCondition",
+    "ArtboardProvider"
+  ],
+  "properties": [
+    {
+      "name": "leftComparatorId",
+      "owner": "TransitionViewModelCondition",
+      "type": "Id",
+      "key": 648,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "The id of the left comaprand to use for this condition"
+    },
+    {
+      "name": "rightComparatorId",
+      "owner": "TransitionViewModelCondition",
+      "type": "Id",
+      "key": 649,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "The id of the right comaprand to use for this condition"
+    },
+    {
+      "name": "opValue",
+      "owner": "TransitionViewModelCondition",
+      "type": "uint",
+      "key": 650,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "equal",
+      "accepts": [
+        "equal",
+        "notEqual",
+        "lessThanOrEqual",
+        "greaterThanOrEqual",
+        "lessThan",
+        "greaterThan"
+      ],
+      "values": [
+        {
+          "name": "equal",
+          "value": 0
+        },
+        {
+          "name": "notEqual",
+          "value": 1
+        },
+        {
+          "name": "lessThanOrEqual",
+          "value": 2
+        },
+        {
+          "name": "greaterThanOrEqual",
+          "value": 3
+        },
+        {
+          "name": "lessThan",
+          "value": 4
+        },
+        {
+          "name": "greaterThan",
+          "value": 5
+        }
+      ],
+      "description": "Integer representation of the StateMachineOp enum."
+    },
+    {
+      "name": "transitionId",
+      "owner": "TransitionCondition",
+      "type": "Id",
+      "key": 153,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Id of the transition this condition belongs to."
+    },
+    {
+      "name": "conditionOrder",
+      "owner": "TransitionCondition",
+      "type": "FractionalIndex",
+      "key": 154,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Order value for condition in a transition."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "runtime_file": "ollie.riv",
+  "artboard": "Runtime",
+  "size": [
+    500,
+    500
+  ],
+  "fit": "contain",
+  "state_machine": "Main",
+  "view_model": "Mascot",
+  "instance": "Default",
+  "properties": [
+    {
+      "name": "mood",
+      "type": "enum",
+      "default": "neutral",
+      "description": "Biểu cảm; giữ thứ tự enum khi tích hợp ứng dụng.",
+      "values": [
+        "neutral",
+        "happy",
+        "wink",
+        "focus",
+        "surprised",
+        "sleepy",
+        "confused"
+      ]
+    },
+    {
+      "name": "isAsleep",
+      "type": "boolean",
+      "default": false,
+      "description": "Ngủ/thức. Chạm Ollie khi ngủ sẽ ghi false trở lại View Model."
+    },
+    {
+      "name": "wave",
+      "type": "trigger",
+      "description": "Vẫy cánh một lần khi thức; trigger không phải boolean có trạng thái lưu."
+    }
+  ],
+  "layers": [
+    "Idle",
+    "Blink",
+    "Ears",
+    "Core",
+    "Mood",
+    "Gesture",
+    "Sleep"
+  ]
+}

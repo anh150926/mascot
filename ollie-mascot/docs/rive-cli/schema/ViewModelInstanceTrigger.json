@@ -1,0 +1,148 @@
+{
+  "type": "ViewModelInstanceTrigger",
+  "typeKey": 501,
+  "authorable": true,
+  "extends": [
+    "ViewModelInstanceValue",
+    "Component",
+    "ArtboardProvider"
+  ],
+  "properties": [
+    {
+      "name": "propertyValue",
+      "owner": "ViewModelInstanceTrigger",
+      "type": "uint",
+      "key": 687,
+      "animatable": true,
+      "bindable": true,
+      "derived": false,
+      "default": "0",
+      "description": "The boolean value."
+    },
+    {
+      "name": "playbackValue",
+      "owner": "ViewModelInstanceTrigger",
+      "type": "uint",
+      "key": 688,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "0"
+    },
+    {
+      "name": "fire",
+      "owner": "ViewModelInstanceTrigger",
+      "type": "callback",
+      "key": 1016,
+      "animatable": true,
+      "bindable": false,
+      "derived": false,
+      "description": "Callback type used for keying the trigger"
+    },
+    {
+      "name": "viewModelInstanceId",
+      "owner": "ViewModelInstanceValue",
+      "type": "Id",
+      "key": 553,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Identifier of the view model instance this value is for, at runtime this is expected in context (after) a ViewModelInstance object."
+    },
+    {
+      "name": "viewModelPropertyId",
+      "owner": "ViewModelInstanceValue",
+      "type": "Id",
+      "key": 554,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Identifier of the property this value will provide data for. At runtime these ids are normalized relative to the ViewModel itself."
+    },
+    {
+      "name": "dependentIds",
+      "owner": "Component",
+      "type": "List<Id>",
+      "key": 3,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "List of integer ids for objects registered in the same context that depend on this object."
+    },
+    {
+      "name": "name",
+      "owner": "Component",
+      "type": "String",
+      "key": 4,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Non-unique identifier, used to give friendly names to elements in the hierarchy. Runtimes provide an API for finding components by this [name]."
+    },
+    {
+      "name": "exportName",
+      "owner": "Component",
+      "type": "bool",
+      "key": 544,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "false",
+      "description": "Flag to export the name property for runtime."
+    },
+    {
+      "name": "parentId",
+      "owner": "Component",
+      "type": "Id",
+      "key": 5,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Identifier used to track parent ContainerComponent."
+    },
+    {
+      "name": "childOrder",
+      "owner": "Component",
+      "type": "FractionalIndex",
+      "key": 6,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Order value for sorting child elements in ContainerComponent parent."
+    },
+    {
+      "name": "flags",
+      "owner": "Component",
+      "type": "uint",
+      "key": 130,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "0",
+      "bits": [
+        "hidden",
+        "locked",
+        "disconnected",
+        "opaque",
+        "guide",
+        "isolated",
+        "visibleOverride",
+        "unlockedOverride",
+        "participatesInLayout",
+        "complexDependency",
+        "selectable"
+      ],
+      "description": "Component state. Runtime export folds visibility and selectable state into drawable flags; editor-only flags stay in the editor."
+    },
+    {
+      "name": "tagIds",
+      "owner": "Component",
+      "type": "List<Id>",
+      "key": 382,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Assigned tag ids."
+    }
+  ]
+}

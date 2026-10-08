@@ -1,0 +1,22 @@
+{
+  "type": "TransitionValueEnumComparator",
+  "typeKey": 485,
+  "authorable": true,
+  "extends": [
+    "TransitionValueIdComparator",
+    "TransitionValueComparator",
+    "TransitionComparator"
+  ],
+  "properties": [
+    {
+      "name": "value",
+      "owner": "TransitionValueIdComparator",
+      "type": "Id",
+      "key": 653,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "The id of the enum to compare the condition to"
+    }
+  ]
+}

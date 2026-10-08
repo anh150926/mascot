@@ -1,0 +1,131 @@
+{
+  "type": "ViewModel",
+  "typeKey": 435,
+  "authorable": true,
+  "extends": [
+    "ViewModelComponent"
+  ],
+  "properties": [
+    {
+      "name": "viewModelOrder",
+      "owner": "ViewModel",
+      "type": "FractionalIndex",
+      "key": 563,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Order value for sorting View Models. NOTE: This value is used in the former subdivided data panel. The updated panel uses a unified order value via the ParentableDataItem mixin."
+    },
+    {
+      "name": "defaultInstanceId",
+      "owner": "ViewModel",
+      "type": "Id",
+      "key": 564,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "The default instance attached to the view model."
+    },
+    {
+      "name": "editingInstanceId",
+      "owner": "ViewModel",
+      "type": "Id",
+      "key": 741,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "The selected inspector instance. Saves to local editor properties."
+    },
+    {
+      "name": "viewModelType",
+      "owner": "ViewModel",
+      "type": "uint",
+      "key": 981,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "standard",
+      "accepts": [
+        "standard",
+        "textInput",
+        "global"
+      ],
+      "values": [
+        {
+          "name": "standard",
+          "value": 0
+        },
+        {
+          "name": "textInput",
+          "value": 1
+        },
+        {
+          "name": "global",
+          "value": 2
+        }
+      ],
+      "description": "Identifies view models that have special uses, like text input view models"
+    },
+    {
+      "name": "shouldPublish",
+      "owner": "ViewModel",
+      "type": "bool",
+      "key": 849,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "true",
+      "description": "An option to opt-out of publishing a component."
+    },
+    {
+      "name": "name",
+      "owner": "ViewModelComponent",
+      "type": "String",
+      "key": 557,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Non-unique identifier, used to give friendly names to any view model component."
+    },
+    {
+      "name": "parentId",
+      "owner": "ViewModelComponent",
+      "type": "Id",
+      "key": 842,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Id of a parent folder within the data panel tree."
+    },
+    {
+      "name": "groupId",
+      "owner": "ViewModelComponent",
+      "type": "Id",
+      "key": 878,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Id of the data source/type group. Typically either a group representing a library or an data type."
+    },
+    {
+      "name": "displayOrder",
+      "owner": "ViewModelComponent",
+      "type": "FractionalIndex",
+      "key": 845,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Order items should be displayed within the updated data panel."
+    },
+    {
+      "name": "tagIds",
+      "owner": "ViewModelComponent",
+      "type": "List<Id>",
+      "key": 382,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Assigned tag ids."
+    }
+  ]
+}

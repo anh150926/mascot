@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ollie · duyệt hình neutral V2</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root { --ink:#193d2d; --muted:#63806b; --line:#cbded0; --mint:#dceee0; --paper:#f4f8f2; --stage:#1d1d1d; --size:500px; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    header { padding:28px clamp(16px,4vw,56px) 18px; display:flex; align-items:end; justify-content:space-between; gap:18px; flex-wrap:wrap; }
+    h1 { margin:0; font-size:clamp(27px,3.3vw,45px); line-height:1.1; letter-spacing:-.045em; }
+    .eyebrow { margin:0 0 6px; color:#438254; text-transform:uppercase; letter-spacing:.13em; font-weight:800; font-size:12px; }
+    header p:last-child { max-width:690px; margin:8px 0 0; color:var(--muted); }
+    a { color:#2d7846; font-weight:700; }
+    .pill { border:1px solid #97c6a1; border-radius:99px; padding:8px 15px; background:#e6f4e7; text-decoration:none; white-space:nowrap; }
+    main { padding:0 clamp(16px,4vw,56px) 56px; }
+    .toolbar { display:flex; align-items:center; gap:11px; flex-wrap:wrap; padding:13px 16px; border:1px solid var(--line); border-radius:18px; background:white; }
+    .toolbar strong { margin-right:5px; }
+    button { border:1px solid #b7d1bd; border-radius:10px; padding:8px 12px; background:#f2f9f2; color:var(--ink); font:inherit; cursor:pointer; }
+    button:hover { border-color:#3b8c54; }
+    button[aria-pressed="true"] { background:#397e4d; border-color:#397e4d; color:white; }
+    .toolbar label { margin-left:auto; display:flex; align-items:center; gap:8px; }
+    input[type=range] { accent-color:#397e4d; width:170px; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:18px; }
+    @media(max-width:1000px) { .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .reference { grid-column:1/-1; } }
+    @media(max-width:650px) { .grid { grid-template-columns:1fr; } .reference { grid-column:auto; } .toolbar label { margin-left:0; } }
+    .card { min-width:0; overflow:hidden; border:1px solid var(--line); border-radius:20px; background:#fff; box-shadow:0 10px 32px #174b2710; }
+    .card-head { padding:15px 18px 10px; }
+    h2 { margin:0; font-size:19px; letter-spacing:-.02em; }
+    .card-head p { margin:2px 0 0; color:var(--muted); font-size:13px; }
+    .stage { min-height:380px; display:grid; place-items:center; background:var(--stage); overflow:hidden; }
+    .art { width:min(var(--size),100%); aspect-ratio:1; position:relative; display:grid; place-items:center; }
+    canvas, .art img { display:block; width:100%; height:100%; object-fit:contain; }
+    #fallback { display:none; position:absolute; inset:0; }
+    .reference-image { display:block; width:100%; max-height:510px; object-fit:contain; object-position:top; background:#fff; }
+    .caption { padding:12px 18px 16px; color:var(--muted); font-size:13px; }
+    .notice { margin-top:17px; padding:14px 17px; border-left:4px solid #75b66d; background:#e8f4e7; border-radius:0 12px 12px 0; }
+    .review-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px; margin-top:18px; }
+    @media(max-width:850px) { .review-grid { grid-template-columns:1fr; } }
+    .review-panel { border:1px solid var(--line); border-radius:20px; background:#fff; padding:19px; min-width:0; }
+    .review-panel h2 { margin-bottom:10px; }
+    .size-list { display:flex; gap:12px; align-items:end; flex-wrap:wrap; }
+    .size-item { display:grid; justify-items:center; gap:5px; padding:9px; border:1px solid var(--line); border-radius:13px; background:#1d1d1d; color:white; font-size:12px; }
+    .size-item img { display:block; image-rendering:auto; }
+    .parts { width:100%; border-radius:12px; background:#1d1d1d; cursor:zoom-in; }
+    .steps { margin-top:18px; }
+    .steps summary { cursor:pointer; font-size:18px; font-weight:700; }
+    .step-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(155px,1fr)); gap:10px; margin-top:14px; }
+    .step-list figure { margin:0; padding:9px; border-radius:13px; background:#1d1d1d; color:#eaf4e8; text-align:center; }
+    .step-list img { display:block; width:100%; max-width:160px; margin:auto; aspect-ratio:1; object-fit:contain; }
+    .step-list figcaption { font-size:12px; }
+    dialog { width:min(96vw,1540px); max-height:95vh; padding:14px; border:0; border-radius:16px; box-shadow:0 24px 70px #102b1e88; }
+    dialog::backdrop { background:#102b1ebb; }
+    dialog img { display:block; width:100%; height:auto; }
+    .dialog-bar { display:flex; justify-content:space-between; align-items:center; padding:0 2px 10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">Ollie · visual checkpoint</p>
+      <h1>Duyệt hình neutral V2</h1>
+      <p>Bản vẽ Bézier Rive mới, tách khỏi bản animation đang chạy. Điều chỉnh kích thước và nền để kiểm tra dáng, mắt, cánh, lá và huy hiệu.</p>
+    </div>
+    <a class="pill" href="../playground/">Mở bản animation hiện tại ↗</a>
+  </header>
+  <main>
+    <div class="toolbar" role="group" aria-label="Điều khiển xem trước">
+      <strong>Kích thước</strong>
+      <button data-size="500" aria-pressed="true">500 px</button>
+      <button data-size="240" aria-pressed="false">240 px</button>
+      <button data-size="120" aria-pressed="false">120 px</button>
+      <button data-size="80" aria-pressed="false">80 px</button>
+      <button id="background" aria-pressed="false">Nền sáng</button>
+      <label>Thu phóng <input id="zoom" type="range" min="80" max="500" value="500"><output id="zoomValue">500 px</output></label>
+    </div>
+    <div class="grid">
+      <section class="card">
+        <div class="card-head"><h2>Hình mới · neutral V2</h2><p>Rive vector, artboard trong suốt; chưa rig hoặc animation.</p></div>
+        <div class="stage"><div class="art"><canvas id="neutral" width="1000" height="1000" aria-label="Ollie neutral V2"></canvas><img id="fallback" src="./build/ollie-neutral-500.png" alt="Ollie neutral V2"></div></div>
+        <div class="caption" id="riveStatus">Đang nạp bản vẽ Rive…</div>
+      </section>
+      <section class="card">
+        <div class="card-head"><h2>Bản kỹ thuật cũ</h2><p>Mốc so sánh hình dáng, trước khi sửa nét.</p></div>
+        <div class="stage"><div class="art"><img src="./current-neutral.png" alt="Ollie neutral cũ"></div></div>
+        <div class="caption">Đầu tròn, mảng mặt phẳng, cánh cứng và huy hiệu quá nổi.</div>
+      </section>
+      <section class="card reference">
+        <div class="card-head"><h2>Ảnh mẫu được duyệt</h2><p>Ưu tiên dáng cú ấm áp, lớp lông và mắt nhiều lớp.</p></div>
+        <img class="reference-image" src="./ollie-reference.png" alt="Bảng tham chiếu linh vật Ollie">
+        <div class="caption">Ảnh mẫu tổng thể; bản vẽ neutral mới vẫn cần đánh giá trực tiếp theo mẫu này.</div>
+      </section>
+    </div>
+    <div class="notice">Trạng thái: V2 là mốc so sánh. Rig trong dự án chính hiện dùng bản dựng lại <a href="../visual-v3/review.html">V3</a>.</div>
+    <div class="review-grid">
+      <section class="review-panel">
+        <h2>Đọc hình ở kích thước nhỏ</h2>
+        <div class="size-list">
+          <div class="size-item"><img width="240" height="240" src="./build/ollie-neutral-240.png" alt="Ollie 240 px"><span>240 px</span></div>
+          <div class="size-item"><img width="120" height="120" src="./build/ollie-neutral-120.png" alt="Ollie 120 px"><span>120 px</span></div>
+          <div class="size-item"><img width="80" height="80" src="./build/ollie-neutral-80.png" alt="Ollie 80 px"><span>80 px</span></div>
+        </div>
+      </section>
+      <section class="review-panel">
+        <h2>Bảng bộ phận</h2>
+        <p>Nhấn để phóng lớn các phần tách rời của cùng bản vẽ Rive.</p>
+        <img class="parts" id="parts" src="./build/ollie_parts.png" alt="Bảng tách bộ phận Ollie">
+      </section>
+    </div>
+    <details class="review-panel steps">
+      <summary>Xem 10 bước dựng hình đã verify và render</summary>
+      <div class="step-list">
+        <figure><img loading="lazy" src="./build/stage_01_head.png" alt="Bước 1, đầu"><figcaption>1 · Đầu</figcaption></figure>
+        <figure><img loading="lazy" src="./build/stage_02_face.png" alt="Bước 2, mặt kem"><figcaption>2 · Mặt kem</figcaption></figure>
+        <figure><img loading="lazy" src="./build/stage_03_eyes.png" alt="Bước 3, mắt"><figcaption>3 · Mắt</figcaption></figure>
+        <figure><img loading="lazy" src="./build/stage_04_beak.png" alt="Bước 4, mỏ"><figcaption>4 · Mỏ</figcaption></figure>
+        <figure><img loading="lazy" src="./build/stage_05_body.png" alt="Bước 5, thân"><figcaption>5 · Thân</figcaption></figure>
+        <figure><img loading="lazy" src="./build/stage_06_wings.png" alt="Bước 6, cánh"><figcaption>6 · Cánh</figcaption></figure>
+        <figure><img loading="lazy" src="./build/stage_07_leaf.png" alt="Bước 7, lá"><figcaption>7 · Lá</figcaption></figure>
+        <figure><img loading="lazy" src="./build/stage_08_feet.png" alt="Bước 8, chân"><figcaption>8 · Chân</figcaption></figure>
+        <figure><img loading="lazy" src="./build/stage_09_core.png" alt="Bước 9, AI Core"><figcaption>9 · AI Core</figcaption></figure>
+        <figure><img loading="lazy" src="./build/stage_10_color.png" alt="Bước 10, màu và bóng"><figcaption>10 · Màu và bóng</figcaption></figure>
+      </div>
+    </details>
+  </main>
+  <dialog id="partsDialog"><div class="dialog-bar"><strong>Bộ phận Ollie · neutral V2</strong><button id="closeDialog">Đóng</button></div><img src="./build/ollie_parts.png" alt="Bảng tách bộ phận Ollie phóng lớn"></dialog>
+  <script src="https://cdn.jsdelivr.net/npm/@rive-app/canvas@2/rive.js"></script>
+  <script>
+    const root = document.documentElement;
+    const canvas = document.getElementById('neutral');
+    const fallback = document.getElementById('fallback');
+    const zoom = document.getElementById('zoom');
+    const zoomValue = document.getElementById('zoomValue');
+    let player;
+    function setSize(value) {
+      root.style.setProperty('--size', value + 'px');
+      zoom.value = value;
+      zoomValue.value = value + ' px';
+      document.querySelectorAll('[data-size]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.size === String(value))));
+      requestAnimationFrame(() => player?.resizeDrawingSurfaceToCanvas());
+    }
+    document.querySelectorAll('[data-size]').forEach(button => button.addEventListener('click', () => setSize(button.dataset.size)));
+    zoom.addEventListener('input', () => setSize(zoom.value));
+    document.getElementById('background').addEventListener('click', event => {
+      const light = event.currentTarget.getAttribute('aria-pressed') !== 'true';
+      event.currentTarget.setAttribute('aria-pressed', String(light));
+      event.currentTarget.textContent = light ? 'Nền tối' : 'Nền sáng';
+      document.querySelectorAll('.stage').forEach(stage => stage.style.background = light ? '#eaf4e7' : '#1d1d1d');
+    });
+    const dialog = document.getElementById('partsDialog');
+    document.getElementById('parts').addEventListener('click', () => dialog.showModal());
+    document.getElementById('closeDialog').addEventListener('click', () => dialog.close());
+    if (window.rive?.Rive) {
+      player = new rive.Rive({
+        src:'./build/ollie-neutral-v2.riv', canvas, artboard:'Neutral', autoplay:false,
+        layout:new rive.Layout({fit:rive.Fit.Contain, alignment:rive.Alignment.Center}),
+        onLoad:() => { player.resizeDrawingSurfaceToCanvas(); document.getElementById('riveStatus').textContent = 'Đã nạp artboard Rive neutral V2. Dùng thanh thu phóng để xem nét vector.'; },
+        onLoadError:() => { canvas.style.display='none'; fallback.style.display='block'; document.getElementById('riveStatus').textContent = 'Đang xem ảnh PNG dự phòng.'; }
+      });
+    } else {
+      canvas.style.display='none'; fallback.style.display='block';
+      document.getElementById('riveStatus').textContent = 'Đang xem ảnh PNG dự phòng.';
+    }
+    window.addEventListener('resize', () => player?.resizeDrawingSurfaceToCanvas());
+  </script>
+</body>
+</html>

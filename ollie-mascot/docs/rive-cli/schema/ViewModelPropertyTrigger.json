@@ -1,0 +1,202 @@
+{
+  "type": "ViewModelPropertyTrigger",
+  "typeKey": 502,
+  "authorable": true,
+  "extends": [
+    "ViewModelProperty",
+    "ViewModelComponent"
+  ],
+  "properties": [
+    {
+      "name": "viewModelId",
+      "owner": "ViewModelProperty",
+      "type": "Id",
+      "key": 558,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Identifier used to track parent View Model."
+    },
+    {
+      "name": "propertyOrder",
+      "owner": "ViewModelProperty",
+      "type": "FractionalIndex",
+      "key": 559,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Order value for sorting child elements in View Model."
+    },
+    {
+      "name": "symbolTypeValue",
+      "owner": "ViewModelProperty",
+      "type": "uint8",
+      "key": 875,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "none",
+      "accepts": [
+        "none",
+        "vertexX",
+        "vertexY",
+        "cubicVertexInPointX",
+        "cubicVertexInPointY",
+        "cubicVertexOutPointX",
+        "cubicVertexOutPointY",
+        "rotation",
+        "inRotation",
+        "outRotation",
+        "distance",
+        "inDistance",
+        "outDistance",
+        "textStyle",
+        "textContent",
+        "itemIndex",
+        "drawIndex"
+      ],
+      "values": [
+        {
+          "name": "none",
+          "value": 0
+        },
+        {
+          "name": "vertexX",
+          "value": 1
+        },
+        {
+          "name": "vertexY",
+          "value": 2
+        },
+        {
+          "name": "cubicVertexInPointX",
+          "value": 3
+        },
+        {
+          "name": "cubicVertexInPointY",
+          "value": 4
+        },
+        {
+          "name": "cubicVertexOutPointX",
+          "value": 5
+        },
+        {
+          "name": "cubicVertexOutPointY",
+          "value": 6
+        },
+        {
+          "name": "rotation",
+          "value": 7
+        },
+        {
+          "name": "inRotation",
+          "value": 8
+        },
+        {
+          "name": "outRotation",
+          "value": 9
+        },
+        {
+          "name": "distance",
+          "value": 10
+        },
+        {
+          "name": "inDistance",
+          "value": 11
+        },
+        {
+          "name": "outDistance",
+          "value": 12
+        },
+        {
+          "name": "textStyle",
+          "value": 13
+        },
+        {
+          "name": "textContent",
+          "value": 14
+        },
+        {
+          "name": "itemIndex",
+          "value": 15
+        },
+        {
+          "name": "drawIndex",
+          "value": 16
+        }
+      ],
+      "description": "Special types of properties. 0 is not a special value type"
+    },
+    {
+      "name": "componentProps",
+      "owner": "ViewModelProperty",
+      "type": "uint8",
+      "key": 957,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "0",
+      "description": "Bitfield that stores data about the property including whether its an input or an output of a stateful component"
+    },
+    {
+      "name": "displayName",
+      "owner": "ViewModelProperty",
+      "type": "String",
+      "key": 1012,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Display name for the property used by stateful components inputs/outputs"
+    },
+    {
+      "name": "name",
+      "owner": "ViewModelComponent",
+      "type": "String",
+      "key": 557,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Non-unique identifier, used to give friendly names to any view model component."
+    },
+    {
+      "name": "parentId",
+      "owner": "ViewModelComponent",
+      "type": "Id",
+      "key": 842,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Id of a parent folder within the data panel tree."
+    },
+    {
+      "name": "groupId",
+      "owner": "ViewModelComponent",
+      "type": "Id",
+      "key": 878,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Id of the data source/type group. Typically either a group representing a library or an data type."
+    },
+    {
+      "name": "displayOrder",
+      "owner": "ViewModelComponent",
+      "type": "FractionalIndex",
+      "key": 845,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Order items should be displayed within the updated data panel."
+    },
+    {
+      "name": "tagIds",
+      "owner": "ViewModelComponent",
+      "type": "List<Id>",
+      "key": 382,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Assigned tag ids."
+    }
+  ]
+}

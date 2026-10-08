@@ -1,0 +1,21 @@
+<Rive version="1" kind="fragment">
+    <DataEnumCustom name="Mood" id="0:600">
+        <DataEnumValue key="neutral" value="Neutral" id="0:601" />
+        <DataEnumValue key="happy" value="Happy" id="0:602" />
+        <DataEnumValue key="wink" value="Wink" id="0:603" />
+        <DataEnumValue key="focus" value="Focus" id="0:604" />
+        <DataEnumValue key="surprised" value="Surprised" id="0:605" />
+        <DataEnumValue key="sleepy" value="Sleepy" id="0:606" />
+        <DataEnumValue key="confused" value="Confused" id="0:607" />
+    </DataEnumCustom>
+    <ViewModel name="Mascot" id="0:610" defaultInstanceId="0:612">
+        <ViewModelPropertyEnumCustom name="mood" id="0:611" enumId="0:600" />
+        <ViewModelPropertyBoolean name="isAsleep" id="0:613" />
+        <ViewModelPropertyTrigger name="wave" id="0:614" />
+        <ViewModelInstance name="Default" id="0:612" exports="true">
+            <ViewModelInstanceEnum viewModelPropertyId="0:611" id="0:806" propertyValue="0:601" />
+            <ViewModelInstanceBoolean viewModelPropertyId="0:613" id="0:807" propertyValue="false" />
+            <ViewModelInstanceTrigger viewModelPropertyId="0:614" id="0:808" />
+        </ViewModelInstance>
+    </ViewModel>
+</Rive>

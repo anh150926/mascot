@@ -1,0 +1,1659 @@
+<Rive version="1" kind="fragment">
+    <Artboard name="Neutral" width="500" height="500" styleId="0:3" id="0:2">
+        <LayoutComponentStyle name="Neutral Style" id="0:3" />
+        <Node name="HeadLeaf" id="0:11">
+            <Shape name="MainLeafLight" id="0:12">
+                <PointsPath name="Path" isClosed="true" id="0:13">
+                    <CubicMirroredVertex x="257" y="78" rotation="-1.68567" distance="5.627" id="0:14" />
+                    <CubicMirroredVertex x="260" y="61" rotation="-1.03584" distance="6.748" id="0:15" />
+                    <CubicMirroredVertex x="273" y="51" rotation="-0.29146" distance="4.489" id="0:16" />
+                    <CubicMirroredVertex x="280" y="55" rotation="1.41419" distance="4.136" id="0:17" />
+                    <CubicMirroredVertex x="276" y="70" rotation="2.05913" distance="7.791" id="0:18" />
+                    <CubicMirroredVertex x="263" y="87" rotation="2.74307" distance="4.432" id="0:19" />
+                </PointsPath>
+                <Fill name="Fill" id="0:20">
+                    <SolidColor name="Color" colorValue="FFA2D66D" id="0:21" />
+                </Fill>
+            </Shape>
+            <Shape name="MainLeaf" id="0:22">
+                <PointsPath name="Path" isClosed="true" id="0:23">
+                    <CubicMirroredVertex x="250" y="102" rotation="-2.03444" distance="4.327" id="0:24" />
+                    <CubicMirroredVertex x="252" y="78" rotation="-1.33156" distance="9.073" id="0:25" />
+                    <CubicMirroredVertex x="260" y="61" rotation="-0.95759" distance="7.098" id="0:26" />
+                    <CubicMirroredVertex x="271" y="51" rotation="-0.51915" distance="5.200" id="0:27" />
+                    <CubicMirroredVertex x="281" y="49" rotation="0.87606" distance="3.358" id="0:28" />
+                    <CubicMirroredVertex x="281" y="63" rotation="1.76819" distance="6.578" id="0:29" />
+                    <CubicMirroredVertex x="275" y="79" rotation="2.11566" distance="8.296" id="0:30" />
+                    <CubicMirroredVertex x="261" y="96" rotation="2.39784" distance="7.304" id="0:31" />
+                </PointsPath>
+                <Fill name="Fill" id="0:32">
+                    <SolidColor name="Color" colorValue="FF78B95B" id="0:33" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.7" join="round" cap="round" id="0:34">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:35" />
+                </Stroke>
+            </Shape>
+            <Shape name="MainLeafVein" id="0:36">
+                <PointsPath name="Path" isClosed="false" id="0:37">
+                    <CubicMirroredVertex x="251" y="99" rotation="-1.20682" distance="4.832" id="0:38" />
+                    <CubicMirroredVertex x="259" y="78" rotation="-1.05957" distance="10.107" id="0:39" />
+                    <CubicMirroredVertex x="274" y="58" rotation="-0.92730" distance="5.375" id="0:40" />
+                </PointsPath>
+                <Stroke name="Outline" thickness="1.7" join="round" cap="round" id="0:41">
+                    <SolidColor name="Color" colorValue="FF286B3B" id="0:42" />
+                </Stroke>
+            </Shape>
+            <Shape name="SmallLeafLight" id="0:43">
+                <PointsPath name="Path" isClosed="true" id="0:44">
+                    <CubicMirroredVertex x="239" y="88" rotation="2.53087" distance="2.624" id="0:45" />
+                    <CubicMirroredVertex x="225" y="79" rotation="-2.33056" distance="5.931" id="0:46" />
+                    <CubicMirroredVertex x="220" y="68" rotation="-0.61073" distance="2.624" id="0:47" />
+                    <CubicMirroredVertex x="235" y="72" rotation="0.81103" distance="5.931" id="0:48" />
+                </PointsPath>
+                <Fill name="Fill" id="0:49">
+                    <SolidColor name="Color" colorValue="FFA2D66D" id="0:50" />
+                </Fill>
+            </Shape>
+            <Shape name="SmallLeaf" id="0:51">
+                <PointsPath name="Path" isClosed="true" id="0:52">
+                    <CubicMirroredVertex x="248" y="98" rotation="2.77070" distance="4.152" id="0:53" />
+                    <CubicMirroredVertex x="232" y="95" rotation="-2.63743" distance="7.121" id="0:54" />
+                    <CubicMirroredVertex x="219" y="82" rotation="-2.07789" distance="6.641" id="0:55" />
+                    <CubicMirroredVertex x="217" y="68" rotation="-1.45369" distance="3.680" id="0:56" />
+                    <CubicMirroredVertex x="221" y="65" rotation="0.14190" distance="4.561" id="0:57" />
+                    <CubicMirroredVertex x="238" y="71" rotation="0.67052" distance="7.958" id="0:58" />
+                    <CubicMirroredVertex x="250" y="88" rotation="1.21609" distance="6.190" id="0:59" />
+                </PointsPath>
+                <Fill name="Fill" id="0:60">
+                    <SolidColor name="Color" colorValue="FF78B95B" id="0:61" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.4" join="round" cap="round" id="0:62">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:63" />
+                </Stroke>
+            </Shape>
+            <Shape name="SmallLeafVein" id="0:64">
+                <PointsPath name="Path" isClosed="false" id="0:65">
+                    <CubicMirroredVertex x="244" y="93" rotation="-2.42750" distance="4.268" id="0:66" />
+                    <CubicMirroredVertex x="229" y="80" rotation="-2.40162" distance="6.696" id="0:67" />
+                    <CubicMirroredVertex x="221" y="72" rotation="-2.35619" distance="2.432" id="0:68" />
+                </PointsPath>
+                <Stroke name="Outline" thickness="1.5" join="round" cap="round" id="0:69">
+                    <SolidColor name="Color" colorValue="FF286B3B" id="0:70" />
+                </Stroke>
+            </Shape>
+            <Shape name="BentStem" id="0:71">
+                <PointsPath name="Path" isClosed="false" id="0:72">
+                    <CubicMirroredVertex x="250" y="110" rotation="-1.65394" distance="2.589" id="0:73" />
+                    <CubicMirroredVertex x="249" y="98" rotation="-1.66146" distance="4.750" id="0:74" />
+                    <CubicMirroredVertex x="248" y="88" rotation="-1.47584" distance="4.535" id="0:75" />
+                    <CubicMirroredVertex x="251" y="77" rotation="-1.30454" distance="2.451" id="0:76" />
+                </PointsPath>
+                <Stroke name="Outline" thickness="2.9" join="round" cap="round" id="0:77">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:78" />
+                </Stroke>
+            </Shape>
+        </Node>
+        <Node name="LeftEye" id="0:79">
+            <Shape name="UpperLashTip" id="0:80">
+                <PointsPath name="Path" isClosed="true" id="0:81">
+                    <CubicMirroredVertex x="166" y="206" rotation="-2.20355" distance="3.999" id="0:82" />
+                    <CubicMirroredVertex x="158" y="197" rotation="2.67795" distance="0.962" id="0:83" />
+                    <CubicMirroredVertex x="162" y="208" rotation="0.93805" distance="3.999" id="0:84" />
+                    <CubicMirroredVertex x="169" y="212" rotation="-0.46365" distance="0.962" id="0:85" />
+                </PointsPath>
+                <Fill name="Fill" id="0:86">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:87" />
+                </Fill>
+            </Shape>
+            <Shape name="PrimaryHighlight" id="0:88">
+                <PointsPath name="Path" isClosed="true" id="0:89">
+                    <CubicMirroredVertex x="187" y="206" rotation="-1.13839" distance="3.078" id="0:90" />
+                    <CubicMirroredVertex x="193" y="204" rotation="0.26625" distance="2.451" id="0:91" />
+                    <CubicMirroredVertex x="198" y="209" rotation="1.20362" distance="2.995" id="0:92" />
+                    <CubicMirroredVertex x="198" y="217" rotation="1.96559" distance="2.795" id="0:93" />
+                    <CubicMirroredVertex x="193" y="221" rotation="3.14159" distance="2.365" id="0:94" />
+                    <CubicMirroredVertex x="187" y="217" rotation="-1.95130" distance="3.473" id="0:95" />
+                </PointsPath>
+                <Fill name="Fill" id="0:96">
+                    <SolidColor name="Color" colorValue="FFFFFFFF" id="0:97" />
+                </Fill>
+            </Shape>
+            <Shape name="SoftReflection" id="0:98">
+                <PointsPath name="Path" isClosed="true" id="0:99">
+                    <CubicMirroredVertex x="182" y="202" rotation="-1.16590" distance="1.637" id="0:100" />
+                    <CubicMirroredVertex x="194" y="197" rotation="-0.04758" distance="4.520" id="0:101" />
+                    <CubicMirroredVertex x="203" y="201" rotation="1.97569" distance="1.637" id="0:102" />
+                    <CubicMirroredVertex x="191" y="204" rotation="3.09401" distance="4.520" id="0:103" />
+                </PointsPath>
+                <Fill name="Fill" id="0:104">
+                    <SolidColor name="Color" colorValue="79FFFFFF" id="0:105" />
+                </Fill>
+            </Shape>
+            <Shape name="SecondaryHighlight" x="211" y="240" id="0:106">
+                <Ellipse name="Path" width="4.5" height="5.5" id="0:107" />
+                <Fill name="Fill" id="0:108">
+                    <SolidColor name="Color" colorValue="FFFFFFFF" id="0:109" />
+                </Fill>
+            </Shape>
+            <Shape name="Pupil" id="0:110">
+                <PointsPath name="Path" isClosed="true" id="0:111">
+                    <CubicMirroredVertex x="202" y="209" rotation="0.03998" distance="5.379" id="0:112" />
+                    <CubicMirroredVertex x="214" y="217" rotation="0.96299" distance="6.024" id="0:113" />
+                    <CubicMirroredVertex x="218" y="232" rotation="1.60412" distance="6.454" id="0:114" />
+                    <CubicMirroredVertex x="213" y="247" rotation="2.24554" distance="5.507" id="0:115" />
+                    <CubicMirroredVertex x="202" y="252" rotation="-3.06176" distance="5.392" id="0:116" />
+                    <CubicMirroredVertex x="188" y="245" rotation="-2.20730" distance="6.149" id="0:117" />
+                    <CubicMirroredVertex x="185" y="229" rotation="-1.53633" distance="6.239" id="0:118" />
+                    <CubicMirroredVertex x="189" y="216" rotation="-0.86630" distance="5.643" id="0:119" />
+                </PointsPath>
+                <Fill name="Fill" id="0:120">
+                    <SolidColor name="Color" colorValue="FF123E28" id="0:121" />
+                </Fill>
+            </Shape>
+            <Shape name="IrisBottomLight" id="0:122">
+                <PointsPath name="Path" isClosed="true" id="0:123">
+                    <CubicMirroredVertex x="182" y="236" rotation="2.55359" distance="1.550" id="0:124" />
+                    <CubicMirroredVertex x="188" y="250" rotation="0.78540" distance="6.081" id="0:125" />
+                    <CubicMirroredVertex x="202" y="256" rotation="-0.06886" distance="6.250" id="0:126" />
+                    <CubicMirroredVertex x="217" y="248" rotation="-0.85844" distance="6.250" id="0:127" />
+                    <CubicMirroredVertex x="221" y="234" rotation="-2.35619" distance="1.520" id="0:128" />
+                    <CubicMirroredVertex x="212" y="243" rotation="2.72337" distance="6.353" id="0:129" />
+                    <CubicMirroredVertex x="194" y="246" rotation="-2.91236" distance="6.623" id="0:130" />
+                </PointsPath>
+                <Fill name="Fill" id="0:131">
+                    <SolidColor name="Color" colorValue="FF79CE69" id="0:132" />
+                </Fill>
+            </Shape>
+            <Shape name="IrisInner" id="0:133">
+                <PointsPath name="Path" isClosed="true" id="0:134">
+                    <CubicMirroredVertex x="201" y="204" rotation="-0.16076" distance="8.059" id="0:135" />
+                    <CubicMirroredVertex x="218" y="210" rotation="0.76318" distance="6.843" id="0:136" />
+                    <CubicMirroredVertex x="224" y="226" rotation="1.48279" distance="7.338" id="0:137" />
+                    <CubicMirroredVertex x="221" y="244" rotation="2.12065" distance="7.817" id="0:138" />
+                    <CubicMirroredVertex x="205" y="257" rotation="2.91050" distance="7.510" id="0:139" />
+                    <CubicMirroredVertex x="187" y="252" rotation="-2.43934" distance="7.323" id="0:140" />
+                    <CubicMirroredVertex x="179" y="235" rotation="-1.73595" distance="7.847" id="0:141" />
+                    <CubicMirroredVertex x="181" y="216" rotation="-0.95360" distance="8.173" id="0:142" />
+                </PointsPath>
+                <Fill name="Fill" id="0:143">
+                    <SolidColor name="Color" colorValue="FF2F8A45" id="0:144" />
+                </Fill>
+            </Shape>
+            <Shape name="IrisLight" id="0:145">
+                <PointsPath name="Path" isClosed="true" id="0:146">
+                    <CubicMirroredVertex x="183" y="216" rotation="-2.15880" distance="4.651" id="0:147" />
+                    <CubicMirroredVertex x="192" y="205" rotation="-0.44611" distance="5.481" id="0:148" />
+                    <CubicMirroredVertex x="206" y="205" rotation="0.44442" distance="5.001" id="0:149" />
+                    <CubicMirroredVertex x="213" y="215" rotation="1.68145" distance="3.894" id="0:150" />
+                    <CubicMirroredVertex x="204" y="223" rotation="3.10827" distance="6.454" id="0:151" />
+                </PointsPath>
+                <Fill name="Fill" id="0:152">
+                    <SolidColor name="Color" colorValue="5579CE69" id="0:153" />
+                </Fill>
+            </Shape>
+            <Shape name="IrisSideLight" id="0:154">
+                <PointsPath name="Path" isClosed="true" id="0:155">
+                    <CubicMirroredVertex x="218" y="210" rotation="-0.69474" distance="1.679" id="0:156" />
+                    <CubicMirroredVertex x="226" y="224" rotation="1.37340" distance="6.578" id="0:157" />
+                    <CubicMirroredVertex x="224" y="240" rotation="1.90553" distance="5.236" id="0:158" />
+                    <CubicMirroredVertex x="218" y="247" rotation="-1.91957" distance="2.517" id="0:159" />
+                    <CubicMirroredVertex x="220" y="229" rotation="-1.57080" distance="7.955" id="0:160" />
+                </PointsPath>
+                <Fill name="Fill" id="0:161">
+                    <SolidColor name="Color" colorValue="7779CE69" id="0:162" />
+                </Fill>
+            </Shape>
+            <Shape name="IrisOuter" id="0:163">
+                <PointsPath name="Path" isClosed="true" id="0:164">
+                    <CubicMirroredVertex x="201" y="197" rotation="-0.13255" distance="9.761" id="0:165" />
+                    <CubicMirroredVertex x="222" y="205" rotation="0.78540" distance="8.514" id="0:166" />
+                    <CubicMirroredVertex x="229" y="225" rotation="1.47354" distance="8.857" id="0:167" />
+                    <CubicMirroredVertex x="226" y="246" rotation="2.13932" distance="9.185" id="0:168" />
+                    <CubicMirroredVertex x="206" y="261" rotation="2.95765" distance="9.404" id="0:169" />
+                    <CubicMirroredVertex x="183" y="254" rotation="-2.44074" distance="9.002" id="0:170" />
+                    <CubicMirroredVertex x="174" y="234" rotation="-1.70944" distance="9.335" id="0:171" />
+                    <CubicMirroredVertex x="177" y="211" rotation="-0.94039" distance="9.848" id="0:172" />
+                </PointsPath>
+                <Fill name="Fill" id="0:173">
+                    <SolidColor name="Color" colorValue="FF123E28" id="0:174" />
+                </Fill>
+            </Shape>
+            <Shape name="EyeWhite" id="0:175">
+                <PointsPath name="Path" isClosed="true" id="0:176">
+                    <CubicMirroredVertex x="199" y="187" rotation="0.00000" distance="8.815" id="0:177" />
+                    <CubicMirroredVertex x="222" y="193" rotation="0.57790" distance="9.446" id="0:178" />
+                    <CubicMirroredVertex x="235.8" y="211" rotation="1.27323" distance="10.120" id="0:179" />
+                    <CubicMirroredVertex x="235.8" y="238" rotation="1.81215" distance="11.514" id="0:180" />
+                    <CubicMirroredVertex x="223" y="263" rotation="2.39938" distance="9.861" id="0:181" />
+                    <CubicMirroredVertex x="202" y="269" rotation="3.11887" distance="9.462" id="0:182" />
+                    <CubicMirroredVertex x="179" y="264" rotation="-2.48972" distance="10.277" id="0:183" />
+                    <CubicMirroredVertex x="164" y="240" rotation="-1.81133" distance="11.733" id="0:184" />
+                    <CubicMirroredVertex x="166" y="211" rotation="-1.22373" distance="10.746" id="0:185" />
+                    <CubicMirroredVertex x="181" y="193" rotation="-0.62880" distance="8.773" id="0:186" />
+                </PointsPath>
+                <Fill name="Fill" id="0:187">
+                    <SolidColor name="Color" colorValue="FFFFF9E9" id="0:188" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.6" join="round" cap="round" id="0:189">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:190" />
+                </Stroke>
+            </Shape>
+            <Shape name="UpperLid" id="0:191">
+                <PointsPath name="Path" isClosed="false" id="0:192">
+                    <CubicMirroredVertex x="165" y="220" rotation="-1.38257" distance="4.596" id="0:193" />
+                    <CubicMirroredVertex x="169" y="199" rotation="-1.03499" distance="8.001" id="0:194" />
+                    <CubicMirroredVertex x="184" y="188" rotation="-0.36520" distance="7.826" id="0:195" />
+                    <CubicMirroredVertex x="203" y="186" rotation="0.17985" distance="9.615" id="0:196" />
+                    <CubicMirroredVertex x="228" y="196" rotation="0.70620" distance="9.608" id="0:197" />
+                    <CubicMirroredVertex x="237" y="215" rotation="1.12842" distance="4.520" id="0:198" />
+                </PointsPath>
+                <Stroke name="Outline" thickness="4.4" join="round" cap="round" id="0:199">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:200" />
+                </Stroke>
+            </Shape>
+            <Shape name="LowerLid" id="0:201">
+                <PointsPath name="Path" isClosed="false" id="0:202">
+                    <CubicMirroredVertex x="173" y="253" rotation="0.68892" distance="4.735" id="0:203" />
+                    <CubicMirroredVertex x="190" y="267" rotation="0.40489" distance="8.187" id="0:204" />
+                    <CubicMirroredVertex x="208" y="268" rotation="-0.37596" distance="8.783" id="0:205" />
+                    <CubicMirroredVertex x="228" y="252" rotation="-0.67474" distance="5.507" id="0:206" />
+                </PointsPath>
+                <Stroke name="Outline" thickness="1.8" join="round" cap="round" id="0:207">
+                    <SolidColor name="Color" colorValue="55286B3B" id="0:208" />
+                </Stroke>
+            </Shape>
+        </Node>
+        <Node name="RightEye" id="0:209">
+            <Shape name="UpperLashTip" id="0:210">
+                <PointsPath name="Path" isClosed="true" id="0:211">
+                    <CubicMirroredVertex x="265" y="207" rotation="-2.20355" distance="3.999" id="0:212" />
+                    <CubicMirroredVertex x="257" y="198" rotation="2.67795" distance="0.962" id="0:213" />
+                    <CubicMirroredVertex x="261" y="209" rotation="0.93805" distance="3.999" id="0:214" />
+                    <CubicMirroredVertex x="268" y="213" rotation="-0.46365" distance="0.962" id="0:215" />
+                </PointsPath>
+                <Fill name="Fill" id="0:216">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:217" />
+                </Fill>
+            </Shape>
+            <Shape name="PrimaryHighlight" id="0:218">
+                <PointsPath name="Path" isClosed="true" id="0:219">
+                    <CubicMirroredVertex x="286" y="207" rotation="-1.13839" distance="3.078" id="0:220" />
+                    <CubicMirroredVertex x="292" y="205" rotation="0.26625" distance="2.451" id="0:221" />
+                    <CubicMirroredVertex x="297" y="210" rotation="1.20362" distance="2.995" id="0:222" />
+                    <CubicMirroredVertex x="297" y="218" rotation="1.96559" distance="2.795" id="0:223" />
+                    <CubicMirroredVertex x="292" y="222" rotation="3.14159" distance="2.365" id="0:224" />
+                    <CubicMirroredVertex x="286" y="218" rotation="-1.95130" distance="3.473" id="0:225" />
+                </PointsPath>
+                <Fill name="Fill" id="0:226">
+                    <SolidColor name="Color" colorValue="FFFFFFFF" id="0:227" />
+                </Fill>
+            </Shape>
+            <Shape name="SoftReflection" id="0:228">
+                <PointsPath name="Path" isClosed="true" id="0:229">
+                    <CubicMirroredVertex x="281" y="203" rotation="-1.16590" distance="1.637" id="0:230" />
+                    <CubicMirroredVertex x="293" y="198" rotation="-0.04758" distance="4.520" id="0:231" />
+                    <CubicMirroredVertex x="302" y="202" rotation="1.97569" distance="1.637" id="0:232" />
+                    <CubicMirroredVertex x="290" y="205" rotation="3.09401" distance="4.520" id="0:233" />
+                </PointsPath>
+                <Fill name="Fill" id="0:234">
+                    <SolidColor name="Color" colorValue="79FFFFFF" id="0:235" />
+                </Fill>
+            </Shape>
+            <Shape name="SecondaryHighlight" x="310" y="241" id="0:236">
+                <Ellipse name="Path" width="4.5" height="5.5" id="0:237" />
+                <Fill name="Fill" id="0:238">
+                    <SolidColor name="Color" colorValue="FFFFFFFF" id="0:239" />
+                </Fill>
+            </Shape>
+            <Shape name="Pupil" id="0:240">
+                <PointsPath name="Path" isClosed="true" id="0:241">
+                    <CubicMirroredVertex x="301" y="210" rotation="0.03998" distance="5.379" id="0:242" />
+                    <CubicMirroredVertex x="313" y="218" rotation="0.96299" distance="6.024" id="0:243" />
+                    <CubicMirroredVertex x="317" y="233" rotation="1.60412" distance="6.454" id="0:244" />
+                    <CubicMirroredVertex x="312" y="248" rotation="2.24554" distance="5.507" id="0:245" />
+                    <CubicMirroredVertex x="301" y="253" rotation="-3.06176" distance="5.392" id="0:246" />
+                    <CubicMirroredVertex x="287" y="246" rotation="-2.20730" distance="6.149" id="0:247" />
+                    <CubicMirroredVertex x="284" y="230" rotation="-1.53633" distance="6.239" id="0:248" />
+                    <CubicMirroredVertex x="288" y="217" rotation="-0.86630" distance="5.643" id="0:249" />
+                </PointsPath>
+                <Fill name="Fill" id="0:250">
+                    <SolidColor name="Color" colorValue="FF123E28" id="0:251" />
+                </Fill>
+            </Shape>
+            <Shape name="IrisBottomLight" id="0:252">
+                <PointsPath name="Path" isClosed="true" id="0:253">
+                    <CubicMirroredVertex x="281" y="237" rotation="2.55359" distance="1.550" id="0:254" />
+                    <CubicMirroredVertex x="287" y="251" rotation="0.78540" distance="6.081" id="0:255" />
+                    <CubicMirroredVertex x="301" y="257" rotation="-0.06886" distance="6.250" id="0:256" />
+                    <CubicMirroredVertex x="316" y="249" rotation="-0.85844" distance="6.250" id="0:257" />
+                    <CubicMirroredVertex x="320" y="235" rotation="-2.35619" distance="1.520" id="0:258" />
+                    <CubicMirroredVertex x="311" y="244" rotation="2.72337" distance="6.353" id="0:259" />
+                    <CubicMirroredVertex x="293" y="247" rotation="-2.91236" distance="6.623" id="0:260" />
+                </PointsPath>
+                <Fill name="Fill" id="0:261">
+                    <SolidColor name="Color" colorValue="FF79CE69" id="0:262" />
+                </Fill>
+            </Shape>
+            <Shape name="IrisInner" id="0:263">
+                <PointsPath name="Path" isClosed="true" id="0:264">
+                    <CubicMirroredVertex x="300" y="205" rotation="-0.16076" distance="8.059" id="0:265" />
+                    <CubicMirroredVertex x="317" y="211" rotation="0.76318" distance="6.843" id="0:266" />
+                    <CubicMirroredVertex x="323" y="227" rotation="1.48279" distance="7.338" id="0:267" />
+                    <CubicMirroredVertex x="320" y="245" rotation="2.12065" distance="7.817" id="0:268" />
+                    <CubicMirroredVertex x="304" y="258" rotation="2.91050" distance="7.510" id="0:269" />
+                    <CubicMirroredVertex x="286" y="253" rotation="-2.43934" distance="7.323" id="0:270" />
+                    <CubicMirroredVertex x="278" y="236" rotation="-1.73595" distance="7.847" id="0:271" />
+                    <CubicMirroredVertex x="280" y="217" rotation="-0.95360" distance="8.173" id="0:272" />
+                </PointsPath>
+                <Fill name="Fill" id="0:273">
+                    <SolidColor name="Color" colorValue="FF2F8A45" id="0:274" />
+                </Fill>
+            </Shape>
+            <Shape name="IrisLight" id="0:275">
+                <PointsPath name="Path" isClosed="true" id="0:276">
+                    <CubicMirroredVertex x="282" y="217" rotation="-2.15880" distance="4.651" id="0:277" />
+                    <CubicMirroredVertex x="291" y="206" rotation="-0.44611" distance="5.481" id="0:278" />
+                    <CubicMirroredVertex x="305" y="206" rotation="0.44442" distance="5.001" id="0:279" />
+                    <CubicMirroredVertex x="312" y="216" rotation="1.68145" distance="3.894" id="0:280" />
+                    <CubicMirroredVertex x="303" y="224" rotation="3.10827" distance="6.454" id="0:281" />
+                </PointsPath>
+                <Fill name="Fill" id="0:282">
+                    <SolidColor name="Color" colorValue="5579CE69" id="0:283" />
+                </Fill>
+            </Shape>
+            <Shape name="IrisSideLight" id="0:284">
+                <PointsPath name="Path" isClosed="true" id="0:285">
+                    <CubicMirroredVertex x="317" y="211" rotation="-0.69474" distance="1.679" id="0:286" />
+                    <CubicMirroredVertex x="325" y="225" rotation="1.37340" distance="6.578" id="0:287" />
+                    <CubicMirroredVertex x="323" y="241" rotation="1.90553" distance="5.236" id="0:288" />
+                    <CubicMirroredVertex x="317" y="248" rotation="-1.91957" distance="2.517" id="0:289" />
+                    <CubicMirroredVertex x="319" y="230" rotation="-1.57080" distance="7.955" id="0:290" />
+                </PointsPath>
+                <Fill name="Fill" id="0:291">
+                    <SolidColor name="Color" colorValue="7779CE69" id="0:292" />
+                </Fill>
+            </Shape>
+            <Shape name="IrisOuter" id="0:293">
+                <PointsPath name="Path" isClosed="true" id="0:294">
+                    <CubicMirroredVertex x="300" y="198" rotation="-0.13255" distance="9.761" id="0:295" />
+                    <CubicMirroredVertex x="321" y="206" rotation="0.78540" distance="8.514" id="0:296" />
+                    <CubicMirroredVertex x="328" y="226" rotation="1.47354" distance="8.857" id="0:297" />
+                    <CubicMirroredVertex x="325" y="247" rotation="2.13932" distance="9.185" id="0:298" />
+                    <CubicMirroredVertex x="305" y="262" rotation="2.95765" distance="9.404" id="0:299" />
+                    <CubicMirroredVertex x="282" y="255" rotation="-2.44074" distance="9.002" id="0:300" />
+                    <CubicMirroredVertex x="273" y="235" rotation="-1.70944" distance="9.335" id="0:301" />
+                    <CubicMirroredVertex x="276" y="212" rotation="-0.94039" distance="9.848" id="0:302" />
+                </PointsPath>
+                <Fill name="Fill" id="0:303">
+                    <SolidColor name="Color" colorValue="FF123E28" id="0:304" />
+                </Fill>
+            </Shape>
+            <Shape name="EyeWhite" id="0:305">
+                <PointsPath name="Path" isClosed="true" id="0:306">
+                    <CubicMirroredVertex x="298" y="188" rotation="0.00000" distance="8.815" id="0:307" />
+                    <CubicMirroredVertex x="321" y="194" rotation="0.55165" distance="9.845" id="0:308" />
+                    <CubicMirroredVertex x="337.0" y="212" rotation="1.22918" distance="10.268" id="0:309" />
+                    <CubicMirroredVertex x="337.0" y="239" rotation="1.85163" distance="11.636" id="0:310" />
+                    <CubicMirroredVertex x="322" y="264" rotation="2.43068" distance="10.214" id="0:311" />
+                    <CubicMirroredVertex x="301" y="270" rotation="3.11887" distance="9.462" id="0:312" />
+                    <CubicMirroredVertex x="278" y="265" rotation="-2.48972" distance="10.277" id="0:313" />
+                    <CubicMirroredVertex x="263" y="241" rotation="-1.81133" distance="11.733" id="0:314" />
+                    <CubicMirroredVertex x="265" y="212" rotation="-1.22373" distance="10.746" id="0:315" />
+                    <CubicMirroredVertex x="280" y="194" rotation="-0.62880" distance="8.773" id="0:316" />
+                </PointsPath>
+                <Fill name="Fill" id="0:317">
+                    <SolidColor name="Color" colorValue="FFFFF9E9" id="0:318" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.6" join="round" cap="round" id="0:319">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:320" />
+                </Stroke>
+            </Shape>
+            <Shape name="UpperLid" id="0:321">
+                <PointsPath name="Path" isClosed="false" id="0:322">
+                    <CubicMirroredVertex x="264" y="221" rotation="-1.38257" distance="4.596" id="0:323" />
+                    <CubicMirroredVertex x="268" y="200" rotation="-1.03499" distance="8.001" id="0:324" />
+                    <CubicMirroredVertex x="283" y="189" rotation="-0.36520" distance="7.826" id="0:325" />
+                    <CubicMirroredVertex x="302" y="187" rotation="0.17985" distance="9.615" id="0:326" />
+                    <CubicMirroredVertex x="327" y="197" rotation="0.70620" distance="9.608" id="0:327" />
+                    <CubicMirroredVertex x="336" y="216" rotation="1.12842" distance="4.520" id="0:328" />
+                </PointsPath>
+                <Stroke name="Outline" thickness="4.4" join="round" cap="round" id="0:329">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:330" />
+                </Stroke>
+            </Shape>
+            <Shape name="LowerLid" id="0:331">
+                <PointsPath name="Path" isClosed="false" id="0:332">
+                    <CubicMirroredVertex x="272" y="254" rotation="0.68892" distance="4.735" id="0:333" />
+                    <CubicMirroredVertex x="289" y="268" rotation="0.40489" distance="8.187" id="0:334" />
+                    <CubicMirroredVertex x="307" y="269" rotation="-0.37596" distance="8.783" id="0:335" />
+                    <CubicMirroredVertex x="327" y="253" rotation="-0.67474" distance="5.507" id="0:336" />
+                </PointsPath>
+                <Stroke name="Outline" thickness="1.8" join="round" cap="round" id="0:337">
+                    <SolidColor name="Color" colorValue="55286B3B" id="0:338" />
+                </Stroke>
+            </Shape>
+        </Node>
+        <Node name="Beak" id="0:339">
+            <Shape name="BeakSpecular" id="0:340">
+                <PointsPath name="Path" isClosed="true" id="0:341">
+                    <CubicMirroredVertex x="244" y="274" rotation="-1.40565" distance="1.308" id="0:342" />
+                    <CubicMirroredVertex x="250" y="271" rotation="-0.09066" distance="2.375" id="0:343" />
+                    <CubicMirroredVertex x="255" y="273" rotation="1.73595" distance="1.308" id="0:344" />
+                    <CubicMirroredVertex x="249" y="277" rotation="3.05093" distance="2.375" id="0:345" />
+                </PointsPath>
+                <Fill name="Fill" id="0:346">
+                    <SolidColor name="Color" colorValue="A7FFF2CF" id="0:347" />
+                </Fill>
+            </Shape>
+            <Shape name="CalmSmile" id="0:348">
+                <PointsPath name="Path" isClosed="false" id="0:349">
+                    <CubicMirroredVertex x="245" y="289" rotation="0.78540" distance="1.520" id="0:350" />
+                    <CubicMirroredVertex x="250" y="294" rotation="0.00000" distance="2.580" id="0:351" />
+                    <CubicMirroredVertex x="257" y="289" rotation="-0.62025" distance="1.849" id="0:352" />
+                </PointsPath>
+                <Stroke name="Outline" thickness="1.6" join="round" cap="round" id="0:353">
+                    <SolidColor name="Color" colorValue="FFD97A18" id="0:354" />
+                </Stroke>
+            </Shape>
+            <Shape name="BeakLower" id="0:355">
+                <PointsPath name="Path" isClosed="true" id="0:356">
+                    <CubicMirroredVertex x="241" y="281" rotation="0.00000" distance="0.860" id="0:357" />
+                    <CubicMirroredVertex x="249" y="290" rotation="-0.04996" distance="4.305" id="0:358" />
+                    <CubicMirroredVertex x="261" y="280" rotation="0.14190" distance="1.520" id="0:359" />
+                    <CubicMirroredVertex x="256" y="291" rotation="2.20355" distance="3.999" id="0:360" />
+                    <CubicMirroredVertex x="250" y="295" rotation="-3.05093" distance="2.375" id="0:361" />
+                    <CubicMirroredVertex x="245" y="290" rotation="-2.14213" distance="3.578" id="0:362" />
+                </PointsPath>
+                <Fill name="Fill" id="0:363">
+                    <SolidColor name="Color" colorValue="FFD97A18" id="0:364" />
+                </Fill>
+            </Shape>
+            <Shape name="BeakUpper" id="0:365">
+                <PointsPath name="Path" isClosed="true" id="0:366">
+                    <CubicMirroredVertex x="238" y="276" rotation="-1.50423" distance="3.232" id="0:367" />
+                    <CubicMirroredVertex x="245" y="269" rotation="-0.57134" distance="3.578" id="0:368" />
+                    <CubicMirroredVertex x="252" y="267" rotation="0.19740" distance="3.289" id="0:369" />
+                    <CubicMirroredVertex x="260" y="272" rotation="0.78540" distance="3.345" id="0:370" />
+                    <CubicMirroredVertex x="263" y="278" rotation="1.81577" distance="2.659" id="0:371" />
+                    <CubicMirroredVertex x="257" y="284" rotation="2.35619" distance="3.649" id="0:372" />
+                    <CubicMirroredVertex x="251" y="290" rotation="3.14159" distance="2.795" id="0:373" />
+                    <CubicMirroredVertex x="244" y="284" rotation="-2.31917" distance="4.108" id="0:374" />
+                </PointsPath>
+                <Fill name="Fill" id="0:375">
+                    <SolidColor name="Color" colorValue="FFF6A62B" id="0:376" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.3" join="round" cap="round" id="0:377">
+                    <SolidColor name="Color" colorValue="FFD97A18" id="0:378" />
+                </Stroke>
+            </Shape>
+        </Node>
+        <Node name="FaceMask" id="0:379">
+            <Shape name="NeckDown" id="0:380">
+                <PointsPath name="Path" isClosed="true" id="0:381">
+                    <CubicMirroredVertex x="224" y="316" rotation="-1.15257" distance="2.118" id="0:382" />
+                    <CubicMirroredVertex x="237" y="326" rotation="0.54042" distance="6.268" id="0:383" />
+                    <CubicMirroredVertex x="249" y="331" rotation="0.04345" distance="4.950" id="0:384" />
+                    <CubicMirroredVertex x="260" y="327" rotation="-0.50417" distance="7.121" id="0:385" />
+                    <CubicMirroredVertex x="278" y="315" rotation="0.61073" distance="2.624" id="0:386" />
+                    <CubicMirroredVertex x="270" y="334" rotation="2.21430" distance="6.450" id="0:387" />
+                    <CubicMirroredVertex x="260" y="339" rotation="3.08901" distance="4.091" id="0:388" />
+                    <CubicMirroredVertex x="251" y="335" rotation="3.01724" distance="3.467" id="0:389" />
+                    <CubicMirroredVertex x="244" y="341" rotation="3.14159" distance="3.870" id="0:390" />
+                    <CubicMirroredVertex x="233" y="335" rotation="-2.24554" distance="6.883" id="0:391" />
+                </PointsPath>
+                <Fill name="Fill" id="0:392">
+                    <SolidColor name="Color" colorValue="FFFFF2CF" id="0:393" />
+                </Fill>
+            </Shape>
+            <Shape name="CheekWarmthL" id="0:394">
+                <PointsPath name="Path" isClosed="true" id="0:395">
+                    <CubicMirroredVertex x="156" y="264" rotation="-0.32175" distance="2.040" id="0:396" />
+                    <CubicMirroredVertex x="166" y="270" rotation="0.38832" distance="5.110" id="0:397" />
+                    <CubicMirroredVertex x="178" y="273" rotation="1.16590" distance="1.637" id="0:398" />
+                    <CubicMirroredVertex x="169" y="277" rotation="3.14159" distance="4.515" id="0:399" />
+                    <CubicMirroredVertex x="157" y="273" rotation="-2.35619" distance="3.953" id="0:400" />
+                </PointsPath>
+                <Fill name="Fill" id="0:401">
+                    <SolidColor name="Color" colorValue="20F6A62B" id="0:402" />
+                </Fill>
+            </Shape>
+            <Shape name="CheekWarmthR" id="0:403">
+                <PointsPath name="Path" isClosed="true" id="0:404">
+                    <CubicMirroredVertex x="345" y="263" rotation="0.07131" distance="3.018" id="0:405" />
+                    <CubicMirroredVertex x="355" y="270" rotation="1.57080" distance="3.010" id="0:406" />
+                    <CubicMirroredVertex x="345" y="277" rotation="2.96940" distance="5.019" id="0:407" />
+                    <CubicMirroredVertex x="332" y="274" rotation="-2.03444" distance="1.923" id="0:408" />
+                    <CubicMirroredVertex x="341" y="269" rotation="-0.70226" distance="3.661" id="0:409" />
+                </PointsPath>
+                <Fill name="Fill" id="0:410">
+                    <SolidColor name="Color" colorValue="20F6A62B" id="0:411" />
+                </Fill>
+            </Shape>
+            <Shape name="MaskLight" id="0:412">
+                <PointsPath name="Path" isClosed="true" id="0:413">
+                    <CubicMirroredVertex x="250" y="183" rotation="0.03507" distance="12.263" id="0:414" />
+                    <CubicMirroredVertex x="276" y="156" rotation="-0.42099" distance="15.783" id="0:415" />
+                    <CubicMirroredVertex x="317" y="153" rotation="0.36036" distance="15.853" id="0:416" />
+                    <CubicMirroredVertex x="345" y="182" rotation="1.12419" distance="16.925" id="0:417" />
+                    <CubicMirroredVertex x="351" y="224" rotation="1.64045" distance="18.535" id="0:418" />
+                    <CubicMirroredVertex x="339" y="268" rotation="2.08568" distance="18.774" id="0:419" />
+                    <CubicMirroredVertex x="308" y="300" rotation="2.53379" distance="18.072" id="0:420" />
+                    <CubicMirroredVertex x="270" y="316" rotation="2.66376" distance="13.559" id="0:421" />
+                    <CubicMirroredVertex x="252" y="329" rotation="3.08901" distance="8.181" id="0:422" />
+                    <CubicMirroredVertex x="232" y="318" rotation="-2.70801" distance="12.794" id="0:423" />
+                    <CubicMirroredVertex x="198" y="304" rotation="-2.51280" distance="17.546" id="0:424" />
+                    <CubicMirroredVertex x="166" y="270" rotation="-2.11882" distance="19.395" id="0:425" />
+                    <CubicMirroredVertex x="151" y="227" rotation="-1.67753" distance="18.163" id="0:426" />
+                    <CubicMirroredVertex x="157" y="186" rotation="-1.13027" distance="16.639" id="0:427" />
+                    <CubicMirroredVertex x="184" y="157" rotation="-0.47647" distance="15.001" id="0:428" />
+                    <CubicMirroredVertex x="219" y="154" rotation="0.37527" distance="15.251" id="0:429" />
+                </PointsPath>
+                <Fill name="Fill" id="0:430">
+                    <LinearGradient name="Gentle light" startX="165" startY="165" endX="335" endY="320" id="0:431">
+                        <GradientStop colorValue="FFFFF8E3" position="0" id="0:432" />
+                        <GradientStop colorValue="FFFFEBCB" position="1" id="0:433" />
+                    </LinearGradient>
+                </Fill>
+            </Shape>
+            <Shape name="MaskShadow" id="0:434">
+                <PointsPath name="Path" isClosed="true" id="0:435">
+                    <CubicMirroredVertex x="250" y="188" rotation="0.04914" distance="13.131" id="0:436" />
+                    <CubicMirroredVertex x="279" y="159" rotation="-0.42878" distance="16.548" id="0:437" />
+                    <CubicMirroredVertex x="320" y="156" rotation="0.34302" distance="15.981" id="0:438" />
+                    <CubicMirroredVertex x="349" y="184" rotation="1.11264" distance="17.500" id="0:439" />
+                    <CubicMirroredVertex x="356" y="229" rotation="1.62569" distance="19.595" id="0:440" />
+                    <CubicMirroredVertex x="344" y="275" rotation="2.09263" distance="19.841" id="0:441" />
+                    <CubicMirroredVertex x="310" y="309" rotation="2.55044" distance="18.903" id="0:442" />
+                    <CubicMirroredVertex x="271" y="324" rotation="2.73462" distance="13.579" id="0:443" />
+                    <CubicMirroredVertex x="252" y="334" rotation="3.14159" distance="8.815" id="0:444" />
+                    <CubicMirroredVertex x="230" y="324" rotation="-2.76726" distance="12.936" id="0:445" />
+                    <CubicMirroredVertex x="196" y="312" rotation="-2.53681" distance="17.772" id="0:446" />
+                    <CubicMirroredVertex x="162" y="277" rotation="-2.12940" distance="20.283" id="0:447" />
+                    <CubicMirroredVertex x="146" y="232" rotation="-1.66625" distance="20.302" id="0:448" />
+                    <CubicMirroredVertex x="153" y="183" rotation="-1.12787" distance="18.561" id="0:449" />
+                    <CubicMirroredVertex x="183" y="154" rotation="-0.39370" distance="15.133" id="0:450" />
+                    <CubicMirroredVertex x="218" y="156" rotation="0.46960" distance="16.154" id="0:451" />
+                </PointsPath>
+                <Fill name="Fill" id="0:452">
+                    <SolidColor name="Color" colorValue="FFEEDFB9" id="0:453" />
+                </Fill>
+            </Shape>
+        </Node>
+        <Node name="CrownPlumage" id="0:454">
+            <Shape name="CrestLightLeft" id="0:455">
+                <PointsPath name="Path" isClosed="true" id="0:456">
+                    <CubicMirroredVertex x="139" y="147" rotation="-1.61078" distance="5.379" id="0:457" />
+                    <CubicMirroredVertex x="154" y="128" rotation="-0.73928" distance="9.892" id="0:458" />
+                    <CubicMirroredVertex x="173" y="116" rotation="-0.33206" distance="6.595" id="0:459" />
+                    <CubicMirroredVertex x="183" y="118" rotation="1.19029" distance="2.316" id="0:460" />
+                    <CubicMirroredVertex x="177" y="126" rotation="0.43241" distance="3.078" id="0:461" />
+                    <CubicMirroredVertex x="196" y="124" rotation="0.25100" distance="8.656" id="0:462" />
+                    <CubicMirroredVertex x="216" y="136" rotation="0.68052" distance="11.618" id="0:463" />
+                    <CubicMirroredVertex x="238" y="158" rotation="0.92730" distance="11.825" id="0:464" />
+                    <CubicMirroredVertex x="249" y="180" rotation="2.98894" distance="2.828" id="0:465" />
+                    <CubicMirroredVertex x="225" y="160" rotation="-2.53931" distance="12.524" id="0:466" />
+                    <CubicMirroredVertex x="201" y="147" rotation="-2.83871" distance="10.812" id="0:467" />
+                    <CubicMirroredVertex x="177" y="145" rotation="3.01189" distance="9.974" id="0:468" />
+                    <CubicMirroredVertex x="155" y="153" rotation="3.08901" distance="8.181" id="0:469" />
+                </PointsPath>
+                <Fill name="Fill" id="0:470">
+                    <SolidColor name="Color" colorValue="FF78B95B" id="0:471" />
+                </Fill>
+            </Shape>
+            <Shape name="CrestLightRight" id="0:472">
+                <PointsPath name="Path" isClosed="true" id="0:473">
+                    <CubicMirroredVertex x="360" y="149" rotation="-1.57080" distance="5.590" id="0:474" />
+                    <CubicMirroredVertex x="345" y="130" rotation="-2.43068" distance="10.214" id="0:475" />
+                    <CubicMirroredVertex x="324" y="118" rotation="-2.85014" distance="6.734" id="0:476" />
+                    <CubicMirroredVertex x="315" y="121" rotation="1.57080" distance="2.580" id="0:477" />
+                    <CubicMirroredVertex x="324" y="130" rotation="2.64225" distance="2.694" id="0:478" />
+                    <CubicMirroredVertex x="304" y="127" rotation="2.90904" distance="8.396" id="0:479" />
+                    <CubicMirroredVertex x="286" y="139" rotation="2.45447" distance="10.846" id="0:480" />
+                    <CubicMirroredVertex x="265" y="159" rotation="2.27942" distance="11.893" id="0:481" />
+                    <CubicMirroredVertex x="250" y="181" rotation="0.42663" distance="2.598" id="0:482" />
+                    <CubicMirroredVertex x="276" y="164" rotation="-0.55500" distance="12.649" id="0:483" />
+                    <CubicMirroredVertex x="300" y="150" rotation="-0.29146" distance="11.223" id="0:484" />
+                    <CubicMirroredVertex x="326" y="149" rotation="0.13255" distance="9.761" id="0:485" />
+                    <CubicMirroredVertex x="345" y="156" rotation="0.00000" distance="7.310" id="0:486" />
+                </PointsPath>
+                <Fill name="Fill" id="0:487">
+                    <SolidColor name="Color" colorValue="FFA2D66D" id="0:488" />
+                </Fill>
+            </Shape>
+            <Shape name="CrestCenterShade" id="0:489">
+                <PointsPath name="Path" isClosed="true" id="0:490">
+                    <CubicMirroredVertex x="211" y="120" rotation="-1.26492" distance="4.284" id="0:491" />
+                    <CubicMirroredVertex x="231" y="119" rotation="0.20232" distance="8.560" id="0:492" />
+                    <CubicMirroredVertex x="250" y="128" rotation="-0.02631" distance="8.173" id="0:493" />
+                    <CubicMirroredVertex x="269" y="118" rotation="-0.16515" distance="9.155" id="0:494" />
+                    <CubicMirroredVertex x="292" y="121" rotation="1.26274" distance="4.964" id="0:495" />
+                    <CubicMirroredVertex x="276" y="140" rotation="2.34081" distance="9.883" id="0:496" />
+                    <CubicMirroredVertex x="260" y="154" rotation="2.22364" distance="9.202" id="0:497" />
+                    <CubicMirroredVertex x="250" y="174" rotation="3.14159" distance="4.515" id="0:498" />
+                    <CubicMirroredVertex x="239" y="154" rotation="-2.17778" distance="9.423" id="0:499" />
+                    <CubicMirroredVertex x="225" y="138" rotation="-2.25972" distance="9.470" id="0:500" />
+                </PointsPath>
+                <Fill name="Fill" id="0:501">
+                    <SolidColor name="Color" colorValue="7331643C" id="0:502" />
+                </Fill>
+            </Shape>
+            <Shape name="CrestFeatherLeft" id="0:503">
+                <PointsPath name="Path" isClosed="false" id="0:504">
+                    <CubicMirroredVertex x="177" y="130" rotation="-0.11711" distance="3.680" id="0:505" />
+                    <CubicMirroredVertex x="194" y="128" rotation="0.17467" distance="7.423" id="0:506" />
+                    <CubicMirroredVertex x="211" y="136" rotation="0.57297" distance="7.932" id="0:507" />
+                    <CubicMirroredVertex x="225" y="148" rotation="0.70863" distance="3.964" id="0:508" />
+                </PointsPath>
+                <Stroke name="Outline" thickness="1.5" join="round" cap="round" id="0:509">
+                    <SolidColor name="Color" colorValue="8B286B3B" id="0:510" />
+                </Stroke>
+            </Shape>
+            <Shape name="CrestFeatherRight" id="0:511">
+                <PointsPath name="Path" isClosed="false" id="0:512">
+                    <CubicMirroredVertex x="324" y="131" rotation="-2.97644" distance="3.923" id="0:513" />
+                    <CubicMirroredVertex x="306" y="128" rotation="2.94420" distance="7.674" id="0:514" />
+                    <CubicMirroredVertex x="289" y="138" rotation="2.52440" distance="8.173" id="0:515" />
+                    <CubicMirroredVertex x="275" y="150" rotation="2.43297" distance="3.964" id="0:516" />
+                </PointsPath>
+                <Stroke name="Outline" thickness="1.5" join="round" cap="round" id="0:517">
+                    <SolidColor name="Color" colorValue="8B286B3B" id="0:518" />
+                </Stroke>
+            </Shape>
+        </Node>
+        <Node name="LeftHeadFeathers" id="0:519">
+            <Shape name="InnerTuft" id="0:520">
+                <PointsPath name="Path" isClosed="true" id="0:521">
+                    <CubicMirroredVertex x="181" y="148" rotation="3.07029" distance="6.035" id="0:522" />
+                    <CubicMirroredVertex x="160" y="138" rotation="-2.57307" distance="9.185" id="0:523" />
+                    <CubicMirroredVertex x="145" y="125" rotation="-2.24554" distance="6.883" id="0:524" />
+                    <CubicMirroredVertex x="140" y="113" rotation="-0.14190" distance="3.041" id="0:525" />
+                    <CubicMirroredVertex x="159" y="123" rotation="0.44684" distance="11.444" id="0:526" />
+                    <CubicMirroredVertex x="188" y="136" rotation="0.84914" distance="7.160" id="0:527" />
+                </PointsPath>
+                <Fill name="Fill" id="0:528">
+                    <SolidColor name="Color" colorValue="FFA2D66D" id="0:529" />
+                </Fill>
+            </Shape>
+            <Shape name="MiddleTuft" id="0:530">
+                <PointsPath name="Path" isClosed="true" id="0:531">
+                    <CubicMirroredVertex x="180" y="151" rotation="2.99122" distance="7.176" id="0:532" />
+                    <CubicMirroredVertex x="156" y="138" rotation="-2.51428" distance="10.622" id="0:533" />
+                    <CubicMirroredVertex x="140" y="122" rotation="-2.26553" distance="8.396" id="0:534" />
+                    <CubicMirroredVertex x="131" y="108" rotation="-2.03444" distance="4.327" id="0:535" />
+                    <CubicMirroredVertex x="131" y="104" rotation="0.46365" distance="3.846" id="0:536" />
+                    <CubicMirroredVertex x="147" y="116" rotation="0.55329" distance="8.592" id="0:537" />
+                    <CubicMirroredVertex x="165" y="125" rotation="0.38460" distance="9.742" id="0:538" />
+                    <CubicMirroredVertex x="189" y="133" rotation="1.04752" distance="6.454" id="0:539" />
+                </PointsPath>
+                <Fill name="Fill" id="0:540">
+                    <SolidColor name="Color" colorValue="FF78B95B" id="0:541" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.8" join="round" cap="round" id="0:542">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:543" />
+                </Stroke>
+            </Shape>
+            <Shape name="LowerTuft" id="0:544">
+                <PointsPath name="Path" isClosed="true" id="0:545">
+                    <CubicMirroredVertex x="188" y="151" rotation="2.87534" distance="7.354" id="0:546" />
+                    <CubicMirroredVertex x="164" y="149" rotation="-2.86329" distance="9.391" id="0:547" />
+                    <CubicMirroredVertex x="146" y="139" rotation="-2.41069" distance="8.374" id="0:548" />
+                    <CubicMirroredVertex x="135" y="123" rotation="-1.24905" distance="2.040" id="0:549" />
+                    <CubicMirroredVertex x="149" y="130" rotation="0.24498" distance="7.978" id="0:550" />
+                    <CubicMirroredVertex x="171" y="132" rotation="0.20540" distance="10.542" id="0:551" />
+                    <CubicMirroredVertex x="197" y="140" rotation="0.84090" distance="5.481" id="0:552" />
+                </PointsPath>
+                <Fill name="Fill" id="0:553">
+                    <SolidColor name="Color" colorValue="FF44924D" id="0:554" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.5" join="round" cap="round" id="0:555">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:556" />
+                </Stroke>
+            </Shape>
+            <Shape name="TuftShadow" id="0:557">
+                <PointsPath name="Path" isClosed="true" id="0:558">
+                    <CubicMirroredVertex x="162" y="151" rotation="2.67795" distance="1.442" id="0:559" />
+                    <CubicMirroredVertex x="140" y="140" rotation="-2.40534" distance="9.285" id="0:560" />
+                    <CubicMirroredVertex x="130" y="122" rotation="-0.46365" distance="1.442" id="0:561" />
+                    <CubicMirroredVertex x="146" y="137" rotation="0.73626" distance="9.285" id="0:562" />
+                </PointsPath>
+                <Fill name="Fill" id="0:563">
+                    <SolidColor name="Color" colorValue="FF286B3B" id="0:564" />
+                </Fill>
+            </Shape>
+            <Shape name="SmallFeather" id="0:565">
+                <PointsPath name="Path" isClosed="true" id="0:566">
+                    <CubicMirroredVertex x="163" y="145" rotation="-3.06482" distance="5.607" id="0:567" />
+                    <CubicMirroredVertex x="151" y="141" rotation="-2.66071" distance="5.578" id="0:568" />
+                    <CubicMirroredVertex x="140" y="133" rotation="-2.03444" distance="0.962" id="0:569" />
+                    <CubicMirroredVertex x="149" y="137" rotation="0.17219" distance="5.019" id="0:570" />
+                    <CubicMirroredVertex x="163" y="137" rotation="0.21109" distance="6.157" id="0:571" />
+                    <CubicMirroredVertex x="177" y="143" rotation="1.57080" distance="1.720" id="0:572" />
+                </PointsPath>
+                <Fill name="Fill" id="0:573">
+                    <SolidColor name="Color" colorValue="FFA2D66D" id="0:574" />
+                </Fill>
+            </Shape>
+        </Node>
+        <Node name="RightHeadFeathers" id="0:575">
+            <Shape name="InnerTuft" id="0:576">
+                <PointsPath name="Path" isClosed="true" id="0:577">
+                    <CubicMirroredVertex x="315" y="136" rotation="-0.84914" distance="7.160" id="0:578" />
+                    <CubicMirroredVertex x="344" y="123" rotation="-0.44684" distance="11.444" id="0:579" />
+                    <CubicMirroredVertex x="363" y="113" rotation="0.14190" distance="3.041" id="0:580" />
+                    <CubicMirroredVertex x="358" y="125" rotation="2.24554" distance="6.883" id="0:581" />
+                    <CubicMirroredVertex x="343" y="138" rotation="2.57307" distance="9.185" id="0:582" />
+                    <CubicMirroredVertex x="322" y="148" rotation="-3.07029" distance="6.035" id="0:583" />
+                </PointsPath>
+                <Fill name="Fill" id="0:584">
+                    <SolidColor name="Color" colorValue="FFA2D66D" id="0:585" />
+                </Fill>
+            </Shape>
+            <Shape name="MiddleTuft" id="0:586">
+                <PointsPath name="Path" isClosed="true" id="0:587">
+                    <CubicMirroredVertex x="315" y="133" rotation="-1.04752" distance="6.454" id="0:588" />
+                    <CubicMirroredVertex x="339" y="125" rotation="-0.38460" distance="9.742" id="0:589" />
+                    <CubicMirroredVertex x="357" y="116" rotation="-0.55329" distance="8.592" id="0:590" />
+                    <CubicMirroredVertex x="373" y="104" rotation="-0.46365" distance="3.846" id="0:591" />
+                    <CubicMirroredVertex x="373" y="108" rotation="2.03444" distance="4.327" id="0:592" />
+                    <CubicMirroredVertex x="364" y="122" rotation="2.26553" distance="8.396" id="0:593" />
+                    <CubicMirroredVertex x="348" y="138" rotation="2.51428" distance="10.622" id="0:594" />
+                    <CubicMirroredVertex x="324" y="151" rotation="-2.99122" distance="7.176" id="0:595" />
+                </PointsPath>
+                <Fill name="Fill" id="0:596">
+                    <SolidColor name="Color" colorValue="FF78B95B" id="0:597" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.8" join="round" cap="round" id="0:598">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:599" />
+                </Stroke>
+            </Shape>
+            <Shape name="LowerTuft" id="0:600">
+                <PointsPath name="Path" isClosed="true" id="0:601">
+                    <CubicMirroredVertex x="306" y="140" rotation="-0.84090" distance="5.481" id="0:602" />
+                    <CubicMirroredVertex x="332" y="132" rotation="-0.20540" distance="10.542" id="0:603" />
+                    <CubicMirroredVertex x="354" y="130" rotation="-0.24498" distance="7.978" id="0:604" />
+                    <CubicMirroredVertex x="368" y="123" rotation="1.24905" distance="2.040" id="0:605" />
+                    <CubicMirroredVertex x="357" y="139" rotation="2.41069" distance="8.374" id="0:606" />
+                    <CubicMirroredVertex x="339" y="149" rotation="2.86329" distance="9.391" id="0:607" />
+                    <CubicMirroredVertex x="315" y="151" rotation="-2.87534" distance="7.354" id="0:608" />
+                </PointsPath>
+                <Fill name="Fill" id="0:609">
+                    <SolidColor name="Color" colorValue="FF44924D" id="0:610" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.5" join="round" cap="round" id="0:611">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:612" />
+                </Stroke>
+            </Shape>
+            <Shape name="TuftShadow" id="0:613">
+                <PointsPath name="Path" isClosed="true" id="0:614">
+                    <CubicMirroredVertex x="357" y="137" rotation="-0.73626" distance="9.285" id="0:615" />
+                    <CubicMirroredVertex x="373" y="122" rotation="0.46365" distance="1.442" id="0:616" />
+                    <CubicMirroredVertex x="363" y="140" rotation="2.40534" distance="9.285" id="0:617" />
+                    <CubicMirroredVertex x="341" y="151" rotation="-2.67795" distance="1.442" id="0:618" />
+                </PointsPath>
+                <Fill name="Fill" id="0:619">
+                    <SolidColor name="Color" colorValue="FF286B3B" id="0:620" />
+                </Fill>
+            </Shape>
+            <Shape name="SmallFeather" id="0:621">
+                <PointsPath name="Path" isClosed="true" id="0:622">
+                    <CubicMirroredVertex x="326" y="143" rotation="-1.57080" distance="1.720" id="0:623" />
+                    <CubicMirroredVertex x="340" y="137" rotation="-0.21109" distance="6.157" id="0:624" />
+                    <CubicMirroredVertex x="354" y="137" rotation="-0.17219" distance="5.019" id="0:625" />
+                    <CubicMirroredVertex x="363" y="133" rotation="2.03444" distance="0.962" id="0:626" />
+                    <CubicMirroredVertex x="352" y="141" rotation="2.66071" distance="5.578" id="0:627" />
+                    <CubicMirroredVertex x="340" y="145" rotation="3.06482" distance="5.607" id="0:628" />
+                </PointsPath>
+                <Fill name="Fill" id="0:629">
+                    <SolidColor name="Color" colorValue="FFA2D66D" id="0:630" />
+                </Fill>
+            </Shape>
+        </Node>
+        <Node name="HeadBase" id="0:698">
+            <Shape name="CrownFeatherLeft" id="0:699">
+                <PointsPath name="Path" isClosed="true" id="0:700">
+                    <CubicMirroredVertex x="165" y="136" rotation="-1.31203" distance="7.562" id="0:701" />
+                    <CubicMirroredVertex x="187" y="119" rotation="-0.41013" distance="10.784" id="0:702" />
+                    <CubicMirroredVertex x="211" y="116" rotation="0.10379" distance="10.376" id="0:703" />
+                    <CubicMirroredVertex x="235" y="124" rotation="1.16590" distance="3.275" id="0:704" />
+                    <CubicMirroredVertex x="217" y="130" rotation="2.78282" distance="9.185" id="0:705" />
+                    <CubicMirroredVertex x="195" y="139" rotation="2.60875" distance="9.735" id="0:706" />
+                    <CubicMirroredVertex x="178" y="153" rotation="-3.04192" distance="6.482" id="0:707" />
+                </PointsPath>
+                <Fill name="Fill" id="0:708">
+                    <SolidColor name="Color" colorValue="A0A2D66D" id="0:709" />
+                </Fill>
+            </Shape>
+            <Shape name="CrownFeatherRight" id="0:710">
+                <PointsPath name="Path" isClosed="true" id="0:711">
+                    <CubicMirroredVertex x="337" y="137" rotation="-1.96559" distance="8.385" id="0:712" />
+                    <CubicMirroredVertex x="311" y="119" rotation="-2.76468" distance="11.099" id="0:713" />
+                    <CubicMirroredVertex x="289" y="118" rotation="2.98727" distance="9.791" id="0:714" />
+                    <CubicMirroredVertex x="266" y="126" rotation="1.97569" distance="3.275" id="0:715" />
+                    <CubicMirroredVertex x="283" y="132" rotation="0.34302" distance="9.589" id="0:716" />
+                    <CubicMirroredVertex x="308" y="141" rotation="0.49116" distance="10.484" id="0:717" />
+                    <CubicMirroredVertex x="326" y="155" rotation="-0.13707" distance="6.294" id="0:718" />
+                </PointsPath>
+                <Fill name="Fill" id="0:719">
+                    <SolidColor name="Color" colorValue="5778B95B" id="0:720" />
+                </Fill>
+            </Shape>
+            <Shape name="HeadHighlight" id="0:721">
+                <PointsPath name="Path" isClosed="true" id="0:722">
+                    <CubicMirroredVertex x="166" y="139" rotation="-1.05525" distance="22.241" id="0:723" />
+                    <CubicMirroredVertex x="195" y="113" rotation="-0.36144" distance="18.848" id="0:724" />
+                    <CubicMirroredVertex x="248" y="108" rotation="0.05708" distance="15.075" id="0:725" />
+                    <CubicMirroredVertex x="265" y="117" rotation="2.25132" distance="5.809" id="0:726" />
+                    <CubicMirroredVertex x="231" y="129" rotation="2.67795" distance="17.307" id="0:727" />
+                    <CubicMirroredVertex x="193" y="153" rotation="2.44685" distance="18.471" id="0:728" />
+                    <CubicMirroredVertex x="165" y="184" rotation="2.34609" distance="15.052" id="0:729" />
+                    <CubicMirroredVertex x="144" y="203" rotation="-1.54858" distance="9.677" id="0:730" />
+                </PointsPath>
+                <Fill name="Fill" id="0:731">
+                    <SolidColor name="Color" colorValue="5478B95B" id="0:732" />
+                </Fill>
+            </Shape>
+            <Shape name="HeadSideShade" id="0:733">
+                <PointsPath name="Path" isClosed="true" id="0:734">
+                    <CubicMirroredVertex x="314" y="119" rotation="-1.48589" distance="10.142" id="0:735" />
+                    <CubicMirroredVertex x="351" y="150" rotation="0.86437" distance="21.198" id="0:736" />
+                    <CubicMirroredVertex x="378" y="194" rotation="1.24287" distance="22.029" id="0:737" />
+                    <CubicMirroredVertex x="384" y="247" rotation="1.67353" distance="20.966" id="0:738" />
+                    <CubicMirroredVertex x="368" y="291" rotation="2.10135" distance="18.695" id="0:739" />
+                    <CubicMirroredVertex x="340" y="322" rotation="2.44685" distance="15.113" id="0:740" />
+                    <CubicMirroredVertex x="314" y="336" rotation="-1.93797" distance="5.989" id="0:741" />
+                    <CubicMirroredVertex x="330" y="296" rotation="-1.21074" distance="19.527" id="0:742" />
+                    <CubicMirroredVertex x="346" y="251" rotation="-1.40074" distance="21.597" id="0:743" />
+                    <CubicMirroredVertex x="347" y="197" rotation="-1.80863" distance="29.202" id="0:744" />
+                </PointsPath>
+                <Fill name="Fill" id="0:745">
+                    <SolidColor name="Color" colorValue="40286B3B" id="0:746" />
+                </Fill>
+            </Shape>
+            <Shape name="HeadContour" id="0:747">
+                <PointsPath name="Path" isClosed="true" id="0:748">
+                    <CubicMirroredVertex x="250" y="119" rotation="0.03225" distance="13.337" id="0:749" />
+                    <CubicMirroredVertex x="283" y="111" rotation="-0.15037" distance="14.352" id="0:750" />
+                    <CubicMirroredVertex x="316" y="109" rotation="0.08047" distance="13.373" id="0:751" />
+                    <CubicMirroredVertex x="345" y="116" rotation="0.14190" distance="10.642" id="0:752" />
+                    <CubicMirroredVertex x="365" y="116" rotation="0.10674" distance="6.054" id="0:753" />
+                    <CubicMirroredVertex x="373" y="119" rotation="1.29250" distance="4.696" id="0:754" />
+                    <CubicMirroredVertex x="371" y="137" rotation="1.31643" distance="11.107" id="0:755" />
+                    <CubicMirroredVertex x="386" y="169" rotation="1.20267" distance="16.131" id="0:756" />
+                    <CubicMirroredVertex x="398" y="207" rotation="1.41709" distance="15.447" id="0:757" />
+                    <CubicMirroredVertex x="397" y="240" rotation="1.73595" distance="13.078" id="0:758" />
+                    <CubicMirroredVertex x="388" y="267" rotation="1.75065" distance="9.615" id="0:759" />
+                    <CubicMirroredVertex x="389" y="284" rotation="2.07789" distance="6.641" id="0:760" />
+                    <CubicMirroredVertex x="373" y="294" rotation="2.69922" distance="9.040" id="0:761" />
+                    <CubicMirroredVertex x="351" y="302" rotation="2.69014" distance="7.885" id="0:762" />
+                    <CubicMirroredVertex x="340" y="310" rotation="2.64225" distance="10.776" id="0:763" />
+                    <CubicMirroredVertex x="307" y="326" rotation="2.81304" distance="19.989" id="0:764" />
+                    <CubicMirroredVertex x="252" y="340" rotation="3.10457" distance="23.236" id="0:765" />
+                    <CubicMirroredVertex x="199" y="330" rotation="-2.85014" distance="20.202" id="0:766" />
+                    <CubicMirroredVertex x="162" y="313" rotation="-2.66470" distance="14.520" id="0:767" />
+                    <CubicMirroredVertex x="139" y="299" rotation="-2.74989" distance="10.700" id="0:768" />
+                    <CubicMirroredVertex x="116" y="294" rotation="-2.71497" distance="7.794" id="0:769" />
+                    <CubicMirroredVertex x="106" y="284" rotation="-1.79760" distance="5.737" id="0:770" />
+                    <CubicMirroredVertex x="110" y="268" rotation="-1.66355" distance="9.285" id="0:771" />
+                    <CubicMirroredVertex x="102" y="241" rotation="-1.70557" distance="12.801" id="0:772" />
+                    <CubicMirroredVertex x="102" y="209" rotation="-1.39861" distance="15.058" id="0:773" />
+                    <CubicMirroredVertex x="114" y="172" rotation="-1.15257" distance="14.823" id="0:774" />
+                    <CubicMirroredVertex x="130" y="146" rotation="-1.24224" distance="9.995" id="0:775" />
+                    <CubicMirroredVertex x="129" y="128" rotation="-1.57080" distance="5.805" id="0:776" />
+                    <CubicMirroredVertex x="130" y="119" rotation="-0.54855" distance="4.535" id="0:777" />
+                    <CubicMirroredVertex x="147" y="117" rotation="0.02777" distance="7.743" id="0:778" />
+                    <CubicMirroredVertex x="166" y="120" rotation="-0.18822" distance="9.192" id="0:779" />
+                    <CubicMirroredVertex x="189" y="109" rotation="-0.19740" distance="12.059" id="0:780" />
+                    <CubicMirroredVertex x="221" y="109" rotation="0.16249" distance="13.290" id="0:781" />
+                </PointsPath>
+                <Fill name="Fill" id="0:782">
+                    <LinearGradient name="Gentle light" startX="150" startY="140" endX="355" endY="325" id="0:783">
+                        <GradientStop colorValue="FF55A45D" position="0" id="0:784" />
+                        <GradientStop colorValue="FF3D8547" position="1" id="0:785" />
+                    </LinearGradient>
+                </Fill>
+                <Stroke name="Outline" thickness="4.6" join="round" cap="round" id="0:786">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:787" />
+                </Stroke>
+            </Shape>
+        </Node>
+        <Node name="CheekFeathers" id="0:631">
+            <Shape name="CheekFeatherL2" id="0:632">
+                <PointsPath name="Path" isClosed="true" id="0:633">
+                    <CubicMirroredVertex x="146" y="282" rotation="-2.50757" distance="9.073" id="0:634" />
+                    <CubicMirroredVertex x="123" y="271" rotation="-3.07917" distance="10.340" id="0:635" />
+                    <CubicMirroredVertex x="98" y="279" rotation="2.28654" distance="6.553" id="0:636" />
+                    <CubicMirroredVertex x="103" y="294" rotation="0.67052" distance="7.958" id="0:637" />
+                    <CubicMirroredVertex x="127" y="302" rotation="0.03702" distance="11.618" id="0:638" />
+                    <CubicMirroredVertex x="157" y="296" rotation="-0.81103" distance="5.931" id="0:639" />
+                </PointsPath>
+                <Fill name="Fill" id="0:640">
+                    <SolidColor name="Color" colorValue="FF78B95B" id="0:641" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.5" join="round" cap="round" id="0:642">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:643" />
+                </Stroke>
+            </Shape>
+            <Shape name="CheekFeatherL1" id="0:644">
+                <PointsPath name="Path" isClosed="true" id="0:645">
+                    <CubicMirroredVertex x="151" y="296" rotation="-2.84505" distance="8.093" id="0:646" />
+                    <CubicMirroredVertex x="129" y="294" rotation="2.94838" distance="10.078" id="0:647" />
+                    <CubicMirroredVertex x="105" y="305" rotation="2.08525" distance="5.680" id="0:648" />
+                    <CubicMirroredVertex x="116" y="317" rotation="0.38051" distance="9.262" id="0:649" />
+                    <CubicMirroredVertex x="145" y="321" rotation="-0.24017" distance="10.846" id="0:650" />
+                    <CubicMirroredVertex x="165" y="305" rotation="-1.33525" distance="5.528" id="0:651" />
+                </PointsPath>
+                <Fill name="Fill" id="0:652">
+                    <SolidColor name="Color" colorValue="FF44924D" id="0:653" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.5" join="round" cap="round" id="0:654">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:655" />
+                </Stroke>
+            </Shape>
+            <Shape name="CheekFeatherR2" id="0:656">
+                <PointsPath name="Path" isClosed="true" id="0:657">
+                    <CubicMirroredVertex x="344" y="296" rotation="0.81103" distance="5.931" id="0:658" />
+                    <CubicMirroredVertex x="374" y="302" rotation="-0.03702" distance="11.618" id="0:659" />
+                    <CubicMirroredVertex x="398" y="294" rotation="-0.67052" distance="7.958" id="0:660" />
+                    <CubicMirroredVertex x="403" y="279" rotation="-2.28654" distance="6.553" id="0:661" />
+                    <CubicMirroredVertex x="378" y="271" rotation="3.07917" distance="10.340" id="0:662" />
+                    <CubicMirroredVertex x="355" y="282" rotation="2.50757" distance="9.073" id="0:663" />
+                </PointsPath>
+                <Fill name="Fill" id="0:664">
+                    <SolidColor name="Color" colorValue="FF78B95B" id="0:665" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.5" join="round" cap="round" id="0:666">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:667" />
+                </Stroke>
+            </Shape>
+            <Shape name="CheekFeatherR1" id="0:668">
+                <PointsPath name="Path" isClosed="true" id="0:669">
+                    <CubicMirroredVertex x="336" y="305" rotation="1.33525" distance="5.528" id="0:670" />
+                    <CubicMirroredVertex x="356" y="321" rotation="0.24017" distance="10.846" id="0:671" />
+                    <CubicMirroredVertex x="385" y="317" rotation="-0.38051" distance="9.262" id="0:672" />
+                    <CubicMirroredVertex x="396" y="305" rotation="-2.08525" distance="5.680" id="0:673" />
+                    <CubicMirroredVertex x="372" y="294" rotation="-2.94838" distance="10.078" id="0:674" />
+                    <CubicMirroredVertex x="350" y="296" rotation="2.84505" distance="8.093" id="0:675" />
+                </PointsPath>
+                <Fill name="Fill" id="0:676">
+                    <SolidColor name="Color" colorValue="FF44924D" id="0:677" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.5" join="round" cap="round" id="0:678">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:679" />
+                </Stroke>
+            </Shape>
+            <Shape name="CheekAccentL" id="0:680">
+                <PointsPath name="Path" isClosed="true" id="0:681">
+                    <CubicMirroredVertex x="130" y="289" rotation="-2.72709" distance="5.872" id="0:682" />
+                    <CubicMirroredVertex x="115" y="286" rotation="3.09995" distance="5.164" id="0:683" />
+                    <CubicMirroredVertex x="106" y="290" rotation="0.90975" distance="2.451" id="0:684" />
+                    <CubicMirroredVertex x="122" y="295" rotation="0.20305" distance="7.463" id="0:685" />
+                    <CubicMirroredVertex x="140" y="297" rotation="-0.64350" distance="2.150" id="0:686" />
+                </PointsPath>
+                <Fill name="Fill" id="0:687">
+                    <SolidColor name="Color" colorValue="FFA2D66D" id="0:688" />
+                </Fill>
+            </Shape>
+            <Shape name="CheekAccentR" id="0:689">
+                <PointsPath name="Path" isClosed="true" id="0:690">
+                    <CubicMirroredVertex x="361" y="297" rotation="0.64350" distance="2.150" id="0:691" />
+                    <CubicMirroredVertex x="379" y="295" rotation="-0.20305" distance="7.463" id="0:692" />
+                    <CubicMirroredVertex x="395" y="290" rotation="-0.90975" distance="2.451" id="0:693" />
+                    <CubicMirroredVertex x="386" y="286" rotation="-3.09995" distance="5.164" id="0:694" />
+                    <CubicMirroredVertex x="371" y="289" rotation="2.72709" distance="5.872" id="0:695" />
+                </PointsPath>
+                <Fill name="Fill" id="0:696">
+                    <SolidColor name="Color" colorValue="FFA2D66D" id="0:697" />
+                </Fill>
+            </Shape>
+        </Node>
+        <Node name="AIBadge" id="0:788">
+            <Shape name="BadgeStem" id="0:789">
+                <PointsPath name="Path" isClosed="false" id="0:790">
+                    <CubicMirroredVertex x="250" y="395" rotation="1.57080" distance="1.720" id="0:791" />
+                    <CubicMirroredVertex x="250" y="403" rotation="1.57080" distance="1.720" id="0:792" />
+                </PointsPath>
+                <Stroke name="Outline" thickness="1.9" join="round" cap="round" id="0:793">
+                    <SolidColor name="Color" colorValue="FFFFF9E9" id="0:794" />
+                </Stroke>
+            </Shape>
+            <Shape name="BadgeLeafL" id="0:795">
+                <PointsPath name="Path" isClosed="true" id="0:796">
+                    <CubicMirroredVertex x="249" y="392" rotation="-2.72337" distance="2.118" id="0:797" />
+                    <CubicMirroredVertex x="241" y="386" rotation="-2.17634" distance="3.399" id="0:798" />
+                    <CubicMirroredVertex x="240" y="379" rotation="-0.46365" distance="1.442" id="0:799" />
+                    <CubicMirroredVertex x="247" y="383" rotation="0.83298" distance="3.196" id="0:800" />
+                    <CubicMirroredVertex x="250" y="390" rotation="1.35213" distance="1.982" id="0:801" />
+                </PointsPath>
+                <Fill name="Fill" id="0:802">
+                    <SolidColor name="Color" colorValue="FFFFF9E9" id="0:803" />
+                </Fill>
+            </Shape>
+            <Shape name="BadgeLeafR" id="0:804">
+                <PointsPath name="Path" isClosed="true" id="0:805">
+                    <CubicMirroredVertex x="252" y="392" rotation="-0.46365" distance="2.404" id="0:806" />
+                    <CubicMirroredVertex x="260" y="385" rotation="-1.05165" distance="3.467" id="0:807" />
+                    <CubicMirroredVertex x="260" y="378" rotation="-2.73670" distance="1.637" id="0:808" />
+                    <CubicMirroredVertex x="253" y="382" rotation="2.26553" distance="3.358" id="0:809" />
+                    <CubicMirroredVertex x="250" y="390" rotation="1.67046" distance="2.161" id="0:810" />
+                </PointsPath>
+                <Fill name="Fill" id="0:811">
+                    <SolidColor name="Color" colorValue="FFFFF9E9" id="0:812" />
+                </Fill>
+            </Shape>
+            <Shape name="BadgeInner" id="0:813">
+                <PointsPath name="Path" isClosed="true" id="0:814">
+                    <CubicMirroredVertex x="248" y="369" rotation="-0.01492" distance="5.186" id="0:815" />
+                    <CubicMirroredVertex x="261.88" y="372.96" rotation="0.73282" distance="5.785" id="0:816" />
+                    <CubicMirroredVertex x="268" y="387" rotation="1.53160" distance="5.926" id="0:817" />
+                    <CubicMirroredVertex x="262.96" y="400.5" rotation="2.35619" distance="5.473" id="0:818" />
+                    <CubicMirroredVertex x="250" y="405" rotation="-3.13465" distance="5.573" id="0:819" />
+                    <CubicMirroredVertex x="237.04" y="400.32" rotation="-2.35619" distance="5.473" id="0:820" />
+                    <CubicMirroredVertex x="232" y="387" rotation="-1.54414" distance="5.807" id="0:821" />
+                    <CubicMirroredVertex x="237.76" y="373.32" rotation="-0.84415" distance="5.178" id="0:822" />
+                </PointsPath>
+                <Fill name="Fill" id="0:823">
+                    <SolidColor name="Color" colorValue="FF69BB91" id="0:824" />
+                </Fill>
+            </Shape>
+            <Shape name="BadgeBacking" id="0:825">
+                <PointsPath name="Path" isClosed="true" id="0:826">
+                    <CubicMirroredVertex x="248" y="365" rotation="-0.01492" distance="6.339" id="0:827" />
+                    <CubicMirroredVertex x="264.52" y="369.84" rotation="0.74195" distance="7.000" id="0:828" />
+                    <CubicMirroredVertex x="272" y="387" rotation="1.53160" distance="7.242" id="0:829" />
+                    <CubicMirroredVertex x="265.84" y="403.5" rotation="2.35619" distance="6.689" id="0:830" />
+                    <CubicMirroredVertex x="250" y="409" rotation="-3.13465" distance="6.811" id="0:831" />
+                    <CubicMirroredVertex x="234.16" y="403.28" rotation="-2.35619" distance="6.689" id="0:832" />
+                    <CubicMirroredVertex x="228" y="387" rotation="-1.54414" distance="7.098" id="0:833" />
+                    <CubicMirroredVertex x="235.04" y="370.28" rotation="-0.83298" distance="6.392" id="0:834" />
+                </PointsPath>
+                <Fill name="Fill" id="0:835">
+                    <SolidColor name="Color" colorValue="7867DFC1" id="0:836" />
+                </Fill>
+            </Shape>
+        </Node>
+        <Node name="LeftWing" id="0:837">
+            <Shape name="TipHighlight" id="0:839">
+                <PointsPath name="Path" isClosed="true" id="0:840">
+                    <CubicMirroredVertex x="148" y="331" rotation="3.05485" distance="4.964" id="0:841" />
+                    <CubicMirroredVertex x="135" y="340" rotation="2.41495" distance="7.767" id="0:842" />
+                    <CubicMirroredVertex x="121" y="355" rotation="1.37340" distance="2.193" id="0:843" />
+                    <CubicMirroredVertex x="137" y="350" rotation="-0.43069" distance="8.754" id="0:844" />
+                    <CubicMirroredVertex x="158" y="338" rotation="-1.04600" distance="4.720" id="0:845" />
+                </PointsPath>
+                <Fill name="Fill" id="0:846">
+                    <SolidColor name="Color" colorValue="FFA2D66D" id="0:847" />
+                </Fill>
+            </Shape>
+            <Shape name="FeatherGlint" id="0:857">
+                <PointsPath name="Path" isClosed="true" id="0:858">
+                    <CubicMirroredVertex x="146" y="349" rotation="2.60987" distance="4.240" id="0:859" />
+                    <CubicMirroredVertex x="137" y="362" rotation="2.12065" distance="7.817" id="0:860" />
+                    <CubicMirroredVertex x="127" y="380" rotation="0.92730" distance="1.075" id="0:861" />
+                    <CubicMirroredVertex x="140" y="366" rotation="-0.80358" distance="8.363" id="0:862" />
+                    <CubicMirroredVertex x="154" y="352" rotation="-1.23150" distance="3.876" id="0:863" />
+                </PointsPath>
+                <Fill name="Fill" id="0:864">
+                    <SolidColor name="Color" colorValue="8BA2D66D" id="0:865" />
+                </Fill>
+            </Shape>
+            <Shape name="FeatherVein" id="0:875">
+                <PointsPath name="Path" isClosed="true" id="0:876">
+                    <CubicMirroredVertex x="153" y="340" rotation="-1.12842" distance="4.520" id="0:877" />
+                    <CubicMirroredVertex x="139" y="358" rotation="2.12696" distance="9.367" id="0:878" />
+                    <CubicMirroredVertex x="130" y="377" rotation="-0.90975" distance="4.903" id="0:879" />
+                </PointsPath>
+                <Stroke name="Outline" thickness="1.6" join="round" cap="round" id="0:880">
+                    <SolidColor name="Color" colorValue="A067DFC1" id="0:881" />
+                </Stroke>
+            </Shape>
+            <Shape name="PrimaryFeatherA" id="0:889">
+                <PointsPath name="Path" isClosed="true" id="0:890">
+                    <CubicMirroredVertex x="164" y="324" rotation="-2.74135" distance="6.070" id="0:891" />
+                    <CubicMirroredVertex x="144" y="325" rotation="2.77986" distance="8.505" id="0:892" />
+                    <CubicMirroredVertex x="127" y="338" rotation="2.35619" distance="8.818" id="0:893" />
+                    <CubicMirroredVertex x="115" y="354" rotation="2.05642" distance="8.752" id="0:894" />
+                    <CubicMirroredVertex x="108" y="374" rotation="1.67567" distance="8.215" id="0:895" />
+                    <CubicMirroredVertex x="111" y="392" rotation="1.19029" distance="5.789" id="0:896" />
+                    <CubicMirroredVertex x="118" y="399" rotation="-0.33474" distance="5.236" id="0:897" />
+                    <CubicMirroredVertex x="134" y="384" rotation="-0.83940" distance="11.266" id="0:898" />
+                    <CubicMirroredVertex x="153" y="360" rotation="-0.92730" distance="12.900" id="0:899" />
+                    <CubicMirroredVertex x="170" y="336" rotation="-1.27425" distance="8.093" id="0:900" />
+                </PointsPath>
+                <Fill name="Fill" id="0:901">
+                    <SolidColor name="Color" colorValue="FF78B95B" id="0:902" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.4" join="round" cap="round" id="0:903">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:904" />
+                </Stroke>
+            </Shape>
+            <Shape name="PrimaryFeatherB" id="0:921">
+                <PointsPath name="Path" isClosed="true" id="0:922">
+                    <CubicMirroredVertex x="169" y="333" rotation="-2.83189" distance="5.643" id="0:923" />
+                    <CubicMirroredVertex x="149" y="338" rotation="2.61352" distance="8.961" id="0:924" />
+                    <CubicMirroredVertex x="133" y="354" rotation="2.20249" distance="10.923" id="0:925" />
+                    <CubicMirroredVertex x="119" y="379" rotation="1.99099" distance="11.068" id="0:926" />
+                    <CubicMirroredVertex x="112" y="401" rotation="1.65630" distance="7.553" id="0:927" />
+                    <CubicMirroredVertex x="116" y="414" rotation="0.94531" distance="4.774" id="0:928" />
+                    <CubicMirroredVertex x="125" y="419" rotation="-0.43241" distance="6.157" id="0:929" />
+                    <CubicMirroredVertex x="142" y="402" rotation="-0.90483" distance="11.484" id="0:930" />
+                    <CubicMirroredVertex x="158" y="377" rotation="-1.05165" distance="13.867" id="0:931" />
+                    <CubicMirroredVertex x="174" y="346" rotation="-1.32582" distance="9.751" id="0:932" />
+                </PointsPath>
+                <Fill name="Fill" id="0:933">
+                    <SolidColor name="Color" colorValue="FF44924D" id="0:934" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.4" join="round" cap="round" id="0:935">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:936" />
+                </Stroke>
+            </Shape>
+            <Shape name="PrimaryFeatherC" id="0:953">
+                <PointsPath name="Path" isClosed="true" id="0:954">
+                    <CubicMirroredVertex x="175" y="346" rotation="3.14159" distance="5.375" id="0:955" />
+                    <CubicMirroredVertex x="157" y="356" rotation="2.35619" distance="9.730" id="0:956" />
+                    <CubicMirroredVertex x="143" y="378" rotation="2.05965" distance="11.446" id="0:957" />
+                    <CubicMirroredVertex x="132" y="403" rotation="1.88555" distance="9.723" id="0:958" />
+                    <CubicMirroredVertex x="129" y="421" rotation="1.46014" distance="5.841" id="0:959" />
+                    <CubicMirroredVertex x="135" y="430" rotation="0.60229" distance="4.175" id="0:960" />
+                    <CubicMirroredVertex x="145" y="432" rotation="-0.65570" distance="7.053" id="0:961" />
+                    <CubicMirroredVertex x="161" y="410" rotation="-1.05572" distance="13.094" id="0:962" />
+                    <CubicMirroredVertex x="175" y="379" rotation="-1.19991" distance="12.457" id="0:963" />
+                    <CubicMirroredVertex x="182" y="356" rotation="-1.57080" distance="7.095" id="0:964" />
+                </PointsPath>
+                <Fill name="Fill" id="0:965">
+                    <SolidColor name="Color" colorValue="FF286B3B" id="0:966" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.4" join="round" cap="round" id="0:967">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:968" />
+                </Stroke>
+            </Shape>
+            <Shape name="SecondaryFeather" id="0:985">
+                <PointsPath name="Path" isClosed="true" id="0:986">
+                    <CubicMirroredVertex x="154" y="365" rotation="2.87534" distance="4.903" id="0:987" />
+                    <CubicMirroredVertex x="138" y="384" rotation="2.21861" distance="9.976" id="0:988" />
+                    <CubicMirroredVertex x="126" y="402" rotation="2.03444" distance="8.173" id="0:989" />
+                    <CubicMirroredVertex x="121" y="418" rotation="1.57080" distance="4.945" id="0:990" />
+                    <CubicMirroredVertex x="126" y="425" rotation="0.17467" distance="3.711" id="0:991" />
+                    <CubicMirroredVertex x="138" y="421" rotation="-0.73782" distance="6.392" id="0:992" />
+                    <CubicMirroredVertex x="148" y="405" rotation="-1.09789" distance="10.385" id="0:993" />
+                    <CubicMirroredVertex x="160" y="378" rotation="-1.42191" distance="8.696" id="0:994" />
+                </PointsPath>
+                <Fill name="Fill" id="0:995">
+                    <SolidColor name="Color" colorValue="FF44924D" id="0:996" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.2" join="round" cap="round" id="0:997">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:998" />
+                </Stroke>
+            </Shape>
+            <Shape name="WingBase" id="0:1013">
+                <PointsPath name="Path" isClosed="true" id="0:1014">
+                    <CubicMirroredVertex x="164" y="316" rotation="-3.01327" distance="6.720" id="0:1015" />
+                    <CubicMirroredVertex x="146" y="320" rotation="2.66590" distance="7.981" id="0:1016" />
+                    <CubicMirroredVertex x="131" y="333" rotation="2.09320" distance="8.187" id="0:1017" />
+                    <CubicMirroredVertex x="127" y="353" rotation="1.35786" distance="8.139" id="0:1018" />
+                    <CubicMirroredVertex x="139" y="370" rotation="0.30288" distance="7.208" id="0:1019" />
+                    <CubicMirroredVertex x="159" y="363" rotation="-0.63939" distance="10.449" id="0:1020" />
+                    <CubicMirroredVertex x="178" y="341" rotation="-1.13839" distance="9.235" id="0:1021" />
+                    <CubicMirroredVertex x="177" y="324" rotation="-2.08128" distance="6.160" id="0:1022" />
+                </PointsPath>
+                <Fill name="Fill" id="0:1023">
+                    <SolidColor name="Color" colorValue="FF286B3B" id="0:1024" />
+                </Fill>
+                <Stroke name="Outline" thickness="3.5" join="round" cap="round" id="0:1025">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:1026" />
+                </Stroke>
+            </Shape>
+        </Node>
+        <Node name="RightWing" id="0:838">
+            <Shape name="TipHighlight" id="0:848">
+                <PointsPath name="Path" isClosed="true" id="0:849">
+                    <CubicMirroredVertex x="334" y="338" rotation="1.04600" distance="4.720" id="0:850" />
+                    <CubicMirroredVertex x="355" y="350" rotation="0.43069" distance="8.754" id="0:851" />
+                    <CubicMirroredVertex x="371" y="355" rotation="-1.37340" distance="2.193" id="0:852" />
+                    <CubicMirroredVertex x="357" y="340" rotation="-2.41495" distance="7.767" id="0:853" />
+                    <CubicMirroredVertex x="344" y="331" rotation="-3.05485" distance="4.964" id="0:854" />
+                </PointsPath>
+                <Fill name="Fill" id="0:855">
+                    <SolidColor name="Color" colorValue="FFA2D66D" id="0:856" />
+                </Fill>
+            </Shape>
+            <Shape name="FeatherGlint" id="0:866">
+                <PointsPath name="Path" isClosed="true" id="0:867">
+                    <CubicMirroredVertex x="348" y="352" rotation="1.23150" distance="3.876" id="0:868" />
+                    <CubicMirroredVertex x="362" y="366" rotation="0.80358" distance="8.363" id="0:869" />
+                    <CubicMirroredVertex x="375" y="380" rotation="-0.92730" distance="1.075" id="0:870" />
+                    <CubicMirroredVertex x="365" y="362" rotation="-2.12065" distance="7.817" id="0:871" />
+                    <CubicMirroredVertex x="356" y="349" rotation="-2.60987" distance="4.240" id="0:872" />
+                </PointsPath>
+                <Fill name="Fill" id="0:873">
+                    <SolidColor name="Color" colorValue="8BA2D66D" id="0:874" />
+                </Fill>
+            </Shape>
+            <Shape name="FeatherVein" id="0:882">
+                <PointsPath name="Path" isClosed="true" id="0:883">
+                    <CubicMirroredVertex x="372" y="377" rotation="0.90975" distance="4.903" id="0:884" />
+                    <CubicMirroredVertex x="363" y="358" rotation="-2.12696" distance="9.367" id="0:885" />
+                    <CubicMirroredVertex x="349" y="340" rotation="1.12842" distance="4.520" id="0:886" />
+                </PointsPath>
+                <Stroke name="Outline" thickness="1.6" join="round" cap="round" id="0:887">
+                    <SolidColor name="Color" colorValue="A067DFC1" id="0:888" />
+                </Stroke>
+            </Shape>
+            <Shape name="PrimaryFeatherA" id="0:905">
+                <PointsPath name="Path" isClosed="true" id="0:906">
+                    <CubicMirroredVertex x="332" y="336" rotation="1.27425" distance="8.093" id="0:907" />
+                    <CubicMirroredVertex x="349" y="360" rotation="0.92730" distance="12.900" id="0:908" />
+                    <CubicMirroredVertex x="368" y="384" rotation="0.83940" distance="11.266" id="0:909" />
+                    <CubicMirroredVertex x="384" y="399" rotation="0.33474" distance="5.236" id="0:910" />
+                    <CubicMirroredVertex x="391" y="392" rotation="-1.19029" distance="5.789" id="0:911" />
+                    <CubicMirroredVertex x="394" y="374" rotation="-1.67567" distance="8.215" id="0:912" />
+                    <CubicMirroredVertex x="387" y="354" rotation="-2.05642" distance="8.752" id="0:913" />
+                    <CubicMirroredVertex x="375" y="338" rotation="-2.35619" distance="8.818" id="0:914" />
+                    <CubicMirroredVertex x="358" y="325" rotation="-2.77986" distance="8.505" id="0:915" />
+                    <CubicMirroredVertex x="338" y="324" rotation="2.74135" distance="6.070" id="0:916" />
+                </PointsPath>
+                <Fill name="Fill" id="0:917">
+                    <SolidColor name="Color" colorValue="FF78B95B" id="0:918" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.4" join="round" cap="round" id="0:919">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:920" />
+                </Stroke>
+            </Shape>
+            <Shape name="PrimaryFeatherB" id="0:937">
+                <PointsPath name="Path" isClosed="true" id="0:938">
+                    <CubicMirroredVertex x="328" y="346" rotation="1.32582" distance="9.751" id="0:939" />
+                    <CubicMirroredVertex x="344" y="377" rotation="1.05165" distance="13.867" id="0:940" />
+                    <CubicMirroredVertex x="360" y="402" rotation="0.90483" distance="11.484" id="0:941" />
+                    <CubicMirroredVertex x="377" y="419" rotation="0.43241" distance="6.157" id="0:942" />
+                    <CubicMirroredVertex x="386" y="414" rotation="-0.94531" distance="4.774" id="0:943" />
+                    <CubicMirroredVertex x="390" y="401" rotation="-1.65630" distance="7.553" id="0:944" />
+                    <CubicMirroredVertex x="383" y="379" rotation="-1.99099" distance="11.068" id="0:945" />
+                    <CubicMirroredVertex x="369" y="354" rotation="-2.20249" distance="10.923" id="0:946" />
+                    <CubicMirroredVertex x="353" y="338" rotation="-2.61352" distance="8.961" id="0:947" />
+                    <CubicMirroredVertex x="333" y="333" rotation="2.83189" distance="5.643" id="0:948" />
+                </PointsPath>
+                <Fill name="Fill" id="0:949">
+                    <SolidColor name="Color" colorValue="FF44924D" id="0:950" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.4" join="round" cap="round" id="0:951">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:952" />
+                </Stroke>
+            </Shape>
+            <Shape name="PrimaryFeatherC" id="0:969">
+                <PointsPath name="Path" isClosed="true" id="0:970">
+                    <CubicMirroredVertex x="320" y="356" rotation="1.57080" distance="7.095" id="0:971" />
+                    <CubicMirroredVertex x="327" y="379" rotation="1.19991" distance="12.457" id="0:972" />
+                    <CubicMirroredVertex x="341" y="410" rotation="1.05572" distance="13.094" id="0:973" />
+                    <CubicMirroredVertex x="357" y="432" rotation="0.65570" distance="7.053" id="0:974" />
+                    <CubicMirroredVertex x="367" y="430" rotation="-0.60229" distance="4.175" id="0:975" />
+                    <CubicMirroredVertex x="373" y="421" rotation="-1.46014" distance="5.841" id="0:976" />
+                    <CubicMirroredVertex x="370" y="403" rotation="-1.88555" distance="9.723" id="0:977" />
+                    <CubicMirroredVertex x="359" y="378" rotation="-2.05965" distance="11.446" id="0:978" />
+                    <CubicMirroredVertex x="345" y="356" rotation="-2.35619" distance="9.730" id="0:979" />
+                    <CubicMirroredVertex x="327" y="346" rotation="3.14159" distance="5.375" id="0:980" />
+                </PointsPath>
+                <Fill name="Fill" id="0:981">
+                    <SolidColor name="Color" colorValue="FF286B3B" id="0:982" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.4" join="round" cap="round" id="0:983">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:984" />
+                </Stroke>
+            </Shape>
+            <Shape name="SecondaryFeather" id="0:999">
+                <PointsPath name="Path" isClosed="true" id="0:1000">
+                    <CubicMirroredVertex x="342" y="378" rotation="1.42191" distance="8.696" id="0:1001" />
+                    <CubicMirroredVertex x="354" y="405" rotation="1.09789" distance="10.385" id="0:1002" />
+                    <CubicMirroredVertex x="364" y="421" rotation="0.73782" distance="6.392" id="0:1003" />
+                    <CubicMirroredVertex x="376" y="425" rotation="-0.17467" distance="3.711" id="0:1004" />
+                    <CubicMirroredVertex x="381" y="418" rotation="-1.57080" distance="4.945" id="0:1005" />
+                    <CubicMirroredVertex x="376" y="402" rotation="-2.03444" distance="8.173" id="0:1006" />
+                    <CubicMirroredVertex x="364" y="384" rotation="-2.21861" distance="9.976" id="0:1007" />
+                    <CubicMirroredVertex x="348" y="365" rotation="-2.87534" distance="4.903" id="0:1008" />
+                </PointsPath>
+                <Fill name="Fill" id="0:1009">
+                    <SolidColor name="Color" colorValue="FF44924D" id="0:1010" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.2" join="round" cap="round" id="0:1011">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:1012" />
+                </Stroke>
+            </Shape>
+            <Shape name="WingBase" id="0:1027">
+                <PointsPath name="Path" isClosed="true" id="0:1028">
+                    <CubicMirroredVertex x="325" y="324" rotation="2.08128" distance="6.160" id="0:1029" />
+                    <CubicMirroredVertex x="324" y="341" rotation="1.13839" distance="9.235" id="0:1030" />
+                    <CubicMirroredVertex x="343" y="363" rotation="0.63939" distance="10.449" id="0:1031" />
+                    <CubicMirroredVertex x="363" y="370" rotation="-0.30288" distance="7.208" id="0:1032" />
+                    <CubicMirroredVertex x="375" y="353" rotation="-1.35786" distance="8.139" id="0:1033" />
+                    <CubicMirroredVertex x="371" y="333" rotation="-2.09320" distance="8.187" id="0:1034" />
+                    <CubicMirroredVertex x="356" y="320" rotation="-2.66590" distance="7.981" id="0:1035" />
+                    <CubicMirroredVertex x="338" y="316" rotation="3.01327" distance="6.720" id="0:1036" />
+                </PointsPath>
+                <Fill name="Fill" id="0:1037">
+                    <SolidColor name="Color" colorValue="FF286B3B" id="0:1038" />
+                </Fill>
+                <Stroke name="Outline" thickness="3.5" join="round" cap="round" id="0:1039">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:1040" />
+                </Stroke>
+            </Shape>
+        </Node>
+        <Node name="ChestPatch" id="0:1041">
+            <Shape name="ChestLightPlane" id="0:1042">
+                <PointsPath name="Path" isClosed="true" id="0:1043">
+                    <CubicMirroredVertex x="220" y="349" rotation="-0.94349" distance="10.622" id="0:1044" />
+                    <CubicMirroredVertex x="236" y="337" rotation="-0.37433" distance="6.468" id="0:1045" />
+                    <CubicMirroredVertex x="248" y="338" rotation="1.50838" distance="3.447" id="0:1046" />
+                    <CubicMirroredVertex x="237" y="353" rotation="2.12510" distance="10.620" id="0:1047" />
+                    <CubicMirroredVertex x="222" y="380" rotation="2.11836" distance="10.324" id="0:1048" />
+                    <CubicMirroredVertex x="212" y="394" rotation="-2.94420" distance="3.289" id="0:1049" />
+                    <CubicMirroredVertex x="207" y="377" rotation="-1.39486" distance="9.827" id="0:1050" />
+                </PointsPath>
+                <Fill name="Fill" id="0:1051">
+                    <SolidColor name="Color" colorValue="29FFFFFF" id="0:1052" />
+                </Fill>
+            </Shape>
+            <Shape name="ChestFeatherShade" id="0:1053">
+                <PointsPath name="Path" isClosed="true" id="0:1054">
+                    <CubicMirroredVertex x="250" y="319" rotation="0.04253" distance="10.114" id="0:1055" />
+                    <CubicMirroredVertex x="274" y="329" rotation="0.64705" distance="12.126" id="0:1056" />
+                    <CubicMirroredVertex x="295" y="353" rotation="1.00295" distance="14.791" id="0:1057" />
+                    <CubicMirroredVertex x="311" y="387" rotation="1.38016" distance="12.481" id="0:1058" />
+                    <CubicMirroredVertex x="306" y="410" rotation="2.09263" distance="9.920" id="0:1059" />
+                    <CubicMirroredVertex x="288" y="427" rotation="2.58830" distance="8.592" id="0:1060" />
+                    <CubicMirroredVertex x="272" y="431" rotation="3.06176" distance="5.392" id="0:1061" />
+                    <CubicMirroredVertex x="263" y="429" rotation="2.64225" distance="5.388" id="0:1062" />
+                    <CubicMirroredVertex x="250" y="443" rotation="3.14159" distance="5.805" id="0:1063" />
+                    <CubicMirroredVertex x="236" y="429" rotation="-2.66071" distance="5.578" id="0:1064" />
+                    <CubicMirroredVertex x="227" y="431" rotation="-2.95160" distance="5.692" id="0:1065" />
+                    <CubicMirroredVertex x="210" y="424" rotation="-2.52693" distance="8.948" id="0:1066" />
+                    <CubicMirroredVertex x="193" y="407" rotation="-2.00475" distance="9.716" id="0:1067" />
+                    <CubicMirroredVertex x="191" y="383" rotation="-1.33395" distance="12.828" id="0:1068" />
+                    <CubicMirroredVertex x="207" y="349" rotation="-0.99946" distance="14.313" id="0:1069" />
+                    <CubicMirroredVertex x="227" y="327" rotation="-0.60916" distance="11.273" id="0:1070" />
+                </PointsPath>
+                <Fill name="Fill" id="0:1071">
+                    <SolidColor name="Color" colorValue="FFEEDFB9" id="0:1072" />
+                </Fill>
+            </Shape>
+            <Shape name="ChestFeather" id="0:1073">
+                <PointsPath name="Path" isClosed="true" id="0:1074">
+                    <CubicMirroredVertex x="250" y="320" rotation="0.00000" distance="8.815" id="0:1075" />
+                    <CubicMirroredVertex x="271" y="329" rotation="0.66273" distance="11.182" id="0:1076" />
+                    <CubicMirroredVertex x="291" y="352" rotation="1.01712" distance="13.902" id="0:1077" />
+                    <CubicMirroredVertex x="305" y="384" rotation="1.40259" distance="11.558" id="0:1078" />
+                    <CubicMirroredVertex x="300" y="405" rotation="2.07566" distance="9.335" id="0:1079" />
+                    <CubicMirroredVertex x="284" y="422" rotation="2.54618" distance="8.050" id="0:1080" />
+                    <CubicMirroredVertex x="269" y="426" rotation="3.01724" distance="5.200" id="0:1081" />
+                    <CubicMirroredVertex x="260" y="425" rotation="2.54154" distance="4.950" id="0:1082" />
+                    <CubicMirroredVertex x="250" y="439" rotation="3.14159" distance="4.515" id="0:1083" />
+                    <CubicMirroredVertex x="239" y="425" rotation="-2.60117" distance="5.015" id="0:1084" />
+                    <CubicMirroredVertex x="230" y="427" rotation="-2.93620" distance="5.271" id="0:1085" />
+                    <CubicMirroredVertex x="215" y="420" rotation="-2.48279" distance="8.429" id="0:1086" />
+                    <CubicMirroredVertex x="199" y="403" rotation="-2.03444" distance="8.654" id="0:1087" />
+                    <CubicMirroredVertex x="197" y="384" rotation="-1.32582" distance="11.524" id="0:1088" />
+                    <CubicMirroredVertex x="212" y="351" rotation="-1.03038" distance="13.790" id="0:1089" />
+                    <CubicMirroredVertex x="230" y="329" rotation="-0.68429" distance="10.544" id="0:1090" />
+                </PointsPath>
+                <Fill name="Fill" id="0:1091">
+                    <LinearGradient name="Gentle light" startX="205" startY="335" endX="295" endY="435" id="0:1092">
+                        <GradientStop colorValue="FFFFF7DE" position="0" id="0:1093" />
+                        <GradientStop colorValue="FFF4E4C2" position="1" id="0:1094" />
+                    </LinearGradient>
+                </Fill>
+            </Shape>
+        </Node>
+        <Node name="Body" id="0:1095">
+            <Shape name="BodyHighlight" id="0:1096">
+                <PointsPath name="Path" isClosed="true" id="0:1097">
+                    <CubicMirroredVertex x="190" y="335" rotation="-1.02164" distance="16.888" id="0:1098" />
+                    <CubicMirroredVertex x="221" y="318" rotation="-0.23442" distance="14.810" id="0:1099" />
+                    <CubicMirroredVertex x="257" y="319" rotation="0.96525" distance="3.399" id="0:1100" />
+                    <CubicMirroredVertex x="230" y="331" rotation="2.49809" distance="16.125" id="0:1101" />
+                    <CubicMirroredVertex x="197" y="364" rotation="2.31775" distance="15.823" id="0:1102" />
+                    <CubicMirroredVertex x="180" y="385" rotation="-1.80765" distance="6.414" id="0:1103" />
+                </PointsPath>
+                <Fill name="Fill" id="0:1104">
+                    <SolidColor name="Color" colorValue="4078B95B" id="0:1105" />
+                </Fill>
+            </Shape>
+            <Shape name="BodyShadow" id="0:1106">
+                <PointsPath name="Path" isClosed="true" id="0:1107">
+                    <CubicMirroredVertex x="299" y="321" rotation="-0.87606" distance="6.717" id="0:1108" />
+                    <CubicMirroredVertex x="328" y="352" rotation="1.11222" distance="18.942" id="0:1109" />
+                    <CubicMirroredVertex x="338" y="400" rotation="1.74404" distance="17.461" id="0:1110" />
+                    <CubicMirroredVertex x="314" y="432" rotation="2.49001" distance="15.954" id="0:1111" />
+                    <CubicMirroredVertex x="279" y="445" rotation="-2.46685" distance="5.507" id="0:1112" />
+                    <CubicMirroredVertex x="294" y="416" rotation="-1.17292" distance="16.092" id="0:1113" />
+                    <CubicMirroredVertex x="308" y="376" rotation="-1.51821" distance="20.453" id="0:1114" />
+                </PointsPath>
+                <Fill name="Fill" id="0:1115">
+                    <SolidColor name="Color" colorValue="36286B3B" id="0:1116" />
+                </Fill>
+            </Shape>
+            <Shape name="BodyContour" id="0:1117">
+                <PointsPath name="Path" isClosed="true" id="0:1118">
+                    <CubicMirroredVertex x="235" y="306" rotation="-0.16515" distance="15.694" id="0:1119" />
+                    <CubicMirroredVertex x="269" y="307" rotation="0.24498" distance="14.183" id="0:1120" />
+                    <CubicMirroredVertex x="299" y="322" rotation="0.62356" distance="15.096" id="0:1121" />
+                    <CubicMirroredVertex x="326" y="348" rotation="0.98279" distance="16.279" id="0:1122" />
+                    <CubicMirroredVertex x="341" y="385" rotation="1.40831" distance="13.290" id="0:1123" />
+                    <CubicMirroredVertex x="336" y="409" rotation="2.09223" distance="11.654" id="0:1124" />
+                    <CubicMirroredVertex x="314" y="432" rotation="2.51280" distance="11.697" id="0:1125" />
+                    <CubicMirroredVertex x="292" y="441" rotation="2.98499" distance="8.271" id="0:1126" />
+                    <CubicMirroredVertex x="276" y="438" rotation="2.97249" distance="8.943" id="0:1127" />
+                    <CubicMirroredVertex x="251" y="448" rotation="3.10080" distance="10.544" id="0:1128" />
+                    <CubicMirroredVertex x="227" y="440" rotation="-3.01724" distance="8.667" id="0:1129" />
+                    <CubicMirroredVertex x="211" y="443" rotation="-2.97249" distance="8.943" id="0:1130" />
+                    <CubicMirroredVertex x="186" y="433" rotation="-2.50150" distance="12.599" id="0:1131" />
+                    <CubicMirroredVertex x="164" y="408" rotation="-2.04169" distance="13.269" id="0:1132" />
+                    <CubicMirroredVertex x="158" y="378" rotation="-1.49283" distance="13.802" id="0:1133" />
+                    <CubicMirroredVertex x="169" y="344" rotation="-0.98672" distance="15.206" id="0:1134" />
+                    <CubicMirroredVertex x="197" y="319" rotation="-0.52240" distance="16.374" id="0:1135" />
+                </PointsPath>
+                <Fill name="Fill" id="0:1136">
+                    <SolidColor name="Color" colorValue="FF44924D" id="0:1137" />
+                </Fill>
+                <Stroke name="Outline" thickness="4.4" join="round" cap="round" id="0:1138">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:1139" />
+                </Stroke>
+            </Shape>
+        </Node>
+        <Node name="Feet" id="0:1140">
+            <Node name="FootL" id="0:1141">
+                <Shape name="ToeBumpA" id="0:1142">
+                    <PointsPath name="Path" isClosed="true" id="0:1143">
+                        <CubicMirroredVertex x="200" y="438" rotation="-0.01119" distance="3.457" id="0:1144" />
+                        <CubicMirroredVertex x="209.92" y="439.98" rotation="0.57134" distance="3.578" id="0:1145" />
+                        <CubicMirroredVertex x="214" y="447" rotation="1.51856" distance="2.965" id="0:1146" />
+                        <CubicMirroredVertex x="210.64" y="453.75" rotation="2.49809" distance="3.225" id="0:1147" />
+                        <CubicMirroredVertex x="202" y="456" rotation="-3.13638" distance="3.715" id="0:1148" />
+                        <CubicMirroredVertex x="193.36" y="453.66" rotation="-2.49809" distance="3.225" id="0:1149" />
+                        <CubicMirroredVertex x="190" y="447" rotation="-1.53526" distance="2.904" id="0:1150" />
+                        <CubicMirroredVertex x="193.84" y="440.16" rotation="-0.73282" distance="2.893" id="0:1151" />
+                    </PointsPath>
+                    <Fill name="Fill" id="0:1152">
+                        <SolidColor name="Color" colorValue="FFF6A62B" id="0:1153" />
+                    </Fill>
+                    <Stroke name="Outline" thickness="2.0" join="round" cap="round" id="0:1154">
+                        <SolidColor name="Color" colorValue="FFD97A18" id="0:1155" />
+                    </Stroke>
+                </Shape>
+                <Shape name="ToeBumpB" id="0:1156">
+                    <PointsPath name="Path" isClosed="true" id="0:1157">
+                        <CubicMirroredVertex x="215" y="439" rotation="-0.01033" distance="3.745" id="0:1158" />
+                        <CubicMirroredVertex x="225.58" y="440.98" rotation="0.54042" distance="3.761" id="0:1159" />
+                        <CubicMirroredVertex x="230" y="448" rotation="1.51421" distance="2.965" id="0:1160" />
+                        <CubicMirroredVertex x="226.36" y="454.75" rotation="2.53605" distance="3.399" id="0:1161" />
+                        <CubicMirroredVertex x="217" y="457" rotation="-3.13678" distance="4.025" id="0:1162" />
+                        <CubicMirroredVertex x="207.64" y="454.66" rotation="-2.53605" distance="3.399" id="0:1163" />
+                        <CubicMirroredVertex x="204" y="448" rotation="-1.53230" distance="2.905" id="0:1164" />
+                        <CubicMirroredVertex x="208.16" y="441.16" rotation="-0.68573" distance="3.056" id="0:1165" />
+                    </PointsPath>
+                    <Fill name="Fill" id="0:1166">
+                        <SolidColor name="Color" colorValue="FFF6A62B" id="0:1167" />
+                    </Fill>
+                    <Stroke name="Outline" thickness="2.0" join="round" cap="round" id="0:1168">
+                        <SolidColor name="Color" colorValue="FFD97A18" id="0:1169" />
+                    </Stroke>
+                </Shape>
+                <Shape name="ToeBumpC" id="0:1170">
+                    <PointsPath name="Path" isClosed="true" id="0:1171">
+                        <CubicMirroredVertex x="231" y="439" rotation="-0.01194" distance="2.881" id="0:1172" />
+                        <CubicMirroredVertex x="239.6" y="440.76" rotation="0.58800" distance="3.101" id="0:1173" />
+                        <CubicMirroredVertex x="243" y="447" rotation="1.52182" distance="2.635" id="0:1174" />
+                        <CubicMirroredVertex x="240.2" y="453.0" rotation="2.46685" distance="2.753" id="0:1175" />
+                        <CubicMirroredVertex x="233" y="455" rotation="-3.13604" distance="3.096" id="0:1176" />
+                        <CubicMirroredVertex x="225.8" y="452.92" rotation="-2.46685" distance="2.753" id="0:1177" />
+                        <CubicMirroredVertex x="223" y="447" rotation="-1.53748" distance="2.581" id="0:1178" />
+                        <CubicMirroredVertex x="226.2" y="440.92" rotation="-0.78540" distance="2.432" id="0:1179" />
+                    </PointsPath>
+                    <Fill name="Fill" id="0:1180">
+                        <SolidColor name="Color" colorValue="FFF6A62B" id="0:1181" />
+                    </Fill>
+                    <Stroke name="Outline" thickness="2.0" join="round" cap="round" id="0:1182">
+                        <SolidColor name="Color" colorValue="FFD97A18" id="0:1183" />
+                    </Stroke>
+                </Shape>
+                <Shape name="FootPad" id="0:1184">
+                    <PointsPath name="Path" isClosed="true" id="0:1185">
+                        <CubicMirroredVertex x="190" y="449" rotation="-1.91382" distance="3.196" id="0:1186" />
+                        <CubicMirroredVertex x="198" y="440" rotation="-0.44752" distance="5.962" id="0:1187" />
+                        <CubicMirroredVertex x="215" y="437" rotation="0.00000" distance="7.525" id="0:1188" />
+                        <CubicMirroredVertex x="233" y="440" rotation="0.37433" distance="6.468" id="0:1189" />
+                        <CubicMirroredVertex x="243" y="448" rotation="1.91382" distance="3.196" id="0:1190" />
+                        <CubicMirroredVertex x="228" y="454" rotation="2.99270" distance="8.696" id="0:1191" />
+                        <CubicMirroredVertex x="203" y="454" rotation="-3.01077" distance="8.240" id="0:1192" />
+                    </PointsPath>
+                    <Fill name="Fill" id="0:1193">
+                        <SolidColor name="Color" colorValue="FFF6A62B" id="0:1194" />
+                    </Fill>
+                    <Stroke name="Outline" thickness="2.4" join="round" cap="round" id="0:1195">
+                        <SolidColor name="Color" colorValue="FFD97A18" id="0:1196" />
+                    </Stroke>
+                </Shape>
+            </Node>
+            <Node name="FootR" id="0:1197">
+                <Shape name="ToeBumpA" id="0:1198">
+                    <PointsPath name="Path" isClosed="true" id="0:1199">
+                        <CubicMirroredVertex x="272" y="438" rotation="-0.01119" distance="3.457" id="0:1200" />
+                        <CubicMirroredVertex x="281.92" y="439.98" rotation="0.57134" distance="3.578" id="0:1201" />
+                        <CubicMirroredVertex x="286" y="447" rotation="1.51856" distance="2.965" id="0:1202" />
+                        <CubicMirroredVertex x="282.64" y="453.75" rotation="2.49809" distance="3.225" id="0:1203" />
+                        <CubicMirroredVertex x="274" y="456" rotation="-3.13638" distance="3.715" id="0:1204" />
+                        <CubicMirroredVertex x="265.36" y="453.66" rotation="-2.49809" distance="3.225" id="0:1205" />
+                        <CubicMirroredVertex x="262" y="447" rotation="-1.53526" distance="2.904" id="0:1206" />
+                        <CubicMirroredVertex x="265.84" y="440.16" rotation="-0.73282" distance="2.893" id="0:1207" />
+                    </PointsPath>
+                    <Fill name="Fill" id="0:1208">
+                        <SolidColor name="Color" colorValue="FFF6A62B" id="0:1209" />
+                    </Fill>
+                    <Stroke name="Outline" thickness="2.0" join="round" cap="round" id="0:1210">
+                        <SolidColor name="Color" colorValue="FFD97A18" id="0:1211" />
+                    </Stroke>
+                </Shape>
+                <Shape name="ToeBumpB" id="0:1212">
+                    <PointsPath name="Path" isClosed="true" id="0:1213">
+                        <CubicMirroredVertex x="287" y="439" rotation="-0.01033" distance="3.745" id="0:1214" />
+                        <CubicMirroredVertex x="297.58" y="440.98" rotation="0.54042" distance="3.761" id="0:1215" />
+                        <CubicMirroredVertex x="302" y="448" rotation="1.51421" distance="2.965" id="0:1216" />
+                        <CubicMirroredVertex x="298.36" y="454.75" rotation="2.53605" distance="3.399" id="0:1217" />
+                        <CubicMirroredVertex x="289" y="457" rotation="-3.13678" distance="4.025" id="0:1218" />
+                        <CubicMirroredVertex x="279.64" y="454.66" rotation="-2.53605" distance="3.399" id="0:1219" />
+                        <CubicMirroredVertex x="276" y="448" rotation="-1.53230" distance="2.905" id="0:1220" />
+                        <CubicMirroredVertex x="280.16" y="441.16" rotation="-0.68573" distance="3.056" id="0:1221" />
+                    </PointsPath>
+                    <Fill name="Fill" id="0:1222">
+                        <SolidColor name="Color" colorValue="FFF6A62B" id="0:1223" />
+                    </Fill>
+                    <Stroke name="Outline" thickness="2.0" join="round" cap="round" id="0:1224">
+                        <SolidColor name="Color" colorValue="FFD97A18" id="0:1225" />
+                    </Stroke>
+                </Shape>
+                <Shape name="ToeBumpC" id="0:1226">
+                    <PointsPath name="Path" isClosed="true" id="0:1227">
+                        <CubicMirroredVertex x="303" y="439" rotation="-0.01194" distance="2.881" id="0:1228" />
+                        <CubicMirroredVertex x="311.6" y="440.76" rotation="0.58800" distance="3.101" id="0:1229" />
+                        <CubicMirroredVertex x="315" y="447" rotation="1.52182" distance="2.635" id="0:1230" />
+                        <CubicMirroredVertex x="312.2" y="453.0" rotation="2.46685" distance="2.753" id="0:1231" />
+                        <CubicMirroredVertex x="305" y="455" rotation="-3.13604" distance="3.096" id="0:1232" />
+                        <CubicMirroredVertex x="297.8" y="452.92" rotation="-2.46685" distance="2.753" id="0:1233" />
+                        <CubicMirroredVertex x="295" y="447" rotation="-1.53748" distance="2.581" id="0:1234" />
+                        <CubicMirroredVertex x="298.2" y="440.92" rotation="-0.78540" distance="2.432" id="0:1235" />
+                    </PointsPath>
+                    <Fill name="Fill" id="0:1236">
+                        <SolidColor name="Color" colorValue="FFF6A62B" id="0:1237" />
+                    </Fill>
+                    <Stroke name="Outline" thickness="2.0" join="round" cap="round" id="0:1238">
+                        <SolidColor name="Color" colorValue="FFD97A18" id="0:1239" />
+                    </Stroke>
+                </Shape>
+                <Shape name="FootPad" id="0:1240">
+                    <PointsPath name="Path" isClosed="true" id="0:1241">
+                        <CubicMirroredVertex x="262" y="449" rotation="-1.91382" distance="3.196" id="0:1242" />
+                        <CubicMirroredVertex x="270" y="440" rotation="-0.44752" distance="5.962" id="0:1243" />
+                        <CubicMirroredVertex x="287" y="437" rotation="0.00000" distance="7.525" id="0:1244" />
+                        <CubicMirroredVertex x="305" y="440" rotation="0.37433" distance="6.468" id="0:1245" />
+                        <CubicMirroredVertex x="315" y="448" rotation="1.91382" distance="3.196" id="0:1246" />
+                        <CubicMirroredVertex x="300" y="454" rotation="2.99270" distance="8.696" id="0:1247" />
+                        <CubicMirroredVertex x="275" y="454" rotation="-3.01077" distance="8.240" id="0:1248" />
+                    </PointsPath>
+                    <Fill name="Fill" id="0:1249">
+                        <SolidColor name="Color" colorValue="FFF6A62B" id="0:1250" />
+                    </Fill>
+                    <Stroke name="Outline" thickness="2.4" join="round" cap="round" id="0:1251">
+                        <SolidColor name="Color" colorValue="FFD97A18" id="0:1252" />
+                    </Stroke>
+                </Shape>
+            </Node>
+        </Node>
+        <Node name="Tail" id="0:1253">
+            <Shape name="TailLeft" id="0:1254">
+                <PointsPath name="Path" isClosed="true" id="0:1255">
+                    <CubicMirroredVertex x="189" y="388" rotation="-2.75327" distance="10.221" id="0:1256" />
+                    <CubicMirroredVertex x="157" y="396" rotation="2.59373" distance="14.860" id="0:1257" />
+                    <CubicMirroredVertex x="130" y="424" rotation="1.76401" distance="10.078" id="0:1258" />
+                    <CubicMirroredVertex x="148" y="442" rotation="0.17467" distance="11.134" id="0:1259" />
+                    <CubicMirroredVertex x="181" y="433" rotation="-0.48603" distance="12.887" id="0:1260" />
+                    <CubicMirroredVertex x="201" y="414" rotation="-1.39486" distance="9.827" id="0:1261" />
+                </PointsPath>
+                <Fill name="Fill" id="0:1262">
+                    <SolidColor name="Color" colorValue="FF286B3B" id="0:1263" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.7" join="round" cap="round" id="0:1264">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:1265" />
+                </Stroke>
+            </Shape>
+            <Shape name="TailRight" id="0:1266">
+                <PointsPath name="Path" isClosed="true" id="0:1267">
+                    <CubicMirroredVertex x="301" y="414" rotation="1.39486" distance="9.827" id="0:1268" />
+                    <CubicMirroredVertex x="321" y="433" rotation="0.48603" distance="12.887" id="0:1269" />
+                    <CubicMirroredVertex x="354" y="442" rotation="-0.17467" distance="11.134" id="0:1270" />
+                    <CubicMirroredVertex x="372" y="424" rotation="-1.76401" distance="10.078" id="0:1271" />
+                    <CubicMirroredVertex x="345" y="396" rotation="-2.59373" distance="14.860" id="0:1272" />
+                    <CubicMirroredVertex x="313" y="388" rotation="2.75327" distance="10.221" id="0:1273" />
+                </PointsPath>
+                <Fill name="Fill" id="0:1274">
+                    <SolidColor name="Color" colorValue="FF286B3B" id="0:1275" />
+                </Fill>
+                <Stroke name="Outline" thickness="2.7" join="round" cap="round" id="0:1276">
+                    <SolidColor name="Color" colorValue="FF173F2A" id="0:1277" />
+                </Stroke>
+            </Shape>
+        </Node>
+        <Node name="GroundShadow" id="0:1278">
+            <Shape name="Shadow" id="0:1279">
+                <PointsPath name="Path" isClosed="true" id="0:1280">
+                    <CubicMirroredVertex x="249" y="450" rotation="-0.00129" distance="29.962" id="0:1281" />
+                    <CubicMirroredVertex x="319.64" y="451.98" rotation="0.08470" distance="22.872" id="0:1282" />
+                    <CubicMirroredVertex x="355" y="459" rotation="1.14532" distance="3.250" id="0:1283" />
+                    <CubicMirroredVertex x="325.88" y="465.75" rotation="3.05527" distance="22.444" id="0:1284" />
+                    <CubicMirroredVertex x="251" y="468" rotation="-3.14099" distance="32.198" id="0:1285" />
+                    <CubicMirroredVertex x="176.12" y="465.66" rotation="-3.05527" distance="22.444" id="0:1286" />
+                    <CubicMirroredVertex x="147" y="459" rotation="-1.27188" distance="3.037" id="0:1287" />
+                    <CubicMirroredVertex x="180.28" y="452.16" rotation="-0.08801" distance="22.015" id="0:1288" />
+                </PointsPath>
+                <Fill name="Fill" id="0:1289">
+                    <SolidColor name="Color" colorValue="2B173F2A" id="0:1290" />
+                </Fill>
+            </Shape>
+        </Node>
+    </Artboard>
+</Rive>

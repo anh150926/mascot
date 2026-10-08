@@ -1,0 +1,92 @@
+{
+  "type": "DataEnumCustom",
+  "typeKey": 438,
+  "authorable": true,
+  "extends": [
+    "DataEnum"
+  ],
+  "properties": [
+    {
+      "name": "splitKeyValues",
+      "owner": "DataEnumCustom",
+      "type": "bool",
+      "key": 571,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "false",
+      "description": "Whether the user can edit keys and values separately."
+    },
+    {
+      "name": "name",
+      "owner": "DataEnumCustom",
+      "type": "String",
+      "key": 572,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Non-unique identifier, used to give friendly names to enums."
+    },
+    {
+      "name": "shouldPublish",
+      "owner": "DataEnumCustom",
+      "type": "bool",
+      "key": 849,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "true",
+      "description": "An option to opt-out of publishing a component."
+    },
+    {
+      "name": "order",
+      "owner": "DataEnum",
+      "type": "FractionalIndex",
+      "key": 570,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Order value for sorting data enums. NOTE: This value is used in the former subdivided data panel. The updated panel uses a unified order value via the ParentableDataItem mixin."
+    },
+    {
+      "name": "parentId",
+      "owner": "DataEnum",
+      "type": "Id",
+      "key": 842,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Id of a parent folder within the data panel tree."
+    },
+    {
+      "name": "groupId",
+      "owner": "DataEnum",
+      "type": "Id",
+      "key": 878,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Id of the data source/type group. Typically either a group representing a library or an data type."
+    },
+    {
+      "name": "displayOrder",
+      "owner": "DataEnum",
+      "type": "FractionalIndex",
+      "key": 845,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Order items should be displayed within the updated data panel."
+    },
+    {
+      "name": "tagIds",
+      "owner": "DataEnum",
+      "type": "List<Id>",
+      "key": 382,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Assigned tag ids."
+    }
+  ]
+}

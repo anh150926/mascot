@@ -1,0 +1,33 @@
+{
+  "names": ["Runtime", "Main", "Mascot", "mood", "isAsleep", "wave", "Idle", "Blink", "Ears", "Core", "Mood", "Gesture", "Sleep", "idle_breathe", "blink", "hello_wave", "sleep_loop", "wake_startle", "WakeOnTap", "AICore"],
+  "captures": [
+    {"id":"t1-default","advance":1,"expect":{"mood":"neutral","isAsleep":false}},
+    {"id":"t3-small","viewport":"80x80","advance":1},
+    {"id":"t5-rest","advance":1},
+    {"id":"t5-inhale","advance":75},
+    {"id":"t5-seam","advance":151},
+    {"id":"t5-eyes-open","advance":200},
+    {"id":"t5-eyes-shut","advance":206},
+    {"id":"t6-neutral","data":["mood=neutral"],"advance":24,"expect":{"mood":"neutral"}},
+    {"id":"t6-happy","data":["mood=happy"],"advance":24,"expect":{"mood":"happy"}},
+    {"id":"t6-wink","data":["mood=wink"],"advance":24,"expect":{"mood":"wink"}},
+    {"id":"t6-focus","data":["mood=focus"],"advance":24,"expect":{"mood":"focus"}},
+    {"id":"t7-surprised","data":["mood=surprised"],"advance":24,"expect":{"mood":"surprised"}},
+    {"id":"t7-sleepy","data":["mood=sleepy"],"advance":24,"expect":{"mood":"sleepy"}},
+    {"id":"t7-confused","data":["mood=confused"],"advance":24,"expect":{"mood":"confused"}},
+    {"id":"t7-happy-blink","data":["mood=happy"],"advance":206},
+    {"id":"t7-sleepy-blink","data":["mood=sleepy"],"advance":206},
+    {"id":"t8-letterbox","viewport":"720x480","advance":1},
+    {"id":"t9-awake","advance":90,"expect":{"isAsleep":false}},
+    {"id":"t9-asleep","data":["isAsleep=true"],"advance":90,"expect":{"isAsleep":true}},
+    {"id":"t9-startle","data":["isAsleep=true"],"steps":["--advance=60","--pointer=click@250,350","--advance=12"],"expect":{"isAsleep":false}},
+    {"id":"t9-awake-after","data":["isAsleep=true"],"steps":["--advance=60","--pointer=click@250,350","--advance=160"],"expect":{"isAsleep":false}},
+    {"id":"t9-sleep-wave","data":["isAsleep=true","wave=1"],"advance":90,"expect":{"isAsleep":true}},
+    {"id":"t10-rest","advance":22},
+    {"id":"t10-wave","data":["wave=1"],"advance":22},
+    {"id":"t10-wave-mid","data":["wave=1"],"advance":52},
+    {"id":"t10-wave-end","data":["wave=1"],"advance":80},
+    {"id":"t10-after","data":["wave=1"],"advance":200},
+    {"id":"t10-baseline-after","advance":200}
+  ]
+}

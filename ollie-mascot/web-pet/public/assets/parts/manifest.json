@@ -1,0 +1,178 @@
+{
+  "head": {
+    "file": "head.png",
+    "width": 341,
+    "height": 323,
+    "sourceRect": [
+      7,
+      44,
+      333,
+      315
+    ]
+  },
+  "body": {
+    "file": "body.png",
+    "width": 298,
+    "height": 315,
+    "sourceRect": [
+      353,
+      44,
+      290,
+      307
+    ]
+  },
+  "wing-left": {
+    "file": "wing-left.png",
+    "width": 200,
+    "height": 348,
+    "sourceRect": [
+      685,
+      28,
+      192,
+      340
+    ]
+  },
+  "wing-right": {
+    "file": "wing-right.png",
+    "width": 193,
+    "height": 347,
+    "sourceRect": [
+      999,
+      29,
+      185,
+      339
+    ]
+  },
+  "eye-left": {
+    "file": "eye-left.png",
+    "width": 229,
+    "height": 206,
+    "sourceRect": [
+      58,
+      421,
+      221,
+      198
+    ]
+  },
+  "eye-right": {
+    "file": "eye-right.png",
+    "width": 223,
+    "height": 207,
+    "sourceRect": [
+      374,
+      421,
+      215,
+      199
+    ]
+  },
+  "lid-left": {
+    "file": "lid-left.png",
+    "width": 227,
+    "height": 85,
+    "sourceRect": [
+      665,
+      487,
+      219,
+      77
+    ]
+  },
+  "lid-right": {
+    "file": "lid-right.png",
+    "width": 220,
+    "height": 84,
+    "sourceRect": [
+      1003,
+      489,
+      212,
+      76
+    ]
+  },
+  "beak-closed": {
+    "file": "beak-closed.png",
+    "width": 157,
+    "height": 149,
+    "sourceRect": [
+      90,
+      710,
+      149,
+      141
+    ]
+  },
+  "beak-open": {
+    "file": "beak-open.png",
+    "width": 169,
+    "height": 166,
+    "sourceRect": [
+      388,
+      694,
+      161,
+      158
+    ]
+  },
+  "foot-left": {
+    "file": "foot-left.png",
+    "width": 202,
+    "height": 179,
+    "sourceRect": [
+      665,
+      690,
+      194,
+      171
+    ]
+  },
+  "foot-right": {
+    "file": "foot-right.png",
+    "width": 206,
+    "height": 179,
+    "sourceRect": [
+      1015,
+      691,
+      198,
+      171
+    ]
+  },
+  "sprout": {
+    "file": "sprout.png",
+    "width": 276,
+    "height": 303,
+    "sourceRect": [
+      30,
+      910,
+      268,
+      295
+    ]
+  },
+  "backpack": {
+    "file": "backpack.png",
+    "width": 308,
+    "height": 296,
+    "sourceRect": [
+      331,
+      901,
+      300,
+      288
+    ]
+  },
+  "apple": {
+    "file": "apple.png",
+    "width": 226,
+    "height": 253,
+    "sourceRect": [
+      681,
+      938,
+      218,
+      245
+    ]
+  },
+  "tail": {
+    "file": "tail.png",
+    "width": 292,
+    "height": 251,
+    "sourceRect": [
+      942,
+      954,
+      284,
+      243
+    ]
+  }
+}

@@ -1,0 +1,321 @@
+{
+  "coordinate_space": "Local transforms in 500x500 artboard; parent transforms compose at runtime.",
+  "nodes": [
+    {
+      "type": "Node",
+      "name": "Character",
+      "id": "0:10",
+      "parent": "Runtime",
+      "local_transform": {
+        "x": 250.0,
+        "y": 478.0,
+        "rotation": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0
+      }
+    },
+    {
+      "type": "Node",
+      "name": "Head",
+      "id": "0:11",
+      "parent": "Character",
+      "local_transform": {
+        "x": 0.0,
+        "y": -186.0,
+        "rotation": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0
+      }
+    },
+    {
+      "type": "Node",
+      "name": "HeadSprout",
+      "id": "0:12",
+      "parent": "Head",
+      "local_transform": {
+        "x": 0.0,
+        "y": -178.0,
+        "rotation": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0
+      }
+    },
+    {
+      "type": "Node",
+      "name": "Face",
+      "id": "0:15",
+      "parent": "Head",
+      "local_transform": {
+        "x": 0.0,
+        "y": 0.0,
+        "rotation": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0
+      }
+    },
+    {
+      "type": "Solo",
+      "name": "FxSet",
+      "id": "0:19",
+      "parent": "Face",
+      "local_transform": {
+        "x": 0.0,
+        "y": 0.0,
+        "rotation": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0
+      }
+    },
+    {
+      "type": "Solo",
+      "name": "MouthSet",
+      "id": "0:18",
+      "parent": "Face",
+      "local_transform": {
+        "x": 0.0,
+        "y": -42.0,
+        "rotation": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0
+      }
+    },
+    {
+      "type": "Node",
+      "name": "EyeBlink",
+      "id": "0:16",
+      "parent": "Face",
+      "local_transform": {
+        "x": 0.0,
+        "y": -68.31578947368422,
+        "rotation": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0
+      }
+    },
+    {
+      "type": "Solo",
+      "name": "EyesSet",
+      "id": "0:17",
+      "parent": "EyeBlink",
+      "local_transform": {
+        "x": 0.0,
+        "y": 0.0,
+        "rotation": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0
+      }
+    },
+    {
+      "type": "Node",
+      "name": "HeadTufts",
+      "id": "0:13",
+      "parent": "Head",
+      "local_transform": {
+        "x": 0.0,
+        "y": 0.0,
+        "rotation": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0
+      }
+    },
+    {
+      "type": "Node",
+      "name": "WingL",
+      "id": "0:20",
+      "parent": "Character",
+      "local_transform": {
+        "x": -84.0,
+        "y": -160.0,
+        "rotation": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0
+      }
+    },
+    {
+      "type": "Node",
+      "name": "WingR",
+      "id": "0:21",
+      "parent": "Character",
+      "local_transform": {
+        "x": 84.0,
+        "y": -160.0,
+        "rotation": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0
+      }
+    },
+    {
+      "type": "Node",
+      "name": "Body",
+      "id": "0:23",
+      "parent": "Character",
+      "local_transform": {
+        "x": 0.0,
+        "y": 0.0,
+        "rotation": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0
+      }
+    },
+    {
+      "type": "Node",
+      "name": "AICore",
+      "id": "0:900",
+      "parent": "Body",
+      "local_transform": {
+        "x": 0.0,
+        "y": -112.37001594896333,
+        "rotation": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0
+      }
+    },
+    {
+      "type": "Node",
+      "name": "FootL",
+      "id": "0:1427",
+      "parent": "Body",
+      "local_transform": {
+        "x": -34.0,
+        "y": -30.0,
+        "rotation": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0
+      }
+    },
+    {
+      "type": "Node",
+      "name": "FootR",
+      "id": "0:1447",
+      "parent": "Body",
+      "local_transform": {
+        "x": 38.0,
+        "y": -30.0,
+        "rotation": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0
+      }
+    }
+  ],
+  "animations": [
+    {
+      "name": "idle_breathe",
+      "id": "0:400",
+      "frames": 150,
+      "fps": 60,
+      "loop": "loop"
+    },
+    {
+      "name": "blink",
+      "id": "0:401",
+      "frames": 240,
+      "fps": 60,
+      "loop": "loop"
+    },
+    {
+      "name": "blink_off",
+      "id": "0:403",
+      "frames": 1,
+      "fps": 60,
+      "loop": "oneShot"
+    },
+    {
+      "name": "ear_twitch",
+      "id": "0:402",
+      "frames": 300,
+      "fps": 60,
+      "loop": "loop"
+    },
+    {
+      "name": "mood_neutral",
+      "id": "0:410",
+      "frames": 180,
+      "fps": 60,
+      "loop": "loop"
+    },
+    {
+      "name": "mood_happy",
+      "id": "0:411",
+      "frames": 40,
+      "fps": 60,
+      "loop": "loop"
+    },
+    {
+      "name": "mood_wink",
+      "id": "0:412",
+      "frames": 60,
+      "fps": 60,
+      "loop": "loop"
+    },
+    {
+      "name": "mood_focus",
+      "id": "0:413",
+      "frames": 24,
+      "fps": 60,
+      "loop": "loop"
+    },
+    {
+      "name": "mood_surprised",
+      "id": "0:414",
+      "frames": 120,
+      "fps": 60,
+      "loop": "loop"
+    },
+    {
+      "name": "mood_sleepy",
+      "id": "0:415",
+      "frames": 200,
+      "fps": 60,
+      "loop": "loop"
+    },
+    {
+      "name": "mood_confused",
+      "id": "0:416",
+      "frames": 120,
+      "fps": 60,
+      "loop": "loop"
+    },
+    {
+      "name": "sleep_loop",
+      "id": "0:420",
+      "frames": 240,
+      "fps": 60,
+      "loop": "loop"
+    },
+    {
+      "name": "wake_startle",
+      "id": "0:421",
+      "frames": 72,
+      "fps": 60,
+      "loop": "oneShot"
+    },
+    {
+      "name": "sleep_none",
+      "id": "0:422",
+      "frames": 1,
+      "fps": 60,
+      "loop": "oneShot"
+    },
+    {
+      "name": "hello_wave",
+      "id": "0:423",
+      "frames": 110,
+      "fps": 60,
+      "loop": "oneShot"
+    },
+    {
+      "name": "gesture_none",
+      "id": "0:424",
+      "frames": 1,
+      "fps": 60,
+      "loop": "oneShot"
+    },
+    {
+      "name": "core_breathe",
+      "id": "0:425",
+      "frames": 150,
+      "fps": 60,
+      "loop": "loop"
+    }
+  ]
+}

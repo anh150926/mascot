@@ -1,0 +1,68 @@
+{
+  "type": "DataBindContext",
+  "typeKey": 447,
+  "authorable": true,
+  "extends": [
+    "DataBind"
+  ],
+  "properties": [
+    {
+      "name": "sourcePathIds",
+      "owner": "DataBindContext",
+      "type": "List<Id>",
+      "key": 588,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Path to the selected property."
+    },
+    {
+      "name": "targetId",
+      "owner": "DataBind",
+      "type": "Id",
+      "key": 585,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Identifier used to track the object that is targetted."
+    },
+    {
+      "name": "propertyKey",
+      "owner": "DataBind",
+      "type": "uint",
+      "key": 586,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "CoreContext.invalidPropertyKey",
+      "description": "The property that is targeted."
+    },
+    {
+      "name": "flags",
+      "owner": "DataBind",
+      "type": "uint",
+      "key": 587,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "0",
+      "bits": [
+        "direction",
+        "twoWay",
+        "once",
+        "sourceToTargetRunsFirst",
+        "nameBased"
+      ]
+    },
+    {
+      "name": "converterId",
+      "owner": "DataBind",
+      "type": "Id",
+      "key": 660,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Identifier used to link to a data converter."
+    }
+  ]
+}

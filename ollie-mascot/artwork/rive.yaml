@@ -1,0 +1,4 @@
+name: ollie-front
+main: Front
+exclude:
+  - build

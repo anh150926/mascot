@@ -1,0 +1,48 @@
+{
+  "type": "DataEnumValue",
+  "typeKey": 445,
+  "authorable": true,
+  "extends": [],
+  "properties": [
+    {
+      "name": "key",
+      "owner": "DataEnumValue",
+      "type": "String",
+      "key": 578,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "The key of this key value enum pair."
+    },
+    {
+      "name": "value",
+      "owner": "DataEnumValue",
+      "type": "String",
+      "key": 579,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "The value of this key value enum pair."
+    },
+    {
+      "name": "enumId",
+      "owner": "DataEnumValue",
+      "type": "Id",
+      "key": 580,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "The id of the enum property this value belongs to."
+    },
+    {
+      "name": "order",
+      "owner": "DataEnumValue",
+      "type": "FractionalIndex",
+      "key": 581,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Order value for sorting enum values."
+    }
+  ]
+}

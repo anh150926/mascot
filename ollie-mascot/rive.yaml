@@ -1,0 +1,19 @@
+name: ollie-mascot
+main: Runtime
+exclude:
+  - data.rml
+  - data
+  - speech
+  - docs
+  - tools
+  - tests
+  - reference
+  - dist
+  - artwork
+  - playground
+  - web-pet
+  - visual-v2
+  - visual-v3
+logs:
+  file: build/rive.log
+  problems: build/problems.log

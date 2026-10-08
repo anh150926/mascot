@@ -1,0 +1,679 @@
+{
+  "type": "Artboard",
+  "typeKey": 1,
+  "authorable": true,
+  "extends": [
+    "LayoutComponent",
+    "Drawable",
+    "Node",
+    "TransformComponent",
+    "WorldTransformComponent",
+    "ContainerComponent",
+    "Component",
+    "ArtboardProvider"
+  ],
+  "properties": [
+    {
+      "name": "originX",
+      "owner": "Artboard",
+      "type": "double",
+      "key": 11,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "0",
+      "description": "Origin x in normalized coordinates (0.5 = center, 0 = left, 1 = right)."
+    },
+    {
+      "name": "originY",
+      "owner": "Artboard",
+      "type": "double",
+      "key": 12,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "0",
+      "description": "Origin y in normalized coordinates (0.5 = center, 0 = top, 1 = bottom)."
+    },
+    {
+      "name": "defaultStateMachineId",
+      "owner": "Artboard",
+      "type": "Id",
+      "key": 236,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "The default StateMachine attached to this artboard automatically when it is initialized."
+    },
+    {
+      "name": "animationsScrollOffset",
+      "owner": "Artboard",
+      "type": "double",
+      "key": 257,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "0.0",
+      "description": "Scroll offset of the animation list"
+    },
+    {
+      "name": "expandedComponents",
+      "owner": "Artboard",
+      "type": "List<Id>",
+      "key": 267,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "List of expanded components"
+    },
+    {
+      "name": "expandedFolders",
+      "owner": "Artboard",
+      "type": "List<Id>",
+      "key": 283,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "List of expanded folders"
+    },
+    {
+      "name": "selectedAnimations",
+      "owner": "Artboard",
+      "type": "List<Id>",
+      "key": 291,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "List of selected animations"
+    },
+    {
+      "name": "viewModelId",
+      "owner": "Artboard",
+      "type": "Id",
+      "key": 583,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "The view model attached to this artboard data context."
+    },
+    {
+      "name": "viewModelInstanceId",
+      "owner": "Artboard",
+      "type": "Id",
+      "key": 584,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "A view model instance attached for editing purposes."
+    },
+    {
+      "name": "isComponent",
+      "owner": "Artboard",
+      "type": "bool",
+      "key": 792,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "false",
+      "description": "Mark the artboard as a reusable component."
+    },
+    {
+      "name": "includeInExport",
+      "owner": "Artboard",
+      "type": "bool",
+      "key": 802,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "true",
+      "description": "If artboard should be exported"
+    },
+    {
+      "name": "openAnimations",
+      "owner": "Artboard",
+      "type": "List<Id>",
+      "key": 949,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "List of timelines and state machines currenty open."
+    },
+    {
+      "name": "previewAnimationId",
+      "owner": "Artboard",
+      "type": "Id",
+      "key": 1039,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "The open animation (timeline or state machine) that is a preview tab, if any."
+    },
+    {
+      "name": "artboardKind",
+      "owner": "Artboard",
+      "type": "uint",
+      "key": 1072,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "regular",
+      "accepts": [
+        "regular",
+        "textInput"
+      ],
+      "values": [
+        {
+          "name": "regular",
+          "value": 0
+        },
+        {
+          "name": "textInput",
+          "value": 1
+        }
+      ],
+      "description": "The kind of artboard that is being rendered. 0 is regular, 1 is textInput."
+    },
+    {
+      "name": "spaceId",
+      "owner": "Artboard",
+      "type": "Id",
+      "key": 440,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Edit-time only Space this artboard is filed under. Coop-synced and undoable because space membership is shared document structure, but runtime:false -- Artboard IS written to a .riv, so a runtime-visible spaceId would land in every exported artboard. Deliberately a plain Id rather than parentId: Artboard.validate() requires parent == null."
+    },
+    {
+      "name": "shouldPublish",
+      "owner": "Artboard",
+      "type": "bool",
+      "key": 849,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "true",
+      "description": "An option to opt-out of publishing a component."
+    },
+    {
+      "name": "clip",
+      "owner": "LayoutComponent",
+      "type": "bool",
+      "key": 196,
+      "animatable": true,
+      "bindable": true,
+      "derived": false,
+      "default": "false",
+      "description": "True when the layout component bounds clip its contents."
+    },
+    {
+      "name": "width",
+      "owner": "LayoutComponent",
+      "type": "double",
+      "key": 7,
+      "animatable": true,
+      "bindable": true,
+      "derived": false,
+      "default": "0",
+      "description": "Initial width of the item."
+    },
+    {
+      "name": "height",
+      "owner": "LayoutComponent",
+      "type": "double",
+      "key": 8,
+      "animatable": true,
+      "bindable": true,
+      "derived": false,
+      "default": "0",
+      "description": "Initial height of the item."
+    },
+    {
+      "name": "styleId",
+      "owner": "LayoutComponent",
+      "type": "Id",
+      "key": 494,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "LayoutStyle that defines the styling for this LayoutComponent"
+    },
+    {
+      "name": "fractionalWidth",
+      "owner": "LayoutComponent",
+      "type": "double",
+      "key": 706,
+      "animatable": true,
+      "bindable": true,
+      "derived": false,
+      "default": "1",
+      "description": "Initial fractional width of the item when using scaleType fill."
+    },
+    {
+      "name": "fractionalHeight",
+      "owner": "LayoutComponent",
+      "type": "double",
+      "key": 707,
+      "animatable": true,
+      "bindable": true,
+      "derived": false,
+      "default": "1",
+      "description": "Initial fractional height of the item when using scaleType fill."
+    },
+    {
+      "name": "blendModeValue",
+      "owner": "Drawable",
+      "type": "uint8",
+      "key": 23,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "srcOver",
+      "accepts": [
+        "srcOver",
+        "additive",
+        "screen",
+        "overlay",
+        "darken",
+        "lighten",
+        "colorDodge",
+        "colorBurn",
+        "hardLight",
+        "softLight",
+        "difference",
+        "exclusion",
+        "multiply",
+        "hue",
+        "saturation",
+        "color",
+        "luminosity"
+      ],
+      "values": [
+        {
+          "name": "srcOver",
+          "value": 3
+        },
+        {
+          "name": "additive",
+          "value": 12
+        },
+        {
+          "name": "screen",
+          "value": 14
+        },
+        {
+          "name": "overlay",
+          "value": 15
+        },
+        {
+          "name": "darken",
+          "value": 16
+        },
+        {
+          "name": "lighten",
+          "value": 17
+        },
+        {
+          "name": "colorDodge",
+          "value": 18
+        },
+        {
+          "name": "colorBurn",
+          "value": 19
+        },
+        {
+          "name": "hardLight",
+          "value": 20
+        },
+        {
+          "name": "softLight",
+          "value": 21
+        },
+        {
+          "name": "difference",
+          "value": 22
+        },
+        {
+          "name": "exclusion",
+          "value": 23
+        },
+        {
+          "name": "multiply",
+          "value": 24
+        },
+        {
+          "name": "hue",
+          "value": 25
+        },
+        {
+          "name": "saturation",
+          "value": 26
+        },
+        {
+          "name": "color",
+          "value": 27
+        },
+        {
+          "name": "luminosity",
+          "value": 28
+        }
+      ]
+    },
+    {
+      "name": "additiveAmount",
+      "owner": "Drawable",
+      "type": "uint8",
+      "key": 450,
+      "animatable": true,
+      "bindable": true,
+      "derived": false,
+      "default": "255",
+      "description": "How much of the additive blend mode to mix in, 0-255. Only meaningful when blendModeValue is additive."
+    },
+    {
+      "name": "isTargetOpaque",
+      "owner": "Drawable",
+      "type": "bool",
+      "key": 477,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "false"
+    },
+    {
+      "name": "drawableFlags",
+      "owner": "Drawable",
+      "type": "uint16",
+      "key": 129,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "0"
+    },
+    {
+      "name": "x",
+      "owner": "Node",
+      "type": "double",
+      "key": 13,
+      "animatable": true,
+      "bindable": true,
+      "derived": false,
+      "default": "0"
+    },
+    {
+      "name": "y",
+      "owner": "Node",
+      "type": "double",
+      "key": 14,
+      "animatable": true,
+      "bindable": true,
+      "derived": false,
+      "default": "0"
+    },
+    {
+      "name": "styleValue",
+      "owner": "Node",
+      "type": "uint",
+      "key": 176,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "group",
+      "accepts": [
+        "group",
+        "target",
+        "targetSmall",
+        "square",
+        "squareSmall",
+        "triangle",
+        "triangleSmall"
+      ],
+      "values": [
+        {
+          "name": "group",
+          "value": 0
+        },
+        {
+          "name": "target",
+          "value": 1
+        },
+        {
+          "name": "targetSmall",
+          "value": 2
+        },
+        {
+          "name": "square",
+          "value": 3
+        },
+        {
+          "name": "squareSmall",
+          "value": 4
+        },
+        {
+          "name": "triangle",
+          "value": 5
+        },
+        {
+          "name": "triangleSmall",
+          "value": 6
+        }
+      ],
+      "description": "Display style of the node in the editor. 0 for group and 1 for target."
+    },
+    {
+      "name": "computedLocalX",
+      "owner": "Node",
+      "type": "double",
+      "key": 806,
+      "animatable": false,
+      "bindable": true,
+      "derived": true,
+      "default": "0"
+    },
+    {
+      "name": "computedLocalY",
+      "owner": "Node",
+      "type": "double",
+      "key": 807,
+      "animatable": false,
+      "bindable": true,
+      "derived": true,
+      "default": "0"
+    },
+    {
+      "name": "computedWorldX",
+      "owner": "Node",
+      "type": "double",
+      "key": 808,
+      "animatable": false,
+      "bindable": true,
+      "derived": true,
+      "default": "0"
+    },
+    {
+      "name": "computedWorldY",
+      "owner": "Node",
+      "type": "double",
+      "key": 809,
+      "animatable": false,
+      "bindable": true,
+      "derived": true,
+      "default": "0"
+    },
+    {
+      "name": "computedRootX",
+      "owner": "Node",
+      "type": "double",
+      "key": 864,
+      "animatable": false,
+      "bindable": true,
+      "derived": true,
+      "default": "0"
+    },
+    {
+      "name": "computedRootY",
+      "owner": "Node",
+      "type": "double",
+      "key": 865,
+      "animatable": false,
+      "bindable": true,
+      "derived": true,
+      "default": "0"
+    },
+    {
+      "name": "computedWidth",
+      "owner": "Node",
+      "type": "double",
+      "key": 810,
+      "animatable": false,
+      "bindable": true,
+      "derived": true,
+      "default": "0"
+    },
+    {
+      "name": "computedHeight",
+      "owner": "Node",
+      "type": "double",
+      "key": 811,
+      "animatable": false,
+      "bindable": true,
+      "derived": true,
+      "default": "0"
+    },
+    {
+      "name": "rotation",
+      "owner": "TransformComponent",
+      "type": "double",
+      "key": 15,
+      "animatable": true,
+      "bindable": true,
+      "derived": false,
+      "default": "0"
+    },
+    {
+      "name": "scaleX",
+      "owner": "TransformComponent",
+      "type": "double",
+      "key": 16,
+      "animatable": true,
+      "bindable": true,
+      "derived": false,
+      "default": "1"
+    },
+    {
+      "name": "scaleY",
+      "owner": "TransformComponent",
+      "type": "double",
+      "key": 17,
+      "animatable": true,
+      "bindable": true,
+      "derived": false,
+      "default": "1"
+    },
+    {
+      "name": "stageColor",
+      "owner": "TransformComponent",
+      "type": "Color",
+      "key": 244,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "0x80FFFFFF",
+      "description": "Editor-only color of the component's stage affordance (bone, group icon)."
+    },
+    {
+      "name": "opacity",
+      "owner": "WorldTransformComponent",
+      "type": "double",
+      "key": 18,
+      "animatable": true,
+      "bindable": true,
+      "derived": false,
+      "default": "1"
+    },
+    {
+      "name": "dependentIds",
+      "owner": "Component",
+      "type": "List<Id>",
+      "key": 3,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "List of integer ids for objects registered in the same context that depend on this object."
+    },
+    {
+      "name": "name",
+      "owner": "Component",
+      "type": "String",
+      "key": 4,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Non-unique identifier, used to give friendly names to elements in the hierarchy. Runtimes provide an API for finding components by this [name]."
+    },
+    {
+      "name": "exportName",
+      "owner": "Component",
+      "type": "bool",
+      "key": 544,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "false",
+      "description": "Flag to export the name property for runtime."
+    },
+    {
+      "name": "parentId",
+      "owner": "Component",
+      "type": "Id",
+      "key": 5,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Identifier used to track parent ContainerComponent."
+    },
+    {
+      "name": "childOrder",
+      "owner": "Component",
+      "type": "FractionalIndex",
+      "key": 6,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Order value for sorting child elements in ContainerComponent parent."
+    },
+    {
+      "name": "flags",
+      "owner": "Component",
+      "type": "uint",
+      "key": 130,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "default": "0",
+      "bits": [
+        "hidden",
+        "locked",
+        "disconnected",
+        "opaque",
+        "guide",
+        "isolated",
+        "visibleOverride",
+        "unlockedOverride",
+        "participatesInLayout",
+        "complexDependency",
+        "selectable"
+      ],
+      "description": "Component state. Runtime export folds visibility and selectable state into drawable flags; editor-only flags stay in the editor."
+    },
+    {
+      "name": "tagIds",
+      "owner": "Component",
+      "type": "List<Id>",
+      "key": 382,
+      "animatable": false,
+      "bindable": false,
+      "derived": false,
+      "description": "Assigned tag ids."
+    }
+  ]
+}
