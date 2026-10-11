@@ -46,12 +46,14 @@ def write_review(report):
 <h2>01 / Kiểm tra đúng nhân vật</h2><div class="compare"><figure><img src="reference/front-500.png" alt="Ảnh front gốc người dùng cung cấp"><figcaption>Ảnh chuẩn — giữ nguyên tỉ lệ và vị trí</figcaption></figure><figure><img src="build/front-alpha.png" alt="Ollie vector render bằng Rive"><figcaption>Bản vector — 77 đường, 18 nhóm có hình</figcaption></figure></div>
 <h2>02 / Chồng nét</h2><div class="compare"><figure><div class="overlay"><img src="reference/front-500.png" alt="Ảnh chuẩn"><img id="overlay" style="opacity:.5" src="build/front-alpha.png" alt="Bản vector chồng lên ảnh chuẩn"></div><label>Độ đậm vector <span id="opacity">50%</span><input id="mix" type="range" min="0" max="100" value="50" aria-label="Độ đậm vector"></label></figure><figure><img src="build/trace/landmarks.png" alt="Các điểm neo hình dáng"><figcaption>Mốc đầu lá, tâm mắt, mỏ, cổ, vai, huy hiệu và chân. Chi tiết trong docs/MODEL_BRIEF.md.</figcaption></figure></div>
 <h2>03 / Cấu tạo & từng bộ phận</h2><img class="wide" src="build/construction.png" alt="Các bước dựng Ollie"><img class="wide" src="build/parts.png" alt="Các bộ phận tách riêng">
-<h2>04 / Biểu cảm</h2><img class="wide" src="build/moods/contact-sheet.png" alt="Bảy biểu cảm và tư thế ngủ">
+<h2>04 / Biểu cảm</h2><img class="wide" src="build/moods/contact-sheet.png" alt="Tám biểu cảm cơ bản và tư thế ngủ">
+<h2>04a / Đang suy nghĩ</h2><p>Cánh gần cằm, mắt nhìn chếch lên, đầu nghiêng chậm và ba chấm suy nghĩ. Vòng lặp 3 giây. <a href="docs/THINKING_MOOD.md">Xem phân tích và khung chuyển động</a> · Chọn biểu cảm 8 trong playground để chạy trực tiếp.</p><img class="wide" src="build/thinking-strip.png" alt="Năm khung chuyển động suy nghĩ trong vòng 3 giây">
 <h2>04b / 19 cảnh chuyển động mới</h2><p><a href="playground/index.html#library">Chọn và chạy từng cảnh</a> · <a href="docs/EXPRESSION_STUDY.md">Phân tích bảng sticker, nét mặt, đạo cụ và nhịp chuyển động</a></p><img class="wide" src="playground/frames/expressions-contact.png" alt="19 cảnh Ollie mới: cảm xúc, công việc, sức khỏe và tài chính">
 <h2>05 / Chuyển động</h2><img class="wide" src="build/idle-strip.png" alt="Thở và chớp mắt"><img class="wide" src="build/wave-strip.png" alt="Chuỗi vẫy cánh"><img class="wide" src="build/sleep-strip.png" alt="Ngủ và chạm để thức">
 <h2>06 / Kích thước ứng dụng</h2><div style="display:flex;gap:20px;align-items:end;flex-wrap:wrap"><figure><img width="80" src="build/size-80-alpha.png" alt="80 pixel"><figcaption>80 px</figcaption></figure><figure><img width="120" src="build/size-120-alpha.png" alt="120 pixel"><figcaption>120 px</figcaption></figure><figure><img width="240" src="build/size-240-alpha.png" alt="240 pixel"><figcaption>240 px</figcaption></figure></div>
 <details><summary>Tất cả frame probe (28)</summary><div class="gallery">PROBES</div></details><p class="small">Biểu cảm ngoài front là bản phát triển từ ảnh chuẩn, chưa phải mẫu đã được bạn duyệt. Xem README.md để thêm ảnh và dựng lại.</p></main><script>document.getElementById('mix').addEventListener('input',e=>{document.getElementById('overlay').style.opacity=e.target.value/100;document.getElementById('opacity').textContent=e.target.value+'%'});</script></html>'''
     html=html.replace('</nav>', '<a href="playground/wing-review.html">Cánh Ollie / 95 khung</a></nav>')
+    html=html.replace('frame probe (28)', f'frame probe ({len(report["captures"])})')
     (ROOT/'review.html').write_text(html.replace('PROBES',probes),encoding='utf-8')
 
 
@@ -103,17 +105,20 @@ def main(review_only=False):
     else:
         print('Capture and test animation states',flush=True)
         report=check.main()
-    moods={'neutral':'t6-neutral','happy':'t6-happy','wink':'t6-wink','focus':'t6-focus','surprised':'t7-surprised','sleepy':'t7-sleepy','confused':'t7-confused','sleep':'t9-asleep'}
+    moods={'neutral':'t6-neutral','happy':'t6-happy','wink':'t6-wink','focus':'t6-focus','surprised':'t7-surprised','sleepy':'t7-sleepy','confused':'t7-confused','thinking':'t7-thinking','sleep':'t9-asleep'}
     (BUILD/'moods').mkdir(exist_ok=True)
     mood_images=[]
     for mood,ident in moods.items():
         p=BUILD/f'probe-{ident}.png';shutil.copy2(p,BUILD/'moods'/f'{mood}.png')
         if mood!='sleep':shutil.copy2(p,BUILD/f'{mood}.png')
         mood_images.append((mood,clean(p)))
-    sheet(mood_images,BUILD/'moods/contact-sheet.png',title='OLLIE / EXPRESSIONS')
+    sheet(mood_images,BUILD/'moods/contact-sheet.png',cols=3,title='OLLIE / 8 EXPRESSIONS + SLEEP')
     shutil.copy2(BUILD/'moods/contact-sheet.png',BUILD/'mood-review.png')
     strips={'idle-strip':['t5-rest','t5-inhale','t5-seam','t5-eyes-open','t5-eyes-shut'],'wave-strip':['t10-rest','t10-wave','t10-wave-mid','t10-wave-end','t10-after'],'sleep-strip':['t9-awake','t9-asleep','t9-startle','t9-awake-after']}
     for filename,ids in strips.items():sheet([(n,clean(BUILD/f'probe-{n}.png')) for n in ids],BUILD/f'{filename}.png',cols=len(ids),size=215,title='OLLIE / '+filename.upper())
+    sheet([(f'{percent/100*3:.2f}s',clean(BUILD/f'probe-thinking-{percent}.png'))
+           for percent in (0,25,50,75,100)],BUILD/'thinking-strip.png',cols=5,size=215,
+          title='OLLIE / THINKING / 3s')
     for size in [80,120,240,500]:
         p=BUILD/f'size-{size}.png'
         if not review_only:render(p,viewport=f'{size}x{size}')

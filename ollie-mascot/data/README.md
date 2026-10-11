@@ -33,4 +33,4 @@ Các quy tắc dữ liệu:
 
 `python tools/build_data.py --check` chỉ kiểm tra, không ghi đè model. Sau khi sửa model, dùng `python tools/build_ollie.py` hoặc full build để sinh lại runtime; khi chưa dựng lại, kiểm tra sẽ báo dữ liệu nhúng khác nguồn.
 
-`build/data/rig-map.json` được trích từ runtime thực tế: 15 node chính cùng pivot cục bộ và 36 timeline. Ba Solo bổ sung chứa đạo cụ, nét mặt phụ và hiệu ứng nền. Không sửa file này làm nguồn; sửa generator/scaffold rồi dựng lại.
+`build/data/rig-map.json` được trích từ runtime thực tế: 15 node chính cùng pivot cục bộ và 37 timeline. Ba Solo bổ sung chứa đạo cụ, nét mặt phụ và hiệu ứng nền. Không sửa file này làm nguồn; sửa generator/scaffold rồi dựng lại.

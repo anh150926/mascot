@@ -2,8 +2,8 @@
   "passed": true,
   "counts": {
     "properties": 3,
-    "enum_values": 26,
-    "presets": 29,
+    "enum_values": 27,
+    "presets": 30,
     "speech_categories": 10,
     "speech_lines": 20,
     "feature_mappings": 8

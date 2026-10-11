@@ -18,16 +18,24 @@ def check_bounds(path):
     return bbox
 
 
-def main(stills_only=False):
+def main(stills_only=False, scene_keys=None):
     validate_runtime()
     catalog=read('data/expressions.json')
     destination=ROOT/'playground/frames'
     destination.mkdir(exist_ok=True)
     out=BUILD/'expressions';out.mkdir(exist_ok=True)
     images=[];report=[]
+    selected=set(scene_keys or (s['key'] for s in catalog['expressions']))
+    unknown=selected-{s['key'] for s in catalog['expressions']}
+    if unknown:raise ValueError('Unknown scenes: '+', '.join(sorted(unknown)))
+    previous={r['key']:r for r in json.loads((out/'report.json').read_text(encoding='utf-8'))} if scene_keys and (out/'report.json').exists() else {}
     presets={p['id']:p for p in read('data/presets.json')['presets']}
     for spec in catalog['expressions']:
         key=spec['key'];frame=presets[key]['capture_steps'][0]['advance']
+        if key not in selected:
+            images.append((spec['label'],Image.open(destination/f'{key}.png').convert('RGBA')))
+            if not stills_only:report.append(previous[key])
+            continue
         target=out/f'{key}.png'
         dump=out/f'{key}.json'
         render(target,data=[f'mood={key}'],steps=[f'--advance={frame}'],dump=dump)
@@ -62,4 +70,6 @@ def main(stills_only=False):
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--stills-only',action='store_true')
-    main(parser.parse_args().stills_only)
+    parser.add_argument('--scenes',nargs='+',help='Re-render selected scenes; retain the other existing frames.')
+    args=parser.parse_args()
+    main(args.stills_only,args.scenes)

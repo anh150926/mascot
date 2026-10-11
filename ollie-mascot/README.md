@@ -1,5 +1,7 @@
 # Bộ mẫu Ollie
 
+**Cập nhật 12/10:** thêm biểu cảm cơ bản thứ 8 **Đang suy nghĩ** (`thinking`), vòng lặp 3 giây với cánh gần cằm, mắt nhìn chếch lên và ba chấm suy nghĩ. Chọn nút **8** trong [playground](playground/index.html); xem [dải khung trong build](build/thinking-strip.png) và [phân tích chuyển động](docs/THINKING_MOOD.md). Tổng cộng 27 mood; giá trị mới được nối cuối enum để giữ thứ tự 26 mood đã có.
+
 Bản dựng ngày 08/10/2026 dùng **“Cú lá xanh chibi đáng yêu.png”** làm chuẩn front mới. Nét vẽ được dựng lại bằng đường Bézier có tay nắm độc lập: đầu lớn, chỏm ba tầng, mắt rộng, mỏ cười, cánh lá và huy hiệu tròn. Đây là bản để đối chiếu và tiếp tục chỉnh sửa theo ảnh người dùng bổ sung, chưa phải thiết kế đã duyệt.
 
 Mở **[review.html](review.html)** để xem ảnh gốc cạnh vector, kéo thanh chồng nét, xem từng bộ phận, biểu cảm và chuỗi chuyển động. **[Playground](playground/index.html)** dùng để thử mood, vẫy, ngủ và chạm đánh thức. Khi runtime web không tải được, playground dùng các frame được xuất từ chính Rive.
@@ -25,7 +27,7 @@ Mở **[review.html](review.html)** để xem ảnh gốc cạnh vector, kéo th
 | Lời thoại tiếng Việt | `speech/lines.vi.json` |
 | Phân tích cấu trúc data/build so với Nez | [docs/BUILD_DATA.md](docs/BUILD_DATA.md) |
 | Tài liệu CLI lưu cục bộ | `docs/rive-cli/`, bản tiện mở `build/doc_*.txt` |
-| Kịch bản 28 probe | `tests/poses.json` |
+| Kịch bản 39 probe | `tests/poses.json` |
 | Kết quả kiểm tra | `build/check-report.json` |
 | Xuất cho ứng dụng | `dist/ollie.riv`, `dist/ollie-front.svg`, `dist/ollie-front.png` |
 
@@ -77,13 +79,14 @@ build/
   front-alpha.png         ảnh bỏ nền preview
   construction.png        từng bước dựng
   parts.png               15 ô bộ phận
-  moods/                  bảy biểu cảm + ngủ + contact sheet
+  moods/                  tám biểu cảm + ngủ + contact sheet
   rv/                     project review độc lập; stages/ chứa từng bước
   trace/                  ảnh chuẩn, overlay, lưới, landmarks, project trace
   probe-t*.png/.json      frame và View Model tương ứng
   idle-strip.png          thở, đầu/cuối vòng, chớp mắt
   wave-strip.png          nghỉ, vẫy, trở về
   sleep-strip.png         thức, ngủ, giật mình, thức lại
+  thinking-strip.png      năm khung của vòng suy nghĩ 3 giây
   size-*.png              80 / 120 / 240 / 500 px
 ```
 
@@ -95,11 +98,11 @@ Artboard Runtime, 500×500, nền trong suốt. State machine Main; View Model M
 
 | Thuộc tính | Kiểu | Giá trị |
 |---|---|---|
-| mood | enum | 7 mood gốc + 19 cảnh mới; xem `data/expressions.json` và `dist/data/contract.json` |
+| mood | enum | 8 biểu cảm cơ bản + 19 cảnh; xem `docs/THINKING_MOOD.md`, `data/expressions.json` và `dist/data/contract.json` |
 | isAsleep | bool | ngủ/thức; chạm nhân vật đặt về false |
 | wave | trigger | vẫy cánh khi đang thức |
 
-Rig có 7 layer, 36 timeline. Kiến trúc animation được lấy từ Nez, lưu snapshot riêng trong tools/scaffold/, rồi thay hình nhân vật bằng Ollie và chỉnh điểm xoay/biên độ. Bộ 19 cảnh mới được dựng trong `tools/expression_library.py`. Build Ollie không phụ thuộc các sửa đổi tương lai của Nez và không chỉnh file của Nez. `data/model.json` là nguồn chính; `tools/build_data.py` sinh `data.rml`, sau đó nhúng vào runtime. File data.rml riêng bị loại khỏi compile trực tiếp để tránh khai báo trùng.
+Rig có 7 layer, 37 timeline. Kiến trúc animation được lấy từ Nez, lưu snapshot riêng trong tools/scaffold/, rồi thay hình nhân vật bằng Ollie và chỉnh điểm xoay/biên độ. Bộ 19 cảnh mới được dựng trong `tools/expression_library.py`. Build Ollie không phụ thuộc các sửa đổi tương lai của Nez và không chỉnh file của Nez. `data/model.json` là nguồn chính; `tools/build_data.py` sinh `data.rml`, sau đó nhúng vào runtime. File data.rml riêng bị loại khỏi compile trực tiếp để tránh khai báo trùng.
 
 ## Thêm ảnh để chỉnh tiếp
 

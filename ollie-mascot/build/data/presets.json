@@ -170,6 +170,30 @@
       ]
     },
     {
+      "id": "thinking",
+      "label": "Đang suy nghĩ",
+      "values": {
+        "mood": "thinking",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 90
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=thinking",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=thinking",
+        "--data=isAsleep=false",
+        "--advance=90"
+      ]
+    },
+    {
       "id": "sleep",
       "label": "Ngủ say",
       "values": {

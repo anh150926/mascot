@@ -1,24 +1,43 @@
-# Ollie — cánh mềm, bản dựng 04
+# Ollie — cánh gốc cho cử chỉ, cầm và nâng đồ (bản dựng 08)
 
-Ảnh mẫu mới cho thấy rõ sự khác biệt ở **dáng tổng thể**: cánh bắt đầu rộng tại vai, vòng ra ngoài rồi quét vào dưới mép phong thư. Lông phía dưới dài, xếp chồng như lá; mảng xanh non chỉ nhấn thành các nhịp nhỏ. Bản cũ đặt hai mảng cánh hẹp rủ dọc hai bên đạo cụ. Bo góc của mảng đó không thể tạo ra dáng ôm trong ảnh mẫu.
+## Phân tích dáng cánh
 
-## Hai dáng vector mới
+Các bản cánh cầm trước biến cánh thành khối tròn bóng, đường viền và mảng sáng chồng tại mép vật. Chúng không giống hai cánh front gốc mà người dùng cung cấp: vai hẹp hơn, hai lông dài nhọn phía dưới và các lớp xanh non chạy dọc thân cánh.
 
-`tools/wing_poses.py` định nghĩa hai bộ bảy lớp bằng đường Bézier có thể sửa trực tiếp:
+Bản này lấy trực tiếp bảy đường Bézier của `LeftWing` trong `artwork/build_artwork.py`, rồi phản chiếu cho cánh phải. `HOLD_SOURCE` ở `tools/wing_poses.py` giữ nguyên thứ tự và màu từng lớp:
 
-| Bộ | Cảnh dùng | Hình dáng |
+| Lớp | Vai trò |
+|---|---|
+| `LowerWingOutline` | Đường bao và hai đầu lông nhọn phía dưới. |
+| `LongLowerFeather`, `MiddleLowerFeather`, `LongSideFeather` | Ba lớp lông dài xếp tầng như cánh front. |
+| `FoldedUpperWing` | Khối cánh chính, vẫn có nếp gập của mẫu gốc. |
+| `LongLimeCovert`, `UpperLeafCovert` | Hai mảng xanh non dạng lá. |
+
+Cả cánh tạo dáng và cánh cầm đều dùng màu phẳng, bỏ gradient bóng. `hug_warp` neo vai tại `(155,322)` và `(345,322)` trên artboard 500 × 500; cùng một phép xoay và thu nhỏ đều áp dụng cho mọi đỉnh lẫn tay nắm Bézier. Đầu lông vì thế giữ nguyên góc nhọn và tỷ lệ như mẫu. Ở cảnh cầm đồ, đích của cánh lấy từ vị trí/góc vật tại từng keyframe; các mốc của cánh được nội suy theo cùng nhịp nâng–giữ–hạ.
+
+## Khung chuyển động cần đọc
+
+Mỗi vòng lặp có năm mốc xem trong [wing-review.html](../playground/wing-review.html). `build/wing-redesign/` chứa ảnh 500 px ở mốc giữa cùng dải năm khung lớn của mười lăm cảnh tạo dáng hoặc cầm/nâng. Mốc 0 và 100% kiểm tra vòng lặp khép kín; 25%, 50% và 75% cho thấy nhịp giữa. Các cảnh có nhịp riêng:
+
+| Cảnh | Điểm cầm và hướng lực | Điều cần thấy ở 5 mốc |
 |---|---|---|
-| `HOLD_SOURCE` | `love`, `nutrition`, `sad`, `wallet`, `saving`, `checklist`, `alarm`, `letter` | Vai liền thân; đường bao vòng ra ngoài; ba lớp lông tối cong dài quét về phía trung tâm; lông xanh non thành nhịp ở mặt cánh. |
-| `SOURCE` | `idea`, `worried`, `pomodoro`, `bedtime`, `celebrate`, `workout`, `meditate` | Cánh tròn và nhiều lớp hơn khi đưa lên mặt, chạm đạo cụ hoặc nghỉ thấp. |
+| `love`, `letter` | Hai đầu cánh ôm hai cạnh dưới; tim và thư vẫn đọc trọn hình. | Vai đứng yên, cánh siết nhẹ theo vật nảy, rồi trở về vị trí đầu. |
+| `nutrition` | Hai thùy dưới đỡ đáy bát; mặt bát và rau không bị che. | Bát lên rồi xuống, đầu cánh bám đáy ở toàn bộ vòng. |
+| `wallet`, `sad`, `saving` | Cánh đỡ hai cạnh ví hoặc heo đất; phần tiền/đồng xu vẫn rõ. | Đầu cánh không trượt qua mép khi vật nhún. |
+| `checklist`, `alarm` | Đầu cánh giữ cạnh bảng và đồng hồ; tâm vật để trống. | Vật rung hoặc nâng mà vai không tách khỏi thân. |
+| `pomodoro` | Cánh tì ở mép dưới màn hình, nhịp gõ trái/phải so le. | Hai đầu cánh dịch ngắn, không tạo các ngón nhỏ trên màn hình. |
+| `workout` | Hai cánh gốc xoay vào thanh tạ ở hai bên thân. | Thanh tạ lên, giữ ngắn ở đỉnh, hạ có kiểm soát; cánh theo hai điểm nắm. |
+| `celebrate` | Cánh trái xoay lên giữ cạnh chân cúp; mặt cúp nằm trước cánh. | Cánh và cúp nâng cùng nhịp, không để lông che mặt cúp. |
+| `meditate` | Hai cánh mở thấp ra hai bên thân. | Đầu lông dài hướng ra ngoài, không thành hai nắm tay tròn trước ngực. |
+| `worried` | Hai cánh chạm mép má ngoài. | Đường lông giữ rõ và không che đồng tử. |
+| `idea`, `bedtime` | Một cánh nâng trước ngực hoặc miệng. | Cánh còn lại giữ dáng đứng gốc; đầu lông không biến thành khối tròn. |
 
-Các lớp dùng bảng màu xanh, viền tối và gradient của Ollie. Mỗi lớp là một khối lông, không có lòng bàn tay hoặc ngón tay. `HOLD_SOURCE` dùng tọa độ 500 × 500 của cảnh cầm thư làm mốc; `hug_warp` giữ gốc vai và cho phần lông cuối đi theo vị trí/góc của đạo cụ ở từng keyframe. Bộ `SOURCE` dùng đường cong vai–nếp gập–đầu cánh cho những cử chỉ còn lại. Các đầu lông của dáng ôm được nối mượt, kể cả ở điểm gấp.
+Các cảnh chạy, mệt, reo vui và tràn năng lượng dùng cánh front gốc. Không sửa ảnh front chuẩn trong `artwork/build_artwork.py`.
 
-Bốn cảnh `running`, `tired`, `cheer`, `energized` tiếp tục dùng cánh front gốc: ở đó cánh dang/hạ đủ rộng và các lớp lông đọc rõ, không có dáng cầm đồ cứng. Hình front trong `artwork/build_artwork.py` không bị đổi, để bảy biểu cảm cơ bản và các chuyển động có sẵn giữ đúng nhận diện.
+## Chỉnh và xuất lại
 
-## Chỉnh tiếp theo ảnh mẫu
+1. Sửa cánh chuẩn trong `artwork/build_artwork.py` nếu cần đổi dáng lông của cả nhân vật. Sửa `WingPoses.hold` và từng lệnh `wings.add` trong `tools/expression_library.py` nếu cần đổi điểm chạm riêng của hành động.
+2. Chạy `python tools/build_kit.py` từ thư mục `ollie-mascot`. Lệnh này tạo lại `runtime.rml`, ảnh trong `build/expressions/`, 95 frame ở `playground/frames/wings/` và `dist/ollie.riv`.
+3. Mở [bảng kiểm tra cánh](../playground/wing-review.html). Xem cả nền sáng/tối và từng mốc của các cảnh trên. Kiểm tra viền vai, mép vật, điểm nắm và khung đầu/cuối trước khi chọn bản cuối.
 
-- Sửa đường bao và từng lớp ở `HOLD_SOURCE` hoặc `SOURCE` trong `tools/wing_poses.py`. `HugMainWing` là mảng xanh chính; `HugLowerFeather`, `HugMiddleFeather`, `HugInnerFeather` tạo ba lông quét dưới mép đạo cụ; `HugLimeScallops` và `HugUpperCovert` tạo điểm sáng.
-- Sửa vị trí tiếp xúc của cánh ôm trong `WingPoses.hold`; các cảnh cử chỉ đặt đích và nếp gập riêng trong `tools/expression_library.py`.
-- Tạo lại bằng `python tools/build_kit.py`, rồi xem [bảng 95 khung của cả 19 cảnh](../playground/wing-review.html) và [playground Rive](../playground/index.html). Trang khung có hai hình giải phẫu cánh mới, bản cánh front gốc, chế độ nền sáng/tối và năm mốc của mỗi vòng lặp.
-
-Khi kiểm tra, nhìn đặc biệt vào cảnh thư, ví, bát và tim: vai không tách thân, mép đạo cụ vẫn đọc được, các lông cuối không biến thành ba ngón nhỏ. Với cảnh đưa cánh lên mặt, kiểm tra cánh không phủ mắt hoặc mỏ. Với cảnh nâng tạ và đồng hồ, xem cả mốc nâng cao nhất và khung đầu/cuối để phát hiện gãy nét khi nội suy.
+Khi chỉ sửa một vài cảnh sau lần build đầy đủ, dùng `python tools/build_expressions.py --scenes celebrate workout` để xuất lại cảnh đó và cập nhật bảng tổng hợp. Sau đó chạy `python tools/build_wing_review.py` để đồng bộ các dải khung lớn.

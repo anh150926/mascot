@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "artboard": "Runtime",
+  "stateMachine": "Main",
+  "viewModel": {
+    "name": "Default",
+    "viewModel": "Mascot",
+    "properties": [
+      {
+        "name": "mood",
+        "path": "mood",
+        "type": "enum",
+        "enumType": "Mood",
+        "value": "thinking",
+        "index": 26,
+        "values": ["neutral", "happy", "wink", "focus", "surprised", "sleepy", "confused", "idea", "love", "nutrition", "running", "tired", "worried", "pomodoro", "bedtime", "cheer", "sad", "wallet", "saving", "checklist", "celebrate", "alarm", "workout", "meditate", "letter", "energized", "thinking"],
+        "changed": true
+      },
+      {
+        "name": "isAsleep",
+        "path": "isAsleep",
+        "type": "boolean",
+        "value": false,
+        "changed": true
+      },
+      {
+        "name": "wave",
+        "path": "wave",
+        "type": "trigger",
+        "changed": false
+      }
+    ]
+  },
+  "globals": [],
+  "nested": []
+}

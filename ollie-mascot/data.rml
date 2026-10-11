@@ -26,6 +26,7 @@
         <DataEnumValue key="meditate" value="Meditate" id="0:10017" />
         <DataEnumValue key="letter" value="Letter" id="0:10018" />
         <DataEnumValue key="energized" value="Energized" id="0:10019" />
+        <DataEnumValue key="thinking" value="Thinking" id="0:608" />
     </DataEnumCustom>
     <ViewModel name="Mascot" id="0:610" defaultInstanceId="0:612">
         <ViewModelPropertyEnumCustom name="mood" id="0:611" enumId="0:600" />

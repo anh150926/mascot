@@ -69,11 +69,13 @@
 <body>
   <header>
     <h1>Ollie · Animation Playground</h1>
-    <p>7 biểu cảm quen thuộc + 19 cảnh chuyển động mới. Nhấn 1–7 để đổi biểu cảm cơ bản, W để vẫy, S để ngủ, Space để dừng.</p>
+    <p>8 biểu cảm cơ bản + 19 cảnh chuyển động. Nhấn 1–8 để đổi biểu cảm, W để vẫy, S để ngủ, Space để dừng.</p>
   </header>
   <div class="review-link">
-    <span><strong>Cánh lá đã được dựng lại.</strong> Dáng cầm đồ cong ôm đạo cụ; lông cánh tròn và chuyển động theo từng cảnh.</span>
+    <span><strong>Cánh gốc · bản 08.</strong> Mọi tư thế cử chỉ, cầm và nâng dùng bảy lớp lông gốc; cúp ăn mừng hiện trước cánh đang giữ.</span>
     <a href="wing-review.html">Xem cánh qua từng khung ↗</a>
+    <a href="../build/wing-redesign/index.html">11 dải chuyển động trong build ↗</a>
+    <a href="../build/thinking-strip.png">Khung chuyển động suy nghĩ ↗</a>
   </div>
   <main>
     <div class="preview-column" id="preview">
@@ -132,11 +134,12 @@
   </section>
   <script src="https://cdn.jsdelivr.net/npm/@rive-app/canvas@2.44.0/rive.js"></script>
   <script>
-    const SRC = '../dist/ollie.riv';
-    const FRAME = name => './frames/' + name + '.png?v=wing04';
+    const SRC = '../dist/ollie.riv?v=thinking01';
+    const FRAME = name => './frames/' + name + '.png?v=thinking01';
     const MOODS = [
       ['neutral','Mặc định'],['happy','Vui vẻ'],['wink','Nháy mắt'],
-      ['focus','Tập trung'],['surprised','Bất ngờ'],['sleepy','Buồn ngủ'],['confused','Thắc mắc']
+      ['focus','Tập trung'],['surprised','Bất ngờ'],['sleepy','Buồn ngủ'],['confused','Thắc mắc'],
+      ['thinking','Đang suy nghĩ']
     ];
     const canvas = document.getElementById('rive');
     const statusEl = document.getElementById('status');
@@ -158,6 +161,11 @@
       document.getElementById('sceneDuration').textContent = scene ? `${(scene.frames/60).toLocaleString('vi-VN',{maximumFractionDigits:2})} GIÂY / VÒNG` : 'BIỂU CẢM CƠ BẢN';
       document.getElementById('sceneMotion').textContent = scene?.motion || 'Một biểu cảm quen thuộc của Ollie.';
       document.getElementById('sceneUse').textContent = scene?.use || 'Chọn trong bộ chuyển động mới để khám phá thêm.';
+      if (key === 'thinking') {
+        document.getElementById('sceneDuration').textContent = 'BIỂU CẢM CƠ BẢN · 3 GIÂY / VÒNG';
+        document.getElementById('sceneMotion').textContent = 'Cánh đặt gần cằm → nhìn chếch lên và nghiêng đầu → chớp mắt nhẹ → trở về nhịp đầu.';
+        document.getElementById('sceneUse').textContent = 'Khi Ollie đang cân nhắc một vấn đề hoặc chuẩn bị trả lời câu hỏi. Ba chấm suy nghĩ hiện lần lượt theo nhịp.';
+      }
       document.querySelectorAll('.scene-card').forEach(card => card.setAttribute('aria-pressed', String(card.dataset.mood === key)));
       selectButton(moodBox, moodBox.querySelector(`[data-mood="${key}"]`));
       if (fallbackMode ? fallbackSleep : sleepProp?.value) {
@@ -303,7 +311,7 @@
       status('Đang nạp Ollie…');
       if (!window.rive) return useFrames('Web runtime chưa tải được. Đang dùng frame do Rive CLI render.');
       animation = new rive.Rive({
-        src: SRC + '?t=' + Date.now(), canvas, artboard:'Runtime', stateMachine:'Main',
+        src: SRC + '&t=' + Date.now(), canvas, artboard:'Runtime', stateMachine:'Main',
         autoplay:true, autoBind:true,
         layout:new rive.Layout({fit:rive.Fit.Contain,alignment:rive.Alignment.Center}),
         onLoad:() => {
@@ -376,7 +384,7 @@
     window.addEventListener('keydown', e => {
       if (/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName) || e.target.isContentEditable) return;
       if (e.target.closest('button') && (e.code === 'Space' || e.key === 'Enter')) return;
-      if (e.key >= '1' && e.key <= '7') setMood(MOODS[Number(e.key)-1][0]);
+      if (e.key >= '1' && e.key <= String(MOODS.length)) setMood(MOODS[Number(e.key)-1][0]);
       if (e.key.toLowerCase() === 'w') document.getElementById('wave').click();
       if (e.key.toLowerCase() === 's') sleepBtn.click();
       if (e.code === 'Space') { e.preventDefault(); document.getElementById('toggle').click(); }

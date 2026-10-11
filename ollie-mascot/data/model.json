@@ -31,7 +31,8 @@
       {"key": "workout", "label": "Workout", "id": "0:10016"},
       {"key": "meditate", "label": "Meditate", "id": "0:10017"},
       {"key": "letter", "label": "Letter", "id": "0:10018"},
-      {"key": "energized", "label": "Energized", "id": "0:10019"}
+      {"key": "energized", "label": "Energized", "id": "0:10019"},
+      {"key": "thinking", "label": "Thinking", "id": "0:608"}
     ]}
   ],
   "properties": [

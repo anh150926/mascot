@@ -13,7 +13,7 @@
         "enumType": "Mood",
         "value": "surprised",
         "index": 4,
-        "values": ["neutral", "happy", "wink", "focus", "surprised", "sleepy", "confused", "idea", "love", "nutrition", "running", "tired", "worried", "pomodoro", "bedtime", "cheer", "sad", "wallet", "saving", "checklist", "celebrate", "alarm", "workout", "meditate", "letter", "energized"],
+        "values": ["neutral", "happy", "wink", "focus", "surprised", "sleepy", "confused", "idea", "love", "nutrition", "running", "tired", "worried", "pomodoro", "bedtime", "cheer", "sad", "wallet", "saving", "checklist", "celebrate", "alarm", "workout", "meditate", "letter", "energized", "thinking"],
         "changed": true
       },
       {

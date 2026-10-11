@@ -1,41 +1,25 @@
-"""Pose seven soft, layered wing feathers along a shoulder-to-feather curve.
+"""Pose Ollie's wings with a fixed shoulder and a moving prop target.
 
-The root stays on the body. Only the distal end follows a prop or a gesture.
-This is a baked vector deformation, so the exported .riv needs no host code.
+All posed wings use the original seven feather contours with flat fills and
+uniform rotation/scale. Both carrying and gestures are baked into the local .riv.
 """
 from math import atan2, cos, sin, hypot, pi, acos
-from build_artwork import SCALE, vertices
+from build_artwork import PARTS, SCALE, vertices
 
-# These are artboard (500px) paths. The neutral front master is deliberately
-# untouched: only expression wings receive this rounder, more flowing anatomy.
-# Each contour closes with cubic arcs, including the tips of the dark feathers.
-SOURCE = [
-    dict(name='SoftWingOutline', d='M 163 323 C 187 317 202 342 207 367 C 215 399 202 426 183 441 C 165 458 145 465 132 451 C 114 459 100 448 101 434 C 86 437 77 423 83 406 C 91 370 119 338 149 324 C 154 321 159 321 163 323 Z', fill='075338', stroke='06442B', weight=4.2),
-    dict(name='LongLowerFeather', d='M 171 384 C 196 398 193 424 175 440 C 161 453 143 462 139 454 C 136 446 148 428 157 410 C 164 397 168 389 171 384 Z', fill='085638', stroke=None, weight=0),
-    dict(name='MiddleLowerFeather', d='M 151 383 C 174 395 180 418 167 433 C 154 446 137 454 126 450 C 116 447 124 436 135 420 C 143 405 146 392 151 383 Z', fill='064F34', stroke='06442B', weight=2.7),
-    dict(name='LongSideFeather', d='M 135 369 C 153 380 161 403 149 421 C 136 438 113 452 103 442 C 96 435 110 420 120 402 C 129 386 133 377 135 369 Z', fill='69AF47', stroke=None, weight=0),
-    dict(name='FoldedUpperWing', d='M 156 322 C 183 317 199 340 202 365 C 205 392 193 418 175 427 C 157 437 146 431 142 417 C 125 431 106 433 94 420 C 83 405 97 375 111 353 C 124 334 143 324 156 322 Z', fill='287D43', stroke='06442B', weight=4, gradient=('4A9C47','196C3E',168,330,124,428)),
-    dict(name='LongLimeCovert', d='M 189 366 C 194 384 187 402 172 409 C 163 413 161 405 166 394 C 172 382 181 375 189 366 Z', fill='A4D156', stroke=None, weight=0),
-    dict(name='UpperLeafCovert', d='M 145 350 C 148 361 142 377 132 388 C 123 398 112 400 109 392 C 115 371 127 357 145 350 Z', fill='A9D75F', stroke=None, weight=0, gradient=('B1DB65','8EC94D',136,353,117,395)),
-]
-
-# A held object needs a different silhouette from a pointing gesture. The
-# shoulder fans outward, while long rounded feathers sweep in front of and
-# beneath the object. Base coordinates fit the 169px envelope at (250, 373).
+# The supplied left and right wing samples are the front master's seven
+# feathers. Reuse their exact contours for carrying poses. Flat fills remove
+# the glossy spots while preserving the pointed lower feather silhouette.
 HOLD_SOURCE = [
-    dict(name='HugOutline', d='M 162 324 C 134 316 110 342 101 375 C 90 410 99 438 118 448 C 135 457 151 455 155 444 C 174 456 187 448 181 437 C 200 448 213 439 208 424 C 211 413 201 400 184 391 C 178 363 177 336 162 324 Z', fill='075338', stroke='06442B', weight=4.2),
-    dict(name='HugLowerFeather', d='M 107 393 C 101 424 116 450 145 459 C 164 467 181 455 168 444 C 141 429 117 406 107 393 Z', fill='085638', stroke=None, weight=0),
-    dict(name='HugMiddleFeather', d='M 116 388 C 119 422 142 446 181 452 C 201 456 211 447 198 434 C 177 411 145 392 116 388 Z', fill='064F34', stroke='06442B', weight=2.2),
-    dict(name='HugInnerFeather', d='M 127 379 C 135 411 166 434 207 439 C 224 441 225 431 210 418 C 188 398 156 385 127 379 Z', fill='287D43', stroke='06442B', weight=2.2),
-    dict(name='HugMainWing', d='M 159 325 C 132 325 113 349 107 377 C 103 397 109 411 122 416 C 131 420 137 413 139 405 C 149 419 160 425 170 421 C 178 417 173 409 166 400 C 181 411 195 416 201 408 C 205 400 187 388 178 375 C 174 344 172 329 159 325 Z', fill='287D43', stroke='06442B', weight=4, gradient=('4A9C47','196C3E',138,338,172,438)),
-    dict(name='HugLimeScallops', d='M 110 394 C 108 411 114 425 123 430 C 129 433 133 426 132 419 C 139 430 147 433 152 426 C 155 421 151 413 146 406 C 131 393 117 388 110 394 Z', fill='A4D156', stroke=None, weight=0),
-    dict(name='HugUpperCovert', d='M 145 348 C 131 350 120 363 117 380 C 115 390 118 398 123 400 C 128 400 130 392 132 386 C 137 393 141 394 145 387 C 151 374 150 359 145 348 Z', fill='A9D75F', stroke=None, weight=0, gradient=('B1DB65','8EC94D',137,352,125,397)),
+    {**shape, 'weight': shape['weight']*SCALE, 'gradient': None, 'master': True}
+    for shape in next(part for part in PARTS if part['name']=='LeftWing')['shapes']
 ]
+SOURCE = HOLD_SOURCE
 
 
 def source_vertices(source):
     points, closed = vertices(source['d'])
-    return [[tuple(v / SCALE for v in p) for p in point] for point in points], closed
+    divisor=1 if source.get('master') else SCALE
+    return [[tuple(v / divisor for v in p) for p in point] for point in points], closed
 
 
 def mix(a, b, t):
@@ -129,17 +113,16 @@ def warp(point, side, tip, bend, width=.88):
 def hug_warp(point, side, tip, bend, width=1):
     x,y=point
     if side=='R':x=500-x
-    base=(208,410) if side=='L' else (292,410)
-    shoulder=(162,324) if side=='L' else (338,324)
-    # The broad outside arc is the feature that makes this read as a wing
-    # rather than a narrow sleeve beside the envelope.
-    if side=='L' and x<shoulder[0]:x=shoulder[0]+(x-shoulder[0])*1.42
-    if side=='R' and x>shoulder[0]:x=shoulder[0]+(x-shoulder[0])*1.42
-    reach=max(0,min(1,(y-shoulder[1])/88))
-    reach=reach*reach*(3-2*reach)
-    # Root is sewn into the body; the distal feather fan follows the prop.
-    dx,dy=tip[0]-base[0],tip[1]-base[1]
-    return x+dx*reach,y+dy*reach
+    root=(155,322) if side=='L' else (345,322)
+    anchor=(164,421) if side=='L' else (336,421)
+    ax,ay=anchor[0]-root[0],anchor[1]-root[1]
+    tx,ty=tip[0]-root[0],tip[1]-root[1]
+    angle=atan2(ty,tx)-atan2(ay,ax)
+    scale=hypot(tx,ty)/hypot(ax,ay)
+    scale=max(.72,min(.84,scale))
+    dx,dy=x-root[0],y-root[1]
+    return (root[0]+scale*(dx*cos(angle)-dy*sin(angle)),
+            root[1]+scale*(dx*sin(angle)+dy*cos(angle)))
 
 
 def geometry(points, side, tip, bend, width, style='gesture'):
@@ -148,6 +131,8 @@ def geometry(points, side, tip, bend, width, style='gesture'):
     ix,iy=inc[0]-xy[0],inc[1]-xy[1]
     ox,oy=out[0]-xy[0],out[1]-xy[1]
     before,after=hypot(ix,iy),hypot(ox,oy)
+    if style=='hug':
+        return (xy[0],xy[1],atan2(iy,ix),before,atan2(oy,ox),after)
     if before>.00001 and after>.00001:
         # A nonlinear wing bend can break tangency even when the source path is
         # smooth. Align both controls again in the posed artboard coordinates.
@@ -182,7 +167,7 @@ class WingPoses:
     def __init__(self, api, foreground):
         self.api,self.foreground,self.wings=api,foreground,[]
 
-    def add(self, name, side, tip, bend, follow=None, width=.88, motion=None, cadence=None, rounding=14, tuck=0, style='gesture'):
+    def add(self, name, side, tip, bend, follow=None, width=.88, motion=None, cadence=None, rounding=14, tuck=0, style='hug'):
         a=self.api
         node=a.N(self.foreground,name)
         pose=dict(name=name,side=side,tip=tip,bend=bend,follow=follow,width=width,
@@ -194,7 +179,7 @@ class WingPoses:
             s=a.shape(node,source['name'])
             points,closed=source_vertices(source)
             if tuck:points=tuck_feathers(points,tuck)
-            if style=='hug' and closed:points=soften(points,8)
+            # The master has deliberate sharp feather tips; leave them intact.
             p=a.E(s,'PointsPath',isClosed=str(closed).lower())
             for point in points:
                 values=geometry(point,side,target,bend,width,style)
@@ -215,7 +200,7 @@ class WingPoses:
 
     def hold(self, prop, offset=67, y=5):
         for side,sign in [('L',-1),('R',1)]:
-            self.add('HoldingWing'+side,side,(sign*(offset-39),y+33),
+            self.add('HoldingWing'+side,side,(sign*(offset-67),y+24),
                      (250+sign*121,385),follow=prop,style='hug')
 
     def target(self, pose, animation=None, frame=0):

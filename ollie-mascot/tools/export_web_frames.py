@@ -12,7 +12,7 @@ from PIL import Image, ImageFilter
 ROOT = Path(__file__).resolve().parent.parent
 BUILD = ROOT / "build"
 DEST = ROOT / "playground" / "frames"
-FRAMES = ["neutral", "happy", "wink", "focus", "surprised", "sleepy", "confused", "wave-mid"]
+FRAMES = ["neutral", "happy", "wink", "focus", "surprised", "sleepy", "confused", "thinking", "wave-mid"]
 BACKGROUND = (29, 29, 29)
 
 

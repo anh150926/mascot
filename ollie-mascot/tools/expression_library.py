@@ -194,8 +194,8 @@ def draw_scene(key, fg, face, back):
         refs['accent'] = g
     elif key == 'worried':
         refs['sweat'] = drop(face, 'Sweat', 375, 146, .8)
-        for side,x,bx in [('L',140,139),('R',360,361)]:
-            wings.add('WorriedWing'+side,side,(x,246),(bx,291),width=.70,
+        for side,x,bx in [('L',120,139),('R',380,361)]:
+            wings.add('WorriedWing'+side,side,(x,275),(bx,291),width=.70,
                       motion=lambda t,d:(0,-4*(1-cos(4*pi*t/d))/2),cadence=30)
     elif key == 'pomodoro':
         path(face, 'Headband', 'M 110 216 C 74 67 419 66 390 216', stroke=INK, width=19)
@@ -211,9 +211,11 @@ def draw_scene(key, fg, face, back):
         ellipse(g, 'LogoShine', -11, -9, 7, 10, 'FFFFBEC0')
         path(g, 'Base', 'M -100 49 L 100 49 L 92 65 L -92 65 Z', 'FFDFE7E6', 'FF34565B', 3)
         refs['led'] = ellipse(g, 'PowerLight', 67, 40, 5, 5, MINT)
-        for side,x,bx,sign in [('L',181,103,1),('R',319,397,-1)]:
-            wings.add('TypingWing'+side,side,(x,414),(bx,378),width=.78,
-                      motion=lambda t,d,s=sign:(0,s*3*cos(2*pi*t/48)),cadence=24)
+        # Keep the supplied pointed wing while its inner edge follows the laptop.
+        for side,sign,beat in [('L',-1,1),('R',1,-1)]:
+            wings.add('TypingWing'+side,side,(sign*41,22),(250+sign*121,385),
+                      follow=g,style='hug',
+                      motion=lambda t,d,s=beat:(0,s*3*cos(2*pi*t/48)),cadence=24)
     elif key == 'bedtime':
         hat = N(face, 'NightCap')
         path(hat, 'Cap', 'M 146 126 C 181 39 329 56 355 111 L 400 161 C 364 156 340 147 315 119 Z', 'FF4A9CAE', INK, 3.5)
@@ -289,7 +291,9 @@ def draw_scene(key, fg, face, back):
         path(g,'Cup','M -32 -43 L 32 -43 L 27 -9 C 25 18 -25 18 -27 -9 Z',GOLD,'FFD78A1A',3.5)
         path(g,'CupShine','M -20 -35 L -10 -35 L -8 4 C -21 -2 -20 -14 -20 -35 Z','FFFFE598',None)
         star(g,'CupStar',7,-18,19,'FFFFF0B3')
-        wings.add('TrophyWing','L',(11,36),(134,319),follow=g,width=.72)
+        wings.add('TrophyWing','L',(11,36),(134,319),follow=g,style='hug')
+        # The cup faces the viewer; its bowl and rim must stay in front of the gripping wing.
+        front(fg,g)
         refs['prop'] = g
         confetti = N(back,'Confetti')
         for i,(x,y) in enumerate([(60,115),(92,61),(151,45),(375,58),(422,98),(445,169),(65,269),(424,315),(106,394),(394,413)]):
@@ -321,7 +325,7 @@ def draw_scene(key, fg, face, back):
             rect(g,'Weight',x,0,21,60 if abs(x)>130 else 83,LIME,INK,7,3.5)
             rect(g,'WeightLight',x-4,-3,6,44 if abs(x)>130 else 63,'FFD4EC83',None,2)
         for side,sign in [('L',-1),('R',1)]:
-            wings.add('LiftingWing'+side,side,(sign*118,8),(250+sign*104,358),follow=g,width=.72)
+            wings.add('LiftingWing'+side,side,(sign*75,8),(250+sign*104,358),follow=g,style='hug')
         refs['prop']=g
         refs['sweat']=drop(face,'WorkoutSweat',361,157,.65)
     elif key == 'meditate':
@@ -401,8 +405,16 @@ def animate_scene(animation, spec, refs):
         keys(animation,'0:16',17,[(0,1),(t,1),(t+5,.1),(t+11,1),(d,1)])
     if 'prop' in refs:
         p=refs['prop'];y=float(p.get('y',0))
-        pulse(animation,p,14,y,y-7,d)
-        pulse(animation,p,15,-.025,.025,d)
+        # A carried object has a readable lift, short hold and controlled
+        # descent. The wing vertices sample these same keys, so the contact
+        # point does not slide while the object travels.
+        lift={'love':11,'nutrition':18,'sad':4,'wallet':13,'saving':8,
+              'checklist':10,'alarm':6,'letter':12,'pomodoro':3}.get(key,7)
+        keys(animation,p,14,[(0,y),(round(d*.28),y-lift*.85),
+                             (round(d*.42),y-lift),(round(d*.62),y-lift),
+                             (round(d*.78),y-lift*.35),(d,y)])
+        sway=.008 if key=='pomodoro' else .025
+        pulse(animation,p,15,-sway,sway,d)
     if 'accent' in refs:
         p=refs['accent']
         pulse(animation,p,16,.95,1.06,d)

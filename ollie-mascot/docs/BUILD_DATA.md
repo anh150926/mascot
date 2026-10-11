@@ -60,7 +60,7 @@ dist/
 - Property không có binding, mood thiếu timeline/transition, thứ tự layer thay đổi.
 - Ảnh bitmap tham chiếu hoặc nền Fill lọt vào runtime sản xuất.
 
-Kiểm tra dữ liệu không đánh giá độ giống nghệ thuật. 28 probe tiếp tục kiểm tra render và hành vi; bảng đối chiếu ảnh vẫn là nơi kiểm tra hình dáng. Các góc nghiêng/sau và đạo cụ chưa có đủ reference tiếp tục để trạng thái chờ.
+Kiểm tra dữ liệu không đánh giá độ giống nghệ thuật. 39 probe tiếp tục kiểm tra render và hành vi; bảng đối chiếu ảnh vẫn là nơi kiểm tra hình dáng. Các góc nghiêng/sau và đạo cụ chưa có đủ reference tiếp tục để trạng thái chờ.
 
 ## Kiểm tra riêng
 

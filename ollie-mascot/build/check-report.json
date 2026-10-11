@@ -198,6 +198,160 @@
       ]
     },
     {
+      "id": "t7-thinking",
+      "data": {
+        "mood": "thinking",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        84,
+        38,
+        426,
+        483
+      ]
+    },
+    {
+      "id": "thinking-0",
+      "data": {
+        "mood": "thinking",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        87,
+        46,
+        409,
+        487
+      ]
+    },
+    {
+      "id": "thinking-25",
+      "data": {
+        "mood": "thinking",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        85,
+        41,
+        406,
+        485
+      ]
+    },
+    {
+      "id": "thinking-50",
+      "data": {
+        "mood": "thinking",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        85,
+        38,
+        426,
+        483
+      ]
+    },
+    {
+      "id": "thinking-75",
+      "data": {
+        "mood": "thinking",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        86,
+        42,
+        434,
+        485
+      ]
+    },
+    {
+      "id": "thinking-100",
+      "data": {
+        "mood": "thinking",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        87,
+        46,
+        409,
+        487
+      ]
+    },
+    {
+      "id": "thinking-asleep",
+      "data": {
+        "mood": "thinking",
+        "isAsleep": true,
+        "wave": null
+      },
+      "bounds": [
+        94,
+        26,
+        442,
+        492
+      ]
+    },
+    {
+      "id": "thinking-wake",
+      "data": {
+        "mood": "thinking",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        85,
+        41,
+        406,
+        485
+      ]
+    },
+    {
+      "id": "thinking-wave",
+      "data": {
+        "mood": "thinking",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        27,
+        46,
+        421,
+        489
+      ]
+    },
+    {
+      "id": "thinking-after-wave",
+      "data": {
+        "mood": "thinking",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        86,
+        45,
+        408,
+        486
+      ]
+    },
+    {
+      "id": "thinking-baseline-after",
+      "data": {
+        "mood": "thinking",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        86,
+        45,
+        408,
+        486
+      ]
+    },
+    {
       "id": "t7-happy-blink",
       "data": {
         "mood": "happy",
@@ -401,6 +555,9 @@
     "sleep_blocks_wave": 0.0,
     "sleep_closes_eyes": 85.22740043644298,
     "breathing_visible": 8.521962666666667,
+    "thinking_motion_visible": 13.519057333333334,
+    "thinking_sleep_override": 0.0,
+    "thinking_wave_returns": 4e-06,
     "neutral_matches_front": 0.208824
   },
   "errors": []

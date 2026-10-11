@@ -62,6 +62,9 @@ def main(paths=None):
         'sleep_blocks_wave':difference('t9-asleep','t9-sleep-wave'),
         'sleep_closes_eyes':difference('t9-awake','t9-asleep',(130,170,365,274)),
         'breathing_visible':difference('t5-rest','t5-inhale'),
+        'thinking_motion_visible':difference('thinking-0','thinking-50'),
+        'thinking_sleep_override':difference('t9-asleep','thinking-asleep'),
+        'thinking_wave_returns':difference('thinking-after-wave','thinking-baseline-after'),
         'neutral_matches_front':0
     }
     for key in ('blink_eye_change','wave_wing_change','sleep_closes_eyes'):
@@ -69,6 +72,9 @@ def main(paths=None):
     if measures['breathing_visible']<.1:errors.append('No visible breathing')
     if measures['wave_returns_to_rest']>3:errors.append('Wave does not return to rest')
     if measures['sleep_blocks_wave']>1:errors.append('Wave changes sleeping pose')
+    if measures['thinking_motion_visible']<.1:errors.append('Thinking has no visible motion')
+    if measures['thinking_sleep_override']>1:errors.append('Thinking pose leaks into sleep')
+    if measures['thinking_wave_returns']>3:errors.append('Wave does not return to thinking')
     if (BUILD/'front.png').exists():
         a=Image.open(BUILD/'front.png').convert('RGB');b=Image.open(BUILD/'probe-t1-default.png').convert('RGB')
         measures['neutral_matches_front']=sum(ImageStat.Stat(ImageChops.difference(a,b)).mean)/3

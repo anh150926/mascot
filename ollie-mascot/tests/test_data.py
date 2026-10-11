@@ -52,7 +52,8 @@ class DataContractTests(unittest.TestCase):
         self.assertEqual([(v['key'],v['id']) for v in values[:7]],
                          [(key,f'0:{601+i}') for i,key in enumerate(legacy)])
         catalog=read('data/expressions.json')
-        self.assertEqual([v['key'] for v in values[7:]], [s['key'] for s in catalog['expressions']])
+        self.assertEqual((values[-1]['key'],values[-1]['id']), ('thinking','0:608'))
+        self.assertEqual([v['key'] for v in values[7:-1]], [s['key'] for s in catalog['expressions']])
         root=ET.parse(ROOT/'runtime.rml').getroot()
         animations={a.get('name'):a for a in root.iter('LinearAnimation')}
         presets={p['id']:p for p in self.sources[1]['presets']}
@@ -63,6 +64,7 @@ class DataContractTests(unittest.TestCase):
                 self.assertEqual(animation.get('loopValue'),'loop')
                 self.assertEqual(presets[spec['key']]['values']['mood'],spec['key'])
                 self.assertEqual(presets[spec['key']]['values']['isAsleep'],False)
+        self.assertEqual(presets['thinking']['values']['mood'],'thinking')
 
     def test_sleep_wave_and_legacy_moods_clear_new_props(self):
         root=ET.parse(ROOT/'runtime.rml').getroot()

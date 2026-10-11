@@ -217,6 +217,13 @@ def build_head(character):
     confused = node(eyes, "EyesConfused", "0:37")
     add_eye(confused, "EyeL", 474*SCALE-250, -2, "open")
     add_eye(confused, "EyeR", 780*SCALE-250, 2, "open", 0.92)
+    thinking = add_eyes_variant(eyes, "EyesThinking", "0:9100")
+    gaze_shapes = {"IrisOutline", "IrisGreen", "LowerIrisLight", "Pupil",
+                   "MainCatchlight", "SmallCatchlight"}
+    for shape in thinking.iter("Shape"):
+        if shape.get("name") in gaze_shapes:
+            shape.set("x", str(float(shape.get("x", 0)) + 4))
+            shape.set("y", str(float(shape.get("y", 0)) - 6))
     add_eyes_variant(eyes, "EyesSleeping", "0:38", "sleep", "sleep")
 
     art_group(face, "FaceMask", -250, -292)
@@ -332,7 +339,9 @@ def main():
     artboard.insert(position, make_artwork(old))
     add_core_motion(artboard)
     from expression_library import extend_runtime
+    from thinking_mood import add_thinking_mood
     extend_runtime(artboard, sys.modules[__name__])
+    add_thinking_mood(artboard)
     # Bundle the view model so runtime.rml and review snapshots are self-contained.
     # data/model.json is canonical; data.rml is its generated, excluded sidecar.
     tree.getroot().extend(list(ET.parse(HERE / "data.rml").getroot()))
