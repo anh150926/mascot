@@ -11,12 +11,13 @@
     "transparent vector-only rig"
   ],
   "source_sha256": {
-    "data/model.json": "c91da3b09ac1944a4b8eaf24a667dc9d0292f3affcbe3441a7aef2f67ee8d3ea",
-    "data/presets.json": "d29055e055f3d76f52f5ca4c4eaecaa07f8ec531705478e36fb10d80454e3513",
-    "data/features.json": "12f013b8636398eaf1e49e9137b4b1289ec5d47f799699358f63edf7ddcb6d8b",
+    "data/model.json": "7a34161fddadaec77452bc2b9cc8088cbeb7875d0935e04ad5e0e5a96a3dc851",
+    "data/presets.json": "0a5779495139d78e6e462fe3334d21ad5a5b3376a42cad3ec9ff8108862acf9d",
+    "data/features.json": "2e17bcc4e919c1fe68ef519497daea390fae378585d963ee3997f0fa188cdf82",
+    "data/expressions.json": "2c57eff4df72d00bc63e9f8ee97e6775b3774dc409edff5b5c8e489e3fb6476d",
     "speech/lines.vi.json": "0c8b18c420cba743460d4fabd1cc6159ff792592762c71f936808a70cc022db5",
-    "data.rml": "8a802622ce9e884888d3e875c284b53cc2ddfcbabce865e2a3295c5842790fcc",
-    "runtime.rml": "db38765a15d1240aeae51d8af5538ceb0998486a1bc37d29238ba8db9e39c33a"
+    "data.rml": "737d29d9fabbf1c9dbea3d5f6e9c6fc09e026348a4bc38505e66b9e35fde0ce8",
+    "runtime.rml": "b3c41c1205aaf5ab774c0f4cd55d93fc886fd7dc16d4ed1a49e2257f9cf2569c"
   },
   "errors": []
 }

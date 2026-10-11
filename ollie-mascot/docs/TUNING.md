@@ -5,6 +5,8 @@
 | Tỉ lệ/nét/màu front | `artwork/build_artwork.py` | front-compare, onion, grid |
 | Điểm xoay/gắn bộ phận | `tools/build_ollie.py` | neutral so với front, wave-strip, sleep-strip |
 | Mắt/mỏ của mood | `tools/build_ollie.py`: add_eye, add_beak | contact sheet + blink probes |
+| 19 cảnh mới: đạo cụ, cánh gập, hiệu ứng, keyframe | `tools/expression_library.py`, `data/expressions.json` | `build/expressions/`, chuyển cảnh/ngủ/vẫy trong playground |
+| Cánh gập từ bảy lớp gốc, vai và đầu lông | `tools/wing_poses.py`, tư thế trong `tools/expression_library.py` | [75 khung cánh](../playground/wing-review.html), [phân tích cấu tạo](WING_STUDY.md) |
 | Thời gian chuyển động | `tools/scaffold/runtime.rml` hoặc bước retarget có ghi chú | đầu, giữa, cuối vòng và trở về |
 | Dữ liệu ứng dụng | `data/model.json`, binding trong scaffold | `build/data/validation.json`, JSON probe |
 | Preset và lời thoại | `data/presets.json`, `speech/lines.vi.json` | `tools/build_data.py --check`, playground |

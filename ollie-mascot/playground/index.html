@@ -37,18 +37,46 @@
     .hint { margin:7px 0 0; font-size:12px; color:var(--muted); }
     .bubble { position:absolute; left:56%; top:3%; max-width:175px; padding:8px 12px; border:2px solid var(--ink); border-radius:15px; background:white; box-shadow:0 8px 20px #14463a22; color:var(--ink); font-weight:650; opacity:0; transform:translateY(9px) scale(.92); transition:opacity .17s,transform .17s; pointer-events:none; }
     .bubble.show { opacity:1; transform:translateY(0) scale(1); }
+    .preview-column { min-width:0; position:sticky; top:18px; align-self:start; }
+    .stage { min-height:490px; }
+    .scene-info { padding:20px 24px; margin-top:12px; border:1px solid var(--line); border-radius:18px; background:var(--panel); }
+    .scene-info h2 { font-size:23px; text-transform:none; letter-spacing:-.025em; color:var(--ink); margin:0 0 8px; }
+    .scene-info p { margin:6px 0; color:var(--muted); }
+    .scene-info .duration { font-size:12px; color:#397344; font-weight:700; }
+    select { width:100%; padding:11px 10px; border:1px solid var(--line); border-radius:10px; font:inherit; background:#f5faf1; color:var(--ink); }
+    a { color:#2e7943; }
+    .library { padding:0 clamp(16px,4vw,48px) 56px; }
+    .library-header { display:flex; align-items:end; justify-content:space-between; gap:18px; flex-wrap:wrap; margin-bottom:22px; }
+    .library h2 { font-size:clamp(26px,3vw,38px); text-transform:none; letter-spacing:-.04em; color:var(--ink); margin:4px 0; }
+    .library-header p { color:var(--muted); margin:4px 0; max-width:630px; }
+    .eyebrow { color:#5b8564; text-transform:uppercase; letter-spacing:.15em; font-size:11px; font-weight:800; }
+    .filters { display:flex; gap:8px; flex-wrap:wrap; margin:20px 0; }
+    .filters button { flex:initial; border-radius:99px; padding:8px 15px; }
+    .scene-cards { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; }
+    .scene-card { display:flex; flex-direction:column; padding:0; overflow:hidden; background:var(--panel); border-radius:18px; }
+    .scene-card:hover { box-shadow:0 8px 24px #244d2912; transform:translateY(-2px); }
+    .scene-card img { width:100%; height:auto; aspect-ratio:1; object-fit:contain; background:#e9f0e2; padding:12px; }
+    .scene-card strong { display:block; padding:14px 15px 0; font-size:15px; }
+    .scene-card small { padding:4px 15px 15px; line-height:1.5; opacity:.8; }
+    .scene-card[hidden] { display:none; }
+    button:focus-visible,select:focus-visible,a:focus-visible { outline:3px solid #d4a933; outline-offset:3px; }
+    @media(max-width:1100px) { .scene-cards { grid-template-columns:repeat(4,minmax(0,1fr)); } }
+    @media(max-width:800px) { .preview-column { position:static; } .scene-cards { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+    @media(max-width:520px) { .scene-cards { grid-template-columns:repeat(2,minmax(0,1fr)); } .stage { min-height:350px; } .mascot { height:auto; aspect-ratio:1; } }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; } #fallback { animation:none; } }
   </style>
 </head>
 <body>
   <header>
     <h1>Ollie · Animation Playground</h1>
-    <p>Thử bảy biểu cảm, vẫy cánh và ngủ/tỉnh. Nhấn 1–7 để đổi mood, W để vẫy, S để ngủ, Space để dừng.</p>
+    <p>7 biểu cảm quen thuộc + 19 cảnh chuyển động mới. Nhấn 1–7 để đổi biểu cảm cơ bản, W để vẫy, S để ngủ, Space để dừng.</p>
   </header>
   <div class="review-link">
-    <span><strong>Bộ mẫu Ollie:</strong> dựng theo ảnh front mới, có tách bộ phận, chồng nét và 28 frame kiểm tra.</span>
-    <a href="../review.html">Mở bộ mẫu ↗</a>
+    <span><strong>Cánh lá đã được dựng lại.</strong> Dáng cầm đồ cong ôm đạo cụ; lông cánh tròn và chuyển động theo từng cảnh.</span>
+    <a href="wing-review.html">Xem cánh qua từng khung ↗</a>
   </div>
   <main>
+    <div class="preview-column" id="preview">
     <section class="stage" aria-label="Bản xem trước Ollie">
       <div class="mascot" id="mascot">
         <canvas id="rive" width="800" height="800"></canvas>
@@ -56,9 +84,19 @@
         <div class="bubble" id="bubble" role="status" aria-live="polite"></div>
       </div>
     </section>
+    <section class="scene-info" aria-live="polite">
+      <span class="duration" id="sceneDuration">BIỂU CẢM CƠ BẢN</span>
+      <h2 id="sceneTitle">Ollie đang ở đây</h2>
+      <p id="sceneMotion">Chọn một cảnh trong bộ mới để xem nhịp chuyển động và cách sử dụng.</p>
+      <p id="sceneUse">Các cảnh lặp nhẹ, có thể dừng bất cứ lúc nào.</p>
+    </section>
+    </div>
     <aside class="panel">
       <h2>Biểu cảm</h2>
       <div class="grid" id="moods"></div>
+      <h2><label for="sceneSelect">Bộ chuyển động mới</label></h2>
+      <select id="sceneSelect"><option value="">Chọn trong 19 cảnh…</option></select>
+      <div class="row" style="margin-top:8px"><button id="previousScene" aria-label="Cảnh trước">← Cảnh trước</button><button id="nextScene" aria-label="Cảnh tiếp theo">Cảnh tiếp →</button></div>
       <h2>Cử chỉ</h2>
       <div class="row">
         <button id="wave">Vẫy cánh</button>
@@ -86,10 +124,16 @@
       <div id="status">Đang nạp Ollie…</div>
     </aside>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/@rive-app/canvas@2/rive.js"></script>
+  <section class="library" id="library" aria-labelledby="libraryTitle">
+    <div class="library-header"><div><span class="eyebrow">OLLIE / MOTION LIBRARY · 01</span><h2 id="libraryTitle">Một Ollie, nhiều sắc thái.</h2><p>Từ một ý tưởng nhỏ đến một ngày đầy năng lượng. Chọn thẻ để thử chuyển động; ảnh trên thẻ là khung hình đại diện.</p></div><div><a href="../docs/EXPRESSION_STUDY.md">Đọc phân tích tạo hình ↗</a><br><a href="../review.html">Xem bộ mẫu gốc ↗</a></div></div>
+    <div class="filters" id="sceneFilters" role="group" aria-label="Nhóm biểu cảm"></div>
+    <div class="scene-cards" id="sceneCards"></div>
+    <p id="libraryStatus" class="hint">Đang nạp bộ chuyển động…</p>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/@rive-app/canvas@2.44.0/rive.js"></script>
   <script>
     const SRC = '../dist/ollie.riv';
-    const FRAME = name => './frames/' + name + '.png';
+    const FRAME = name => './frames/' + name + '.png?v=wing04';
     const MOODS = [
       ['neutral','Mặc định'],['happy','Vui vẻ'],['wink','Nháy mắt'],
       ['focus','Tập trung'],['surprised','Bất ngờ'],['sleepy','Buồn ngủ'],['confused','Thắc mắc']
@@ -103,6 +147,64 @@
     let animation = null, moodProp = null, sleepProp = null, waveProp = null, playing = true, bubbleTimer = null;
     let fallbackMode = false, fallbackMood = 'neutral', fallbackSleep = false, gestureTimer = null;
     let speechData = null;
+    let scenes = [], currentMood = 'neutral';
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const sceneSelect = document.getElementById('sceneSelect');
+    function describeMood(key) {
+      currentMood = key;
+      const scene = scenes.find(item => item.key === key);
+      sceneSelect.value = scene ? key : '';
+      document.getElementById('sceneTitle').textContent = scene?.label || MOODS.find(item => item[0] === key)?.[1] || 'Ollie';
+      document.getElementById('sceneDuration').textContent = scene ? `${(scene.frames/60).toLocaleString('vi-VN',{maximumFractionDigits:2})} GIÂY / VÒNG` : 'BIỂU CẢM CƠ BẢN';
+      document.getElementById('sceneMotion').textContent = scene?.motion || 'Một biểu cảm quen thuộc của Ollie.';
+      document.getElementById('sceneUse').textContent = scene?.use || 'Chọn trong bộ chuyển động mới để khám phá thêm.';
+      document.querySelectorAll('.scene-card').forEach(card => card.setAttribute('aria-pressed', String(card.dataset.mood === key)));
+      selectButton(moodBox, moodBox.querySelector(`[data-mood="${key}"]`));
+      if (fallbackMode ? fallbackSleep : sleepProp?.value) {
+        document.getElementById('sceneTitle').textContent = 'Ollie đang ngủ';
+        document.getElementById('sceneDuration').textContent = 'NGHỈ NGƠI';
+        document.getElementById('sceneMotion').textContent = 'Mắt khép, thở đều; đạo cụ được cất đi khi ngủ.';
+        document.getElementById('sceneUse').textContent = 'Chạm vào Ollie để đánh thức và trở lại cảnh đã chọn.';
+      }
+    }
+    fetch('../data/expressions.json').then(r => { if (!r.ok) throw new Error('Không tải được danh mục'); return r.json(); }).then(catalog => {
+      scenes = catalog.expressions;
+      for (const group of catalog.groups) {
+        const optgroup = document.createElement('optgroup'); optgroup.label = group.label;
+        scenes.filter(scene => scene.group === group.id).forEach(scene => {
+          const option = document.createElement('option'); option.value = scene.key; option.textContent = scene.label; optgroup.append(option);
+        });
+        sceneSelect.append(optgroup);
+      }
+      const filters = document.getElementById('sceneFilters');
+      for (const group of [{id:'all',label:'Tất cả · 19'}, ...catalog.groups]) {
+        const button = document.createElement('button'); button.textContent = group.label; button.setAttribute('aria-pressed', String(group.id === 'all'));
+        button.onclick = () => {
+          selectButton(filters, button);
+          document.querySelectorAll('.scene-card').forEach(card => card.hidden = group.id !== 'all' && card.dataset.group !== group.id);
+        };
+        filters.append(button);
+      }
+      for (const scene of scenes) {
+        const card = document.createElement('button'); card.className = 'scene-card'; card.dataset.mood = scene.key; card.dataset.group = scene.group; card.setAttribute('aria-pressed','false');
+        const picture = document.createElement('img'); picture.src = FRAME(scene.key); picture.alt = ''; picture.loading = 'lazy'; picture.width = 500; picture.height = 500;
+        const title = document.createElement('strong'); title.textContent = scene.label;
+        const caption = document.createElement('small'); caption.textContent = `${(scene.frames/60).toLocaleString('vi-VN',{maximumFractionDigits:2})} giây · ${scene.prop}`;
+        card.append(picture,title,caption);
+        card.onclick = () => { setMood(scene.key); document.getElementById('preview').scrollIntoView({behavior:reducedMotion?'instant':'smooth',block:'start'}); };
+        document.getElementById('sceneCards').append(card);
+      }
+      describeMood(currentMood);
+      document.getElementById('libraryStatus').textContent = '19 cảnh mới · 4 nhóm · cùng một nhân vật Ollie';
+    }).catch(() => { document.getElementById('libraryStatus').textContent = 'Chưa nạp được danh mục. Hãy mở trang qua máy chủ xem trước cục bộ.'; });
+    sceneSelect.onchange = () => setMood(sceneSelect.value || 'neutral');
+    function stepScene(direction) {
+      if (!scenes.length) return;
+      const index = scenes.findIndex(scene => scene.key === currentMood);
+      setMood(scenes[(index + direction + scenes.length) % scenes.length].key);
+    }
+    document.getElementById('previousScene').onclick = () => stepScene(-1);
+    document.getElementById('nextScene').onclick = () => stepScene(1);
     const speechPrevious = new Map();
     // Real app values belong here. Never invent minutes, tasks or reminder times.
     const speechContext = {name:'bạn'};
@@ -113,9 +215,14 @@
 
     function showFrame(name) { fallback.src = FRAME(name); }
     function useFrames(reason) {
+      if (moodProp) fallbackMood = moodProp.value;
+      if (sleepProp) fallbackSleep = !!sleepProp.value;
       if (animation) { animation.cleanup(); animation = null; }
+      moodProp = null; sleepProp = null; waveProp = null;
       fallbackMode = true; fallback.style.display = 'block'; canvas.style.display = 'none';
+      fallback.style.animationPlayState = playing ? 'running' : 'paused';
       showFrame(fallbackSleep ? 'sleep' : fallbackMood);
+      syncSleep();
       status(reason || 'Đang xem các frame render từ Rive. Mood, wave và sleep có thể thử ở chế độ này.');
     }
 
@@ -127,15 +234,16 @@
       container.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b === current)));
     }
     function setMood(key) {
+      clearTimeout(gestureTimer);
+      fallbackMood = key;
+      describeMood(key);
       if (fallbackMode) {
         fallbackMood = key;
         if (!fallbackSleep) showFrame(key);
-        selectButton(moodBox, moodBox.querySelector(`[data-mood="${key}"]`));
         return status(`mood = ${key} · frame preview`);
       }
       if (!moodProp) return status('Chưa tìm thấy Mascot.mood.', true);
       moodProp.value = key;
-      selectButton(moodBox, moodBox.querySelector(`[data-mood="${key}"]`));
       status(`mood = ${key}`);
     }
     MOODS.forEach(([key,label],index) => {
@@ -182,9 +290,11 @@
     });
     function syncSleep() {
       const asleep = fallbackMode ? fallbackSleep : !!sleepProp?.value;
+      fallbackSleep = asleep;
       sleepBtn.textContent = asleep ? 'Đang ngủ…' : 'Cho ngủ';
       sleepBtn.setAttribute('aria-pressed', String(asleep));
       if (asleep) bubble.classList.remove('show');
+      describeMood(currentMood);
     }
     function load() {
       if (animation) animation.cleanup();
@@ -202,6 +312,8 @@
           moodProp = model?.enum('mood');
           sleepProp = model?.boolean('isAsleep');
           waveProp = model?.trigger('wave');
+          if (moodProp) moodProp.value = currentMood;
+          if (sleepProp) sleepProp.value = fallbackSleep;
           if (sleepProp) sleepProp.on(() => { syncSleep(); status(`isAsleep = ${sleepProp.value}`); });
           syncSleep();
           playing = true;
@@ -215,6 +327,7 @@
     }
     sleepBtn.onclick = () => {
       if (fallbackMode) {
+        clearTimeout(gestureTimer);
         fallbackSleep = !fallbackSleep;
         showFrame(fallbackSleep ? 'sleep' : fallbackMood);
         syncSleep();
@@ -255,11 +368,14 @@
       fallbackSleep = false;
       showFrame('surprised');
       syncSleep();
-      setTimeout(() => showFrame(fallbackMood), 650);
+      clearTimeout(gestureTimer);
+      gestureTimer = setTimeout(() => showFrame(fallbackSleep ? 'sleep' : fallbackMood), 650);
       status('Ollie đã tỉnh · frame preview');
     };
     window.addEventListener('resize', () => animation?.resizeDrawingSurfaceToCanvas());
     window.addEventListener('keydown', e => {
+      if (/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName) || e.target.isContentEditable) return;
+      if (e.target.closest('button') && (e.code === 'Space' || e.key === 'Enter')) return;
       if (e.key >= '1' && e.key <= '7') setMood(MOODS[Number(e.key)-1][0]);
       if (e.key.toLowerCase() === 'w') document.getElementById('wave').click();
       if (e.key.toLowerCase() === 's') sleepBtn.click();

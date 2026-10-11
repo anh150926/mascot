@@ -204,7 +204,7 @@ def snapshot():
     animations=[{'name':a.get('name'),'id':a.get('id'),'frames':int(a.get('duration','0')),'fps':60,'loop':a.get('loopValue','oneShot')}
                 for a in art.findall('LinearAnimation')]
     write(BUILD/'data/rig-map.json',{'coordinate_space':'Local transforms in 500x500 artboard; parent transforms compose at runtime.','nodes':nodes,'animations':animations})
-    paths=['data/model.json','data/presets.json','data/features.json','speech/lines.vi.json','data.rml','runtime.rml']
+    paths=['data/model.json','data/presets.json','data/features.json','data/expressions.json','speech/lines.vi.json','data.rml','runtime.rml']
     write(BUILD/'data/validation.json',{'passed':True,'checks':['unique IDs','artboard and default state machine','exported View Model defaults','embedded model equality','bindings for every property','enum animations and transitions','ordered layers','transparent vector-only rig'],
           'source_sha256':{p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in paths},'errors':[]})
     print(f'Runtime data valid: {len(nodes)} rig nodes, {len(animations)} animations',flush=True)
@@ -216,6 +216,7 @@ def package():
     for name in ['contract.json','presets.json','rig-map.json','validation.json']:
         shutil.copy2(BUILD/'data'/name,dest/name)
     shutil.copy2(ROOT/'data/features.json',dest/'features.json')
+    shutil.copy2(ROOT/'data/expressions.json',dest/'expressions.json')
     speech=ROOT/'dist/speech';speech.mkdir(exist_ok=True)
     shutil.copy2(ROOT/'speech/lines.vi.json',speech/'lines.vi.json')
 

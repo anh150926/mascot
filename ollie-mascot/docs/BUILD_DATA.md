@@ -13,7 +13,7 @@ Nez hiện **không có thư mục nguồn `data/`**; nguồn View Model là fil
 | `data.rml` | Mood + Mascot/Default + mood/isAsleep/wave | `data/model.json` sinh `data.rml`, giữ tên, enum và ID hiện có |
 | Không có metadata phiên bản cho doc cache | khó biết tài liệu thuộc CLI nào | `docs/rive-cli/index.json`: phiên bản, lệnh nguồn, SHA-256; 14 schema JSON |
 | `speech/lines.vi.json` | câu thoại app đọc, mood/gesture, điểm neo | 20 câu riêng của Ollie, 10 nhóm theo planning/wellness, không sao chép câu về robot/tai nghe/phòng học |
-| Preset nằm rải trong lệnh và probe | dữ liệu chạy thử | `data/presets.json`: 10 preset dùng trực tiếp bởi `tools/preview.py` |
+| Preset nằm rải trong lệnh và probe | dữ liệu chạy thử | `data/presets.json`: 29 preset dùng trực tiếp bởi `tools/preview.py`, gồm 19 cảnh mới trong `data/expressions.json` |
 | MASCOT_BRIEF + TUNING | nhận diện và cách chỉnh | MASCOT_BRIEF + MODEL_BRIEF + TUNING + tài liệu này |
 | `tests/t1..t10*.json` | kiểm theo giai đoạn và vùng màu của Nez | Ollie giữ 28 capture riêng, thêm 5 kiểm thử lỗi dữ liệu; không dùng vùng pixel xanh dương của Nez |
 | `build/moods`, `rv`, `trace` | output xem biểu cảm/rig/chồng ảnh | đã có từ bộ mẫu; thêm `build/data` cho contract, rig map, báo cáo |

@@ -179,9 +179,11 @@ def add_fx(face):
     zzz = node(fx, "FxZzz", "0:56")
     for i, (xx, yy) in enumerate([(130, -142), (153, -169)]):
         line(zzz, f"Z{i}", [(xx-8, yy-7), (xx+6, yy-7), (xx-7, yy+7), (xx+8, yy+7)], GREEN, 4)
-    q = node(fx, "FxQuestion", "0:57")
-    line(q, "QuestionCurl", [(122, -149), (132, -158), (144, -155), (149, -145), (134, -129), (134, -123)], GREEN, 5)
-    ellipse(q, "QuestionDot", 134, -111, 6, 6, GREEN)
+    # Keep the question mark clear of the crown throughout the head tilt.
+    # Local coordinates let it grow around its own centre at small preview sizes.
+    q = node(fx, "FxQuestion", "0:57", x=184, y=-190, scaleX=1.25, scaleY=1.25)
+    line(q, "QuestionCurl", [(-12, -15), (-2, -24), (10, -21), (15, -11), (0, 5), (0, 11)], GREEN, 7)
+    ellipse(q, "QuestionDot", 0, 23, 8, 8, GREEN)
     snore = node(fx, "FxSnore", "0:58")
     for idx, (xx, yy) in enumerate([(110, -125), (142, -157), (170, -185)], 1):
         z = node(snore, f"Z{idx}", f"0:{700+idx}", x=xx, y=yy, opacity=0)
@@ -329,6 +331,8 @@ def main():
     artboard.remove(old)
     artboard.insert(position, make_artwork(old))
     add_core_motion(artboard)
+    from expression_library import extend_runtime
+    extend_runtime(artboard, sys.modules[__name__])
     # Bundle the view model so runtime.rml and review snapshots are self-contained.
     # data/model.json is canonical; data.rml is its generated, excluded sidecar.
     tree.getroot().extend(list(ET.parse(HERE / "data.rml").getroot()))

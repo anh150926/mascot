@@ -6,6 +6,10 @@ Mở **[review.html](review.html)** để xem ảnh gốc cạnh vector, kéo th
 
 ## Các file chính
 
+**Bản dựng cánh 04:** 15 tư thế có cánh vector mới với đường bao và các lớp lông cong tròn; dáng cầm đồ ôm mép đạo cụ thay vì rủ thẳng hai bên. Bốn cảnh dang/hạ cánh giữ rig front gốc. [Xem đủ 95 khung của 19 cảnh](playground/wing-review.html), [đọc phân tích cánh](docs/WING_STUDY.md). Nguồn tư thế: `tools/wing_poses.py` và `tools/expression_library.py`.
+
+**Mới ngày 09/10:** thêm 19 cảnh theo bảng sticker, tổng cộng 26 mood. Mở [thư viện chuyển động](playground/index.html#library) và [phân tích từng ô mẫu](docs/EXPRESSION_STUDY.md). Nguồn đạo cụ/keyframe: `tools/expression_library.py`; danh mục: `data/expressions.json`. Bảy mood gốc giữ nguyên ID và thứ tự; mood mới được nối vào cuối enum.
+
 | Mục | Vị trí |
 |---|---|
 | Ảnh front nguyên gốc | `reference/ollie-front-master.png` |
@@ -91,14 +95,14 @@ Artboard Runtime, 500×500, nền trong suốt. State machine Main; View Model M
 
 | Thuộc tính | Kiểu | Giá trị |
 |---|---|---|
-| mood | enum | neutral, happy, wink, focus, surprised, sleepy, confused |
+| mood | enum | 7 mood gốc + 19 cảnh mới; xem `data/expressions.json` và `dist/data/contract.json` |
 | isAsleep | bool | ngủ/thức; chạm nhân vật đặt về false |
 | wave | trigger | vẫy cánh khi đang thức |
 
-Rig có 7 layer, 17 timeline. Kiến trúc animation được lấy từ Nez, lưu snapshot riêng trong tools/scaffold/, rồi thay hình nhân vật bằng Ollie và chỉnh điểm xoay/biên độ. Build Ollie không phụ thuộc các sửa đổi tương lai của Nez và không chỉnh file của Nez. `data/model.json` là nguồn chính; `tools/build_data.py` sinh `data.rml`, sau đó nhúng vào runtime. File data.rml riêng bị loại khỏi compile trực tiếp để tránh khai báo trùng.
+Rig có 7 layer, 36 timeline. Kiến trúc animation được lấy từ Nez, lưu snapshot riêng trong tools/scaffold/, rồi thay hình nhân vật bằng Ollie và chỉnh điểm xoay/biên độ. Bộ 19 cảnh mới được dựng trong `tools/expression_library.py`. Build Ollie không phụ thuộc các sửa đổi tương lai của Nez và không chỉnh file của Nez. `data/model.json` là nguồn chính; `tools/build_data.py` sinh `data.rml`, sau đó nhúng vào runtime. File data.rml riêng bị loại khỏi compile trực tiếp để tránh khai báo trùng.
 
 ## Thêm ảnh để chỉnh tiếp
 
 Đặt ảnh bổ sung trong reference/incoming/ và ghi rõ góc nhìn hoặc biểu cảm. Ảnh front mới là chuẩn nhận diện; bảng thiết kế cũ chỉ cung cấp hướng biểu cảm, màu và bối cảnh. Khi ảnh mâu thuẫn, ghi lại quyết định trong reference/manifest.json trước khi thay nét. Xem [docs/TUNING.md](docs/TUNING.md) để biết sửa file nào.
 
-Hiện chỉ có front đủ rõ để dựng chính xác. Chưa có bộ vector nghiêng/sau hoặc đạo cụ được xác nhận; các mục đó được đánh dấu chờ ảnh. Kiểm tra tự động xác nhận hành vi và tránh cắt hình ở các frame chọn trước; độ giống nghệ thuật vẫn cần xem ảnh đối chiếu và phản hồi của người dùng.
+Hiện front là rig chính; chưa có bộ vector quay nghiêng/sau hoàn chỉnh. Đạo cụ của 19 cảnh mới đã được dựng cách điệu theo bảng sticker, đang chờ phản hồi thẩm mỹ. Kiểm tra tự động xác nhận hành vi và tránh cắt hình ở các frame chọn trước; độ giống nghệ thuật vẫn cần xem ảnh đối chiếu và phản hồi của người dùng.

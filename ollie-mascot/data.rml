@@ -7,6 +7,25 @@
         <DataEnumValue key="surprised" value="Surprised" id="0:605" />
         <DataEnumValue key="sleepy" value="Sleepy" id="0:606" />
         <DataEnumValue key="confused" value="Confused" id="0:607" />
+        <DataEnumValue key="idea" value="Idea" id="0:10001" />
+        <DataEnumValue key="love" value="Love" id="0:10002" />
+        <DataEnumValue key="nutrition" value="Nutrition" id="0:10003" />
+        <DataEnumValue key="running" value="Running" id="0:10004" />
+        <DataEnumValue key="tired" value="Tired" id="0:10005" />
+        <DataEnumValue key="worried" value="Worried" id="0:10006" />
+        <DataEnumValue key="pomodoro" value="Pomodoro" id="0:10007" />
+        <DataEnumValue key="bedtime" value="Bedtime" id="0:10008" />
+        <DataEnumValue key="cheer" value="Cheer" id="0:10009" />
+        <DataEnumValue key="sad" value="Sad" id="0:10010" />
+        <DataEnumValue key="wallet" value="Wallet" id="0:10011" />
+        <DataEnumValue key="saving" value="Saving" id="0:10012" />
+        <DataEnumValue key="checklist" value="Checklist" id="0:10013" />
+        <DataEnumValue key="celebrate" value="Celebrate" id="0:10014" />
+        <DataEnumValue key="alarm" value="Alarm" id="0:10015" />
+        <DataEnumValue key="workout" value="Workout" id="0:10016" />
+        <DataEnumValue key="meditate" value="Meditate" id="0:10017" />
+        <DataEnumValue key="letter" value="Letter" id="0:10018" />
+        <DataEnumValue key="energized" value="Energized" id="0:10019" />
     </DataEnumCustom>
     <ViewModel name="Mascot" id="0:610" defaultInstanceId="0:612">
         <ViewModelPropertyEnumCustom name="mood" id="0:611" enumId="0:600" />

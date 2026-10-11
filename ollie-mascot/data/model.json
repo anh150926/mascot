@@ -12,7 +12,26 @@
       {"key": "focus", "label": "Focus", "id": "0:604"},
       {"key": "surprised", "label": "Surprised", "id": "0:605"},
       {"key": "sleepy", "label": "Sleepy", "id": "0:606"},
-      {"key": "confused", "label": "Confused", "id": "0:607"}
+      {"key": "confused", "label": "Confused", "id": "0:607"},
+      {"key": "idea", "label": "Idea", "id": "0:10001"},
+      {"key": "love", "label": "Love", "id": "0:10002"},
+      {"key": "nutrition", "label": "Nutrition", "id": "0:10003"},
+      {"key": "running", "label": "Running", "id": "0:10004"},
+      {"key": "tired", "label": "Tired", "id": "0:10005"},
+      {"key": "worried", "label": "Worried", "id": "0:10006"},
+      {"key": "pomodoro", "label": "Pomodoro", "id": "0:10007"},
+      {"key": "bedtime", "label": "Bedtime", "id": "0:10008"},
+      {"key": "cheer", "label": "Cheer", "id": "0:10009"},
+      {"key": "sad", "label": "Sad", "id": "0:10010"},
+      {"key": "wallet", "label": "Wallet", "id": "0:10011"},
+      {"key": "saving", "label": "Saving", "id": "0:10012"},
+      {"key": "checklist", "label": "Checklist", "id": "0:10013"},
+      {"key": "celebrate", "label": "Celebrate", "id": "0:10014"},
+      {"key": "alarm", "label": "Alarm", "id": "0:10015"},
+      {"key": "workout", "label": "Workout", "id": "0:10016"},
+      {"key": "meditate", "label": "Meditate", "id": "0:10017"},
+      {"key": "letter", "label": "Letter", "id": "0:10018"},
+      {"key": "energized", "label": "Energized", "id": "0:10019"}
     ]}
   ],
   "properties": [

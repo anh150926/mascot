@@ -15,6 +15,8 @@ import trace
 import build_data
 import sync_cli_docs
 from export_web_frames import main as export_frames
+from build_expressions import main as export_expressions
+from build_wing_review import main as export_wing_review
 
 sys.path.insert(0,str(ROOT/'artwork'))
 import build_artwork as art
@@ -45,9 +47,11 @@ def write_review(report):
 <h2>02 / Chồng nét</h2><div class="compare"><figure><div class="overlay"><img src="reference/front-500.png" alt="Ảnh chuẩn"><img id="overlay" style="opacity:.5" src="build/front-alpha.png" alt="Bản vector chồng lên ảnh chuẩn"></div><label>Độ đậm vector <span id="opacity">50%</span><input id="mix" type="range" min="0" max="100" value="50" aria-label="Độ đậm vector"></label></figure><figure><img src="build/trace/landmarks.png" alt="Các điểm neo hình dáng"><figcaption>Mốc đầu lá, tâm mắt, mỏ, cổ, vai, huy hiệu và chân. Chi tiết trong docs/MODEL_BRIEF.md.</figcaption></figure></div>
 <h2>03 / Cấu tạo & từng bộ phận</h2><img class="wide" src="build/construction.png" alt="Các bước dựng Ollie"><img class="wide" src="build/parts.png" alt="Các bộ phận tách riêng">
 <h2>04 / Biểu cảm</h2><img class="wide" src="build/moods/contact-sheet.png" alt="Bảy biểu cảm và tư thế ngủ">
+<h2>04b / 19 cảnh chuyển động mới</h2><p><a href="playground/index.html#library">Chọn và chạy từng cảnh</a> · <a href="docs/EXPRESSION_STUDY.md">Phân tích bảng sticker, nét mặt, đạo cụ và nhịp chuyển động</a></p><img class="wide" src="playground/frames/expressions-contact.png" alt="19 cảnh Ollie mới: cảm xúc, công việc, sức khỏe và tài chính">
 <h2>05 / Chuyển động</h2><img class="wide" src="build/idle-strip.png" alt="Thở và chớp mắt"><img class="wide" src="build/wave-strip.png" alt="Chuỗi vẫy cánh"><img class="wide" src="build/sleep-strip.png" alt="Ngủ và chạm để thức">
 <h2>06 / Kích thước ứng dụng</h2><div style="display:flex;gap:20px;align-items:end;flex-wrap:wrap"><figure><img width="80" src="build/size-80-alpha.png" alt="80 pixel"><figcaption>80 px</figcaption></figure><figure><img width="120" src="build/size-120-alpha.png" alt="120 pixel"><figcaption>120 px</figcaption></figure><figure><img width="240" src="build/size-240-alpha.png" alt="240 pixel"><figcaption>240 px</figcaption></figure></div>
 <details><summary>Tất cả frame probe (28)</summary><div class="gallery">PROBES</div></details><p class="small">Biểu cảm ngoài front là bản phát triển từ ảnh chuẩn, chưa phải mẫu đã được bạn duyệt. Xem README.md để thêm ảnh và dựng lại.</p></main><script>document.getElementById('mix').addEventListener('input',e=>{document.getElementById('overlay').style.opacity=e.target.value/100;document.getElementById('opacity').textContent=e.target.value+'%'});</script></html>'''
+    html=html.replace('</nav>', '<a href="playground/wing-review.html">Cánh Ollie / 95 khung</a></nav>')
     (ROOT/'review.html').write_text(html.replace('PROBES',probes),encoding='utf-8')
 
 
@@ -116,7 +120,10 @@ def main(review_only=False):
         clean(p)
     shutil.copy2(BUILD/'probe-t10-wave.png',BUILD/'wave-mid.png')
     shutil.copy2(BUILD/'probe-t9-asleep.png',BUILD/'sleep-late.png')
-    export_frames();overlay.main();trace.sync()
+    export_frames()
+    if not review_only:export_expressions()
+    export_wing_review()
+    overlay.main();trace.sync()
     if not review_only:run([BUILD/'trace','--screenshot='+str(BUILD/'trace.png'),'--fit=contain'])
     write_review(report)
     if not review_only:run(['.','--once'])

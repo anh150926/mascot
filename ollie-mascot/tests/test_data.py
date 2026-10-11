@@ -45,5 +45,36 @@ class DataContractTests(unittest.TestCase):
         wake=next(p for p in self.sources[1]['presets'] if p['id']=='wake')
         self.assertEqual(preset_args(wake,True)[-3:],['--advance=60','--pointer=click@250,350','--advance=12'])
 
+    def test_expression_library_preserves_existing_integration(self):
+        model=self.sources[0]
+        values=model['enums'][0]['values']
+        legacy=['neutral','happy','wink','focus','surprised','sleepy','confused']
+        self.assertEqual([(v['key'],v['id']) for v in values[:7]],
+                         [(key,f'0:{601+i}') for i,key in enumerate(legacy)])
+        catalog=read('data/expressions.json')
+        self.assertEqual([v['key'] for v in values[7:]], [s['key'] for s in catalog['expressions']])
+        root=ET.parse(ROOT/'runtime.rml').getroot()
+        animations={a.get('name'):a for a in root.iter('LinearAnimation')}
+        presets={p['id']:p for p in self.sources[1]['presets']}
+        for spec in catalog['expressions']:
+            with self.subTest(scene=spec['key']):
+                animation=animations['mood_'+spec['key']]
+                self.assertEqual(int(animation.get('duration')),spec['frames'])
+                self.assertEqual(animation.get('loopValue'),'loop')
+                self.assertEqual(presets[spec['key']]['values']['mood'],spec['key'])
+                self.assertEqual(presets[spec['key']]['values']['isAsleep'],False)
+
+    def test_sleep_wave_and_legacy_moods_clear_new_props(self):
+        root=ET.parse(ROOT/'runtime.rml').getroot()
+        slots=[s for s in root.iter('Solo') if s.get('name','').startswith('Scene')]
+        self.assertEqual(len(slots),3)
+        animations={a.get('name'):a for a in root.iter('LinearAnimation')}
+        for name in ['mood_'+s for s in ['neutral','happy','wink','focus','surprised','sleepy','confused']]+['sleep_loop','wake_startle','hello_wave']:
+            for slot in slots:
+                with self.subTest(animation=name,slot=slot.get('name')):
+                    obj=animations[name].find(f"KeyedObject[@objectId='{slot.get('id')}']")
+                    active=obj.find("KeyedProperty[@propertyKey='296']/KeyFrameId")
+                    self.assertEqual(active.get('value'),slot.get('activeComponentId'))
+
 
 if __name__=='__main__':unittest.main()
