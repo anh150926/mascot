@@ -2,9 +2,13 @@
 
 Ngày dựng: 12/10/2026. Key dùng trong ứng dụng: `mood = thinking`.
 
-Biểu cảm này dành cho lúc Ollie cân nhắc một vấn đề, đọc câu hỏi hoặc chuẩn bị trả lời. Tư thế chính là một cánh đặt gần cằm, mắt nhìn chếch lên bên phải, mỏ khép và đầu nghiêng chậm. Ba chấm nhỏ lần lượt sáng lên để giữ cảm giác đang suy nghĩ trong lúc chờ.
+Biểu cảm này dành cho lúc Ollie cân nhắc một vấn đề, đọc câu hỏi hoặc chuẩn bị trả lời. Tư thế chính là một cánh đặt gần cằm, mắt nhìn chếch lên bên phải, mỏ khép và đầu nghiêng chậm. Một đám mây suy nghĩ nối với đầu bằng ba bong bóng nhỏ dần, bên trong có năm dấu chấm hiện lần lượt.
 
-`confused` thể hiện thắc mắc bằng dấu hỏi và cánh mở; `thinking` thể hiện sự cân nhắc; `idea` thể hiện lúc tìm ra cách giải quyết bằng bóng đèn. Ứng dụng có thể chuyển `thinking` → `idea` khi đã có câu trả lời.
+`confused` thể hiện thắc mắc bằng dấu hỏi và cánh mở; `thinking` thể hiện sự cân nhắc bằng đám mây suy nghĩ; `idea` thể hiện lúc tìm ra cách giải quyết bằng bóng đèn. Ứng dụng có thể chuyển `thinking` → `idea` khi đã có câu trả lời.
+
+## Đám mây suy nghĩ
+
+Đám mây gồm bốn hình elip chồng lên nhau (Puff1–Puff4), tạo ra hình dáng mây mềm mại mà không cần đường path phức tạp. Ba bong bóng nối (LinkBubble1–3) tăng dần kích thước từ đỉnh đầu Ollie lên tới đám mây. Bên trong mây có năm dấu chấm xếp hàng ngang, hiện lần lượt từ trái sang phải.
 
 ## Khung chuyển động
 
@@ -12,11 +16,13 @@ Vòng lặp 180 frame ở 60 fps, dài 3 giây. Các đường chuyển động 
 
 | Thời điểm | Chuyển động |
 |---|---|
-| 0 s | Cánh nghỉ gần cằm, đầu nghiêng nhẹ; chấm suy nghĩ mờ. |
-| 0,75 s | Đầu nghiêng thêm, thân nâng theo nhịp thở; các chấm bắt đầu hiện. |
-| 1,5 s | Giữ nhịp cân nhắc, cánh nâng nhẹ khoảng 4 px; ba chấm rõ. |
-| 2,1–2,3 s | Chớp mắt ngắn trong lúc đầu bắt đầu trở lại. |
-| 3 s | Đầu, cánh, thân và chấm trở về tư thế đầu vòng. |
+| 0 s | Cánh nghỉ gần cằm, đầu nghiêng nhẹ; bong bóng nối và đám mây mờ. |
+| 0,25–0,58 s | Ba bong bóng nối hiện lần lượt từ dưới lên (offset 14 frame). |
+| 0,5–0,92 s | Đám mây fade in (opacity 0→0.85), bắt đầu nhịp thở (scale 0.95→1.05). |
+| 0,67–1,75 s | Năm dấu chấm bên trong mây sáng lần lượt trái→phải (offset 8 frame). |
+| 2,1–2,3 s | Chớp mắt ngắn; đám mây và dấu chấm bắt đầu mờ dần. |
+| 2,42–2,58 s | Bong bóng nối mờ lần lượt từ trên xuống. |
+| 3 s | Đầu, cánh, thân, đám mây và bong bóng trở về tư thế đầu vòng. |
 
 Cánh dùng nguyên bộ bảy lớp lông của rig hiện tại. Tròng mắt và ánh sáng trong mắt dịch nhẹ lên phải, trong khi viền mắt giữ vị trí gốc. Chồi lá tiếp tục chuyển động theo layer của rig.
 

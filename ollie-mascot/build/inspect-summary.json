@@ -3,67 +3,7 @@
   "summary": true,
   "problems": [],
   "artboards": [
-    {
-      "name": "Runtime",
-      "objects": 55772,
-      "types": {
-        "AnimationState": 36,
-        "AnyState": 7,
-        "Artboard": 1,
-        "BindablePropertyBoolean": 3,
-        "BindablePropertyEnum": 33,
-        "BindablePropertyTrigger": 1,
-        "CubicDetachedVertex": 1915,
-        "CubicEaseInterpolator": 20093,
-        "DataBindContext": 37,
-        "Ellipse": 87,
-        "EntryState": 7,
-        "ExitState": 7,
-        "Fill": 523,
-        "GradientStop": 76,
-        "KeyFrameDouble": 24365,
-        "KeyFrameId": 172,
-        "KeyedObject": 1309,
-        "KeyedProperty": 4403,
-        "LayoutComponentStyle": 1,
-        "LinearAnimation": 36,
-        "LinearGradient": 38,
-        "ListenerViewModelChange": 1,
-        "Node": 237,
-        "PointsPath": 457,
-        "Rectangle": 50,
-        "Shape": 613,
-        "SolidColor": 767,
-        "Solo": 6,
-        "Star": 19,
-        "StateMachine": 1,
-        "StateMachineLayer": 7,
-        "StateMachineListenerSingle": 1,
-        "StateTransition": 45,
-        "StraightVertex": 28,
-        "Stroke": 282,
-        "TransitionPropertyViewModelComparator": 36,
-        "TransitionValueBooleanComparator": 2,
-        "TransitionValueEnumComparator": 33,
-        "TransitionValueTriggerComparator": 1,
-        "TransitionViewModelCondition": 36
-      }
-    }
+    {"name": "Runtime", "objects": 57475, "types": {"AnimationState": 37, "AnyState": 7, "Artboard": 1, "BindablePropertyBoolean": 3, "BindablePropertyEnum": 34, "BindablePropertyTrigger": 1, "CubicDetachedVertex": 2018, "CubicEaseInterpolator": 20542, "DataBindContext": 38, "Ellipse": 99, "EntryState": 7, "ExitState": 7, "Fill": 558, "GradientStop": 84, "KeyFrameDouble": 25037, "KeyFrameId": 178, "KeyedObject": 1364, "KeyedProperty": 4632, "LayoutComponentStyle": 1, "LinearAnimation": 37, "LinearGradient": 42, "ListenerViewModelChange": 1, "Node": 246, "PointsPath": 480, "Rectangle": 50, "Shape": 648, "SolidColor": 810, "Solo": 6, "Star": 19, "StateMachine": 1, "StateMachineLayer": 7, "StateMachineListenerSingle": 1, "StateTransition": 46, "StraightVertex": 28, "Stroke": 294, "TransitionPropertyViewModelComparator": 37, "TransitionValueBooleanComparator": 2, "TransitionValueEnumComparator": 34, "TransitionValueTriggerComparator": 1, "TransitionViewModelCondition": 37}}
   ],
-  "roots": {
-    "objects": 36,
-    "types": {
-      "Backboard": 1,
-      "DataEnumCustom": 1,
-      "DataEnumValue": 26,
-      "ViewModel": 1,
-      "ViewModelInstance": 1,
-      "ViewModelInstanceBoolean": 1,
-      "ViewModelInstanceEnum": 1,
-      "ViewModelInstanceTrigger": 1,
-      "ViewModelPropertyBoolean": 1,
-      "ViewModelPropertyEnumCustom": 1,
-      "ViewModelPropertyTrigger": 1
-    }
-  }
+  "roots": {"objects": 37, "types": {"Backboard": 1, "DataEnumCustom": 1, "DataEnumValue": 27, "ViewModel": 1, "ViewModelInstance": 1, "ViewModelInstanceBoolean": 1, "ViewModelInstanceEnum": 1, "ViewModelInstanceTrigger": 1, "ViewModelPropertyBoolean": 1, "ViewModelPropertyEnumCustom": 1, "ViewModelPropertyTrigger": 1}}
 }

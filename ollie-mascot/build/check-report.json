@@ -207,7 +207,7 @@
       "bounds": [
         84,
         38,
-        426,
+        471,
         483
       ]
     },
@@ -235,7 +235,7 @@
       "bounds": [
         85,
         41,
-        406,
+        473,
         485
       ]
     },
@@ -249,7 +249,7 @@
       "bounds": [
         85,
         38,
-        426,
+        471,
         483
       ]
     },
@@ -263,7 +263,7 @@
       "bounds": [
         86,
         42,
-        434,
+        479,
         485
       ]
     },
@@ -305,7 +305,7 @@
       "bounds": [
         85,
         41,
-        406,
+        473,
         485
       ]
     },
@@ -555,9 +555,9 @@
     "sleep_blocks_wave": 0.0,
     "sleep_closes_eyes": 85.22740043644298,
     "breathing_visible": 8.521962666666667,
-    "thinking_motion_visible": 13.519057333333334,
+    "thinking_motion_visible": 15.688586666666666,
     "thinking_sleep_override": 0.0,
-    "thinking_wave_returns": 4e-06,
+    "thinking_wave_returns": 2.6666666666666664e-06,
     "neutral_matches_front": 0.208824
   },
   "errors": []
