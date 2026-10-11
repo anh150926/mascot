@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "scenes": 19,
+  "checks": [
+    "all selectable",
+    "no missing images",
+    "sleep and return screenshots",
+    "sleep description",
+    "120/240/400px light and dark",
+    "fallback preserves mood",
+    "repeated fallback activation",
+    "all fallback images",
+    "mobile overflow",
+    "no page errors"
+  ]
+}

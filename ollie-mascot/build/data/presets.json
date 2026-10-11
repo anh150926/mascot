@@ -1,0 +1,717 @@
+{
+  "schema_version": 1,
+  "presets": [
+    {
+      "id": "neutral",
+      "label": "Mặc định",
+      "values": {
+        "mood": "neutral",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 24
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=neutral",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=neutral",
+        "--data=isAsleep=false",
+        "--advance=24"
+      ]
+    },
+    {
+      "id": "happy",
+      "label": "Vui vẻ",
+      "values": {
+        "mood": "happy",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 24
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=happy",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=happy",
+        "--data=isAsleep=false",
+        "--advance=24"
+      ]
+    },
+    {
+      "id": "wink",
+      "label": "Nháy mắt",
+      "values": {
+        "mood": "wink",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 24
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=wink",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=wink",
+        "--data=isAsleep=false",
+        "--advance=24"
+      ]
+    },
+    {
+      "id": "focus",
+      "label": "Tập trung",
+      "values": {
+        "mood": "focus",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 24
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=focus",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=focus",
+        "--data=isAsleep=false",
+        "--advance=24"
+      ]
+    },
+    {
+      "id": "surprised",
+      "label": "Bất ngờ",
+      "values": {
+        "mood": "surprised",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 24
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=surprised",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=surprised",
+        "--data=isAsleep=false",
+        "--advance=24"
+      ]
+    },
+    {
+      "id": "sleepy",
+      "label": "Buồn ngủ",
+      "values": {
+        "mood": "sleepy",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 24
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=sleepy",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=sleepy",
+        "--data=isAsleep=false",
+        "--advance=24"
+      ]
+    },
+    {
+      "id": "confused",
+      "label": "Thắc mắc",
+      "values": {
+        "mood": "confused",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 24
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=confused",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=confused",
+        "--data=isAsleep=false",
+        "--advance=24"
+      ]
+    },
+    {
+      "id": "sleep",
+      "label": "Ngủ say",
+      "values": {
+        "mood": "neutral",
+        "isAsleep": true
+      },
+      "capture_steps": [
+        {
+          "advance": 90
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=neutral",
+        "--data=isAsleep=true"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=neutral",
+        "--data=isAsleep=true",
+        "--advance=90"
+      ]
+    },
+    {
+      "id": "wave",
+      "label": "Vẫy chào",
+      "values": {
+        "mood": "neutral",
+        "isAsleep": false
+      },
+      "triggers": [
+        "wave"
+      ],
+      "capture_steps": [
+        {
+          "advance": 22
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=neutral",
+        "--data=isAsleep=false",
+        "--data=wave=1"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=neutral",
+        "--data=isAsleep=false",
+        "--data=wave=1",
+        "--advance=22"
+      ]
+    },
+    {
+      "id": "wake",
+      "label": "Chạm đánh thức",
+      "values": {
+        "mood": "neutral",
+        "isAsleep": true
+      },
+      "capture_steps": [
+        {
+          "advance": 60
+        },
+        {
+          "click": [
+            250,
+            350
+          ]
+        },
+        {
+          "advance": 12
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=neutral",
+        "--data=isAsleep=true"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=neutral",
+        "--data=isAsleep=true",
+        "--advance=60",
+        "--pointer=click@250,350",
+        "--advance=12"
+      ]
+    },
+    {
+      "id": "idea",
+      "label": "Nảy ý tưởng",
+      "values": {
+        "mood": "idea",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 60
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=idea",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=idea",
+        "--data=isAsleep=false",
+        "--advance=60"
+      ]
+    },
+    {
+      "id": "love",
+      "label": "Ôm yêu thương",
+      "values": {
+        "mood": "love",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 60
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=love",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=love",
+        "--data=isAsleep=false",
+        "--advance=60"
+      ]
+    },
+    {
+      "id": "nutrition",
+      "label": "Ăn lành mạnh",
+      "values": {
+        "mood": "nutrition",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 60
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=nutrition",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=nutrition",
+        "--data=isAsleep=false",
+        "--advance=60"
+      ]
+    },
+    {
+      "id": "running",
+      "label": "Chạy bộ",
+      "values": {
+        "mood": "running",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 36
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=running",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=running",
+        "--data=isAsleep=false",
+        "--advance=36"
+      ]
+    },
+    {
+      "id": "tired",
+      "label": "Mệt rồi",
+      "values": {
+        "mood": "tired",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 60
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=tired",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=tired",
+        "--data=isAsleep=false",
+        "--advance=60"
+      ]
+    },
+    {
+      "id": "worried",
+      "label": "Hơi lo lắng",
+      "values": {
+        "mood": "worried",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 60
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=worried",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=worried",
+        "--data=isAsleep=false",
+        "--advance=60"
+      ]
+    },
+    {
+      "id": "pomodoro",
+      "label": "Vào guồng",
+      "values": {
+        "mood": "pomodoro",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 60
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=pomodoro",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=pomodoro",
+        "--data=isAsleep=false",
+        "--advance=60"
+      ]
+    },
+    {
+      "id": "bedtime",
+      "label": "Đến giờ nghỉ",
+      "values": {
+        "mood": "bedtime",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 60
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=bedtime",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=bedtime",
+        "--data=isAsleep=false",
+        "--advance=60"
+      ]
+    },
+    {
+      "id": "cheer",
+      "label": "Bạn làm được!",
+      "values": {
+        "mood": "cheer",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 50
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=cheer",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=cheer",
+        "--data=isAsleep=false",
+        "--advance=50"
+      ]
+    },
+    {
+      "id": "sad",
+      "label": "Cần cân đối lại",
+      "values": {
+        "mood": "sad",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 60
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=sad",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=sad",
+        "--data=isAsleep=false",
+        "--advance=60"
+      ]
+    },
+    {
+      "id": "wallet",
+      "label": "Quản lý chi tiêu",
+      "values": {
+        "mood": "wallet",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 60
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=wallet",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=wallet",
+        "--data=isAsleep=false",
+        "--advance=60"
+      ]
+    },
+    {
+      "id": "saving",
+      "label": "Tiết kiệm nhỏ",
+      "values": {
+        "mood": "saving",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 36
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=saving",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=saving",
+        "--data=isAsleep=false",
+        "--advance=36"
+      ]
+    },
+    {
+      "id": "checklist",
+      "label": "Xong một việc",
+      "values": {
+        "mood": "checklist",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 60
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=checklist",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=checklist",
+        "--data=isAsleep=false",
+        "--advance=60"
+      ]
+    },
+    {
+      "id": "celebrate",
+      "label": "Ăn mừng",
+      "values": {
+        "mood": "celebrate",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 60
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=celebrate",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=celebrate",
+        "--data=isAsleep=false",
+        "--advance=60"
+      ]
+    },
+    {
+      "id": "alarm",
+      "label": "Nhắc giờ nhẹ",
+      "values": {
+        "mood": "alarm",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 32
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=alarm",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=alarm",
+        "--data=isAsleep=false",
+        "--advance=32"
+      ]
+    },
+    {
+      "id": "workout",
+      "label": "Tập một chút",
+      "values": {
+        "mood": "workout",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 60
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=workout",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=workout",
+        "--data=isAsleep=false",
+        "--advance=60"
+      ]
+    },
+    {
+      "id": "meditate",
+      "label": "Hít thở chậm",
+      "values": {
+        "mood": "meditate",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 90
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=meditate",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=meditate",
+        "--data=isAsleep=false",
+        "--advance=90"
+      ]
+    },
+    {
+      "id": "letter",
+      "label": "Gửi lời cảm ơn",
+      "values": {
+        "mood": "letter",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 60
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=letter",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=letter",
+        "--data=isAsleep=false",
+        "--advance=60"
+      ]
+    },
+    {
+      "id": "energized",
+      "label": "Đầy năng lượng",
+      "values": {
+        "mood": "energized",
+        "isAsleep": false
+      },
+      "capture_steps": [
+        {
+          "advance": 60
+        }
+      ],
+      "preview_args": [
+        "--fit=contain",
+        "--data=mood=energized",
+        "--data=isAsleep=false"
+      ],
+      "capture_args": [
+        "--fit=contain",
+        "--data=mood=energized",
+        "--data=isAsleep=false",
+        "--advance=60"
+      ]
+    }
+  ]
+}

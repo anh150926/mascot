@@ -1,0 +1,11 @@
+{
+  "errors": [],
+  "checks": [
+    "Review images and overlay slider",
+    "Review mobile 390px and download links",
+    "Speech JSON, placeholder substitution, no immediate repeat, suppression during sleep",
+    "Playground fallback mood, sleep, wake and wave"
+  ],
+  "initialPlaygroundStatus": "Đã nạp Ollie · mood = neutral\nChạm nhân vật khi ngủ để tỉnh.",
+  "passed": true
+}

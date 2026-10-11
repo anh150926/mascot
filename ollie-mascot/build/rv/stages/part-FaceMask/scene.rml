@@ -1,0 +1,66 @@
+<Rive version="1" kind="fragment">
+  <Artboard name="Front" width="500" height="500" styleId="0:3" id="0:2">
+    <LayoutComponentStyle name="Style" id="0:3" />
+    <Node name="FaceMask" id="0:11">
+      <Shape name="BrowR" id="0:12">
+        <PointsPath name="Path" isClosed="true" isClockwise="true" id="0:13">
+          <CubicDetachedVertex x="315.7894736842105" y="163.8755980861244" inRotation="-2.936197264400026" inDistance="9.774841046356658" outRotation="-2.214297435588181" outDistance="15.948963317384358" id="0:14" />
+          <CubicDetachedVertex x="285.4864433811802" y="173.84370015948963" inRotation="-1.2351577764672874" inDistance="18.158369277090433" outRotation="-0.6498704494119468" outDistance="12.520190165955002" id="0:15" />
+        </PointsPath>
+        <Fill name="Fill" id="0:16">
+          <SolidColor name="Color" colorValue="FFCDDA9C" id="0:17" />
+        </Fill>
+      </Shape>
+      <Shape name="BrowL" id="0:18">
+        <PointsPath name="Path" isClosed="true" isClockwise="true" id="0:19">
+          <CubicDetachedVertex x="184.21052631578948" y="163.8755980861244" inRotation="-0.20539538918976763" inDistance="9.774841046356658" outRotation="-0.9272952180016126" outDistance="15.948963317384358" id="0:20" />
+          <CubicDetachedVertex x="214.5135566188198" y="173.84370015948963" inRotation="-1.9064348771225057" inDistance="18.158369277090433" outRotation="-2.4917222041778464" outDistance="12.520190165955002" id="0:21" />
+        </PointsPath>
+        <Fill name="Fill" id="0:22">
+          <SolidColor name="Color" colorValue="FFCDDA9C" id="0:23" />
+        </Fill>
+      </Shape>
+      <Shape name="FacialDisc" id="0:24">
+        <PointsPath name="Path" isClosed="true" isClockwise="false" id="0:25">
+          <CubicDetachedVertex x="249.6012759170654" y="208.13397129186603" inRotation="-1.411244605861637" inDistance="35.13526212130813" outRotation="-1.7191241609166616" outDistance="35.07412379784568" id="0:26" />
+          <CubicDetachedVertex x="190.59011164274324" y="141.14832535885168" inRotation="0.0" inDistance="31.499202551834117" outRotation="-3.029909791749894" outDistance="42.93093881758866" id="0:27" />
+          <CubicDetachedVertex x="120.01594896331738" y="227.27272727272728" inRotation="-1.5707963267948966" inDistance="50.63795853269539" outRotation="1.6349284417963281" outDistance="43.5504542931839" id="0:28" />
+          <CubicDetachedVertex x="198.96331738437001" y="305.8213716108453" inRotation="3.141592653589793" inDistance="53.827751196172244" outRotation="0.09065988720074775" outDistance="8.808102884519343" id="0:29" />
+          <CubicDetachedVertex x="220.89314194577352" y="304.22647527910686" inRotation="2.9147938055359117" inDistance="5.319642768790404" outRotation="2.4468543773930893" outDistance="12.45653855806483" id="0:30" />
+          <CubicDetachedVertex x="232.05741626794259" y="312.9984051036683" inRotation="2.72092930445676" inDistance="16.59861108173735" outRotation="1.1659045405098094" outDistance="9.109776442420907" id="0:31" />
+          <CubicDetachedVertex x="250.0" y="325.35885167464113" inRotation="3.141592653589793" inDistance="6.778309409888351" outRotation="0.0" outDistance="6.778309409888379" id="0:32" />
+          <CubicDetachedVertex x="267.9425837320574" y="312.9984051036683" inRotation="1.9756881130799808" inDistance="9.109776442420896" outRotation="0.42066334913303227" outDistance="16.598611081737374" id="0:33" />
+          <CubicDetachedVertex x="279.1068580542265" y="304.22647527910686" inRotation="0.6947382761967038" inDistance="12.45653855806483" outRotation="0.22679884805388267" outDistance="5.319642768790376" id="0:34" />
+          <CubicDetachedVertex x="301.03668261563" y="305.8213716108453" inRotation="3.050932766389046" inDistance="8.808102884519371" outRotation="0.0" outDistance="53.827751196172244" id="0:35" />
+          <CubicDetachedVertex x="379.9840510366826" y="227.27272727272728" inRotation="1.5066642117934645" inDistance="43.5504542931839" outRotation="-1.5707963267948966" outDistance="50.63795853269539" id="0:36" />
+          <CubicDetachedVertex x="309.40988835725676" y="141.14832535885168" inRotation="-0.11168286183989927" inDistance="42.93093881758866" outRotation="3.141592653589793" outDistance="31.499202551834117" id="0:37" />
+        </PointsPath>
+        <Fill name="Fill" id="0:38">
+          <LinearGradient name="Soft light" startX="159.4896331738437" startY="159.4896331738437" endX="326.9537480063796" endY="303.03030303030306" id="0:39">
+            <GradientStop position="0" colorValue="FFFFFAE9" id="0:40" />
+            <GradientStop position="1" colorValue="FFFCF0D9" id="0:41" />
+          </LinearGradient>
+        </Fill>
+      </Shape>
+      <Shape name="FacialDiscShadow" id="0:42">
+        <PointsPath name="Path" isClosed="true" isClockwise="false" id="0:43">
+          <CubicDetachedVertex x="249.6012759170654" y="208.13397129186603" inRotation="-1.411244605861637" inDistance="35.13526212130813" outRotation="-1.7191241609166616" outDistance="35.07412379784568" id="0:44" />
+          <CubicDetachedVertex x="190.59011164274324" y="141.14832535885168" inRotation="0.0" inDistance="31.499202551834117" outRotation="-3.029909791749894" outDistance="42.93093881758866" id="0:45" />
+          <CubicDetachedVertex x="120.01594896331738" y="227.27272727272728" inRotation="-1.5707963267948966" inDistance="50.63795853269539" outRotation="1.6349284417963281" outDistance="43.5504542931839" id="0:46" />
+          <CubicDetachedVertex x="198.96331738437001" y="307.01754385964915" inRotation="-3.1193740882630734" inDistance="53.84104035850191" outRotation="0.09065988720074132" outDistance="8.808102884519338" id="0:47" />
+          <CubicDetachedVertex x="220.89314194577352" y="305.0239234449761" inRotation="2.843093722003616" inDistance="5.423233855157674" outRotation="2.4468543773930893" outDistance="12.45653855806483" id="0:48" />
+          <CubicDetachedVertex x="231.25996810207337" y="315.3907496012759" inRotation="2.8049178342030636" inDistance="16.89762368454315" outRotation="1.1263771168937982" outDistance="9.274085605752008" id="0:49" />
+          <CubicDetachedVertex x="250.0" y="330.5422647527911" inRotation="-3.0309354324158946" inDistance="7.2212002696470705" outRotation="-0.11065722117389826" outDistance="7.221200269647098" id="0:50" />
+          <CubicDetachedVertex x="268.74003189792666" y="315.3907496012759" inRotation="2.015215536695995" inDistance="9.274085605752008" outRotation="0.3366748193867297" outDistance="16.89762368454315" id="0:51" />
+          <CubicDetachedVertex x="279.1068580542265" y="305.0239234449761" inRotation="0.6947382761967038" inDistance="12.45653855806483" outRotation="0.2984989315861785" outDistance="5.4232338551576476" id="0:52" />
+          <CubicDetachedVertex x="301.03668261563" y="307.01754385964915" inRotation="3.050932766389052" inDistance="8.808102884519366" outRotation="-0.022218565326719692" outDistance="53.84104035850191" id="0:53" />
+          <CubicDetachedVertex x="379.9840510366826" y="227.27272727272728" inRotation="1.5066642117934645" inDistance="43.5504542931839" outRotation="-1.5707963267948966" outDistance="50.63795853269539" id="0:54" />
+          <CubicDetachedVertex x="309.40988835725676" y="141.14832535885168" inRotation="-0.11168286183989927" inDistance="42.93093881758866" outRotation="3.141592653589793" outDistance="31.499202551834117" id="0:55" />
+        </PointsPath>
+        <Fill name="Fill" id="0:56">
+          <SolidColor name="Color" colorValue="FFE9DCBF" id="0:57" />
+        </Fill>
+      </Shape>
+    </Node>
+  </Artboard>
+</Rive>

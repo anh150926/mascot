@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "summary": true,
+  "problems": [],
+  "artboards": [
+    {"name": "Runtime", "objects": 55370, "types": {"AnimationState": 36, "AnyState": 7, "Artboard": 1, "BindablePropertyBoolean": 3, "BindablePropertyEnum": 33, "BindablePropertyTrigger": 1, "CubicDetachedVertex": 2145, "CubicEaseInterpolator": 17595, "DataBindContext": 37, "Ellipse": 87, "EntryState": 7, "ExitState": 7, "Fill": 523, "GradientStop": 184, "KeyFrameDouble": 23837, "KeyFrameId": 172, "KeyedObject": 1593, "KeyedProperty": 6373, "LayoutComponentStyle": 1, "LinearAnimation": 36, "LinearGradient": 92, "ListenerViewModelChange": 1, "Node": 237, "PointsPath": 457, "Rectangle": 50, "Shape": 613, "SolidColor": 729, "Solo": 6, "Star": 19, "StateMachine": 1, "StateMachineLayer": 7, "StateMachineListenerSingle": 1, "StateTransition": 45, "StraightVertex": 28, "Stroke": 298, "TransitionPropertyViewModelComparator": 36, "TransitionValueBooleanComparator": 2, "TransitionValueEnumComparator": 33, "TransitionValueTriggerComparator": 1, "TransitionViewModelCondition": 36}}
+  ],
+  "roots": {"objects": 36, "types": {"Backboard": 1, "DataEnumCustom": 1, "DataEnumValue": 26, "ViewModel": 1, "ViewModelInstance": 1, "ViewModelInstanceBoolean": 1, "ViewModelInstanceEnum": 1, "ViewModelInstanceTrigger": 1, "ViewModelPropertyBoolean": 1, "ViewModelPropertyEnumCustom": 1, "ViewModelPropertyTrigger": 1}}
+}

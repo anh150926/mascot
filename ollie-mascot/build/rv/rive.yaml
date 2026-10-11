@@ -1,0 +1,5 @@
+name: ollie-rig-review
+main: Runtime
+exclude:
+  - stages
+  - parts

@@ -1,0 +1,43 @@
+<Rive version="1" kind="fragment">
+  <Artboard name="Front" width="500" height="500" styleId="0:3" id="0:2">
+    <LayoutComponentStyle name="Style" id="0:3" />
+    <Node name="FootL" id="0:11">
+      <Shape name="ToeLight" id="0:12">
+        <PointsPath name="Path" isClosed="true" isClockwise="false" id="0:13">
+          <CubicDetachedVertex x="191.78628389154704" y="456.140350877193" inRotation="0.0" inDistance="0.0" outRotation="2.9325697107835267" outDistance="13.450660122354845" id="0:14" />
+          <CubicDetachedVertex x="167.8628389154705" y="475.27910685805426" inRotation="-1.7818896600176424" inDistance="5.708860073076741" outRotation="1.1071487177940869" outDistance="7.132593229664362" id="0:15" />
+          <CubicDetachedVertex x="190.19138755980862" y="469.6969696969697" inRotation="2.6620733615971943" inDistance="11.235249444661395" outRotation="-0.6107259643892029" outDistance="4.8670476936737055" id="0:16" />
+          <CubicDetachedVertex x="201.35566188197768" y="463.71610845295055" inRotation="2.6779450445889763" inDistance="3.5662966148322255" outRotation="2.4775464907631064" outDistance="11.645200850486654" id="0:17" />
+          <CubicDetachedVertex x="190.19138755980862" y="481.2599681020734" inRotation="-2.4668517113662354" inDistance="5.106159678973585" outRotation="0.6947382761967028" outDistance="9.342403918548634" id="0:18" />
+          <CubicDetachedVertex x="215.311004784689" y="468.5007974481659" inRotation="1.9513027039072615" inDistance="10.735974495882184" outRotation="1.6575346654708814" outDistance="9.205260271622938" id="0:19" />
+          <CubicDetachedVertex x="228.8676236044657" y="474.88038277511964" inRotation="2.3561944901923417" inDistance="6.202691063039886" outRotation="-0.7266423406817261" outDistance="9.602547510998651" id="0:20" />
+          <CubicDetachedVertex x="217.70334928229664" y="457.7352472089314" inRotation="0.11942892601834182" inDistance="10.039615878799182" outRotation="0.0" outDistance="0.0" id="0:21" />
+        </PointsPath>
+        <Fill name="Fill" id="0:22">
+          <LinearGradient name="Soft light" startX="175.43859649122808" startY="454.54545454545456" endX="210.12759170653908" endY="486.4433811802233" id="0:23">
+            <GradientStop position="0" colorValue="FFFFD044" id="0:24" />
+            <GradientStop position="1" colorValue="FFFFAE19" id="0:25" />
+          </LinearGradient>
+        </Fill>
+      </Shape>
+      <Shape name="ToeSilhouette" id="0:26">
+        <PointsPath name="Path" isClosed="true" isClockwise="false" id="0:27">
+          <CubicDetachedVertex x="191.38755980861245" y="446.969696969697" inRotation="0.0" inDistance="0.0" outRotation="1.13838855122436" outDistance="5.708860073076668" id="0:28" />
+          <CubicDetachedVertex x="184.6092503987241" y="457.7352472089314" inRotation="-0.33929261445404646" inDistance="7.188100628915447" outRotation="2.827972001373094" outDistance="15.509290541289282" id="0:29" />
+          <CubicDetachedVertex x="164.6730462519936" y="478.4688995215311" inRotation="-1.7454685258031324" inDistance="6.883044857110093" outRotation="1.4536875822280295" outDistance="6.825056925288577" id="0:30" />
+          <CubicDetachedVertex x="187.00159489633174" y="481.65869218500796" inRotation="2.6940726784326214" inDistance="11.056957435296697" outRotation="1.0768549578753146" outDistance="11.774181068766683" id="0:31" />
+          <CubicDetachedVertex x="215.311004784689" y="480.06379585326954" inRotation="2.2318394956455827" inDistance="9.092308015144678" outRotation="0.5144513130590304" outDistance="10.534166518040616" id="0:32" />
+          <CubicDetachedVertex x="233.65231259968104" y="469.6969696969697" inRotation="1.3473197256542642" inDistance="8.995625337064197" outRotation="-1.7894652726688416" outDistance="7.352108817617913" id="0:33" />
+          <CubicDetachedVertex x="220.49441786283893" y="456.9377990430622" inRotation="0.27829965900511" inDistance="5.805510278533094" outRotation="0.0" outDistance="0.0" id="0:34" />
+          <CubicDetachedVertex x="218.50079744816588" y="446.969696969697" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="0:35" />
+        </PointsPath>
+        <Fill name="Fill" id="0:36">
+          <SolidColor name="Color" colorValue="FFF49A13" id="0:37" />
+        </Fill>
+        <Stroke name="Outline" thickness="3.189792663476874" join="round" cap="round" id="0:38">
+          <SolidColor name="Color" colorValue="FFA6530A" id="0:39" />
+        </Stroke>
+      </Shape>
+    </Node>
+  </Artboard>
+</Rive>

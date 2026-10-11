@@ -1,0 +1,68 @@
+// One-time browser QA of the generated review and existing playground.
+const { chromium } = require('../web-pet/node_modules/@playwright/test');
+const fs = require('node:fs');
+const path = require('node:path');
+(async () => {
+  const browser = await chromium.launch({channel:'msedge',headless:true});
+  const page = await browser.newPage({viewport:{width:1440,height:1000}});
+  page.setDefaultTimeout(15000);
+  const base='http://127.0.0.1:8773';
+  const report={errors:[],checks:[]};
+  page.on('pageerror',error=>report.errors.push(error.message));
+  await page.goto(base+'/review.html');
+  await page.locator('img').evaluateAll(images=>{for(const im of images)im.loading='eager'});
+  await page.waitForFunction(()=>Array.from(document.images).every(im=>im.complete));
+  const broken=await page.locator('img').evaluateAll(images=>images.filter(im=>!im.naturalWidth).map(im=>im.src));
+  if(broken.length)throw new Error('Missing images '+broken);
+  await page.locator('#mix').fill('75');
+  if(await page.locator('#overlay').evaluate(el=>el.style.opacity)!=='0.75')throw new Error('Overlay slider failed');
+  await page.locator('#mix').fill('50');
+  await page.screenshot({path:path.join(__dirname,'review-desktop.png')});
+  report.checks.push('Review images and overlay slider');
+  for(const url of await page.locator('nav a').evaluateAll(links=>links.map(a=>a.href))) {
+    const response=await page.request.get(url);
+    if(!response.ok())throw new Error('Bad link '+url);
+  }
+  await page.setViewportSize({width:390,height:844});
+  if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw new Error('Mobile horizontal overflow');
+  await page.screenshot({path:path.join(__dirname,'review-mobile.png')});
+  report.checks.push('Review mobile 390px and download links');
+  await page.setViewportSize({width:1440,height:1000});
+  await page.goto(base+'/playground/index.html',{waitUntil:'load'});
+  await page.waitForFunction(()=>!document.querySelector('#status').textContent.includes('Đang nạp'),null,{timeout:25000});
+  report.initialPlaygroundStatus=await page.locator('#status').innerText();
+  await page.waitForFunction(()=>typeof speechData !== 'undefined' && speechData !== null);
+  await page.locator('[data-category="greeting"]').click();
+  const firstSpeech=await page.locator('#bubble').innerText();
+  if(!firstSpeech.includes('Ollie') || firstSpeech.includes('{'))throw new Error('Speech JSON or placeholder rendering failed');
+  await page.locator('[data-category="greeting"]').click();
+  if(await page.locator('#bubble').innerText()===firstSpeech)throw new Error('Speech immediately repeats');
+  await page.locator('[data-category="planning"]').click();
+  if((await page.locator('#bubble').innerText()).includes('{'))throw new Error('Missing speech context exposed');
+  await page.locator('#sleep').click();
+  await page.locator('[data-category="greeting"]').click();
+  if(await page.locator('#bubble').evaluate(el=>el.classList.contains('show')))throw new Error('Speech shown while asleep');
+  await page.locator('#sleep').click();
+  report.checks.push('Speech JSON, placeholder substitution, no immediate repeat, suppression during sleep');
+  await page.locator('#useFrames').click();
+  await page.locator('[data-mood="happy"]').click();
+  if(!(await page.locator('#fallback').getAttribute('src')).includes('happy.png'))throw new Error('Mood switch failed');
+  await page.locator('#sleep').click();
+  if(!(await page.locator('#fallback').getAttribute('src')).includes('sleep.png'))throw new Error('Sleep switch failed');
+  await page.locator('#wave').click();
+  if(!(await page.locator('#fallback').getAttribute('src')).includes('sleep.png'))throw new Error('Wave while asleep');
+  // Breathing deliberately keeps its bounding box moving; use a direct click.
+  await page.locator('#fallback').click({force:true});
+  await page.waitForFunction(()=>document.querySelector('#fallback').src.endsWith('happy.png'));
+  await page.locator('#wave').click();
+  if(!(await page.locator('#fallback').getAttribute('src')).includes('wave-mid.png'))throw new Error('Wave frame failed');
+  await page.waitForFunction(()=>document.querySelector('#fallback').src.endsWith('happy.png'));
+  await page.locator('[data-mood="neutral"]').click();
+  await page.screenshot({path:path.join(__dirname,'playground-desktop.png')});
+  report.checks.push('Playground fallback mood, sleep, wake and wave');
+  report.passed=report.errors.length===0;
+  fs.writeFileSync(path.join(__dirname,'browser-check.json'),JSON.stringify(report,null,2));
+  console.log(JSON.stringify(report,null,2));
+  await browser.close();
+  if(!report.passed)process.exitCode=1;
+})().catch(error=>{console.error(error);process.exit(1)});

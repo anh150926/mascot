@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "scenes": 19,
+  "frames": 95,
+  "checks": [
+    "all frames load",
+    "detail and main agree",
+    "previous and next buttons",
+    "theme toggle",
+    "mobile width",
+    "no page errors"
+  ]
+}

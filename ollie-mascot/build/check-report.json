@@ -1,0 +1,407 @@
+{
+  "passed": true,
+  "captures": [
+    {
+      "id": "t1-default",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        75,
+        12,
+        425,
+        490
+      ]
+    },
+    {
+      "id": "t3-small",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        12,
+        2,
+        68,
+        79
+      ]
+    },
+    {
+      "id": "t5-rest",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        75,
+        12,
+        425,
+        490
+      ]
+    },
+    {
+      "id": "t5-inhale",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        77,
+        10,
+        426,
+        490
+      ]
+    },
+    {
+      "id": "t5-seam",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        76,
+        13,
+        425,
+        490
+      ]
+    },
+    {
+      "id": "t5-eyes-open",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        75,
+        10,
+        425,
+        490
+      ]
+    },
+    {
+      "id": "t5-eyes-shut",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        75,
+        10,
+        425,
+        490
+      ]
+    },
+    {
+      "id": "t6-neutral",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        75,
+        12,
+        425,
+        490
+      ]
+    },
+    {
+      "id": "t6-happy",
+      "data": {
+        "mood": "happy",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        22,
+        10,
+        478,
+        486
+      ]
+    },
+    {
+      "id": "t6-wink",
+      "data": {
+        "mood": "wink",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        81,
+        17,
+        479,
+        490
+      ]
+    },
+    {
+      "id": "t6-focus",
+      "data": {
+        "mood": "focus",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        73,
+        10,
+        423,
+        490
+      ]
+    },
+    {
+      "id": "t7-surprised",
+      "data": {
+        "mood": "surprised",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        62,
+        12,
+        438,
+        490
+      ]
+    },
+    {
+      "id": "t7-sleepy",
+      "data": {
+        "mood": "sleepy",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        82,
+        19,
+        430,
+        490
+      ]
+    },
+    {
+      "id": "t7-confused",
+      "data": {
+        "mood": "confused",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        55,
+        7,
+        445,
+        490
+      ]
+    },
+    {
+      "id": "t7-happy-blink",
+      "data": {
+        "mood": "happy",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        22,
+        7,
+        478,
+        489
+      ]
+    },
+    {
+      "id": "t7-sleepy-blink",
+      "data": {
+        "mood": "sleepy",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        81,
+        16,
+        430,
+        490
+      ]
+    },
+    {
+      "id": "t8-letterbox",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        192,
+        12,
+        528,
+        470
+      ]
+    },
+    {
+      "id": "t9-awake",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        77,
+        11,
+        427,
+        490
+      ]
+    },
+    {
+      "id": "t9-asleep",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": true,
+        "wave": null
+      },
+      "bounds": [
+        94,
+        26,
+        442,
+        492
+      ]
+    },
+    {
+      "id": "t9-startle",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        35,
+        3,
+        465,
+        481
+      ]
+    },
+    {
+      "id": "t9-awake-after",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        76,
+        10,
+        426,
+        490
+      ]
+    },
+    {
+      "id": "t9-sleep-wave",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": true,
+        "wave": null
+      },
+      "bounds": [
+        94,
+        26,
+        442,
+        492
+      ]
+    },
+    {
+      "id": "t10-rest",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        75,
+        12,
+        425,
+        490
+      ]
+    },
+    {
+      "id": "t10-wave",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        27,
+        8,
+        421,
+        489
+      ]
+    },
+    {
+      "id": "t10-wave-mid",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        21,
+        6,
+        421,
+        490
+      ]
+    },
+    {
+      "id": "t10-wave-end",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        21,
+        6,
+        421,
+        490
+      ]
+    },
+    {
+      "id": "t10-after",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        75,
+        10,
+        425,
+        490
+      ]
+    },
+    {
+      "id": "t10-baseline-after",
+      "data": {
+        "mood": "neutral",
+        "isAsleep": false,
+        "wave": null
+      },
+      "bounds": [
+        75,
+        10,
+        425,
+        490
+      ]
+    }
+  ],
+  "measurements": {
+    "blink_eye_change": 55.83688537675607,
+    "wave_wing_change": 26.108048224177256,
+    "wave_returns_to_rest": 0.0,
+    "sleep_blocks_wave": 0.0,
+    "sleep_closes_eyes": 85.22740043644298,
+    "breathing_visible": 8.521962666666667,
+    "neutral_matches_front": 0.208824
+  },
+  "errors": []
+}
