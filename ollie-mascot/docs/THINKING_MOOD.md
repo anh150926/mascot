@@ -4,6 +4,8 @@ Ngày dựng: 12/10/2026. Key dùng trong ứng dụng: `mood = thinking`.
 
 Biểu cảm này dành cho lúc Ollie cân nhắc một vấn đề, đọc câu hỏi hoặc chuẩn bị trả lời. Tư thế chính là một cánh đặt gần cằm, mắt nhìn chếch lên bên phải, mỏ khép và đầu nghiêng chậm. Một đám mây suy nghĩ nối với đầu bằng ba bong bóng nhỏ dần, bên trong có năm dấu chấm hiện lần lượt.
 
+Tỉ lệ nhân vật bằng bảy biểu cảm gốc. Đám mây và các bong bóng được đặt quanh Ollie, không thu nhỏ toàn bộ nhân vật.
+
 `confused` thể hiện thắc mắc bằng dấu hỏi và cánh mở; `thinking` thể hiện sự cân nhắc bằng đám mây suy nghĩ; `idea` thể hiện lúc tìm ra cách giải quyết bằng bóng đèn. Ứng dụng có thể chuyển `thinking` → `idea` khi đã có câu trả lời.
 
 ## Đám mây suy nghĩ

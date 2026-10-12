@@ -47,7 +47,7 @@ Tọa độ “hàng.cột” tính từ góc trên trái. Thời lượng tính
 
 Ưu tiên một hành động chính trong mỗi cảnh. Đạo cụ chuyển động chậm hơn các tín hiệu ngắn như dấu tích, đồng xu hoặc chuông để mắt người xem biết nhìn vào đâu. Các keyframe đầu/cuối của từng vòng quay về cùng tư thế. Chớp mắt chỉ được thêm vào các cảnh mở mắt; các đường mắt cười/nhắm không cần chớp thêm.
 
-Cảnh mới thu nhẹ nhân vật để chừa khoảng trống cho chồi lá và hiệu ứng. Dấu hỏi đã chỉnh của `confused` giữ nguyên. Các cảnh ôm/cầm dùng tư thế uốn từ bảy lớp cánh gốc; chỉ cánh tham gia động tác được thay thế. Khi chuyển về mood gốc, ngủ hoặc vẫy, các lớp mới được xóa bằng Solo, cánh và khớp chân trở lại giá trị phù hợp.
+Cả 19 cảnh giữ tỉ lệ nhân vật bằng bảy mood gốc; khoảng trống cho đạo cụ và hiệu ứng được bố trí quanh Ollie. Dấu hỏi đã chỉnh của `confused` giữ nguyên. Các cảnh ôm/cầm dùng tư thế uốn từ bảy lớp cánh gốc; chỉ cánh tham gia động tác được thay thế. Khi chuyển về mood gốc, ngủ hoặc vẫy, các lớp mới được xóa bằng Solo, cánh và khớp chân trở lại giá trị phù hợp.
 
 `bedtime` là biểu cảm chuẩn bị nghỉ, không tự đặt `isAsleep`. `isAsleep=true` vẫn ưu tiên tư thế ngủ thật, ẩn đạo cụ và chặn cử chỉ vẫy như rig cũ. Chạm Ollie ghi `isAsleep=false`, chạy giật mình rồi trở lại mood được chọn.
 

@@ -160,7 +160,7 @@ def draw_scene(key, fg, face, back):
         path(g, 'Filament', 'M -5 16 L -5 0 C -16 -11 -12 -17 -5 -9 C -1 -2 2 -2 7 -10 C 14 -16 18 -8 7 0 L 7 16', stroke='FFD08A1C', width=2)
         ellipse(g, 'BulbShine', -10, -14, 8, 14, WHITE)
         refs['accent'] = g
-        wings.add('ThinkingWing','L',(244,299),(201,322),width=.80,
+        wings.add('ThinkingWing','L',(244,299),(201,322),width=.80,full_size=True,
                   motion=lambda t,d:(0,-5*(1-cos(2*pi*t/d))/2))
     elif key == 'love':
         g = held(fg, 'LoveHug', 356)
@@ -222,7 +222,7 @@ def draw_scene(key, fg, face, back):
         path(hat, 'Band', 'M 143 124 C 206 101 271 101 323 116 L 318 136 C 255 124 203 125 150 144 Z', 'FFACDDD8', INK, 3)
         for x,y in [(203,89),(249,81),(289,97)]:star(hat, 'HatStar', x,y,15,'FFCDF1DB')
         ellipse(hat, 'PomPom', 397, 159, 30, 30, 'FFB5E5DF', INK, 3)
-        wings.add('YawningWing','L',(250,262),(201,302),width=.78,
+        wings.add('YawningWing','L',(235,230),(201,302),width=.78,full_size=True,
                   motion=lambda t,d:(0,-5*(1-cos(2*pi*t/d))/2))
         g = N(face, 'BedtimeZ', x=409, y=206)
         line(g, 'Z', [(-10,-12),(8,-12),(-10,10),(9,10)], 'FF4A9CAE', 4)
@@ -284,14 +284,14 @@ def draw_scene(key, fg, face, back):
         grip(g,80,18)
         refs['prop'] = g
     elif key == 'celebrate':
-        g = N(fg,'Trophy',x=98,y=266)
+        g = N(fg,'Trophy',x=76,y=266)
         for x in (-29,29):ellipse(g,'Handle',x,-16,29,41,None,'FFD78A1A',8)
         rect(g,'Stem',0,28,12,37,GOLD,'FFD78A1A',3,2)
         rect(g,'Base',0,50,62,15,GOLD,'FFD78A1A',5,3)
         path(g,'Cup','M -32 -43 L 32 -43 L 27 -9 C 25 18 -25 18 -27 -9 Z',GOLD,'FFD78A1A',3.5)
         path(g,'CupShine','M -20 -35 L -10 -35 L -8 4 C -21 -2 -20 -14 -20 -35 Z','FFFFE598',None)
         star(g,'CupStar',7,-18,19,'FFFFF0B3')
-        wings.add('TrophyWing','L',(11,36),(134,319),follow=g,style='hug')
+        wings.add('TrophyWing','L',(24,36),(134,319),follow=g,style='hug',full_size=True)
         # The cup faces the viewer; its bowl and rim must stay in front of the gripping wing.
         front(fg,g)
         refs['prop'] = g
@@ -379,9 +379,11 @@ def pulse(animation, node, prop, a, b, duration):
 def animate_scene(animation, spec, refs):
     key,d=spec['key'],spec['frames']
     fixed(animation,'0:10',13,250)
-    fixed(animation,'0:10',16,.92)
-    pulse(animation,'0:10',17,.92,.924,d)
-    pulse(animation,'0:10',14,476,472,d)
+    # Match the seven original moods: scene props need to fit around Ollie,
+    # without shrinking the character (including the thinking mood).
+    fixed(animation,'0:10',16,1)
+    fixed(animation,'0:10',17,1)
+    pulse(animation,'0:10',14,478,474,d)
     fixed(animation,'0:10',15,0)
     pulse(animation,'0:11',15,-.025,.025,d)
     fixed(animation,'0:11',14,-186)
@@ -439,19 +441,16 @@ def animate_scene(animation, spec, refs):
         pulse(animation,'0:11',15,-.07,.015,d)
         pulse(animation,refs['accent'],18,.5,1,d)
     elif key=='running':
-        fixed(animation,'0:10',16,.88)
-        pulse(animation,'0:10',17,.88,.884,d)
         fixed(animation,'0:10',15,.045)
         fixed(animation,'0:11',15,-.04)
-        keys(animation,'0:10',14,[(0,476),(12,466),(24,476),(36,466),(48,476)])
+        keys(animation,'0:10',14,[(0,475),(12,471),(24,475),(36,471),(48,475)])
         for oid,sign in [('0:20',1),('0:21',-1)]:pulse(animation,oid,15,-.5*sign,.65*sign,d)
         for oid,sign in [('0:1427',1),('0:1447',-1)]:
             pulse(animation,oid,15,-.32*sign,.32*sign,d)
-            pulse(animation,oid,14,-30,-44 if sign==1 else -22,d)
+            pulse(animation,oid,14,-34,-48 if sign==1 else -26,d)
         pulse(animation,refs['speed'],13,8,-9,d)
         pulse(animation,refs['speed'],18,.4,1,d)
     elif key=='tired':
-        pulse(animation,'0:10',17,.88,.9,d)
         pulse(animation,'0:11',14,-173,-167,d)
         pulse(animation,'0:11',15,.04,.10,d)
         fixed(animation,'0:20',15,-.10);fixed(animation,'0:21',15,.1)
@@ -464,7 +463,7 @@ def animate_scene(animation, spec, refs):
         pulse(animation,'0:11',15,0,.075,d)
         pulse(animation,refs['accent'],14,206,191,d)
     elif key=='cheer':
-        pulse(animation,'0:10',14,476,457,d)
+        pulse(animation,'0:10',14,478,474,d)
         pulse(animation,'0:20',15,1.03,1.37,d)
         pulse(animation,'0:21',15,-1.03,-1.37,d)
     elif key=='sad':
@@ -477,7 +476,7 @@ def animate_scene(animation, spec, refs):
     elif key=='checklist':
         for prop in (16,17):keys(animation,refs['accent'],prop,[(0,.92),(35,1.12),(60,1),(120,1),(d,.92)])
     elif key=='celebrate':
-        pulse(animation,'0:10',14,476,458,d)
+        pulse(animation,'0:10',14,478,474,d)
         fixed(animation,'0:21',18,1)
         pulse(animation,'0:21',15,-1.1,-1.4,d)
         pulse(animation,refs['prop'],14,266,248,d)
@@ -487,9 +486,8 @@ def animate_scene(animation, spec, refs):
         keys(animation,refs['prop'],15,[(0,0),(8,-.07),(16,.07),(24,-.07),(32,.07),(44,0),(d,0)])
     elif key=='workout':
         keys(animation,refs['prop'],14,[(0,390),(50,360),(80,360),(130,390),(d,390)])
-        pulse(animation,'0:10',17,.91,.925,d)
     elif key=='meditate':
-        pulse(animation,'0:10',14,476,466,d)
+        pulse(animation,'0:10',14,474,470,d)
         fixed(animation,'0:11',15,0)
         fixed(animation,'0:1427',13,-23);fixed(animation,'0:1447',13,25)
         fixed(animation,'0:1427',15,-.30);fixed(animation,'0:1447',15,.30)
@@ -497,7 +495,7 @@ def animate_scene(animation, spec, refs):
     elif key=='energized':
         pulse(animation,'0:20',15,.05,.25,d)
         pulse(animation,'0:21',15,-.05,-.25,d)
-        pulse(animation,'0:10',14,476,464,d)
+        pulse(animation,'0:10',14,478,474,d)
     refs['wings'].animate(animation)
 
 

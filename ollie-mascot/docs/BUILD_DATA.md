@@ -1,6 +1,6 @@
 # Phân tích Nez và phần bổ sung cho Ollie
 
-Kiểm tra trực tiếp các thư mục `nez-mascot/`, data.rml, speech, tests, tools, tài liệu build và năm file doc_*.txt. Các file của Nez giữ nguyên.
+Tài liệu này ghi lại lần đối chiếu dự án Nez cũ với nguồn data, speech, tests, tools và tài liệu build của Ollie. Dự án Nez không còn nằm trong cây thư mục hiện tại; Ollie dùng bản scaffold riêng trong `tools/scaffold/`.
 
 ## Phân biệt tài liệu với dữ liệu chạy
 

@@ -13,7 +13,7 @@ Bản này lấy trực tiếp bảy đường Bézier của `LeftWing` trong `a
 | `FoldedUpperWing` | Khối cánh chính, vẫn có nếp gập của mẫu gốc. |
 | `LongLimeCovert`, `UpperLeafCovert` | Hai mảng xanh non dạng lá. |
 
-Cả cánh tạo dáng và cánh cầm đều dùng màu phẳng, bỏ gradient bóng. `hug_warp` neo vai tại `(155,322)` và `(345,322)` trên artboard 500 × 500; cùng một phép xoay và thu nhỏ đều áp dụng cho mọi đỉnh lẫn tay nắm Bézier. Đầu lông vì thế giữ nguyên góc nhọn và tỷ lệ như mẫu. Ở cảnh cầm đồ, đích của cánh lấy từ vị trí/góc vật tại từng keyframe; các mốc của cánh được nội suy theo cùng nhịp nâng–giữ–hạ.
+Cả cánh tạo dáng và cánh cầm đều dùng màu phẳng, bỏ gradient bóng. `hug_warp` neo vai tại `(155,322)` và `(345,322)` trên artboard 500 × 500; cùng một phép xoay và tỷ lệ đồng đều áp dụng cho mọi đỉnh lẫn tay nắm Bézier. Cánh chống cằm ở `thinking` và `idea`, cánh che mỏ ở `bedtime`, cánh cầm cúp ở `celebrate` giữ đúng kích thước cánh front gốc. Các dáng cầm vật khác giữ tỷ lệ nhỏ hơn khi cần ôm sát đạo cụ. Ở cảnh cầm đồ, đích của cánh lấy từ vị trí/góc vật tại từng keyframe; các mốc của cánh được nội suy theo cùng nhịp nâng–giữ–hạ.
 
 ## Khung chuyển động cần đọc
 

@@ -25,7 +25,7 @@ def add_thinking_mood(artboard):
 
     wing_group = N(props, 'ThinkingPose')
     wings = WingPoses(scene, wing_group)
-    wings.add('ChinWing', 'L', (226, 301), (195, 326), width=.80,
+    wings.add('ChinWing', 'L', (226, 301), (195, 326), width=.80, full_size=True,
               motion=lambda frame, length: (0, -4 * (1-cos(2*pi*frame/length))/2))
 
     marks = N(face_slot, 'ThinkingMarks')

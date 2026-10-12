@@ -326,133 +326,133 @@
     },
     {
       "name": "mood_love",
-      "id": "0:21636",
+      "id": "0:21632",
       "frames": 160,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_nutrition",
-      "id": "0:25782",
+      "id": "0:25774",
       "frames": 180,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_running",
-      "id": "0:29616",
+      "id": "0:29604",
       "frames": 48,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_tired",
-      "id": "0:29796",
+      "id": "0:29772",
       "frames": 240,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_worried",
-      "id": "0:30113",
+      "id": "0:30079",
       "frames": 120,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_pomodoro",
-      "id": "0:33127",
+      "id": "0:33089",
       "frames": 144,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_bedtime",
-      "id": "0:37064",
+      "id": "0:37022",
       "frames": 240,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_cheer",
-      "id": "0:38011",
+      "id": "0:37965",
       "frames": 100,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_sad",
-      "id": "0:38371",
+      "id": "0:38321",
       "frames": 210,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_wallet",
-      "id": "0:42485",
+      "id": "0:42431",
       "frames": 180,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_saving",
-      "id": "0:46543",
+      "id": "0:46485",
       "frames": 180,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_checklist",
-      "id": "0:50607",
+      "id": "0:50545",
       "frames": 150,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_celebrate",
-      "id": "0:54618",
+      "id": "0:54552",
       "frames": 120,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_alarm",
-      "id": "0:55839",
+      "id": "0:55769",
       "frames": 120,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_workout",
-      "id": "0:62459",
+      "id": "0:62385",
       "frames": 150,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_meditate",
-      "id": "0:67480",
+      "id": "0:67396",
       "frames": 360,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_letter",
-      "id": "0:69401",
+      "id": "0:69313",
       "frames": 200,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_energized",
-      "id": "0:73262",
+      "id": "0:73170",
       "frames": 120,
       "fps": 60,
       "loop": "loop"
     },
     {
       "name": "mood_thinking",
-      "id": "0:73530",
+      "id": "0:73434",
       "frames": 180,
       "fps": 60,
       "loop": "loop"

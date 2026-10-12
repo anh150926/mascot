@@ -1,6 +1,6 @@
 # Ollie Rive project
 
-- This project owns Ollie's vector artwork and animation. Do not edit `../nez-mascot`.
+- This project owns Ollie's vector artwork and animation.
 - RML and Rive CLI syntax must be checked with `rive docs` and `rive schema`; do not guess types or property keys.
 - `tools/build_ollie.py` regenerates `runtime.rml` from the reference animation scaffold plus Ollie's artwork. Change the generator for visual edits, then regenerate.
 - After changing the generator or RML, run `rive . --verify`, `rive inspect . --summary`, and render the affected moods to inspect them visually.

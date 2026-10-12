@@ -96,7 +96,7 @@ def tuck_feathers(points, amount):
     return [tuple(tuck(p) for p in point) for point in points]
 
 
-def warp(point, side, tip, bend, width=.88):
+def warp(point, side, tip, bend, width=.88, full_size=False):
     """Bend the master centreline; retain its feather spacing and proportions."""
     x, y = point
     t = (y - 318) / 138
@@ -110,7 +110,7 @@ def warp(point, side, tip, bend, width=.88):
             (1-t)**2*root[1] + 2*t*(1-t)*bend[1] + t*t*tip[1] - sign*across*dx/length)
 
 
-def hug_warp(point, side, tip, bend, width=1):
+def hug_warp(point, side, tip, bend, width=1, full_size=False):
     x,y=point
     if side=='R':x=500-x
     root=(155,322) if side=='L' else (345,322)
@@ -118,16 +118,17 @@ def hug_warp(point, side, tip, bend, width=1):
     ax,ay=anchor[0]-root[0],anchor[1]-root[1]
     tx,ty=tip[0]-root[0],tip[1]-root[1]
     angle=atan2(ty,tx)-atan2(ay,ax)
-    scale=hypot(tx,ty)/hypot(ax,ay)
-    scale=max(.72,min(.84,scale))
+    # A few expressive wings must keep the front master's full footprint.
+    # The usual carrying poses retain their compact size around props.
+    scale=1 if full_size else max(.72,min(.84,hypot(tx,ty)/hypot(ax,ay)))
     dx,dy=x-root[0],y-root[1]
     return (root[0]+scale*(dx*cos(angle)-dy*sin(angle)),
             root[1]+scale*(dx*sin(angle)+dy*cos(angle)))
 
 
-def geometry(points, side, tip, bend, width, style='gesture'):
+def geometry(points, side, tip, bend, width, style='gesture', full_size=False):
     transform=hug_warp if style=='hug' else warp
-    xy, inc, out = [transform(p,side,tip,bend,width) for p in points]
+    xy, inc, out = [transform(p,side,tip,bend,width,full_size) for p in points]
     ix,iy=inc[0]-xy[0],inc[1]-xy[1]
     ox,oy=out[0]-xy[0],out[1]-xy[1]
     before,after=hypot(ix,iy),hypot(ox,oy)
@@ -167,10 +168,10 @@ class WingPoses:
     def __init__(self, api, foreground):
         self.api,self.foreground,self.wings=api,foreground,[]
 
-    def add(self, name, side, tip, bend, follow=None, width=.88, motion=None, cadence=None, rounding=14, tuck=0, style='hug'):
+    def add(self, name, side, tip, bend, follow=None, width=.88, motion=None, cadence=None, rounding=14, tuck=0, style='hug', full_size=False):
         a=self.api
         node=a.N(self.foreground,name)
-        pose=dict(name=name,side=side,tip=tip,bend=bend,follow=follow,width=width,
+        pose=dict(name=name,side=side,tip=tip,bend=bend,follow=follow,width=width,full_size=full_size,
                   motion=motion,cadence=cadence,rounding=rounding,tuck=tuck,style=style,vertices=[],gradients=[],node=node)
         self.wings.append(pose)
         target=self.target(pose)
@@ -182,13 +183,13 @@ class WingPoses:
             # The master has deliberate sharp feather tips; leave them intact.
             p=a.E(s,'PointsPath',isClosed=str(closed).lower())
             for point in points:
-                values=geometry(point,side,target,bend,width,style)
+                values=geometry(point,side,target,bend,width,style,full_size)
                 v=a.E(p,'CubicDetachedVertex',**dict(zip(('x','y','inRotation','inDistance','outRotation','outDistance'),values)))
                 pose['vertices'].append((v,point))
             if source.get('gradient'):
                 c1,c2,x1,y1,x2,y2=source['gradient']
                 start=(x1,y1);end=(x2,y2)
-                p1=transform(start,side,target,bend,width);p2=transform(end,side,target,bend,width)
+                p1=transform(start,side,target,bend,width,full_size);p2=transform(end,side,target,bend,width,full_size)
                 grad=a.E(a.E(s,'Fill'),'LinearGradient',startX=p1[0],startY=p1[1],endX=p2[0],endY=p2[1])
                 a.E(grad,'GradientStop',position=0,colorValue='FF'+c1)
                 a.E(grad,'GradientStop',position=1,colorValue='FF'+c2)
@@ -229,7 +230,7 @@ class WingPoses:
             frames=sorted(frames)
             targets={t:self.target(pose,animation,t) for t in frames}
             for vertex,source in pose['vertices']:
-                values=[geometry(source,pose['side'],targets[t],pose['bend'],pose['width'],pose['style']) for t in frames]
+                values=[geometry(source,pose['side'],targets[t],pose['bend'],pose['width'],pose['style'],pose['full_size']) for t in frames]
                 # Unwrap bezier handle angles so interpolation never spins a feather.
                 for column in (2,4):
                     for i in range(1,len(values)):
@@ -241,7 +242,7 @@ class WingPoses:
                     a.keys(animation,vertex,prop,[(t,round(values[i][column],6)) for i,t in enumerate(frames)])
             for grad,start,end in pose['gradients']:
                 transform=hug_warp if pose['style']=='hug' else warp
-                values=[(*transform(start,pose['side'],targets[t],pose['bend'],pose['width']),
-                         *transform(end,pose['side'],targets[t],pose['bend'],pose['width'])) for t in frames]
+                values=[(*transform(start,pose['side'],targets[t],pose['bend'],pose['width'],pose['full_size']),
+                         *transform(end,pose['side'],targets[t],pose['bend'],pose['width'],pose['full_size'])) for t in frames]
                 for column,prop in enumerate((42,33,34,35)):
                     a.keys(animation,grad,prop,[(t,round(values[i][column],6)) for i,t in enumerate(frames)])

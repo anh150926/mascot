@@ -12,7 +12,9 @@ INK='#164632'
 
 
 def run(args,cwd=ROOT):
-    result=subprocess.run([RIVE,*map(str,args)],cwd=cwd,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=75)
+    command=[RIVE,*map(str,args)]
+    timeout=180 if command[1]=='inspect' and '--json' in command else 75
+    result=subprocess.run(command,cwd=cwd,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=timeout)
     if result.returncode:
         raise RuntimeError(result.stdout+'\n'+result.stderr)
     return result.stdout

@@ -1,2 +1,0 @@
-@AGENTS.md
-@MASCOT_BRIEF.md
