@@ -207,7 +207,7 @@
       "bounds": [
         70,
         4,
-        491,
+        452,
         486
       ]
     },
@@ -221,7 +221,7 @@
       "bounds": [
         73,
         10,
-        423,
+        441,
         490
       ]
     },
@@ -235,7 +235,7 @@
       "bounds": [
         71,
         6,
-        493,
+        443,
         488
       ]
     },
@@ -249,7 +249,7 @@
       "bounds": [
         71,
         4,
-        491,
+        452,
         486
       ]
     },
@@ -263,7 +263,7 @@
       "bounds": [
         72,
         7,
-        499,
+        459,
         487
       ]
     },
@@ -277,7 +277,7 @@
       "bounds": [
         73,
         10,
-        423,
+        441,
         490
       ]
     },
@@ -305,7 +305,7 @@
       "bounds": [
         71,
         7,
-        493,
+        439,
         488
       ]
     },
@@ -333,7 +333,7 @@
       "bounds": [
         72,
         9,
-        421,
+        436,
         489
       ]
     },
@@ -347,7 +347,7 @@
       "bounds": [
         72,
         9,
-        421,
+        436,
         489
       ]
     },
@@ -549,13 +549,13 @@
     }
   ],
   "measurements": {
-    "blink_eye_change": 55.83688537675607,
+    "blink_eye_change": 64.99566304810558,
     "wave_wing_change": 26.108048224177256,
     "wave_returns_to_rest": 0.0,
     "sleep_blocks_wave": 0.0,
     "sleep_closes_eyes": 85.22740043644298,
     "breathing_visible": 8.521962666666667,
-    "thinking_motion_visible": 18.169013333333336,
+    "thinking_motion_visible": 16.922504,
     "thinking_sleep_override": 0.0,
     "thinking_wave_returns": 1.3333333333333332e-06,
     "neutral_matches_front": 0.208824

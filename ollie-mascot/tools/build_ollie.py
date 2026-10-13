@@ -13,7 +13,6 @@ from math import atan2, hypot
 import xml.etree.ElementTree as ET
 from build_data import generate as generate_data
 
-
 HERE = Path(__file__).resolve().parent.parent
 SOURCE = HERE / "tools" / "scaffold"
 NEXT_ID = 3000
@@ -40,9 +39,7 @@ def node(parent, name, fixed_id=None, **attrs):
 
 def art_group(parent, name, x, y):
     """Place editable Ollie vectors under an existing animated rig component."""
-    source = next(
-        item for item in ART_SOURCE.iter("Node") if item.get("name") == name
-    )
+    source = next(item for item in ART_SOURCE.iter("Node") if item.get("name") == name)
     artwork = deepcopy(source)
     artwork.set("x", str(x))
     artwork.set("y", str(y))
@@ -60,11 +57,19 @@ def bezier(parent, name, d, color=None, outline=None, thickness=2):
     points, closed = vertices(d)
     p = element(s, "PointsPath", "Path", isClosed=str(closed).lower())
     for xy, inc, out in points:
-        dx, dy = inc[0]-xy[0], inc[1]-xy[1]
-        ox, oy = out[0]-xy[0], out[1]-xy[1]
-        element(p, "CubicDetachedVertex", "V", x=xy[0], y=xy[1],
-                inRotation=atan2(dy, dx), inDistance=hypot(dx, dy),
-                outRotation=atan2(oy, ox), outDistance=hypot(ox, oy))
+        dx, dy = inc[0] - xy[0], inc[1] - xy[1]
+        ox, oy = out[0] - xy[0], out[1] - xy[1]
+        element(
+            p,
+            "CubicDetachedVertex",
+            "V",
+            x=xy[0],
+            y=xy[1],
+            inRotation=atan2(dy, dx),
+            inDistance=hypot(dx, dy),
+            outRotation=atan2(oy, ox),
+            outDistance=hypot(ox, oy),
+        )
     if color:
         paint(s, color, outline, thickness)
     elif outline:
@@ -81,7 +86,9 @@ def paint(shape, color, outline=None, thickness=3):
         element(stroke, "SolidColor", "Color", colorValue=outline)
 
 
-def ellipse(parent, name, x, y, width, height, color, outline=None, thickness=3, fixed_id=None, **attrs):
+def ellipse(
+    parent, name, x, y, width, height, color, outline=None, thickness=3, fixed_id=None, **attrs
+):
     s = element(parent, "Shape", name, fixed_id, x=x, y=y, **attrs)
     element(s, "Ellipse", "Path", width=width, height=height)
     paint(s, color, outline, thickness)
@@ -133,24 +140,59 @@ MINT = "FF74F5D0"
 def add_eye(parent, name, x, y, expression="open", scale=1):
     e = node(parent, name, x=x, y=y, scaleX=scale, scaleY=scale)
     if expression in ("closed", "wink", "sleep"):
-        path_data = "M -94 28 C -65 -25 39 -49 79 10" if expression != "sleep" else "M -94 -4 C -53 51 40 54 79 -6"
+        path_data = (
+            "M -94 28 C -65 -25 39 -49 79 10"
+            if expression != "sleep"
+            else "M -94 -4 C -53 51 40 54 79 -6"
+        )
         bezier(e, "ClosedLid", path_data, outline="FF101D18", thickness=4.8)
         return e
+    # Draw order is front-to-back. The two cream lids sit over the unchanged
+    # eye artwork and grow toward its centre during a blink.
+    upper_color = "FFFFF9E8" if name == "EyeL" else "FFFDF3DE"
+    lower_color = "FFFDF6E2" if name == "EyeL" else "FFFCF0D9"
+    upper = node(e, "BlinkUpper", y=-51, scaleY=0.001, opacity=0)
+    upper_seam = bezier(
+        upper, "BlinkSeam", "M -155 129 C -85 117 85 117 155 129", outline="FF101D18", thickness=4.5
+    )
+    upper_seam.set("opacity", "0")
+    upper_fill = bezier(
+        upper,
+        "UpperLidFill",
+        "M -155 0 L 155 0 L 155 133 C 85 124 -85 124 -155 133 Z",
+        color=upper_color,
+    )
+    lower = node(e, "BlinkLower", y=51, scaleY=0.001, opacity=0)
+    lower_fill = bezier(
+        lower,
+        "LowerLidFill",
+        "M -155 -130 C -85 -140 85 -140 155 -130 L 155 0 L -155 0 Z",
+        color=lower_color,
+    )
     source_name = "LeftEye" if name == "EyeL" else "RightEye"
-    source_x, source_y = (474 if name == "EyeL" else 780)*SCALE, 561*SCALE
+    source_x, source_y = (474 if name == "EyeL" else 780) * SCALE, 561 * SCALE
     if expression == "half":
         bezier(e, "LidEdge", "M -119 -8 C -64 10 35 10 79 -8", outline="FF13251B", thickness=3.5)
-        bezier(e, "UpperLid", "M -128 -130 L 99 -130 L 99 -12 C 40 13 -65 13 -128 -9 Z", color="FFFFF4DE")
+        bezier(
+            e,
+            "UpperLid",
+            "M -128 -130 L 99 -130 L 99 -12 C 40 13 -65 13 -128 -9 Z",
+            color="FFFFF4DE",
+        )
     artwork = art_group(e, source_name, -source_x, -source_y)
+    eye_outline = next(shape for shape in artwork.iter("Shape") if shape.get("name") == "UpperLash")
+    for lid_shape in (upper_seam, upper_fill, lower_fill):
+        element(lid_shape, "ClippingShape", "EyeContourClip", sourceId=eye_outline.get("id"))
     if expression == "surprised":
-        e.set("scaleX", "1.06");e.set("scaleY", "1.06")
+        e.set("scaleX", "1.06")
+        e.set("scaleY", "1.06")
     return e
 
 
 def add_eyes_variant(solo, name, fixed_id, left="open", right="open", left_y=0, right_y=0):
     group = node(solo, name, fixed_id)
-    add_eye(group, "EyeL", 474*SCALE-250, left_y, left)
-    add_eye(group, "EyeR", 780*SCALE-250, right_y, right)
+    add_eye(group, "EyeL", 474 * SCALE - 250, left_y, left)
+    add_eye(group, "EyeR", 780 * SCALE - 250, right_y, right)
     return group
 
 
@@ -178,11 +220,19 @@ def add_fx(face):
     ellipse(ex, "ExclamationDot", 132, -117, 7, 7, ORANGE)
     zzz = node(fx, "FxZzz", "0:56")
     for i, (xx, yy) in enumerate([(130, -142), (153, -169)]):
-        line(zzz, f"Z{i}", [(xx-8, yy-7), (xx+6, yy-7), (xx-7, yy+7), (xx+8, yy+7)], GREEN, 4)
+        line(
+            zzz,
+            f"Z{i}",
+            [(xx - 8, yy - 7), (xx + 6, yy - 7), (xx - 7, yy + 7), (xx + 8, yy + 7)],
+            GREEN,
+            4,
+        )
     # Keep the question mark clear of the crown throughout the head tilt.
     # Local coordinates let it grow around its own centre at small preview sizes.
     q = node(fx, "FxQuestion", "0:57", x=184, y=-190, scaleX=1.25, scaleY=1.25)
-    line(q, "QuestionCurl", [(-12, -15), (-2, -24), (10, -21), (15, -11), (0, 5), (0, 11)], GREEN, 7)
+    line(
+        q, "QuestionCurl", [(-12, -15), (-2, -24), (10, -21), (15, -11), (0, 5), (0, 11)], GREEN, 7
+    )
     ellipse(q, "QuestionDot", 0, 23, 8, 8, GREEN)
     snore = node(fx, "FxSnore", "0:58")
     for idx, (xx, yy) in enumerate([(110, -125), (142, -157), (170, -185)], 1):
@@ -206,7 +256,7 @@ def build_head(character):
     add_beak(mouth, "MouthSmall", "0:44", small=True)
     add_beak(mouth, "MouthSlant", "0:45", slant=True)
 
-    blink = node(face, "EyeBlink", "0:16", y=561*SCALE-292)
+    blink = node(face, "EyeBlink", "0:16", y=561 * SCALE - 292)
     eyes = element(blink, "Solo", "EyesSet", "0:17", activeComponentId="0:31")
     add_eyes_variant(eyes, "EyesNeutral", "0:31")
     add_eyes_variant(eyes, "EyesHappy", "0:32", "closed", "closed")
@@ -215,11 +265,17 @@ def build_head(character):
     add_eyes_variant(eyes, "EyesSurprised", "0:35", "surprised", "surprised")
     add_eyes_variant(eyes, "EyesSleepy", "0:36", "half", "half")
     confused = node(eyes, "EyesConfused", "0:37")
-    add_eye(confused, "EyeL", 474*SCALE-250, -2, "open")
-    add_eye(confused, "EyeR", 780*SCALE-250, 2, "open", 0.92)
+    add_eye(confused, "EyeL", 474 * SCALE - 250, -2, "open")
+    add_eye(confused, "EyeR", 780 * SCALE - 250, 2, "open", 0.92)
     thinking = add_eyes_variant(eyes, "EyesThinking", "0:9100")
-    gaze_shapes = {"IrisOutline", "IrisGreen", "LowerIrisLight", "Pupil",
-                   "MainCatchlight", "SmallCatchlight"}
+    gaze_shapes = {
+        "IrisOutline",
+        "IrisGreen",
+        "LowerIrisLight",
+        "Pupil",
+        "MainCatchlight",
+        "SmallCatchlight",
+    }
     for shape in thinking.iter("Shape"):
         if shape.get("name") in gaze_shapes:
             shape.set("x", str(float(shape.get("x", 0)) + 4))
@@ -238,11 +294,11 @@ def build_head(character):
 
 def build_body(character):
     body = node(character, "Body", "0:23")
-    core = node(body, "AICore", "0:900", x=0, y=917*SCALE-478)
-    art_group(core, "AIBadge", -250, -917*SCALE)
+    core = node(body, "AICore", "0:900", x=0, y=917 * SCALE - 478)
+    art_group(core, "AIBadge", -250, -917 * SCALE)
     art_group(body, "ChestPatch", -250, -478)
     art_group(body, "Body", -250, -478)
-    for x, name, fixed, source_x in [(-34,"FootL","0:1427",216),(38,"FootR","0:1447",288)]:
+    for x, name, fixed, source_x in [(-34, "FootL", "0:1427", 216), (38, "FootR", "0:1447", 288)]:
         foot = node(body, name, fixed, x=x, y=-30)
         art_group(foot, name, -source_x, -448)
 
@@ -273,11 +329,17 @@ def add_core_motion(artboard):
     ET.SubElement(layer, "ExitState", {"x": "400", "y": "-150", "id": "0:9002"})
     entry = ET.SubElement(layer, "EntryState", {"x": "-250", "y": "0", "id": "0:9003"})
     ET.SubElement(entry, "StateTransition", {"stateToId": "0:9005", "id": "0:9004"})
-    ET.SubElement(layer, "AnimationState", {"x": "0", "y": "0", "animationId": "0:425", "id": "0:9005"})
+    ET.SubElement(
+        layer, "AnimationState", {"x": "0", "y": "0", "animationId": "0:425", "id": "0:9005"}
+    )
     mood_index = next(i for i, e in enumerate(machine) if e.attrib.get("name") == "Mood")
     machine.insert(mood_index, layer)
 
-    animation = ET.SubElement(artboard, "LinearAnimation", {"loopValue": "loop", "duration": "150", "name": "core_breathe", "id": "0:425"})
+    animation = ET.SubElement(
+        artboard,
+        "LinearAnimation",
+        {"loopValue": "loop", "duration": "150", "name": "core_breathe", "id": "0:425"},
+    )
     keyed = ET.SubElement(animation, "KeyedObject", {"objectId": "0:900", "id": "0:9010"})
     prop = ET.SubElement(keyed, "KeyedProperty", {"propertyKey": "18", "id": "0:9011"})
     for frame, value, kid in [(0, "0.88", 9012), (75, "1", 9014), (150, "0.88", 9016)]:
@@ -286,7 +348,11 @@ def add_core_motion(artboard):
             attrs["interpolationType"] = "cubic"
         key = ET.SubElement(prop, "KeyFrameDouble", attrs)
         if frame != 150:
-            ET.SubElement(key, "CubicEaseInterpolator", {"x1": "0.42", "y1": "0", "x2": "0.58", "y2": "1", "id": f"0:{kid+1}"})
+            ET.SubElement(
+                key,
+                "CubicEaseInterpolator",
+                {"x1": "0.42", "y1": "0", "x2": "0.58", "y2": "1", "id": f"0:{kid+1}"},
+            )
 
     for sleep in artboard.findall("LinearAnimation"):
         if sleep.attrib.get("name") != "sleep_loop":
@@ -299,7 +365,70 @@ def add_core_motion(artboard):
                 attrs["interpolationType"] = "cubic"
             key = ET.SubElement(prop, "KeyFrameDouble", attrs)
             if frame != 240:
-                ET.SubElement(key, "CubicEaseInterpolator", {"x1": "0.42", "y1": "0", "x2": "0.58", "y2": "1", "id": f"0:{kid+1}"})
+                ET.SubElement(
+                    key,
+                    "CubicEaseInterpolator",
+                    {"x1": "0.42", "y1": "0", "x2": "0.58", "y2": "1", "id": f"0:{kid+1}"},
+                )
+
+
+def retarget_blink(artboard):
+    """Animate eyelid coverage, leaving the eye and its highlights full size."""
+    lids = [
+        item for item in artboard.iter("Node") if item.get("name") in ("BlinkUpper", "BlinkLower")
+    ]
+    seams = [item for item in artboard.iter("Shape") if item.get("name") == "BlinkSeam"]
+    eye_artwork = [
+        child
+        for eye in artboard.iter("Node")
+        if eye.get("name") in ("EyeL", "EyeR")
+        for child in eye.findall("Node")
+        if child.get("name") in ("LeftEye", "RightEye")
+    ]
+    for animation in artboard.findall("LinearAnimation"):
+        if animation.get("name") not in ("blink", "blink_off"):
+            continue
+        for keyed in list(animation.findall("KeyedObject")):
+            if keyed.get("objectId") == "0:16":
+                animation.remove(keyed)
+        frames = (
+            ((0, 0.001), (200, 0.001), (205, 1), (207, 1), (213, 0.001), (240, 0.001))
+            if animation.get("name") == "blink"
+            else ((0, 0.001),)
+        )
+        seam_frames = (
+            ((0, 0), (201, 0), (203, 1), (210, 1), (212, 0), (240, 0))
+            if animation.get("name") == "blink"
+            else ((0, 0),)
+        )
+        lid_opacity_frames = (
+            ((0, 0), (200, 0), (201, 1), (212, 1), (213, 0), (240, 0))
+            if animation.get("name") == "blink"
+            else ((0, 0),)
+        )
+        eye_frames = (
+            ((0, 1), (204, 1), (205, 0), (207, 0), (208, 1), (240, 1))
+            if animation.get("name") == "blink"
+            else ((0, 1),)
+        )
+        for objects, property_key, keys in (
+            (lids, "17", frames),
+            (lids, "18", lid_opacity_frames),
+            (seams, "18", seam_frames),
+            (eye_artwork, "18", eye_frames),
+        ):
+            for item in objects:
+                keyed = ET.SubElement(
+                    animation, "KeyedObject", {"objectId": item.get("id"), "id": new_id()}
+                )
+                prop = ET.SubElement(
+                    keyed, "KeyedProperty", {"propertyKey": property_key, "id": new_id()}
+                )
+                for index, (frame, value) in enumerate(keys):
+                    attrs = {"value": str(value), "frame": str(frame), "id": new_id()}
+                    if index < len(keys) - 1:
+                        attrs["interpolationType"] = "linear"
+                    ET.SubElement(prop, "KeyFrameDouble", attrs)
 
 
 def main():
@@ -320,10 +449,13 @@ def main():
                 for key in prop.findall("KeyFrameDouble"):
                     value = float(key.get("value"))
                     if oid in ("0:20", "0:21") and pk == "15":
-                        value -= .36 if oid == "0:20" else -.36
-                    if oid == "0:13" and pk == "15": value *= .12
-                    if oid == "0:10" and pk == "14": value = 478+(value-478)*.45
-                    if oid == "0:10" and pk == "17": value = 1+(value-1)*.30
+                        value -= 0.36 if oid == "0:20" else -0.36
+                    if oid == "0:13" and pk == "15":
+                        value *= 0.12
+                    if oid == "0:10" and pk == "14":
+                        value = 478 + (value - 478) * 0.45
+                    if oid == "0:10" and pk == "17":
+                        value = 1 + (value - 1) * 0.30
                     key.set("value", str(round(value, 6)))
         if name == "sleep_loop":
             for key in animation.iter("KeyFrameId"):
@@ -337,9 +469,11 @@ def main():
     position = list(artboard).index(old)
     artboard.remove(old)
     artboard.insert(position, make_artwork(old))
+    retarget_blink(artboard)
     add_core_motion(artboard)
     from expression_library import extend_runtime
     from thinking_mood import add_thinking_mood
+
     extend_runtime(artboard, sys.modules[__name__])
     add_thinking_mood(artboard)
     # Bundle the view model so runtime.rml and review snapshots are self-contained.
@@ -348,7 +482,7 @@ def main():
     ET.indent(tree, space="    ")
     tree.write(HERE / "runtime.rml", encoding="utf-8", xml_declaration=False)
     (HERE / "rive.yaml").write_text(
-        "name: ollie-mascot\nmain: Runtime\nexclude:\n  - data.rml\n  - data\n  - speech\n  - docs\n  - tools\n  - tests\n  - reference\n  - dist\n  - artwork\n  - playground\n  - web-pet\n  - visual-v2\n  - visual-v3\nlogs:\n  file: build/rive.log\n  problems: build/problems.log\n",
+        "name: ollie-mascot\nmain: Runtime\nexclude:\n  - data.rml\n  - data\n  - speech\n  - docs\n  - tools\n  - tests\n  - reference\n  - dist\n  - artwork\n  - playground\nlogs:\n  file: build/rive.log\n  problems: build/problems.log\n",
         encoding="utf-8",
     )
 

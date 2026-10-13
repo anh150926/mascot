@@ -1,395 +1,949 @@
 <!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ollie · Animation Playground</title>
-  <link rel="icon" href="data:,">
-  <style>
-    :root { --paper:#f5f8f1; --panel:#fffdf6; --ink:#14463a; --muted:#557764; --green:#448c4d; --line:#c9dfc5; --stage:#e8f2e7; --size:400px; }
-    :root[data-stage="dark"] { --stage:#1b2520; }
-    * { box-sizing:border-box; }
-    body { margin:0; color:var(--ink); background:var(--paper); font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif; }
-    header { padding:22px clamp(16px,4vw,48px) 10px; }
-    h1 { margin:0; font-size:clamp(24px,3vw,36px); letter-spacing:-.04em; }
-    header p { margin:5px 0 0; color:var(--muted); }
-    .review-link { display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; margin:0 clamp(16px,4vw,48px) 4px; padding:12px 16px; border:1px solid #98c8a3; border-radius:14px; background:#e8f5e7; color:var(--ink); }
-    .review-link a { display:inline-block; padding:8px 13px; border-radius:10px; background:#377e4d; color:white; font-weight:700; text-decoration:none; }
-    .review-link a:hover { background:#286c3e; }
-    main { display:grid; grid-template-columns:minmax(300px,1fr) 330px; gap:18px; padding:12px clamp(16px,4vw,48px) 40px; }
-    @media(max-width:800px) { main { grid-template-columns:1fr; } }
-    .stage { min-height:520px; border:1px solid var(--line); border-radius:22px; background:var(--stage); display:grid; place-items:center; overflow:hidden; transition:background .2s; }
-    .mascot { position:relative; width:var(--size); height:var(--size); max-width:100%; }
-    canvas { display:block; width:100%; height:100%; }
-    #fallback { display:none; position:absolute; inset:0; width:100%; height:100%; object-fit:contain; animation:breathe 2.5s ease-in-out infinite; cursor:pointer; }
-    @keyframes breathe { 0%,100% { transform:translateY(0) scale(1); } 50% { transform:translateY(-2px) scale(1.012); } }
-    .panel { background:var(--panel); border:1px solid var(--line); border-radius:22px; padding:18px; }
-    h2 { margin:15px 0 8px; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.09em; }
-    h2:first-child { margin-top:0; }
-    .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
-    .row { display:flex; gap:8px; flex-wrap:wrap; }
-    button { flex:1; min-width:0; border:1px solid var(--line); border-radius:10px; padding:9px 11px; background:#f5faf1; color:var(--ink); font:inherit; text-align:left; cursor:pointer; }
-    button:hover { border-color:var(--green); }
-    button[aria-pressed="true"] { background:var(--green); border-color:var(--green); color:white; }
-    .row button { text-align:center; }
-    #status { min-height:58px; margin-top:18px; padding:11px; border-radius:10px; background:#f0f5ec; color:var(--muted); white-space:pre-wrap; font:12px/1.45 ui-monospace,Consolas,monospace; }
-    #status.error { color:#9b3b20; }
-    .hint { margin:7px 0 0; font-size:12px; color:var(--muted); }
-    .bubble { position:absolute; left:56%; top:3%; max-width:175px; padding:8px 12px; border:2px solid var(--ink); border-radius:15px; background:white; box-shadow:0 8px 20px #14463a22; color:var(--ink); font-weight:650; opacity:0; transform:translateY(9px) scale(.92); transition:opacity .17s,transform .17s; pointer-events:none; }
-    .bubble.show { opacity:1; transform:translateY(0) scale(1); }
-    .preview-column { min-width:0; position:sticky; top:18px; align-self:start; }
-    .stage { min-height:490px; }
-    .scene-info { padding:20px 24px; margin-top:12px; border:1px solid var(--line); border-radius:18px; background:var(--panel); }
-    .scene-info h2 { font-size:23px; text-transform:none; letter-spacing:-.025em; color:var(--ink); margin:0 0 8px; }
-    .scene-info p { margin:6px 0; color:var(--muted); }
-    .scene-info .duration { font-size:12px; color:#397344; font-weight:700; }
-    select { width:100%; padding:11px 10px; border:1px solid var(--line); border-radius:10px; font:inherit; background:#f5faf1; color:var(--ink); }
-    a { color:#2e7943; }
-    .library { padding:0 clamp(16px,4vw,48px) 56px; }
-    .library-header { display:flex; align-items:end; justify-content:space-between; gap:18px; flex-wrap:wrap; margin-bottom:22px; }
-    .library h2 { font-size:clamp(26px,3vw,38px); text-transform:none; letter-spacing:-.04em; color:var(--ink); margin:4px 0; }
-    .library-header p { color:var(--muted); margin:4px 0; max-width:630px; }
-    .eyebrow { color:#5b8564; text-transform:uppercase; letter-spacing:.15em; font-size:11px; font-weight:800; }
-    .filters { display:flex; gap:8px; flex-wrap:wrap; margin:20px 0; }
-    .filters button { flex:initial; border-radius:99px; padding:8px 15px; }
-    .scene-cards { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; }
-    .scene-card { display:flex; flex-direction:column; padding:0; overflow:hidden; background:var(--panel); border-radius:18px; }
-    .scene-card:hover { box-shadow:0 8px 24px #244d2912; transform:translateY(-2px); }
-    .scene-card img { width:100%; height:auto; aspect-ratio:1; object-fit:contain; background:#e9f0e2; padding:12px; }
-    .scene-card strong { display:block; padding:14px 15px 0; font-size:15px; }
-    .scene-card small { padding:4px 15px 15px; line-height:1.5; opacity:.8; }
-    .scene-card[hidden] { display:none; }
-    button:focus-visible,select:focus-visible,a:focus-visible { outline:3px solid #d4a933; outline-offset:3px; }
-    @media(max-width:1100px) { .scene-cards { grid-template-columns:repeat(4,minmax(0,1fr)); } }
-    @media(max-width:800px) { .preview-column { position:static; } .scene-cards { grid-template-columns:repeat(3,minmax(0,1fr)); } }
-    @media(max-width:520px) { .scene-cards { grid-template-columns:repeat(2,minmax(0,1fr)); } .stage { min-height:350px; } .mascot { height:auto; aspect-ratio:1; } }
-    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; } #fallback { animation:none; } }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Ollie · Animation Playground</h1>
-    <p>8 biểu cảm cơ bản + 19 cảnh chuyển động. Nhấn 1–8 để đổi biểu cảm, W để vẫy, S để ngủ, Space để dừng.</p>
-  </header>
-  <div class="review-link">
-    <span><strong>Cánh gốc · bản 08.</strong> Mọi tư thế cử chỉ, cầm và nâng dùng bảy lớp lông gốc; cúp ăn mừng hiện trước cánh đang giữ.</span>
-    <a href="wing-review.html">Xem cánh qua từng khung ↗</a>
-    <a href="../build/wing-redesign/index.html">11 dải chuyển động trong build ↗</a>
-    <a href="../build/thinking-strip.png">Khung chuyển động suy nghĩ ↗</a>
-  </div>
-  <main>
-    <div class="preview-column" id="preview">
-    <section class="stage" aria-label="Bản xem trước Ollie">
-      <div class="mascot" id="mascot">
-        <canvas id="rive" width="800" height="800"></canvas>
-        <img id="fallback" alt="Ollie preview từ các frame Rive đã render">
-        <div class="bubble" id="bubble" role="status" aria-live="polite"></div>
-      </div>
-    </section>
-    <section class="scene-info" aria-live="polite">
-      <span class="duration" id="sceneDuration">BIỂU CẢM CƠ BẢN</span>
-      <h2 id="sceneTitle">Ollie đang ở đây</h2>
-      <p id="sceneMotion">Chọn một cảnh trong bộ mới để xem nhịp chuyển động và cách sử dụng.</p>
-      <p id="sceneUse">Các cảnh lặp nhẹ, có thể dừng bất cứ lúc nào.</p>
-    </section>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ollie · Animation Playground</title>
+    <link rel="icon" href="data:," />
+    <style>
+      :root {
+        --paper: #f5f8f1;
+        --panel: #fffdf6;
+        --ink: #14463a;
+        --muted: #557764;
+        --green: #448c4d;
+        --line: #c9dfc5;
+        --stage: #e8f2e7;
+        --size: 400px;
+      }
+      :root[data-stage="dark"] {
+        --stage: #1b2520;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font:
+          15px/1.45 system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+      }
+      header {
+        padding: 22px clamp(16px, 4vw, 48px) 10px;
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(24px, 3vw, 36px);
+        letter-spacing: -0.04em;
+      }
+      header p {
+        margin: 5px 0 0;
+        color: var(--muted);
+      }
+      .review-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin: 0 clamp(16px, 4vw, 48px) 4px;
+        padding: 12px 16px;
+        border: 1px solid #98c8a3;
+        border-radius: 14px;
+        background: #e8f5e7;
+        color: var(--ink);
+      }
+      .review-link a {
+        display: inline-block;
+        padding: 8px 13px;
+        border-radius: 10px;
+        background: #377e4d;
+        color: white;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .review-link a:hover {
+        background: #286c3e;
+      }
+      main {
+        display: grid;
+        grid-template-columns: minmax(300px, 1fr) 330px;
+        gap: 18px;
+        padding: 12px clamp(16px, 4vw, 48px) 40px;
+      }
+      @media (max-width: 800px) {
+        main {
+          grid-template-columns: 1fr;
+        }
+      }
+      .stage {
+        min-height: 520px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: var(--stage);
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        transition: background 0.2s;
+      }
+      .mascot {
+        position: relative;
+        width: var(--size);
+        height: var(--size);
+        max-width: 100%;
+      }
+      canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      #fallback {
+        display: none;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        animation: breathe 2.5s ease-in-out infinite;
+        cursor: pointer;
+      }
+      @keyframes breathe {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-2px) scale(1.012);
+        }
+      }
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 18px;
+      }
+      h2 {
+        margin: 15px 0 8px;
+        font-size: 12px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+      }
+      h2:first-child {
+        margin-top: 0;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+      .row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      button {
+        flex: 1;
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 9px 11px;
+        background: #f5faf1;
+        color: var(--ink);
+        font: inherit;
+        text-align: left;
+        cursor: pointer;
+      }
+      button:hover {
+        border-color: var(--green);
+      }
+      button[aria-pressed="true"] {
+        background: var(--green);
+        border-color: var(--green);
+        color: white;
+      }
+      .row button {
+        text-align: center;
+      }
+      #status {
+        min-height: 58px;
+        margin-top: 18px;
+        padding: 11px;
+        border-radius: 10px;
+        background: #f0f5ec;
+        color: var(--muted);
+        white-space: pre-wrap;
+        font:
+          12px/1.45 ui-monospace,
+          Consolas,
+          monospace;
+      }
+      #status.error {
+        color: #9b3b20;
+      }
+      .hint {
+        margin: 7px 0 0;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .bubble {
+        position: absolute;
+        left: 56%;
+        top: 3%;
+        max-width: 175px;
+        padding: 8px 12px;
+        border: 2px solid var(--ink);
+        border-radius: 15px;
+        background: white;
+        box-shadow: 0 8px 20px #14463a22;
+        color: var(--ink);
+        font-weight: 650;
+        opacity: 0;
+        transform: translateY(9px) scale(0.92);
+        transition:
+          opacity 0.17s,
+          transform 0.17s;
+        pointer-events: none;
+      }
+      .bubble.show {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      .preview-column {
+        min-width: 0;
+        position: sticky;
+        top: 18px;
+        align-self: start;
+      }
+      .stage {
+        min-height: 490px;
+      }
+      .scene-info {
+        padding: 20px 24px;
+        margin-top: 12px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--panel);
+      }
+      .scene-info h2 {
+        font-size: 23px;
+        text-transform: none;
+        letter-spacing: -0.025em;
+        color: var(--ink);
+        margin: 0 0 8px;
+      }
+      .scene-info p {
+        margin: 6px 0;
+        color: var(--muted);
+      }
+      .scene-info .duration {
+        font-size: 12px;
+        color: #397344;
+        font-weight: 700;
+      }
+      select {
+        width: 100%;
+        padding: 11px 10px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        font: inherit;
+        background: #f5faf1;
+        color: var(--ink);
+      }
+      a {
+        color: #2e7943;
+      }
+      .library {
+        padding: 0 clamp(16px, 4vw, 48px) 56px;
+      }
+      .library-header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+        margin-bottom: 22px;
+      }
+      .library h2 {
+        font-size: clamp(26px, 3vw, 38px);
+        text-transform: none;
+        letter-spacing: -0.04em;
+        color: var(--ink);
+        margin: 4px 0;
+      }
+      .library-header p {
+        color: var(--muted);
+        margin: 4px 0;
+        max-width: 630px;
+      }
+      .eyebrow {
+        color: #5b8564;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-size: 11px;
+        font-weight: 800;
+      }
+      .filters {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 20px 0;
+      }
+      .filters button {
+        flex: initial;
+        border-radius: 99px;
+        padding: 8px 15px;
+      }
+      .scene-cards {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 14px;
+      }
+      .scene-card {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        overflow: hidden;
+        background: var(--panel);
+        border-radius: 18px;
+      }
+      .scene-card:hover {
+        box-shadow: 0 8px 24px #244d2912;
+        transform: translateY(-2px);
+      }
+      .scene-card img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        object-fit: contain;
+        background: #e9f0e2;
+        padding: 12px;
+      }
+      .scene-card strong {
+        display: block;
+        padding: 14px 15px 0;
+        font-size: 15px;
+      }
+      .scene-card small {
+        padding: 4px 15px 15px;
+        line-height: 1.5;
+        opacity: 0.8;
+      }
+      .scene-card[hidden] {
+        display: none;
+      }
+      button:focus-visible,
+      select:focus-visible,
+      a:focus-visible {
+        outline: 3px solid #d4a933;
+        outline-offset: 3px;
+      }
+      @media (max-width: 1100px) {
+        .scene-cards {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 800px) {
+        .preview-column {
+          position: static;
+        }
+        .scene-cards {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 520px) {
+        .scene-cards {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .stage {
+          min-height: 350px;
+        }
+        .mascot {
+          height: auto;
+          aspect-ratio: 1;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition: none !important;
+        }
+        #fallback {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Ollie · Animation Playground</h1>
+      <p>
+        8 biểu cảm cơ bản + 19 cảnh chuyển động. Nhấn 1–8 để đổi biểu cảm, W để
+        vẫy, S để ngủ, Space để dừng.
+      </p>
+    </header>
+    <div class="review-link">
+      <span
+        ><strong>Cánh gốc · bản 08.</strong> Mọi tư thế cử chỉ, cầm và nâng dùng
+        bảy lớp lông gốc; cúp ăn mừng hiện trước cánh đang giữ.</span
+      >
+      <a href="wing-review.html">Xem cánh qua từng khung ↗</a>
+      <a href="../build/wing-redesign/index.html"
+        >11 dải chuyển động trong build ↗</a
+      >
+      <a href="../build/thinking-strip.png">Khung chuyển động suy nghĩ ↗</a>
     </div>
-    <aside class="panel">
-      <h2>Biểu cảm</h2>
-      <div class="grid" id="moods"></div>
-      <h2><label for="sceneSelect">Bộ chuyển động mới</label></h2>
-      <select id="sceneSelect"><option value="">Chọn trong 19 cảnh…</option></select>
-      <div class="row" style="margin-top:8px"><button id="previousScene" aria-label="Cảnh trước">← Cảnh trước</button><button id="nextScene" aria-label="Cảnh tiếp theo">Cảnh tiếp →</button></div>
-      <h2>Cử chỉ</h2>
-      <div class="row">
-        <button id="wave">Vẫy cánh</button>
-        <button id="sleep" aria-pressed="false">Cho ngủ</button>
+    <main>
+      <div class="preview-column" id="preview">
+        <section class="stage" aria-label="Bản xem trước Ollie">
+          <div class="mascot" id="mascot">
+            <canvas id="rive" width="800" height="800"></canvas>
+            <img
+              id="fallback"
+              alt="Ollie preview từ các frame Rive đã render"
+            />
+            <div
+              class="bubble"
+              id="bubble"
+              role="status"
+              aria-live="polite"
+            ></div>
+          </div>
+        </section>
+        <section class="scene-info" aria-live="polite">
+          <span class="duration" id="sceneDuration">BIỂU CẢM CƠ BẢN</span>
+          <h2 id="sceneTitle">Ollie đang ở đây</h2>
+          <p id="sceneMotion">
+            Chọn một cảnh trong bộ mới để xem nhịp chuyển động và cách sử dụng.
+          </p>
+          <p id="sceneUse">Các cảnh lặp nhẹ, có thể dừng bất cứ lúc nào.</p>
+        </section>
       </div>
-      <p class="hint">Khi Ollie ngủ, chạm trực tiếp vào nhân vật để đánh thức.</p>
-      <h2>Câu nói thử</h2>
-      <div class="row">
-        <button data-category="greeting" data-say="Chào bạn! Mình là Ollie.">Chào hỏi</button>
-        <button data-category="planning" data-say="Cùng hoàn thành từng bước nhỏ nhé!">Lập kế hoạch</button>
-        <button data-category="activity" data-say="Mình cùng đứng dậy vươn vai một chút nhé.">Sống khỏe</button>
+      <aside class="panel">
+        <h2>Biểu cảm</h2>
+        <div class="grid" id="moods"></div>
+        <h2><label for="sceneSelect">Bộ chuyển động mới</label></h2>
+        <select id="sceneSelect">
+          <option value="">Chọn trong 19 cảnh…</option>
+        </select>
+        <div class="row" style="margin-top: 8px">
+          <button id="previousScene" aria-label="Cảnh trước">
+            ← Cảnh trước</button
+          ><button id="nextScene" aria-label="Cảnh tiếp theo">
+            Cảnh tiếp →
+          </button>
+        </div>
+        <h2>Cử chỉ</h2>
+        <div class="row">
+          <button id="wave">Vẫy cánh</button>
+          <button id="sleep" aria-pressed="false">Cho ngủ</button>
+        </div>
+        <p class="hint">
+          Khi Ollie ngủ, chạm trực tiếp vào nhân vật để đánh thức.
+        </p>
+        <h2>Câu nói thử</h2>
+        <div class="row">
+          <button data-category="greeting" data-say="Chào bạn! Mình là Ollie.">
+            Chào hỏi
+          </button>
+          <button
+            data-category="planning"
+            data-say="Cùng hoàn thành từng bước nhỏ nhé!"
+          >
+            Lập kế hoạch
+          </button>
+          <button
+            data-category="activity"
+            data-say="Mình cùng đứng dậy vươn vai một chút nhé."
+          >
+            Sống khỏe
+          </button>
+        </div>
+        <h2>Hiển thị</h2>
+        <div class="row" id="sizes"></div>
+        <div class="row" style="margin-top: 8px">
+          <button data-stage="light" aria-pressed="true">Nền sáng</button>
+          <button data-stage="dark" aria-pressed="false">Nền tối</button>
+        </div>
+        <h2>Điều khiển</h2>
+        <div class="row">
+          <button id="toggle">Dừng</button>
+          <button id="reload">Nạp lại .riv</button>
+        </div>
+        <p class="hint">
+          <button id="useFrames" style="width: 100%; text-align: center">
+            Xem bằng frame đã render
+          </button>
+        </p>
+        <div id="status">Đang nạp Ollie…</div>
+      </aside>
+    </main>
+    <section class="library" id="library" aria-labelledby="libraryTitle">
+      <div class="library-header">
+        <div>
+          <span class="eyebrow">OLLIE / MOTION LIBRARY · 01</span>
+          <h2 id="libraryTitle">Một Ollie, nhiều sắc thái.</h2>
+          <p>
+            Từ một ý tưởng nhỏ đến một ngày đầy năng lượng. Chọn thẻ để thử
+            chuyển động; ảnh trên thẻ là khung hình đại diện.
+          </p>
+        </div>
+        <div>
+          <a href="../docs/EXPRESSION_STUDY.md">Đọc phân tích tạo hình ↗</a
+          ><br /><a href="../review.html">Xem bộ mẫu gốc ↗</a>
+        </div>
       </div>
-      <h2>Hiển thị</h2>
-      <div class="row" id="sizes"></div>
-      <div class="row" style="margin-top:8px">
-        <button data-stage="light" aria-pressed="true">Nền sáng</button>
-        <button data-stage="dark" aria-pressed="false">Nền tối</button>
-      </div>
-      <h2>Điều khiển</h2>
-      <div class="row">
-        <button id="toggle">Dừng</button>
-        <button id="reload">Nạp lại .riv</button>
-      </div>
-      <p class="hint"><button id="useFrames" style="width:100%;text-align:center">Xem bằng frame đã render</button></p>
-      <div id="status">Đang nạp Ollie…</div>
-    </aside>
-  </main>
-  <section class="library" id="library" aria-labelledby="libraryTitle">
-    <div class="library-header"><div><span class="eyebrow">OLLIE / MOTION LIBRARY · 01</span><h2 id="libraryTitle">Một Ollie, nhiều sắc thái.</h2><p>Từ một ý tưởng nhỏ đến một ngày đầy năng lượng. Chọn thẻ để thử chuyển động; ảnh trên thẻ là khung hình đại diện.</p></div><div><a href="../docs/EXPRESSION_STUDY.md">Đọc phân tích tạo hình ↗</a><br><a href="../review.html">Xem bộ mẫu gốc ↗</a></div></div>
-    <div class="filters" id="sceneFilters" role="group" aria-label="Nhóm biểu cảm"></div>
-    <div class="scene-cards" id="sceneCards"></div>
-    <p id="libraryStatus" class="hint">Đang nạp bộ chuyển động…</p>
-  </section>
-  <script src="https://cdn.jsdelivr.net/npm/@rive-app/canvas@2.44.0/rive.js"></script>
-  <script>
-    const SRC = '../dist/ollie.riv?v=full-wings01';
-    const FRAME = name => './frames/' + name + '.png?v=full-wings01';
-    const MOODS = [
-      ['neutral','Mặc định'],['happy','Vui vẻ'],['wink','Nháy mắt'],
-      ['focus','Tập trung'],['surprised','Bất ngờ'],['sleepy','Buồn ngủ'],['confused','Thắc mắc'],
-      ['thinking','Đang suy nghĩ']
-    ];
-    const canvas = document.getElementById('rive');
-    const statusEl = document.getElementById('status');
-    const moodBox = document.getElementById('moods');
-    const sleepBtn = document.getElementById('sleep');
-    const bubble = document.getElementById('bubble');
-    const fallback = document.getElementById('fallback');
-    let animation = null, moodProp = null, sleepProp = null, waveProp = null, playing = true, bubbleTimer = null;
-    let fallbackMode = false, fallbackMood = 'neutral', fallbackSleep = false, gestureTimer = null;
-    let speechData = null;
-    let scenes = [], currentMood = 'neutral';
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const sceneSelect = document.getElementById('sceneSelect');
-    function describeMood(key) {
-      currentMood = key;
-      const scene = scenes.find(item => item.key === key);
-      sceneSelect.value = scene ? key : '';
-      document.getElementById('sceneTitle').textContent = scene?.label || MOODS.find(item => item[0] === key)?.[1] || 'Ollie';
-      document.getElementById('sceneDuration').textContent = scene ? `${(scene.frames/60).toLocaleString('vi-VN',{maximumFractionDigits:2})} GIÂY / VÒNG` : 'BIỂU CẢM CƠ BẢN';
-      document.getElementById('sceneMotion').textContent = scene?.motion || 'Một biểu cảm quen thuộc của Ollie.';
-      document.getElementById('sceneUse').textContent = scene?.use || 'Chọn trong bộ chuyển động mới để khám phá thêm.';
-      if (key === 'thinking') {
-        document.getElementById('sceneDuration').textContent = 'BIỂU CẢM CƠ BẢN · 3 GIÂY / VÒNG';
-        document.getElementById('sceneMotion').textContent = 'Cánh đặt gần cằm → nhìn chếch lên và nghiêng đầu → chớp mắt nhẹ → trở về nhịp đầu.';
-        document.getElementById('sceneUse').textContent = 'Khi Ollie đang cân nhắc một vấn đề hoặc chuẩn bị trả lời câu hỏi. Ba chấm suy nghĩ hiện lần lượt theo nhịp.';
+      <div
+        class="filters"
+        id="sceneFilters"
+        role="group"
+        aria-label="Nhóm biểu cảm"
+      ></div>
+      <div class="scene-cards" id="sceneCards"></div>
+      <p id="libraryStatus" class="hint">Đang nạp bộ chuyển động…</p>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/@rive-app/canvas@2.44.0/rive.js"></script>
+    <script>
+      const SRC = "../dist/ollie.riv?v=blink-lids01";
+      const FRAME = (name) => "./frames/" + name + ".png?v=blink-lids01";
+      const MOODS = [
+        ["neutral", "Mặc định"],
+        ["happy", "Vui vẻ"],
+        ["wink", "Nháy mắt"],
+        ["focus", "Tập trung"],
+        ["surprised", "Bất ngờ"],
+        ["sleepy", "Buồn ngủ"],
+        ["confused", "Thắc mắc"],
+        ["thinking", "Đang suy nghĩ"],
+      ];
+      const canvas = document.getElementById("rive");
+      const statusEl = document.getElementById("status");
+      const moodBox = document.getElementById("moods");
+      const sleepBtn = document.getElementById("sleep");
+      const bubble = document.getElementById("bubble");
+      const fallback = document.getElementById("fallback");
+      let animation = null,
+        moodProp = null,
+        sleepProp = null,
+        waveProp = null,
+        playing = true,
+        bubbleTimer = null;
+      let fallbackMode = false,
+        fallbackMood = "neutral",
+        fallbackSleep = false,
+        gestureTimer = null;
+      let speechData = null;
+      let scenes = [],
+        currentMood = "neutral";
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      const sceneSelect = document.getElementById("sceneSelect");
+      function describeMood(key) {
+        currentMood = key;
+        const scene = scenes.find((item) => item.key === key);
+        sceneSelect.value = scene ? key : "";
+        document.getElementById("sceneTitle").textContent =
+          scene?.label || MOODS.find((item) => item[0] === key)?.[1] || "Ollie";
+        document.getElementById("sceneDuration").textContent = scene
+          ? `${(scene.frames / 60).toLocaleString("vi-VN", { maximumFractionDigits: 2 })} GIÂY / VÒNG`
+          : "BIỂU CẢM CƠ BẢN";
+        document.getElementById("sceneMotion").textContent =
+          scene?.motion || "Một biểu cảm quen thuộc của Ollie.";
+        document.getElementById("sceneUse").textContent =
+          scene?.use || "Chọn trong bộ chuyển động mới để khám phá thêm.";
+        if (key === "thinking") {
+          document.getElementById("sceneDuration").textContent =
+            "BIỂU CẢM CƠ BẢN · 3 GIÂY / VÒNG";
+          document.getElementById("sceneMotion").textContent =
+            "Cánh đặt gần cằm → nhìn chếch lên và nghiêng đầu → chớp mắt nhẹ → trở về nhịp đầu.";
+          document.getElementById("sceneUse").textContent =
+            "Khi Ollie đang cân nhắc một vấn đề hoặc chuẩn bị trả lời câu hỏi. Đám mây và các dấu chấm xuất hiện lần lượt.";
+        }
+        document
+          .querySelectorAll(".scene-card")
+          .forEach((card) =>
+            card.setAttribute(
+              "aria-pressed",
+              String(card.dataset.mood === key),
+            ),
+          );
+        selectButton(moodBox, moodBox.querySelector(`[data-mood="${key}"]`));
+        if (fallbackMode ? fallbackSleep : sleepProp?.value) {
+          document.getElementById("sceneTitle").textContent = "Ollie đang ngủ";
+          document.getElementById("sceneDuration").textContent = "NGHỈ NGƠI";
+          document.getElementById("sceneMotion").textContent =
+            "Mắt khép, thở đều; đạo cụ được cất đi khi ngủ.";
+          document.getElementById("sceneUse").textContent =
+            "Chạm vào Ollie để đánh thức và trở lại cảnh đã chọn.";
+        }
       }
-      document.querySelectorAll('.scene-card').forEach(card => card.setAttribute('aria-pressed', String(card.dataset.mood === key)));
-      selectButton(moodBox, moodBox.querySelector(`[data-mood="${key}"]`));
-      if (fallbackMode ? fallbackSleep : sleepProp?.value) {
-        document.getElementById('sceneTitle').textContent = 'Ollie đang ngủ';
-        document.getElementById('sceneDuration').textContent = 'NGHỈ NGƠI';
-        document.getElementById('sceneMotion').textContent = 'Mắt khép, thở đều; đạo cụ được cất đi khi ngủ.';
-        document.getElementById('sceneUse').textContent = 'Chạm vào Ollie để đánh thức và trở lại cảnh đã chọn.';
-      }
-    }
-    fetch('../data/expressions.json').then(r => { if (!r.ok) throw new Error('Không tải được danh mục'); return r.json(); }).then(catalog => {
-      scenes = catalog.expressions;
-      for (const group of catalog.groups) {
-        const optgroup = document.createElement('optgroup'); optgroup.label = group.label;
-        scenes.filter(scene => scene.group === group.id).forEach(scene => {
-          const option = document.createElement('option'); option.value = scene.key; option.textContent = scene.label; optgroup.append(option);
+      fetch("../data/expressions.json")
+        .then((r) => {
+          if (!r.ok) throw new Error("Không tải được danh mục");
+          return r.json();
+        })
+        .then((catalog) => {
+          scenes = catalog.expressions;
+          for (const group of catalog.groups) {
+            const optgroup = document.createElement("optgroup");
+            optgroup.label = group.label;
+            scenes
+              .filter((scene) => scene.group === group.id)
+              .forEach((scene) => {
+                const option = document.createElement("option");
+                option.value = scene.key;
+                option.textContent = scene.label;
+                optgroup.append(option);
+              });
+            sceneSelect.append(optgroup);
+          }
+          const filters = document.getElementById("sceneFilters");
+          for (const group of [
+            { id: "all", label: "Tất cả · 19" },
+            ...catalog.groups,
+          ]) {
+            const button = document.createElement("button");
+            button.textContent = group.label;
+            button.setAttribute("aria-pressed", String(group.id === "all"));
+            button.onclick = () => {
+              selectButton(filters, button);
+              document
+                .querySelectorAll(".scene-card")
+                .forEach(
+                  (card) =>
+                    (card.hidden =
+                      group.id !== "all" && card.dataset.group !== group.id),
+                );
+            };
+            filters.append(button);
+          }
+          for (const scene of scenes) {
+            const card = document.createElement("button");
+            card.className = "scene-card";
+            card.dataset.mood = scene.key;
+            card.dataset.group = scene.group;
+            card.setAttribute("aria-pressed", "false");
+            const picture = document.createElement("img");
+            picture.src = FRAME(scene.key);
+            picture.alt = "";
+            picture.loading = "lazy";
+            picture.width = 500;
+            picture.height = 500;
+            const title = document.createElement("strong");
+            title.textContent = scene.label;
+            const caption = document.createElement("small");
+            caption.textContent = `${(scene.frames / 60).toLocaleString("vi-VN", { maximumFractionDigits: 2 })} giây · ${scene.prop}`;
+            card.append(picture, title, caption);
+            card.onclick = () => {
+              setMood(scene.key);
+              document.getElementById("preview").scrollIntoView({
+                behavior: reducedMotion ? "instant" : "smooth",
+                block: "start",
+              });
+            };
+            document.getElementById("sceneCards").append(card);
+          }
+          describeMood(currentMood);
+          document.getElementById("libraryStatus").textContent =
+            "19 cảnh mới · 4 nhóm · cùng một nhân vật Ollie";
+        })
+        .catch(() => {
+          document.getElementById("libraryStatus").textContent =
+            "Chưa nạp được danh mục. Hãy mở trang qua máy chủ xem trước cục bộ.";
         });
-        sceneSelect.append(optgroup);
+      sceneSelect.onchange = () => setMood(sceneSelect.value || "neutral");
+      function stepScene(direction) {
+        if (!scenes.length) return;
+        const index = scenes.findIndex((scene) => scene.key === currentMood);
+        setMood(
+          scenes[(index + direction + scenes.length) % scenes.length].key,
+        );
       }
-      const filters = document.getElementById('sceneFilters');
-      for (const group of [{id:'all',label:'Tất cả · 19'}, ...catalog.groups]) {
-        const button = document.createElement('button'); button.textContent = group.label; button.setAttribute('aria-pressed', String(group.id === 'all'));
-        button.onclick = () => {
-          selectButton(filters, button);
-          document.querySelectorAll('.scene-card').forEach(card => card.hidden = group.id !== 'all' && card.dataset.group !== group.id);
-        };
-        filters.append(button);
-      }
-      for (const scene of scenes) {
-        const card = document.createElement('button'); card.className = 'scene-card'; card.dataset.mood = scene.key; card.dataset.group = scene.group; card.setAttribute('aria-pressed','false');
-        const picture = document.createElement('img'); picture.src = FRAME(scene.key); picture.alt = ''; picture.loading = 'lazy'; picture.width = 500; picture.height = 500;
-        const title = document.createElement('strong'); title.textContent = scene.label;
-        const caption = document.createElement('small'); caption.textContent = `${(scene.frames/60).toLocaleString('vi-VN',{maximumFractionDigits:2})} giây · ${scene.prop}`;
-        card.append(picture,title,caption);
-        card.onclick = () => { setMood(scene.key); document.getElementById('preview').scrollIntoView({behavior:reducedMotion?'instant':'smooth',block:'start'}); };
-        document.getElementById('sceneCards').append(card);
-      }
-      describeMood(currentMood);
-      document.getElementById('libraryStatus').textContent = '19 cảnh mới · 4 nhóm · cùng một nhân vật Ollie';
-    }).catch(() => { document.getElementById('libraryStatus').textContent = 'Chưa nạp được danh mục. Hãy mở trang qua máy chủ xem trước cục bộ.'; });
-    sceneSelect.onchange = () => setMood(sceneSelect.value || 'neutral');
-    function stepScene(direction) {
-      if (!scenes.length) return;
-      const index = scenes.findIndex(scene => scene.key === currentMood);
-      setMood(scenes[(index + direction + scenes.length) % scenes.length].key);
-    }
-    document.getElementById('previousScene').onclick = () => stepScene(-1);
-    document.getElementById('nextScene').onclick = () => stepScene(1);
-    const speechPrevious = new Map();
-    // Real app values belong here. Never invent minutes, tasks or reminder times.
-    const speechContext = {name:'bạn'};
-    fetch('../speech/lines.vi.json').then(r => {
-      if (!r.ok) throw new Error('Speech data unavailable');
-      return r.json();
-    }).then(data => { speechData = data; }).catch(() => {});
+      document.getElementById("previousScene").onclick = () => stepScene(-1);
+      document.getElementById("nextScene").onclick = () => stepScene(1);
+      const speechPrevious = new Map();
+      // Real app values belong here. Never invent minutes, tasks or reminder times.
+      const speechContext = { name: "bạn" };
+      fetch("../speech/lines.vi.json")
+        .then((r) => {
+          if (!r.ok) throw new Error("Speech data unavailable");
+          return r.json();
+        })
+        .then((data) => {
+          speechData = data;
+        })
+        .catch(() => {});
 
-    function showFrame(name) { fallback.src = FRAME(name); }
-    function useFrames(reason) {
-      if (moodProp) fallbackMood = moodProp.value;
-      if (sleepProp) fallbackSleep = !!sleepProp.value;
-      if (animation) { animation.cleanup(); animation = null; }
-      moodProp = null; sleepProp = null; waveProp = null;
-      fallbackMode = true; fallback.style.display = 'block'; canvas.style.display = 'none';
-      fallback.style.animationPlayState = playing ? 'running' : 'paused';
-      showFrame(fallbackSleep ? 'sleep' : fallbackMood);
-      syncSleep();
-      status(reason || 'Đang xem các frame render từ Rive. Mood, wave và sleep có thể thử ở chế độ này.');
-    }
-
-    function status(message, error=false) {
-      statusEl.textContent = message;
-      statusEl.classList.toggle('error', error);
-    }
-    function selectButton(container, current) {
-      container.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b === current)));
-    }
-    function setMood(key) {
-      clearTimeout(gestureTimer);
-      fallbackMood = key;
-      describeMood(key);
-      if (fallbackMode) {
-        fallbackMood = key;
-        if (!fallbackSleep) showFrame(key);
-        return status(`mood = ${key} · frame preview`);
+      function showFrame(name) {
+        fallback.src = FRAME(name);
       }
-      if (!moodProp) return status('Chưa tìm thấy Mascot.mood.', true);
-      moodProp.value = key;
-      status(`mood = ${key}`);
-    }
-    MOODS.forEach(([key,label],index) => {
-      const b = document.createElement('button');
-      b.dataset.mood = key;
-      b.textContent = `${index+1}. ${label}`;
-      b.setAttribute('aria-pressed', String(key === 'neutral'));
-      b.onclick = () => setMood(key);
-      moodBox.appendChild(b);
-    });
-    [['120px','120 px'],['240px','240 px'],['400px','400 px']].forEach(([size,label]) => {
-      const b = document.createElement('button');
-      b.textContent = label;
-      b.setAttribute('aria-pressed', String(size === '400px'));
-      b.onclick = () => {
-        document.documentElement.style.setProperty('--size', size);
-        selectButton(document.getElementById('sizes'), b);
-        requestAnimationFrame(() => animation?.resizeDrawingSurfaceToCanvas());
-      };
-      document.getElementById('sizes').appendChild(b);
-    });
-    document.querySelectorAll('[data-stage]').forEach(b => b.onclick = () => {
-      document.documentElement.dataset.stage = b.dataset.stage;
-      selectButton(b.parentElement, b);
-    });
-    document.querySelectorAll('[data-say]').forEach(b => b.onclick = () => {
-      if (fallbackMode ? fallbackSleep : sleepProp?.value) return status('Ollie đang ngủ. Chạm vào nhân vật để đánh thức.');
-      const category = b.dataset.category;
-      const eligible = (speechData?.categories[category]?.lines || []).filter(line =>
-        Array.from(line.text.matchAll(/\{([^{}]+)\}/g)).every(match => Object.hasOwn(speechContext, match[1])));
-      const choices = eligible.filter(line => line.id !== speechPrevious.get(category));
-      const line = (choices.length ? choices : eligible)[0];
-      if (line) {
-        speechPrevious.set(category, line.id);
-        setMood(line.mood);
-        if (line.gesture === 'wave') document.getElementById('wave').click();
-      }
-      bubble.textContent = line ? line.text.replace(/\{([^{}]+)\}/g, (_, key) => speechContext[key]) : b.dataset.say;
-      bubble.classList.add('show');
-      clearTimeout(bubbleTimer);
-      const rules = speechData?.rules;
-      const duration = Math.max(rules?.min_duration_ms || 3200, bubble.textContent.length * (rules?.ms_per_character || 65));
-      bubbleTimer = setTimeout(() => bubble.classList.remove('show'), duration);
-    });
-    function syncSleep() {
-      const asleep = fallbackMode ? fallbackSleep : !!sleepProp?.value;
-      fallbackSleep = asleep;
-      sleepBtn.textContent = asleep ? 'Đang ngủ…' : 'Cho ngủ';
-      sleepBtn.setAttribute('aria-pressed', String(asleep));
-      if (asleep) bubble.classList.remove('show');
-      describeMood(currentMood);
-    }
-    function load() {
-      if (animation) animation.cleanup();
-      animation = null; moodProp = null; sleepProp = null; waveProp = null;
-      fallbackMode = false; fallback.style.display = 'none'; canvas.style.display = 'block';
-      status('Đang nạp Ollie…');
-      if (!window.rive) return useFrames('Web runtime chưa tải được. Đang dùng frame do Rive CLI render.');
-      animation = new rive.Rive({
-        src: SRC + '&t=' + Date.now(), canvas, artboard:'Runtime', stateMachine:'Main',
-        autoplay:true, autoBind:true,
-        layout:new rive.Layout({fit:rive.Fit.Contain,alignment:rive.Alignment.Center}),
-        onLoad:() => {
-          animation.resizeDrawingSurfaceToCanvas();
-          const model = animation.viewModelInstance;
-          moodProp = model?.enum('mood');
-          sleepProp = model?.boolean('isAsleep');
-          waveProp = model?.trigger('wave');
-          if (moodProp) moodProp.value = currentMood;
-          if (sleepProp) sleepProp.value = fallbackSleep;
-          if (sleepProp) sleepProp.on(() => { syncSleep(); status(`isAsleep = ${sleepProp.value}`); });
-          syncSleep();
-          playing = true;
-          document.getElementById('toggle').textContent = 'Dừng';
-          status(moodProp && sleepProp && waveProp
-            ? `Đã nạp Ollie · mood = ${moodProp.value}\nChạm nhân vật khi ngủ để tỉnh.`
-            : 'File đã nạp nhưng thiếu mood, isAsleep hoặc wave.', !(moodProp && sleepProp && waveProp));
-        },
-        onLoadError:e => useFrames('Web runtime không nạp được file .riv cục bộ: ' + (e?.data || e) + '\nĐang dùng frame do Rive CLI render.')
-      });
-    }
-    sleepBtn.onclick = () => {
-      if (fallbackMode) {
-        clearTimeout(gestureTimer);
-        fallbackSleep = !fallbackSleep;
-        showFrame(fallbackSleep ? 'sleep' : fallbackMood);
+      function useFrames(reason) {
+        if (moodProp) fallbackMood = moodProp.value;
+        if (sleepProp) fallbackSleep = !!sleepProp.value;
+        if (animation) {
+          animation.cleanup();
+          animation = null;
+        }
+        moodProp = null;
+        sleepProp = null;
+        waveProp = null;
+        fallbackMode = true;
+        fallback.style.display = "block";
+        canvas.style.display = "none";
+        fallback.style.animationPlayState = playing ? "running" : "paused";
+        showFrame(fallbackSleep ? "sleep" : fallbackMood);
         syncSleep();
-        return status(`isAsleep = ${fallbackSleep} · frame preview`);
+        status(
+          reason ||
+            "Đang xem các frame render từ Rive. Mood, wave và sleep có thể thử ở chế độ này.",
+        );
       }
-      if (!sleepProp) return status('Không tìm thấy isAsleep.', true);
-      sleepProp.value = !sleepProp.value;
-      syncSleep();
-    };
-    document.getElementById('wave').onclick = () => {
-      if (fallbackMode) {
-        if (fallbackSleep) return status('Ollie đang ngủ, chưa vẫy cánh.');
+
+      function status(message, error = false) {
+        statusEl.textContent = message;
+        statusEl.classList.toggle("error", error);
+      }
+      function selectButton(container, current) {
+        container
+          .querySelectorAll("button")
+          .forEach((b) =>
+            b.setAttribute("aria-pressed", String(b === current)),
+          );
+      }
+      function setMood(key) {
         clearTimeout(gestureTimer);
-        showFrame('wave-mid');
-        gestureTimer = setTimeout(() => showFrame(fallbackMood), 900);
-        return status('wave() · các frame Rive đã render');
+        fallbackMood = key;
+        describeMood(key);
+        if (fallbackMode) {
+          fallbackMood = key;
+          if (!fallbackSleep) showFrame(key);
+          return status(`mood = ${key} · frame preview`);
+        }
+        if (!moodProp) return status("Chưa tìm thấy Mascot.mood.", true);
+        moodProp.value = key;
+        status(`mood = ${key}`);
       }
-      if (!waveProp) return status('Không tìm thấy wave.', true);
-      if (sleepProp?.value) return status('Ollie đang ngủ, chưa vẫy cánh.');
-      waveProp.trigger(); status('wave() · Ollie vẫy cánh');
-    };
-    document.getElementById('toggle').onclick = e => {
-      if (fallbackMode) {
-        fallback.style.animationPlayState = playing ? 'paused' : 'running';
+      MOODS.forEach(([key, label], index) => {
+        const b = document.createElement("button");
+        b.dataset.mood = key;
+        b.textContent = `${index + 1}. ${label}`;
+        b.setAttribute("aria-pressed", String(key === "neutral"));
+        b.onclick = () => setMood(key);
+        moodBox.appendChild(b);
+      });
+      [
+        ["120px", "120 px"],
+        ["240px", "240 px"],
+        ["400px", "400 px"],
+      ].forEach(([size, label]) => {
+        const b = document.createElement("button");
+        b.textContent = label;
+        b.setAttribute("aria-pressed", String(size === "400px"));
+        b.onclick = () => {
+          document.documentElement.style.setProperty("--size", size);
+          selectButton(document.getElementById("sizes"), b);
+          requestAnimationFrame(() =>
+            animation?.resizeDrawingSurfaceToCanvas(),
+          );
+        };
+        document.getElementById("sizes").appendChild(b);
+      });
+      document.querySelectorAll("[data-stage]").forEach(
+        (b) =>
+          (b.onclick = () => {
+            document.documentElement.dataset.stage = b.dataset.stage;
+            selectButton(b.parentElement, b);
+          }),
+      );
+      document.querySelectorAll("[data-say]").forEach(
+        (b) =>
+          (b.onclick = () => {
+            if (fallbackMode ? fallbackSleep : sleepProp?.value)
+              return status("Ollie đang ngủ. Chạm vào nhân vật để đánh thức.");
+            const category = b.dataset.category;
+            const eligible = (
+              speechData?.categories[category]?.lines || []
+            ).filter((line) =>
+              Array.from(line.text.matchAll(/\{([^{}]+)\}/g)).every((match) =>
+                Object.hasOwn(speechContext, match[1]),
+              ),
+            );
+            const choices = eligible.filter(
+              (line) => line.id !== speechPrevious.get(category),
+            );
+            const line = (choices.length ? choices : eligible)[0];
+            if (line) {
+              speechPrevious.set(category, line.id);
+              setMood(line.mood);
+              if (line.gesture === "wave")
+                document.getElementById("wave").click();
+            }
+            bubble.textContent = line
+              ? line.text.replace(
+                  /\{([^{}]+)\}/g,
+                  (_, key) => speechContext[key],
+                )
+              : b.dataset.say;
+            bubble.classList.add("show");
+            clearTimeout(bubbleTimer);
+            const rules = speechData?.rules;
+            const duration = Math.max(
+              rules?.min_duration_ms || 3200,
+              bubble.textContent.length * (rules?.ms_per_character || 65),
+            );
+            bubbleTimer = setTimeout(
+              () => bubble.classList.remove("show"),
+              duration,
+            );
+          }),
+      );
+      function syncSleep() {
+        const asleep = fallbackMode ? fallbackSleep : !!sleepProp?.value;
+        fallbackSleep = asleep;
+        sleepBtn.textContent = asleep ? "Đang ngủ…" : "Cho ngủ";
+        sleepBtn.setAttribute("aria-pressed", String(asleep));
+        if (asleep) bubble.classList.remove("show");
+        describeMood(currentMood);
+      }
+      function load() {
+        if (animation) animation.cleanup();
+        animation = null;
+        moodProp = null;
+        sleepProp = null;
+        waveProp = null;
+        fallbackMode = false;
+        fallback.style.display = "none";
+        canvas.style.display = "block";
+        status("Đang nạp Ollie…");
+        if (!window.rive)
+          return useFrames(
+            "Web runtime chưa tải được. Đang dùng frame do Rive CLI render.",
+          );
+        animation = new rive.Rive({
+          src: SRC + "&t=" + Date.now(),
+          canvas,
+          artboard: "Runtime",
+          stateMachine: "Main",
+          autoplay: true,
+          autoBind: true,
+          layout: new rive.Layout({
+            fit: rive.Fit.Contain,
+            alignment: rive.Alignment.Center,
+          }),
+          onLoad: () => {
+            animation.resizeDrawingSurfaceToCanvas();
+            const model = animation.viewModelInstance;
+            moodProp = model?.enum("mood");
+            sleepProp = model?.boolean("isAsleep");
+            waveProp = model?.trigger("wave");
+            if (moodProp) moodProp.value = currentMood;
+            if (sleepProp) sleepProp.value = fallbackSleep;
+            if (sleepProp)
+              sleepProp.on(() => {
+                syncSleep();
+                status(`isAsleep = ${sleepProp.value}`);
+              });
+            syncSleep();
+            playing = true;
+            document.getElementById("toggle").textContent = "Dừng";
+            status(
+              moodProp && sleepProp && waveProp
+                ? `Đã nạp Ollie · mood = ${moodProp.value}\nChạm nhân vật khi ngủ để tỉnh.`
+                : "File đã nạp nhưng thiếu mood, isAsleep hoặc wave.",
+              !(moodProp && sleepProp && waveProp),
+            );
+          },
+          onLoadError: (e) =>
+            useFrames(
+              "Web runtime không nạp được file .riv cục bộ: " +
+                (e?.data || e) +
+                "\nĐang dùng frame do Rive CLI render.",
+            ),
+        });
+      }
+      sleepBtn.onclick = () => {
+        if (fallbackMode) {
+          clearTimeout(gestureTimer);
+          fallbackSleep = !fallbackSleep;
+          showFrame(fallbackSleep ? "sleep" : fallbackMood);
+          syncSleep();
+          return status(`isAsleep = ${fallbackSleep} · frame preview`);
+        }
+        if (!sleepProp) return status("Không tìm thấy isAsleep.", true);
+        sleepProp.value = !sleepProp.value;
+        syncSleep();
+      };
+      document.getElementById("wave").onclick = () => {
+        if (fallbackMode) {
+          if (fallbackSleep) return status("Ollie đang ngủ, chưa vẫy cánh.");
+          clearTimeout(gestureTimer);
+          showFrame("wave-mid");
+          gestureTimer = setTimeout(() => showFrame(fallbackMood), 900);
+          return status("wave() · các frame Rive đã render");
+        }
+        if (!waveProp) return status("Không tìm thấy wave.", true);
+        if (sleepProp?.value) return status("Ollie đang ngủ, chưa vẫy cánh.");
+        waveProp.trigger();
+        status("wave() · Ollie vẫy cánh");
+      };
+      document.getElementById("toggle").onclick = (e) => {
+        if (fallbackMode) {
+          fallback.style.animationPlayState = playing ? "paused" : "running";
+          playing = !playing;
+          e.target.textContent = playing ? "Dừng" : "Chạy";
+          return;
+        }
+        if (!animation) return;
+        playing ? animation.pause() : animation.play();
         playing = !playing;
-        e.target.textContent = playing ? 'Dừng' : 'Chạy';
-        return;
-      }
-      if (!animation) return;
-      playing ? animation.pause() : animation.play();
-      playing = !playing;
-      e.target.textContent = playing ? 'Dừng' : 'Chạy';
-    };
-    document.getElementById('reload').onclick = load;
-    document.getElementById('useFrames').onclick = () => useFrames();
-    fallback.onclick = () => {
-      if (!fallbackSleep) return;
-      fallbackSleep = false;
-      showFrame('surprised');
-      syncSleep();
-      clearTimeout(gestureTimer);
-      gestureTimer = setTimeout(() => showFrame(fallbackSleep ? 'sleep' : fallbackMood), 650);
-      status('Ollie đã tỉnh · frame preview');
-    };
-    window.addEventListener('resize', () => animation?.resizeDrawingSurfaceToCanvas());
-    window.addEventListener('keydown', e => {
-      if (/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName) || e.target.isContentEditable) return;
-      if (e.target.closest('button') && (e.code === 'Space' || e.key === 'Enter')) return;
-      if (e.key >= '1' && e.key <= String(MOODS.length)) setMood(MOODS[Number(e.key)-1][0]);
-      if (e.key.toLowerCase() === 'w') document.getElementById('wave').click();
-      if (e.key.toLowerCase() === 's') sleepBtn.click();
-      if (e.code === 'Space') { e.preventDefault(); document.getElementById('toggle').click(); }
-    });
-    load();
-  </script>
-</body>
+        e.target.textContent = playing ? "Dừng" : "Chạy";
+      };
+      document.getElementById("reload").onclick = load;
+      document.getElementById("useFrames").onclick = () => useFrames();
+      fallback.onclick = () => {
+        if (!fallbackSleep) return;
+        fallbackSleep = false;
+        showFrame("surprised");
+        syncSleep();
+        clearTimeout(gestureTimer);
+        gestureTimer = setTimeout(
+          () => showFrame(fallbackSleep ? "sleep" : fallbackMood),
+          650,
+        );
+        status("Ollie đã tỉnh · frame preview");
+      };
+      window.addEventListener("resize", () =>
+        animation?.resizeDrawingSurfaceToCanvas(),
+      );
+      window.addEventListener("keydown", (e) => {
+        if (
+          /^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName) ||
+          e.target.isContentEditable
+        )
+          return;
+        if (
+          e.target.closest("button") &&
+          (e.code === "Space" || e.key === "Enter")
+        )
+          return;
+        if (e.key >= "1" && e.key <= String(MOODS.length))
+          setMood(MOODS[Number(e.key) - 1][0]);
+        if (e.key.toLowerCase() === "w")
+          document.getElementById("wave").click();
+        if (e.key.toLowerCase() === "s") sleepBtn.click();
+        if (e.code === "Space") {
+          e.preventDefault();
+          document.getElementById("toggle").click();
+        }
+      });
+      load();
+    </script>
+  </body>
 </html>

@@ -1,8 +1,0 @@
-name: ollie-neutral-v2
-main: Neutral
-exclude:
-  - reference
-  - build
-logs:
-  file: build/rive.log
-  problems: build/problems.log

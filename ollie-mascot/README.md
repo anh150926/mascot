@@ -1,6 +1,6 @@
 # Bộ mẫu Ollie
 
-**Cập nhật 12/10:** thêm biểu cảm cơ bản thứ 8 **Đang suy nghĩ** (`thinking`), vòng lặp 3 giây với cánh gần cằm, mắt nhìn chếch lên và ba chấm suy nghĩ. Chọn nút **8** trong [playground](playground/index.html); xem [dải khung trong build](build/thinking-strip.png) và [phân tích chuyển động](docs/THINKING_MOOD.md). Tổng cộng 27 mood; giá trị mới được nối cuối enum để giữ thứ tự 26 mood đã có.
+**Cập nhật 12/10:** thêm biểu cảm cơ bản thứ 8 **Đang suy nghĩ** (`thinking`), vòng lặp 3 giây với cánh gần cằm, mắt nhìn chếch lên và đám mây suy nghĩ. Chọn nút **8** trong [playground](playground/index.html); xem [dải khung trong build](build/thinking-strip.png) và [phân tích chuyển động](docs/THINKING_MOOD.md). Tổng cộng 27 mood; giá trị mới được nối cuối enum để giữ thứ tự 26 mood đã có.
 
 Bản dựng ngày 08/10/2026 dùng **“Cú lá xanh chibi đáng yêu.png”** làm chuẩn front mới. Nét vẽ được dựng lại bằng đường Bézier có tay nắm độc lập: đầu lớn, chỏm ba tầng, mắt rộng, mỏ cười, cánh lá và huy hiệu tròn. Đây là bản để đối chiếu và tiếp tục chỉnh sửa theo ảnh người dùng bổ sung, chưa phải thiết kế đã duyệt.
 
@@ -30,6 +30,7 @@ Mở **[review.html](review.html)** để xem ảnh gốc cạnh vector, kéo th
 | Kịch bản 39 probe | `tests/poses.json` |
 | Kết quả kiểm tra | `build/check-report.json` |
 | Xuất cho ứng dụng | `dist/ollie.riv`, `dist/ollie-front.svg`, `dist/ollie-front.png` |
+| Gói nhúng Expo | [integrations/expo/](integrations/expo/README.md) — component TypeScript, `.riv`, ảnh dự phòng và hợp đồng mood |
 
 ## Dựng lại trên Windows
 
@@ -90,7 +91,7 @@ build/
   size-*.png              80 / 120 / 240 / 500 px
 ```
 
-V2/V3 được giữ làm lịch sử. Nguồn hiện tại là artwork/, không phải visual-v3/. Thư mục web-pet/ là bản web riêng, không nằm trong gói Rive và chưa được chuyển sang artwork mới này.
+Nguồn hình hiện tại là `artwork/`; các bản thử V2/V3 và ứng dụng web cũ đã được dọn khỏi cây làm việc. Có thể xem lại chúng trong lịch sử Git.
 
 ## Dữ liệu runtime
 

@@ -34,7 +34,7 @@ Các số khớp với `build/trace/landmarks.png`; số làm tròn để đọc
 
 `artwork/build_artwork.py` là nguồn duy nhất cho nét front, xuất đồng thời SVG và RML. Path dùng đoạn cubic rõ tay nắm; không tự làm trơn qua toàn bộ mốc vì sẽ làm tròn sai đầu lá. Nguồn khai báo lớp từ sau ra trước, khi xuất RML đảo thứ tự để khớp quy tắc vẽ Rive.
 
-Rig giữ ID cố định cho đầu, cánh, mắt, miệng và dữ liệu. Nét nhập vào được cấp ID mới. Tâm chớp mắt nằm ngang tâm mắt để mắt không trượt xuống khi scaleY đóng lại. Góc cánh được retarget từ dáng nghỉ Nez về góc 0 của bản front; biên độ nhún cơ thể giảm để chồi lá không vượt khung.
+Rig giữ ID cố định cho đầu, cánh, mắt, miệng và dữ liệu. Nét nhập vào được cấp ID mới. Khi chớp mắt, mí trên và mí dưới khép vào tâm mắt; tròng mắt giữ nguyên kích thước và được che bởi mí. Góc cánh được retarget từ dáng nghỉ Nez về góc 0 của bản front; biên độ nhún cơ thể giảm để chồi lá không vượt khung.
 
 ## Phạm vi bản hiện tại
 

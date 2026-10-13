@@ -10,7 +10,7 @@ Tỉ lệ nhân vật bằng bảy biểu cảm gốc. Đám mây và các bong 
 
 ## Đám mây suy nghĩ
 
-Đám mây gồm bốn hình elip chồng lên nhau (Puff1–Puff4), tạo ra hình dáng mây mềm mại mà không cần đường path phức tạp. Ba bong bóng nối (LinkBubble1–3) tăng dần kích thước từ đỉnh đầu Ollie lên tới đám mây. Bên trong mây có năm dấu chấm xếp hàng ngang, hiện lần lượt từ trái sang phải.
+Đám mây dùng một đường bao vector liền với nền xanh kem. Ba bong bóng nối (LinkBubble1–3) tăng dần kích thước từ đỉnh đầu Ollie lên tới đám mây. Bên trong mây có năm dấu chấm xếp hàng ngang, hiện lần lượt từ trái sang phải. Các hình mở ra bằng thay đổi kích thước để ảnh dự phòng giữ được màu sáng của mây.
 
 ## Khung chuyển động
 
@@ -18,12 +18,12 @@ Vòng lặp 180 frame ở 60 fps, dài 3 giây. Các đường chuyển động 
 
 | Thời điểm | Chuyển động |
 |---|---|
-| 0 s | Cánh nghỉ gần cằm, đầu nghiêng nhẹ; bong bóng nối và đám mây mờ. |
-| 0,25–0,58 s | Ba bong bóng nối hiện lần lượt từ dưới lên (offset 14 frame). |
-| 0,5–0,92 s | Đám mây fade in (opacity 0→0.85), bắt đầu nhịp thở (scale 0.95→1.05). |
-| 0,67–1,75 s | Năm dấu chấm bên trong mây sáng lần lượt trái→phải (offset 8 frame). |
-| 2,1–2,3 s | Chớp mắt ngắn; đám mây và dấu chấm bắt đầu mờ dần. |
-| 2,42–2,58 s | Bong bóng nối mờ lần lượt từ trên xuống. |
+| 0 s | Cánh nghỉ gần cằm, đầu nghiêng nhẹ; bong bóng nối và đám mây thu nhỏ. |
+| 0,25–0,58 s | Ba bong bóng nối lớn dần từ dưới lên (offset 14 frame). |
+| 0,5–0,92 s | Đám mây mở rộng, bắt đầu nhịp thở nhẹ. |
+| 0,67–1,75 s | Năm dấu chấm bên trong mây lớn dần từ trái sang phải (offset 8 frame). |
+| 2,1–2,3 s | Chớp mắt ngắn; đám mây và dấu chấm bắt đầu thu lại. |
+| 2,42–2,58 s | Bong bóng nối thu nhỏ lần lượt từ trên xuống. |
 | 3 s | Đầu, cánh, thân, đám mây và bong bóng trở về tư thế đầu vòng. |
 
 Cánh dùng nguyên bộ bảy lớp lông của rig hiện tại. Tròng mắt và ánh sáng trong mắt dịch nhẹ lên phải, trong khi viền mắt giữ vị trí gốc. Chồi lá tiếp tục chuyển động theo layer của rig.
@@ -32,7 +32,7 @@ Cánh dùng nguyên bộ bảy lớp lông của rig hiện tại. Tròng mắt 
 
 - Nút **8. Đang suy nghĩ** trong [playground](../playground/index.html), phím tắt **8**.
 - [Dải 5 khung trong build](../build/thinking-strip.png) và [ảnh đại diện](../build/moods/thinking.png).
-- `tools/thinking_mood.py`: cánh, ba chấm, keyframe và transition; `tools/build_ollie.py`: mắt và bước ghép rig.
+- `tools/thinking_mood.py`: cánh, đám mây, keyframe và transition; `tools/build_ollie.py`: mắt và bước ghép rig.
 - `data/model.json`: thêm `thinking` với ID `0:608` vào cuối enum, giữ thứ tự toàn bộ 26 giá trị trước đó. Vị trí thứ 8 là thứ tự nút trong nhóm biểu cảm cơ bản.
 - `data/presets.json`: preset suy nghĩ; `tests/poses.json`: khung đầu/giữa/cuối vòng và tương tác ngủ/vẫy.
 

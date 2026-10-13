@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": "tools/templates/*.html",
+      "options": {
+        "htmlWhitespaceSensitivity": "ignore"
+      }
+    }
+  ]
+}

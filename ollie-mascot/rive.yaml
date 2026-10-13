@@ -11,9 +11,6 @@ exclude:
   - dist
   - artwork
   - playground
-  - web-pet
-  - visual-v2
-  - visual-v3
 logs:
   file: build/rive.log
   problems: build/problems.log

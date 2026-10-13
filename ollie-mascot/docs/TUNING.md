@@ -21,6 +21,6 @@ Probe kiểm tra: dữ liệu mood/ngủ thật, chớp mắt có thay đổi v�
 
 Screenshot CLI có nền preview #1D1D1D; ảnh *-alpha.png chỉ loại nền nối với mép ảnh để bảo toàn đồng tử và mi đen. Rive artboard và SVG vốn trong suốt. Ảnh front gốc được bảo toàn; bản 500 px không crop.
 
-Rive compile loại web-pet/ và playground/: các thư mục này không phải nguồn RML, riêng node_modules gây quét/đóng gói chậm. build/rv là snapshot runtime tối giản; build/trace là project chồng ảnh tĩnh. Các stages bị loại khỏi compile của project review cha.
+Rive compile loại playground/ vì thư mục này không phải nguồn RML. build/rv là snapshot runtime tối giản; build/trace là project chồng ảnh tĩnh. Các stages bị loại khỏi compile của project review cha.
 
 Scaffold chụp từ dự án Nez có sẵn trong workspace ngày 08/10/2026. Nez giữ nguyên; Ollie có scaffold độc lập. Nếu thay scaffold, giữ/retarget ID cố định và chạy lại probe.
